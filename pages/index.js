@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Character from '../components/Character';
 import CategoryTile from '../components/CategoryTile';
@@ -20,6 +20,26 @@ export default function Home() {
   const [playedAnimals, setPlayedAnimals] = useState([]); 
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null); 
   const scrollContainerRef = useRef(null);
+
+  // Image Preloading State
+  const [preloadedData, setPreloadedData] = useState(null);
+  const [isPreloading, setIsPreloading] = useState(false);
+
+  // Tile Pool System - 100 feste Tiles
+  const TILE_POOL_SIZE = 100;
+  const [tilePool, setTilePool] = useState(() => {
+    // Initialisiere 100 leere Tiles
+    return Array.from({ length: TILE_POOL_SIZE }, (_, index) => ({
+      id: `tile-${index}`,
+      isVisible: false,
+      content: null,
+      animationMode: null,
+      isAnimal: false,
+      isPlayed: false,
+      isCurrentlyPlaying: false,
+      onClick: null
+    }));
+  });
 
   // Zentraler Animation State
   const [currentGridAnimation, setCurrentGridAnimation] = useState('slideFromLeft');
@@ -127,6 +147,7 @@ export default function Home() {
   const loadCategories = async () => {
     try {
       setLoading(true);
+      console.log('🔄 Loading categories...');
       
       // Zufällige Animation für neues Grid wählen
       const randomAnimation = animationManager.getRandomGridAnimation();
@@ -136,6 +157,7 @@ export default function Home() {
       const data = await response.json();
       
       if (data.categories) {
+        console.log(`✅ Loaded ${data.categories.length} categories`);
         // HIERARCHISCH: Kategorien mit Main-Recent-Logic anordnen
         const mainRecentItems = loadRecentItemsFromStorage('main');
         const arrangedCategories = arrangeItemsWithRecent(data.categories, mainRecentItems);
@@ -149,6 +171,7 @@ export default function Home() {
     } catch (err) {
       console.error('Error loading categories:', err);
       setError('Fehler beim Laden der Kategorien. Bitte versuche es nochmal!');
+      setCategories([]); // Explizit leeres Array setzen
     } finally {
       setLoading(false);
     }
@@ -218,19 +241,71 @@ export default function Home() {
     }
   };
 
-  // Hauptkategorie angeklickt - GLEICHZEITIGE Animationen
+  // Image Preloading Funktion
+  const preloadNextContent = async (slug, type = 'category') => {
+    try {
+      setIsPreloading(true);
+      console.log(`🔄 Preloading ${type}: ${slug}`);
+      
+             let response;
+       if (type === 'category') {
+         response = await fetch(`/api/categories/${slug}`);
+       } else if (type === 'animals') {
+         response = await fetch(`/api/animals/category/${slug}`);
+       }
+      
+      const data = await response.json();
+      
+      if (data) {
+        setPreloadedData({ type, slug, data });
+        console.log(`✅ Preloaded ${type} data:`, data);
+        
+        // Preload Images
+        const imagesToPreload = [];
+        if (type === 'category' && data.category?.subcategories) {
+          imagesToPreload.push(...data.category.subcategories.map(sub => 
+            `http://localhost:5000/images/${sub.image.filename}`
+          ));
+        } else if (type === 'animals' && data.animals) {
+          imagesToPreload.push(...data.animals.map(animal => 
+            `http://localhost:5000/images/${animal.image.filename}`
+          ));
+        }
+        
+        // Promise.all für alle Bilder
+        await Promise.all(imagesToPreload.map(src => {
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => resolve();
+            img.onerror = () => resolve(); // Auch bei Fehlern weitermachen
+            img.src = src;
+          });
+        }));
+        
+        console.log(`🖼️ Preloaded ${imagesToPreload.length} images`);
+      }
+    } catch (error) {
+      console.error('Preloading error:', error);
+    } finally {
+      setIsPreloading(false);
+    }
+  };
+
+  // Hauptkategorie angeklickt - MIT Image Preloading
   const handleCategoryClick = (category) => {
     if (currentView === 'transitioning') return; // Keine Klicks während Transition
 
-    // ===== SOFORT ALLE ANIMATIONEN GLEICHZEITIG STARTEN =====
-    // 1. Geklicktes Tile markieren
-    setClickedItemId(category.id);
+    const direction = getRandomDirection();
     
-    // 2. Fly-Out Richtung für andere Tiles
-    setGlobalAnimationDirection(getRandomDirection());
+    // SOFORT Image Preloading starten
+    preloadNextContent(category.slug, 'category');
     
-    // 3. Status auf transitioning - JETZT starten die Animationen
-    setCurrentView('transitioning');
+    // ===== BATCH ALLE STATE UPDATES IN EINEM CALL =====
+    React.startTransition(() => {
+      setClickedItemId(category.id);
+      setGlobalAnimationDirection(direction);
+      setCurrentView('transitioning');
+    });
     
     // Neue zufällige Animation für das nächste Grid wählen
     const randomAnimation = animationManager.getRandomGridAnimation();
@@ -244,33 +319,50 @@ export default function Home() {
       playAudio(`/${category.audio.path}`);
     }
     
-    // Nach Animation die Subkategorien laden - warten bis Animationen fertig
+    // Nach Animation die vorgeladenen Daten verwenden
     setTimeout(() => {
-      loadCategoryDetails(category.slug);
+      if (preloadedData && preloadedData.slug === category.slug && preloadedData.type === 'category') {
+        // Verwende vorgeladene Daten
+        const data = preloadedData.data;
+        if (data.category) {
+          setSelectedCategory(data.category);
+          const subcats = data.category.subcategories || [];
+          const categoryRecentItems = loadRecentItemsFromStorage('category', category.slug);
+          const arrangedSubcats = arrangeItemsWithRecent(subcats, categoryRecentItems);
+          setRecentItems(categoryRecentItems);
+          setSubcategories(arrangedSubcats);
+          setError(null);
+        }
+        setPreloadedData(null); // Reset nach Verwendung
+      } else {
+        // Fallback: Normale Ladung
+        loadCategoryDetails(category.slug);
+      }
       setCurrentView('category');
       setClickedItemId(null);
     }, 1800); // Warten bis Animationen fertig sind (1.8s)
   };
 
-  // Subkategorie angeklickt - GLEICHZEITIGE Animationen
+  // Subkategorie angeklickt - MIT Image Preloading
   const handleSubcategoryClick = (subcategory) => {
     if (currentView === 'transitioning') return; // Keine Klicks während Transition
 
     console.log(`🔥 SUBCATEGORY CLICKED: ${subcategory.name} (ID: ${subcategory.id})`);
 
-    // ===== SOFORT ALLE ANIMATIONEN GLEICHZEITIG STARTEN =====
-    // 1. Geklicktes Tile markieren
-    setClickedItemId(subcategory.id);
-    console.log(`📌 Set clickedItemId to: ${subcategory.id}`);
-    
-    // 2. Fly-Out Richtung für andere Tiles
     const direction = getRandomDirection();
-    setGlobalAnimationDirection(direction);
-    console.log(`🎯 Set globalAnimationDirection to: ${direction}`);
+    console.log(`🎯 Generated direction: ${direction}`);
+
+    // SOFORT Image Preloading für Tiere starten
+    preloadNextContent(subcategory.slug, 'animals');
+
+    // ===== BATCH ALLE STATE UPDATES IN EINEM CALL =====
+    React.startTransition(() => {
+      setClickedItemId(subcategory.id);
+      setGlobalAnimationDirection(direction);
+      setCurrentView('transitioning');
+    });
     
-    // 3. Status auf transitioning - JETZT starten die Animationen
-    setCurrentView('transitioning');
-    console.log(`🔄 Set currentView to: transitioning`);
+    console.log(`🔄 Batched state update completed`);
 
     // Neue zufällige Animation für das nächste Grid wählen
     const randomAnimation = animationManager.getRandomGridAnimation();
@@ -284,9 +376,23 @@ export default function Home() {
       playAudio(`/${subcategory.audio.path}`);
     }
     
-    // Lade Tier-Einträge für diese Subkategorie
+    // Nach Animation die vorgeladenen Tier-Daten verwenden
     setTimeout(() => {
-      loadAnimalsForCategory(subcategory.slug);
+      if (preloadedData && preloadedData.slug === subcategory.slug && preloadedData.type === 'animals') {
+        // Verwende vorgeladene Tier-Daten
+        const data = preloadedData.data;
+        if (data.animals) {
+          const animalRecentItems = loadRecentItemsFromStorage('animals', selectedCategory?.slug, subcategory.slug);
+          const arrangedAnimals = arrangeItemsWithRecent(data.animals, animalRecentItems);
+          setRecentItems(animalRecentItems);
+          setAnimals(arrangedAnimals);
+          setError(null);
+        }
+        setPreloadedData(null); // Reset nach Verwendung
+      } else {
+        // Fallback: Normale Ladung
+        loadAnimalsForCategory(subcategory.slug);
+      }
       setCurrentView('animals'); // Wechsel zu animals view
       setClickedItemId(null);
     }, 1800);
@@ -365,36 +471,86 @@ export default function Home() {
 
   // Zurück zu Hauptkategorien mit Animation
   const handleBackToCategories = () => {
+    console.log('🔙 Back to categories clicked');
+    
+    if (currentView === 'transitioning') return; // Keine doppelten Klicks
+    
+    // 1. PHASE: Nur Animation triggern - KEINE Daten ändern!
+    const direction = getRandomDirection();
+    
+    React.startTransition(() => {
+      setClickedItemId(null); // Kein spezifisches geklicktes Tile
+      setGlobalAnimationDirection(direction);
+      setCurrentView('transitioning');
+    });
+    
     // Neue zufällige Animation für das nächste Grid wählen
     const randomAnimation = animationManager.getRandomGridAnimation();
     setCurrentGridAnimation(randomAnimation);
     
-    // States zurücksetzen
-    setSelectedCategory(null);
-    setSubcategories([]);
-    setAnimals([]);
-    setCharacterContext('idle');
-    setClickedItemId(null);
-    setCurrentView('main');
-    
-    // Kategorien neu laden mit aktuellen Recent Items
-    loadCategories();
+    // 2. PHASE: Nach Fly-Out Animation ERST DANN Daten wechseln
+    setTimeout(() => {
+      console.log('🔄 Starting data transition after fly-out');
+      
+      React.startTransition(() => {
+        // ERST Daten clearen 
+        setSelectedCategory(null);
+        setSubcategories([]);
+        setAnimals([]);
+        setCharacterContext('idle');
+        
+        // DANN View wechseln
+        setCurrentView('main');
+      });
+      
+      // Neue Kategorien laden NACH dem View-Wechsel
+      setTimeout(() => {
+        console.log('📝 Loading categories for main view');
+        loadCategories();
+      }, 50); // Sehr kurze Verzögerung für View-Update
+    }, 1800); // Warten bis Fly-Out komplett fertig ist
   };
 
   // Zurück zu Subkategorien von Animal-Ansicht mit Animation
   const handleBackToSubcategories = () => {
+    console.log('🔙 Back to subcategories clicked');
+    
+    if (currentView === 'transitioning') return; // Keine doppelten Klicks
+    
+    // 1. PHASE: Nur Animation triggern - KEINE Daten ändern!
+    const direction = getRandomDirection();
+    
+    React.startTransition(() => {
+      setClickedItemId(null); // Kein spezifisches geklicktes Tile
+      setGlobalAnimationDirection(direction);
+      setCurrentView('transitioning');
+    });
+    
     // Neue zufällige Animation für das nächste Grid wählen
     const randomAnimation = animationManager.getRandomGridAnimation();
     setCurrentGridAnimation(randomAnimation);
     
-    setAnimals([]);
-    setCurrentView('category');
-    setCharacterContext(selectedCategory ? selectedCategory.slug : 'idle');
-    
-    // Subkategorien neu laden mit aktuellen Recent Items
-    if (selectedCategory) {
-      loadCategoryDetails(selectedCategory.slug);
-    }
+    // 2. PHASE: Nach Fly-Out Animation ERST DANN Daten wechseln
+    setTimeout(() => {
+      console.log('🔄 Starting data transition after fly-out (to subcategories)');
+      
+      React.startTransition(() => {
+        // ERST Daten clearen
+        setAnimals([]);
+        setCharacterContext(selectedCategory ? selectedCategory.slug : 'idle');
+        
+        // DANN View wechseln
+        setCurrentView('category');
+      });
+      
+      // Subkategorien neu laden NACH dem View-Wechsel
+      setTimeout(() => {
+        if (selectedCategory) {
+          console.log('📝 Loading subcategories for:', selectedCategory.slug);
+          loadCategoryDetails(selectedCategory.slug);
+        }
+      }, 50); // Sehr kurze Verzögerung für View-Update
+    }, 1800); // Warten bis Fly-Out komplett fertig ist
   };
 
   // Character Emotion-Change Handler
@@ -434,6 +590,121 @@ export default function Home() {
     // Normale Position - keine individuelle Animation
     return null;
   };
+
+  // Tile Pool Management - Aktualisiere nur Inhalte
+  const updateTilePool = (items) => {
+    // SPEZIAL: Während Transition nur Animation-Modi updaten, KEINE Content-Changes!
+    if (currentView === 'transitioning') {
+      console.log('🎭 Updating ONLY animation modes during transition');
+      setTilePool(prev => {
+        const updated = [...prev];
+        
+        // Nur Animation-Modi updaten, Content und onClick NICHT ändern!
+        updated.forEach(tile => {
+          if (tile.isVisible && tile.content) {
+            const newAnimationMode = getAnimationMode(tile.content.id);
+            if (tile.animationMode !== newAnimationMode) {
+              tile.animationMode = newAnimationMode;
+              console.log(`🎯 Updated animation for ${tile.content.name}: ${newAnimationMode}`);
+            }
+          }
+        });
+        
+        return updated;
+      });
+      return;
+    }
+    
+    setTilePool(prev => {
+      const updated = [...prev];
+      
+      // RESET: Alle Tiles komplett zurücksetzen
+      updated.forEach(tile => {
+        tile.isVisible = false;
+        tile.content = null;
+        tile.animationMode = null;
+        tile.onClick = null;
+        tile.isAnimal = false;
+        tile.isPlayed = false;
+        tile.isCurrentlyPlaying = false;
+      });
+      
+      // Nur die benötigten Tiles aktivieren und mit Inhalt füllen
+      items.forEach((item, index) => {
+        if (index < TILE_POOL_SIZE) {
+          const tile = updated[index];
+          tile.isVisible = true;
+          tile.content = item;
+          tile.animationMode = getAnimationMode(item.id);
+          
+          // Click Handler je nach currentView setzen
+          if (currentView === 'main') {
+            tile.onClick = handleCategoryClick;
+            tile.isAnimal = false;
+            tile.isPlayed = false;
+            tile.isCurrentlyPlaying = false;
+          } else if (currentView === 'category') {
+            tile.onClick = handleSubcategoryClick;
+            tile.isAnimal = false;
+            tile.isPlayed = false;
+            tile.isCurrentlyPlaying = false;
+          } else if (currentView === 'animals') {
+            tile.onClick = handleAnimalClick;
+            tile.isAnimal = true;
+            tile.isPlayed = playedAnimals.includes(item.id);
+            tile.isCurrentlyPlaying = currentlyPlaying === item.id;
+          }
+        }
+      });
+      
+      console.log(`🎯 Tile pool updated: ${items.length} visible tiles, view: ${currentView}`);
+      return updated;
+    });
+  };
+
+  // Zentrale Funktion: Welche Items sollen aktuell gerendert werden?
+  const getCurrentItems = () => {
+    if (currentView === 'main' || (!selectedCategory && currentView !== 'animals')) {
+      return categories;
+    } else if (currentView === 'category' || (selectedCategory && subcategories.length > 0 && currentView === 'transitioning')) {
+      return subcategories;
+    } else if (currentView === 'animals') {
+      // Animals in CategoryTile-Format konvertieren
+      return animals.map(animal => ({
+        id: animal.id,
+        name: animal.name,
+        slug: animal.slug,
+        image: animal.image,
+        audio: animal.audio
+      }));
+    }
+    return [];
+  };
+
+  // Zentrale Funktion: Soll Grid-Animation laufen?
+  const shouldUseGridAnimation = () => {
+    return currentView !== 'transitioning';
+  };
+
+  // Tile Pool aktualisieren wenn sich Inhalte ändern
+  useEffect(() => {
+    const currentItems = getCurrentItems();
+    console.log(`🔄 Updating tile pool for ${currentView}:`, currentItems.length, 'items', currentItems);
+    
+    // Nur updaten wenn wir tatsächlich Items haben oder explizit leeren wollen
+    if (currentItems.length > 0 || (currentView === 'main' && categories.length === 0)) {
+      updateTilePool(currentItems);
+    }
+  }, [categories, subcategories, animals, currentView, playedAnimals, currentlyPlaying, clickedItemId, globalAnimationDirection]);
+
+  // Debug useEffect für Back Navigation
+  useEffect(() => {
+    console.log(`📊 State Update - View: ${currentView}, Categories: ${categories.length}, Subcategories: ${subcategories.length}, Animals: ${animals.length}`);
+    console.log(`🎯 Visible tiles: ${tilePool.filter(t => t.isVisible).length}`);
+    tilePool.filter(t => t.isVisible).forEach((tile, index) => {
+      console.log(`  Tile ${index}: ${tile.content?.name || 'No name'}`);
+    });
+  }, [currentView, categories, subcategories, animals, tilePool]);
 
   // Initial Kategorien laden
   useEffect(() => {
@@ -549,88 +820,46 @@ export default function Home() {
         ref={scrollContainerRef}
         onScroll={handleScroll}
       >
-        {/* Hauptkategorien-Ansicht - MIT Grid-Fly-In */}
-        {!selectedCategory && (
+        {/* TILE POOL GRID - 100 feste DOM-Elemente, nur Inhalte wechseln */}
+        {shouldUseGridAnimation() ? (
           <motion.div 
             className="tile-grid"
             variants={animationManager.getGridVariants(currentGridAnimation)}
             initial="hidden"
             animate="visible"
+            style={{ 
+              opacity: tilePool.some(tile => tile.isVisible) ? 1 : 0,
+              transition: 'opacity 0.1s ease' 
+            }}
           >
-            {categories.map((category, index) => (
+            {tilePool.map((poolTile, index) => (
               <CategoryTile
-                key={category.id}
-                category={category}
-                onClick={handleCategoryClick}
-                delay={animationManager.getTileDelay(index, categories.length, currentGridAnimation)}
-                animationMode={getAnimationMode(category.id)}
+                key={poolTile.id} // Feste IDs - niemals ändern!
+                poolTile={poolTile}
+                delay={poolTile.isVisible ? animationManager.getTileDelay(
+                  tilePool.filter((t, i) => t.isVisible && i <= index).length - 1, 
+                  tilePool.filter(t => t.isVisible).length, 
+                  currentGridAnimation
+                ) : 0}
               />
             ))}
           </motion.div>
-        )}
-
-        {/* Subkategorien-Ansicht - MIT Grid-Fly-In nur bei category, OHNE bei transitioning */}
-        {selectedCategory && subcategories.length > 0 && currentView === 'category' && (
-          <motion.div 
+        ) : (
+          <div 
             className="tile-grid"
-            variants={animationManager.getGridVariants(currentGridAnimation)}
-            initial="hidden"
-            animate="visible"
+            style={{ 
+              opacity: tilePool.some(tile => tile.isVisible) ? 1 : 0,
+              transition: 'opacity 0.1s ease' 
+            }}
           >
-            {subcategories.map((subcategory, index) => (
+            {tilePool.map((poolTile) => (
               <CategoryTile
-                key={subcategory.id}
-                category={subcategory}
-                onClick={handleSubcategoryClick}
-                delay={animationManager.getTileDelay(index, subcategories.length, currentGridAnimation)}
-                animationMode={getAnimationMode(subcategory.id)}
-              />
-            ))}
-          </motion.div>
-        )}
-
-        {/* Subkategorien während Transition - NUR Tile-Animationen, KEINE Grid-Animation */}
-        {selectedCategory && subcategories.length > 0 && currentView === 'transitioning' && (
-          <div className="tile-grid">
-            {subcategories.map((subcategory, index) => (
-              <CategoryTile
-                key={subcategory.id}
-                category={subcategory}
-                onClick={handleSubcategoryClick}
+                key={poolTile.id} // Feste IDs - niemals ändern!
+                poolTile={poolTile}
                 delay={0}
-                animationMode={getAnimationMode(subcategory.id)}
               />
             ))}
           </div>
-        )}
-
-        {/* Tier-Einträge-Ansicht - MIT Grid-Fly-In */}
-        {currentView === 'animals' && animals.length > 0 && (
-          <motion.div 
-            className="tile-grid"
-            variants={animationManager.getGridVariants(currentGridAnimation)}
-            initial="hidden"
-            animate="visible"
-          >
-            {animals.map((animal, index) => (
-              <CategoryTile
-                key={animal.id}
-                category={{
-                  id: animal.id,
-                  name: animal.name,
-                  slug: animal.slug,
-                  image: animal.image,
-                  audio: animal.audio
-                }}
-                onClick={handleAnimalClick}
-                delay={animationManager.getTileDelay(index, animals.length, currentGridAnimation)}
-                animationMode={getAnimationMode(animal.id)}
-                isAnimal={true}
-                isPlayed={playedAnimals.includes(animal.id)}
-                isCurrentlyPlaying={currentlyPlaying === animal.id}
-              />
-            ))}
-          </motion.div>
         )}
 
         {/* Placeholder für leere Subkategorien */}

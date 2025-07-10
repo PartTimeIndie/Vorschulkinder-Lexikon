@@ -4,18 +4,35 @@ import { motion } from 'framer-motion';
 import { animationManager } from '../utils/animationManager';
 
 const CategoryTile = ({ 
-  category, 
-  onClick, 
-  delay = 0, 
-  animationMode = null,
-  isAnimal = false,
-  isPlayed = false,
-  isCurrentlyPlaying = false 
+  poolTile,  // Jetzt nehmen wir das komplette Tile aus dem Pool
+  delay = 0
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  
+  // Wenn Tile nicht sichtbar oder kein Content, dann verstecken
+  if (!poolTile?.isVisible || !poolTile?.content) {
+    return (
+      <div 
+        className="category-tile" 
+        style={{ 
+          opacity: 0, 
+          pointerEvents: 'none',
+          visibility: 'hidden',
+          width: '100%',
+          height: '100%'
+        }}
+      />
+    );
+  }
+  
+  const { content: category, animationMode, isAnimal, isPlayed, isCurrentlyPlaying, onClick } = poolTile;
 
-  // Image-URL für Backend
+  // Image-URL für Backend mit Fallback
   const getImageUrl = () => {
+    if (!category.image?.filename) {
+      console.warn('❌ No image filename for category:', category.name);
+      return '/websiteBaseImages/placeholder.png'; // Fallback
+    }
     return `http://localhost:5000/images/${category.image.filename}`;
   };
 
