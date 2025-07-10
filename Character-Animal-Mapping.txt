@@ -1,0 +1,34 @@
+# Character Animal Mapping für Kinderlexikon
+# Jede Emotion hat ein passendes kleines Tier, das auf dem Character herumläuft
+# 
+# Format: emotion = animal + description
+
+idle = eichhoernchen
+# Ein neugieriges braunes Eichhörnchen sitzt auf der Schulter des Characters
+
+excited = baby-affe  
+# Ein kleiner, lebhafter Baby-Affe hängt am Arm des Characters und zeigt die gleiche Begeisterung
+
+curious = maus
+# Eine kleine graue Maus läuft über den Kopf des Characters und schnüffelt neugierig herum
+
+surprised = hamster
+# Ein flauschiger goldener Hamster sitzt auf dem Hut/Kopf des Characters mit großen überraschten Augen
+
+scared = baby-kaninchen
+# Ein kleines weißes Kaninchen kuschelt sich ängstlich an den Hals des Characters
+
+exploring = frettchen
+# Ein verspieltes braunes Frettchen erkundet die Taschen der Weste des Characters
+
+thinking = kleine-eule
+# Eine winzige weise Eule sitzt auf dem Kopf des Characters und denkt mit
+
+laughing = bunter-papagei
+# Ein kleiner, farbenfroher Papagei sitzt auf der Schulter und lacht mit dem Character
+
+# Notizen:
+# - Alle Tiere sind klein und niedlich (geeignet für 3-7 Jahre)
+# - Tiere passen zur jeweiligen Emotion
+# - Tiere sind in warmen, natürlichen Farben gehalten
+# - Stil konsistent mit dem handgezeichneten Kinderbuch-Look 

@@ -1,0 +1,679 @@
+/* Global Styles - Mobile First Design */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f1f8e9 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Main Layout Container - 5-Spalten-System */
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+}
+
+/* Desktop Layout (Landscape) - 5-Spalten-Grid */
+@media (min-width: 768px) and (orientation: landscape) {
+  .container {
+    grid-template-columns: 1fr 4fr; /* 1/5 für Character, 4/5 für Tiles - LINKS statt RECHTS */
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "character categories"; /* Character LINKS, Categories RECHTS */
+  }
+  
+  /* Header-Bereich entfernt - keine ausgewählte Kategorie mehr */
+  
+  /* Selected tile styles entfernt */
+  
+  .categories-section {
+    grid-area: categories;
+    background: url('/background.png') center/cover, linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%); /* Hintergrundbild hinzugefügt */
+    overflow-y: auto;
+    padding: 2rem;
+    padding-left: 1rem; /* Platz für Scroll-Indikator LINKS statt rechts */
+  }
+  
+  .character-section {
+    grid-area: character;
+    background: url('/websiteBaseImages/Baumhaus.png') center/cover, linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
+    display: flex;
+    align-items: flex-end; /* Character komplett unten */
+    justify-content: center;
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem; /* MINIMAL Padding - Character fast ganz unten */
+    box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.1); /* Schatten von RECHTS statt links */
+    border: 3px solid #654321; /* Dunkelbraune Outline für Baumhaus */
+    position: relative; /* Für Back Button Positionierung */
+  }
+  
+  .character-container {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 400px !important; /* Doppelt so groß! */
+    height: 500px !important; /* Doppelt so groß! */
+    right: auto !important;
+    top: auto !important;
+    bottom: 0 !important; /* Character ganz unten anheften */
+    transform: none !important;
+    margin-bottom: 0 !important; /* Kein extra Margin */
+  }
+}
+
+/* Portrait Layout (Mobile/Tablet) - GLEICHE ANORDNUNG WIE LANDSCAPE */
+@media (max-width: 767px), (orientation: portrait) {
+  .container {
+    grid-template-columns: 1fr 3fr; /* Character links, Categories rechts - wie Desktop */
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "character categories"; /* Gleiche Anordnung wie Landscape */
+  }
+  
+  /* Header-Bereich entfernt - keine ausgewählte Kategorie mehr */
+  
+  /* Selected area styles entfernt */
+  
+  .character-section {
+    grid-area: character;
+    background: url('/websiteBaseImages/Baumhaus.png') center/cover, linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
+    display: flex;
+    align-items: flex-end; /* Character unten */
+    justify-content: center;
+    padding: 0.05rem 0.05rem 0.05rem 0.05rem; /* EXTREM wenig Padding für Mobile - Character fast am Rand */
+    box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.1); /* Schatten von rechts wie Desktop */
+    border: 3px solid #654321; /* Dunkelbraune Outline für Baumhaus */
+    position: relative; /* Für Back Button Positionierung */
+  }
+  
+  .categories-section {
+    grid-area: categories;
+    background: url('/background.png') center/cover, linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%); /* Hintergrundbild hinzugefügt */
+    overflow-y: auto;
+    padding: 1rem;
+    padding-left: 0.5rem; /* Platz für Scroll-Indikator links wie Desktop */
+  }
+  
+  .character-container {
+    position: relative !important;
+    width: 160px !important; /* Auch Portrait doppelt so groß */
+    height: 200px !important; /* Auch Portrait doppelt so groß */
+    right: auto !important;
+    bottom: 0 !important; /* Character ganz unten anheften */
+    top: auto !important;
+    transform: none !important;
+    margin-bottom: 0 !important; /* Kein extra Margin */
+  }
+}
+
+/* ===== EINZIGE GRID DEFINITION - FÜR ALLE TILES ===== */
+.tile-grid {
+  display: grid;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  max-width: none;
+}
+
+/* Desktop Landscape: Exakt 4 Spalten */
+@media (min-width: 768px) and (orientation: landscape) {
+  .tile-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: none;
+  }
+}
+
+/* Kleinere Screens: 3 Spalten */
+@media (min-width: 768px) and (max-width: 1400px) and (orientation: landscape) {
+  .tile-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Portrait: 2 Spalten */
+@media (max-width: 767px), (orientation: portrait) {
+  .tile-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Kategorie Tile Styles - Simple & Working */
+.category-tile {
+  position: relative;
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 3px solid #654321; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  aspect-ratio: 1;
+}
+
+/* Geladene Tiles - normal sichtbar und interaktiv */
+.category-tile.loaded {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* FLY-IN Animationen: Tiles kommen aus verschiedenen Richtungen */
+.category-tile.fly-in-from-down {
+  animation: flyInFromDown 0.8s ease-out forwards;
+}
+
+.category-tile.fly-in-from-up {
+  animation: flyInFromUp 0.8s ease-out forwards;
+}
+
+.category-tile.fly-in-from-left {
+  animation: flyInFromLeft 0.8s ease-out forwards;
+}
+
+.category-tile.fly-in-from-right {
+  animation: flyInFromRight 0.8s ease-out forwards;
+}
+
+.category-tile.fly-in-from-up-left {
+  animation: flyInFromUpLeft 0.8s ease-out forwards;
+}
+
+.category-tile.fly-in-from-up-right {
+  animation: flyInFromUpRight 0.8s ease-out forwards;
+}
+
+.category-tile.fly-in-from-down-left {
+  animation: flyInFromDownLeft 0.8s ease-out forwards;
+}
+
+.category-tile.fly-in-from-down-right {
+  animation: flyInFromDownRight 0.8s ease-out forwards;
+}
+
+/* FLY-IN KEYFRAMES */
+@keyframes flyInFromDown {
+  0% { opacity: 0; transform: translateY(120vh) translateX(0) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+}
+
+@keyframes flyInFromUp {
+  0% { opacity: 0; transform: translateY(-120vh) translateX(0) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+}
+
+@keyframes flyInFromLeft {
+  0% { opacity: 0; transform: translateY(0) translateX(-120vw) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+}
+
+@keyframes flyInFromRight {
+  0% { opacity: 0; transform: translateY(0) translateX(120vw) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+}
+
+@keyframes flyInFromUpLeft {
+  0% { opacity: 0; transform: translateY(-120vh) translateX(-120vw) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+}
+
+@keyframes flyInFromUpRight {
+  0% { opacity: 0; transform: translateY(-120vh) translateX(120vw) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+}
+
+@keyframes flyInFromDownLeft {
+  0% { opacity: 0; transform: translateY(120vh) translateX(-120vw) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+}
+
+@keyframes flyInFromDownRight {
+  0% { opacity: 0; transform: translateY(120vh) translateX(120vw) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+}
+
+/* AUSGEWÄHLTE TILE: Nur skalieren und ausblenden - LÄNGER als andere Tiles */
+.category-tile.selected {
+  z-index: 1000 !important;
+  pointer-events: none !important;
+  animation: selectedGrowAndFade 1.8s linear forwards;
+}
+
+@keyframes selectedGrowAndFade {
+  0% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(0) scale(1.15);
+  }
+}
+
+/* ANDERE TILES: In verschiedene Richtungen fliegen - KÜRZER als selected tile */
+.category-tile.fall-out-down {
+  animation: fallOutDown 1.2s linear forwards;
+  pointer-events: none;
+}
+
+.category-tile.fall-out-up {
+  animation: fallOutUp 1.2s linear forwards;
+  pointer-events: none;
+}
+
+.category-tile.fall-out-left {
+  animation: fallOutLeft 1.2s linear forwards;
+  pointer-events: none;
+}
+
+.category-tile.fall-out-right {
+  animation: fallOutRight 1.2s linear forwards;
+  pointer-events: none;
+}
+
+.category-tile.fall-out-up-left {
+  animation: fallOutUpLeft 1.2s linear forwards;
+  pointer-events: none;
+}
+
+.category-tile.fall-out-up-right {
+  animation: fallOutUpRight 1.2s linear forwards;
+  pointer-events: none;
+}
+
+.category-tile.fall-out-down-left {
+  animation: fallOutDownLeft 1.2s linear forwards;
+  pointer-events: none;
+}
+
+.category-tile.fall-out-down-right {
+  animation: fallOutDownRight 1.2s linear forwards;
+  pointer-events: none;
+}
+
+/* FALL-OUT KEYFRAMES */
+@keyframes fallOutDown {
+  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateY(120vh) translateX(0) scale(0.8); }
+}
+
+@keyframes fallOutUp {
+  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-120vh) translateX(0) scale(0.8); }
+}
+
+@keyframes fallOutLeft {
+  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateY(0) translateX(-120vw) scale(0.8); }
+}
+
+@keyframes fallOutRight {
+  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateY(0) translateX(120vw) scale(0.8); }
+}
+
+@keyframes fallOutUpLeft {
+  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-120vh) translateX(-120vw) scale(0.8); }
+}
+
+@keyframes fallOutUpRight {
+  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-120vh) translateX(120vw) scale(0.8); }
+}
+
+@keyframes fallOutDownLeft {
+  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateY(120vh) translateX(-120vw) scale(0.8); }
+}
+
+@keyframes fallOutDownRight {
+  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateY(120vh) translateX(120vw) scale(0.8); }
+}
+
+/* Category Image */
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Content wird nur bei Desktop angezeigt (versteckt für reine Bildkacheln) */
+.category-content {
+  display: none; /* Versteckt für reine Bild-Tiles */
+}
+
+.category-title {
+  display: none; /* Versteckt für reine Bild-Tiles */
+}
+
+.category-description {
+  display: none; /* Versteckt für reine Bild-Tiles */
+}
+
+/* Legacy Animationen entfernt - neue Tile-Animation-System aktiv */
+
+
+/* Character Container - wird durch Media Queries überschrieben */
+.character-container {
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.character-container:hover {
+  transform: scale(1.05);
+}
+
+.character-container:active {
+  transform: scale(0.95);
+}
+
+/* Character Image mit subtiler Loop-Animation */
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+/* Subtile Character Loop-Animation */
+@keyframes characterSubtleMove {
+  0%, 100% { 
+    transform: translateY(0) scaleY(1); 
+  }
+  25% { 
+    transform: translateY(-2px) scaleY(1.01); 
+  }
+  50% { 
+    transform: translateY(0) scaleY(1.02); 
+  }
+  75% { 
+    transform: translateY(1px) scaleY(1.01); 
+  }
+}
+
+.character-subtle-animation {
+  animation: characterSubtleMove 4s ease-in-out infinite;
+}
+
+/* Character Rotation Animation - Verbessert: Länger + gleichzeitig groß + drehen */
+@keyframes characterRotateOut {
+  0% { transform: rotateY(0deg) scale(1); }
+  100% { transform: rotateY(90deg) scale(0.8); }
+}
+
+@keyframes characterRotateIn {
+  0% { transform: rotateY(90deg); } /* Startet da wo rotate-out aufhört */
+  100% { transform: rotateY(0deg); } /* Dreht -90° zurück zur ursprünglichen Position */
+}
+
+.character-rotate-out {
+  animation: characterRotateOut 0.15s ease-in-out forwards; /* Doppelt so schnell */
+}
+
+.character-rotate-in {
+  animation: characterRotateIn 0.15s ease-in-out forwards; /* Doppelt so schnell */
+}
+
+/* Character Fly-In Animation beim ersten Laden */
+.character-fly-in {
+  animation: characterFlyIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes characterFlyIn {
+  0% { 
+    opacity: 0;
+    transform: translateX(50px) scale(0.7) rotate(10deg);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0deg);
+  }
+}
+
+/* Entfernt: Veraltete Character Bounce und Breathing Animationen */
+
+/* Completion Badge für gehörte Einträge */
+.completion-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  animation: badgeBounce 0.6s ease-out;
+  border: 2px solid #4caf50;
+}
+
+@keyframes badgeBounce {
+  0% { 
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  60% { 
+    transform: scale(1.2) rotate(10deg);
+    opacity: 1;
+  }
+  100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Grüne Outline für aktuell spielendes Tier */
+.category-tile.currently-playing {
+  outline: 4px solid #2e7d32 !important; /* Dunkelgrün */
+  outline-offset: 2px;
+  animation: playingPulse 2s ease-in-out infinite;
+}
+
+@keyframes playingPulse {
+  0% { outline-color: #2e7d32; }
+  50% { outline-color: #4caf50; }
+  100% { outline-color: #2e7d32; }
+}
+
+/* Subkategorien Container */
+.subcategories-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 900;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* ENTFERNT - Verwenden jetzt .tile-grid für alle Grids */
+
+/* Back Button - Im Character Panel oben */
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%); /* Standard Position - bleibt konstant */
+  background: url('/websiteBaseImages/back button.png') center/cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1010; /* Über allem anderen */
+  border: 3px solid #654321; /* GLEICHE DUNKLE BRAUNE FARBE */
+}
+
+.back-button:hover {
+  /* KEIN Transform beim Hover - nur Schatten-Verbesserung */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.back-button:active {
+  transform: translateX(-50%) scale(0.95); /* Nur beim Klick etwas kleiner skalieren */
+}
+
+/* Portrait Back Button */
+@media (max-width: 767px), (orientation: portrait) {
+  .back-button {
+    width: 70px;
+    height: 70px;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%); /* Standard Position - bleibt konstant */
+    border: 3px solid #654321; /* GLEICHE DUNKLE BRAUNE FARBE */
+  }
+  
+  .back-button:hover {
+    /* KEIN Transform beim Hover - nur Schatten-Verbesserung */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  .back-button:active {
+    transform: translateX(-50%) scale(0.95); /* Nur beim Klick etwas kleiner skalieren */
+  }
+}
+
+/* Scroll Indikator - Zwischen Tiles und Character - VERSTECKT */
+.scroll-indicator {
+  position: fixed;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+  display: none; /* Scrollbar verstecken */
+}
+
+/* Desktop Scroll Indikator - zwischen Character und Categories */
+@media (min-width: 768px) and (orientation: landscape) {
+  .scroll-indicator {
+    left: calc(20vw - 5px); /* LINKS: 1/5 für Character minus halbe Indikator-Breite */
+    top: calc(120px + 2rem); /* Nach Header-Bereich */
+    width: 10px;
+    height: calc(100vh - 120px - 4rem); /* Rest-Höhe nach Header */
+    transform: translateX(-50%); /* Links statt rechts */
+  }
+  
+  .scroll-thumb {
+    background: rgba(76, 175, 80, 0.5); /* Halb transparent */
+    border-radius: 10px;
+    width: 100%;
+    min-height: 20px;
+    transition: all 0.3s ease;
+  }
+}
+
+/* Portrait Scroll Indikator - rechts am Rand */
+@media (max-width: 767px), (orientation: portrait) {
+  .scroll-indicator {
+    right: 0.5rem;
+    top: calc(80px + 100px + 1rem); /* Nach Header + Character + Padding */
+    width: 6px;
+    height: calc(100vh - 80px - 100px - 2rem);
+  }
+  
+  .scroll-thumb {
+    background: rgba(76, 175, 80, 0.5); /* Halb transparent */
+    border-radius: 10px;
+    width: 100%;
+    min-height: 15px;
+    transition: all 0.3s ease;
+  }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e0e0e0;
+  border-top: 4px solid #4caf50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.error-message {
+  text-align: center;
+  color: #f44336;
+  padding: 2rem;
+  font-size: 1.1rem;
+  background: #ffebee;
+  border-radius: 10px;
+  margin: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+  
+  .category-tile {
+    min-height: 200px;
+  }
+  
+  .character-container {
+    width: 100px;
+    height: 125px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .category-title {
+    font-size: 1.1rem;
+  }
+  
+  .category-description {
+    font-size: 0.85rem;
+  }
+} 
+
+/* Fehlende Fly-In Animationen - URSPRÜNGLICHE VERSION */
+ 
+/* LOADING-OVERLAY ENTFERNT */ 

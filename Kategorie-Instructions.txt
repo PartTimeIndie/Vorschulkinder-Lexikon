@@ -1,0 +1,169 @@
+# KATEGORIE-ERSTELLUNGS ANLEITUNG
+# ================================
+
+## ÜBERSICHT
+Diese Anleitung erklärt, wie neue Kategorien und Subkategorien für das Kinderlexikon erstellt werden.
+Jede Kategorie/Subkategorie braucht:
+1. Subkategorie-Planung und Feedback-Runde (NEUER SCHRITT)
+2. Character-generierte Beschreibung (mit kategoriePrompt.txt)
+3. Handgezeichnetes Bild (mit Category-Generator.ps1) - falls noch nicht vorhanden
+4. JSON-Datei mit allen Daten
+
+## SCHRITT 0: SUBKATEGORIE-PLANUNG (NEU!)
+
+### Vor jeder Kategorie-Erstellung:
+1. **Brainstorming:** Liste mögliche Subkategorien für die Hauptkategorie auf
+2. **Altersgerechte Prüfung:** Sind alle Subkategorien für 3-7 Jahre geeignet?
+3. **Feedback-Runde:** Vorschläge dem User präsentieren
+4. **Finalisierung:** Nach User-Feedback finale Subkategorie-Liste erstellen
+5. **Safety-Bewertung:** Jede Subkategorie auf Safety Score 1-10 bewerten
+
+### Beispiel-Format für Subkategorie-Vorschlag:
+```
+HAUPTKATEGORIE: Tiere
+VORGESCHLAGENE SUBKATEGORIEN:
+
+1. Haustiere (Safety: 9) - Hunde, Katzen, Hamster, Vögel
+2. Waldtiere (Safety: 8) - Rehe, Eichhörnchen, Füchse, Bären
+3. Meerestiere (Safety: 7) - Fische, Wale, Delfine, Seepferdchen
+4. Bauernhoftiere (Safety: 9) - Kühe, Schweine, Hühner, Pferde
+5. Exotische Tiere (Safety: 6) - Löwen, Elefanten, Giraffen, Pinguine
+6. Kleine Tiere (Safety: 8) - Insekten, Schmetterlinge, Käfer, Spinnen
+
+User-Feedback abwarten vor Fortsetzung!
+```
+
+## SCHRITT 1: BESCHREIBUNG GENERIEREN
+
+### Für Hauptkategorien:
+1. Öffne kategoriePrompt.txt
+2. Ersetze {KATEGORIE_NAME} mit dem gewünschten Namen (z.B. "Tiere", "Orte", "Naturphänomene")
+3. Gib den kompletten Prompt an ChatGPT/Claude
+4. Kopiere die generierte Beschreibung in die JSON-Datei
+
+### Für Subkategorien:
+1. Verwende den GLEICHEN kategoriePrompt.txt
+2. Ersetze {KATEGORIE_NAME} mit dem Subkategorie-Namen (z.B. "Haustiere", "Waldtiere", "Meerestiere")
+3. Der Character-Ton bleibt gleich, nur das Thema ändert sich
+4. Kopiere die Beschreibung in die entsprechende JSON-Subkategorie
+
+## SCHRITT 2: BILD GENERIEREN
+
+### Für Hauptkategorien:
+**NUR wenn noch kein Bild vorhanden!**
+```powershell
+powershell -ExecutionPolicy Bypass -File .\Category-Generator.ps1 -CategoryName "Tiere"
+```
+
+### Für Subkategorien:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\Category-Generator.ps1 -CategoryName "Haustiere"
+```
+
+Das Script erstellt automatisch:
+- kategorien/images/category-{Name}.png (1024x1024 randloses Tile)
+- Handgezeichneter Kinderbuch-Stil (Eric Carle/Beatrix Potter)
+- Edge-to-edge Komposition ohne Rahmen
+
+## SCHRITT 3: JSON-STRUKTUR (AKTUALISIERT)
+
+### Hauptkategorie-Datei (z.B. kategorien/tiere.json):
+```json
+{
+  "id": "cat_001",
+  "name": "Tiere",
+  "slug": "tiere",
+  "description": "[Character-generierte Beschreibung MIT integriertem Exploration-Teaser]",
+  "image": {
+    "filename": "category-Tiere.png",
+    "path": "images/category-Tiere.png",
+    "alt": "[Beschreibung des Bildinhalts]"
+  },
+  "audio": {
+    "filename": "category-tiere.mp3",
+    "path": "audio/de/categories/category-tiere.mp3"
+  },
+  "character_emotions": ["excited", "curious", "surprised"],
+  "safety_score": 8,
+  "subcategories": [...]
+}
+```
+
+### Subkategorie in JSON:
+```json
+{
+  "id": "subcat_001_001",
+  "name": "Haustiere",
+  "slug": "haustiere",
+  "description": "[Character-generierte Beschreibung MIT integriertem Exploration-Teaser]",
+  "image": {
+    "filename": "category-Haustiere.png", 
+    "path": "images/category-Haustiere.png",
+    "alt": "[Beschreibung des Bildinhalts]"
+  },
+  "audio": {
+    "filename": "category-haustiere.mp3",
+    "path": "audio/de/categories/category-haustiere.mp3"
+  },
+  "character_emotions": ["excited", "laughing"],
+  "safety_score": 9
+}
+```
+
+## WICHTIGE REGELN
+
+### Beschreibungen:
+- ✅ IMMER kategoriePrompt.txt verwenden (für Kategorien UND Subkategorien)
+- ✅ Character spricht direkt mit dem Kind ("Du", "Dir")
+- ✅ Exploration-Teaser als letzter Satz in die Beschreibung integrieren
+- ✅ 60-80 Wörter, kindgerechte Sprache
+- ✅ 2-3 passende Character-Emotionen zuweisen
+- ✅ Safety Score 1-10 bewerten
+
+### Audio-Dateien:
+- ✅ JEDE Kategorie/Subkategorie hat audio-Objekt in JSON
+- ✅ Wenn Audio noch nicht existiert: null als Wert
+- ✅ Audio-Pfad: audio/de/categories/category-{slug}.mp3
+
+### Bilder:
+- ✅ NUR neue Bilder generieren wenn noch nicht vorhanden
+- ✅ JEDE Kategorie/Subkategorie braucht ein eigenes Bild
+- ✅ 1024x1024 quadratische Tiles ohne Rand
+- ✅ Handgezeichneter Kinderbuch-Stil
+- ✅ Edge-to-edge Komposition für optimale Darstellung
+
+### Dateistruktur:
+```
+kategorien/
+├── tiere.json (Hauptkategorie)
+├── orte.json (Hauptkategorie)  
+├── naturphaenomene.json (Hauptkategorie)
+└── images/
+    ├── category-Tiere.png
+    ├── category-Haustiere.png
+    ├── category-Waldtiere.png
+    ├── category-Orte.png
+    └── ...
+```
+
+## BEISPIEL-WORKFLOW (AKTUALISIERT)
+
+1. **Neue Hauptkategorie "Orte":**
+   - SCHRITT 0: Subkategorie-Vorschläge erstellen → User-Feedback abwarten
+   - SCHRITT 1: kategoriePrompt.txt → {KATEGORIE_NAME} = "Orte" → LLM-Beschreibung
+   - SCHRITT 2: Category-Generator.ps1 -CategoryName "Orte" → Bild generieren (falls nötig)
+   - SCHRITT 3: orte.json erstellen mit generierten Daten
+
+2. **Subkategorie "Zuhause" unter "Orte":**
+   - kategoriePrompt.txt → {KATEGORIE_NAME} = "Zuhause" → LLM-Beschreibung  
+   - Category-Generator.ps1 -CategoryName "Zuhause" → Bild generieren
+   - Subkategorie in orte.json hinzufügen
+
+## QUALITY CHECK
+- [ ] Subkategorie-Planung mit User abgestimmt
+- [ ] Character-Ton konsistent (neugierig, nerdy, einladend)
+- [ ] Exploration-Teaser integriert in Beschreibung
+- [ ] Bild im handgezeichneten Stil generiert (falls nötig)
+- [ ] JSON-Struktur vollständig mit Audio-Links
+- [ ] Character-Emotionen passend zugewiesen
+- [ ] Safety-Score appropriate (1-10) für alle Kategorien 

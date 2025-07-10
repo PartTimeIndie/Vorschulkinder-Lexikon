@@ -1,0 +1,2002 @@
+{
+  "tiere": [
+    {
+      "id": "tier_001",
+      "name": "Hund",
+      "slug": "hund",
+      "description": "Hallo du kleiner Forscher! Ich bin so aufgeregt, dir von meinen liebsten vierbeinigen Freunden zu erzählen - den Hunden! Weißt du, Hunde sind schon seit über 15.000 Jahren die besten Freunde der Menschen. Das ist länger als es Städte gibt! Stell dir vor, schon die Menschen in der Steinzeit hatten Hunde als Freunde. Hunde haben eine superstarke Nase - sie können 10.000 Mal besser riechen als wir Menschen! Während wir vielleicht den Duft von frischen Keksen riechen, kann ein Hund jeden einzelnen Krümel erschnüffeln. Ihre Nasen sind wie magische Superkräfte! Sie können sogar riechen, wenn du traurig oder fröhlich bist. Und ihre Ohren! Hunde können Töne hören, die für uns Menschen völlig stumm sind. Sie hören fast doppelt so hohe Töne wie wir. Deshalb drehen sie manchmal den Kopf, wenn scheinbar nichts da ist - sie hören etwas, was wir nicht hören können! Das Coolste an Hunden ist aber ihr Herz. Sie lieben uns Menschen so sehr, dass ihr Herzschlag sich an unseren anpasst, wenn sie bei uns sind. Ist das nicht wunderbar? Hunde gibt es in allen Größen - von winzig kleinen Chihuahuas, die in eine Handtasche passen, bis hin zu riesigen Deutsche Doggen, die größer sind als manche Ponys! Jede Hunderasse hat ihre eigenen besonderen Talente. Manche sind super schnell, andere können schwimmen wie Fische, und wieder andere sind so klug, dass sie Menschen helfen können, die nicht sehen können. Hunde sprechen auch mit uns - nicht mit Worten, aber mit ihrem ganzen Körper! Wenn sie mit dem Schwanz wedeln, sind sie glücklich. Wenn sie die Ohren nach hinten legen, sind sie vielleicht ein bisschen nervös. Und wenn sie dir ihre Pfote geben, wollen sie dein Freund sein!",
+      "categories": ["haustiere", "mittelgrosse-tiere", "saeugetiere", "allesfresser"],
+      "image": {
+        "filename": "tier-hund.png",
+        "path": "images/tier-hund.png",
+        "alt": "Handgezeichnete Illustration eines freundlichen Hundes in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-hund.mp3",
+        "path": "audio/tier-hund.mp3"
+      },
+      "character_emotions": ["excited", "curious", "laughing"],
+      "safety_score": 10
+    },
+    {
+      "id": "tier_002",
+      "name": "Katze",
+      "slug": "katze",
+      "description": "",
+      "categories": ["haustiere", "mittelgrosse-tiere", "saeugetiere", "fleischfresser"],
+      "image": {
+        "filename": "tier-katze.png",
+        "path": "images/tier-katze.png",
+        "alt": "Handgezeichnete Illustration einer kuscheligen Katze in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-katze.mp3",
+        "path": "audio/tier-katze.mp3"
+      },
+      "character_emotions": ["curious", "exploring", "excited"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_003",
+      "name": "Kaninchen",
+      "slug": "kaninchen",
+      "description": "",
+      "categories": ["haustiere", "kleine-tiere", "saeugetiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-kaninchen.png",
+        "path": "images/tier-kaninchen.png",
+        "alt": "Handgezeichnete Illustration eines niedlichen Kaninchens in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-kaninchen.mp3",
+        "path": "audio/tier-kaninchen.mp3"
+      },
+      "character_emotions": ["curious", "excited", "exploring"],
+      "safety_score": 10
+    },
+    {
+      "id": "tier_004",
+      "name": "Hamster",
+      "slug": "hamster",
+      "description": "",
+      "categories": ["haustiere", "kleine-tiere", "saeugetiere", "allesfresser"],
+      "image": {
+        "filename": "tier-hamster.png",
+        "path": "images/tier-hamster.png",
+        "alt": "Handgezeichnete Illustration eines süßen Hamsters in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-hamster.mp3",
+        "path": "audio/tier-hamster.mp3"
+      },
+      "character_emotions": ["curious", "excited", "laughing"],
+      "safety_score": 10
+    },
+    {
+      "id": "tier_005",
+      "name": "Wellensittich",
+      "slug": "wellensittich",
+      "description": "",
+      "categories": ["haustiere", "kleine-tiere", "voegel", "flugtiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-wellensittich.png",
+        "path": "images/tier-wellensittich.png",
+        "alt": "Handgezeichnete Illustration eines bunten Wellensittichs in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-wellensittich.mp3",
+        "path": "audio/tier-wellensittich.mp3"
+      },
+      "character_emotions": ["excited", "curious", "laughing"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_006",
+      "name": "Kuh",
+      "slug": "kuh",
+      "description": "",
+      "categories": ["bauernhoftiere", "grosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-kuh.png",
+        "path": "images/tier-kuh.png",
+        "alt": "Handgezeichnete Illustration einer freundlichen Kuh in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-kuh.mp3",
+        "path": "audio/tier-kuh.mp3"
+      },
+      "character_emotions": ["curious", "excited", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_007",
+      "name": "Schwein",
+      "slug": "schwein",
+      "description": "",
+      "categories": ["bauernhoftiere", "mittelgrosse-tiere", "saeugetiere", "allesfresser"],
+      "image": {
+        "filename": "tier-schwein.png",
+        "path": "images/tier-schwein.png",
+        "alt": "Handgezeichnete Illustration eines fröhlichen Schweins in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-schwein.mp3",
+        "path": "audio/tier-schwein.mp3"
+      },
+      "character_emotions": ["excited", "curious", "laughing"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_008",
+      "name": "Huhn",
+      "slug": "huhn",
+      "description": "",
+      "categories": ["bauernhoftiere", "kleine-tiere", "voegel", "allesfresser"],
+      "image": {
+        "filename": "tier-huhn.png",
+        "path": "images/tier-huhn.png",
+        "alt": "Handgezeichnete Illustration eines bunten Huhns in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-huhn.mp3",
+        "path": "audio/tier-huhn.mp3"
+      },
+      "character_emotions": ["curious", "excited", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_009",
+      "name": "Pferd",
+      "slug": "pferd",
+      "description": "",
+      "categories": ["bauernhoftiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-pferd.png",
+        "path": "images/tier-pferd.png",
+        "alt": "Handgezeichnete Illustration eines eleganten Pferdes in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-pferd.mp3",
+        "path": "audio/tier-pferd.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_010",
+      "name": "Ziege",
+      "slug": "ziege",
+      "description": "",
+      "categories": ["bauernhoftiere", "mittelgrosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-ziege.png",
+        "path": "images/tier-ziege.png",
+        "alt": "Handgezeichnete Illustration einer kletternden Ziege in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-ziege.mp3",
+        "path": "audio/tier-ziege.mp3"
+      },
+      "character_emotions": ["curious", "excited", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_011",
+      "name": "Reh",
+      "slug": "reh",
+      "description": "",
+      "categories": ["waldtiere", "mittelgrosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-reh.png",
+        "path": "images/tier-reh.png",
+        "alt": "Handgezeichnete Illustration eines eleganten Rehs in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-reh.mp3",
+        "path": "audio/tier-reh.mp3"
+      },
+      "character_emotions": ["curious", "exploring", "excited"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_012",
+      "name": "Eichhörnchen",
+      "slug": "eichhoernchen",
+      "description": "",
+      "categories": ["waldtiere", "kleine-tiere", "saeugetiere", "pflanzenfresser", "gartentiere"],
+      "image": {
+        "filename": "tier-eichhoernchen.png",
+        "path": "images/tier-eichhoernchen.png",
+        "alt": "Handgezeichnete Illustration eines flinken Eichhörnchens in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-eichhoernchen.mp3",
+        "path": "audio/tier-eichhoernchen.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_013",
+      "name": "Fuchs",
+      "slug": "fuchs",
+      "description": "",
+      "categories": ["waldtiere", "mittelgrosse-tiere", "saeugetiere", "fleischfresser", "nachtaktive-tiere"],
+      "image": {
+        "filename": "tier-fuchs.png",
+        "path": "images/tier-fuchs.png",
+        "alt": "Handgezeichnete Illustration eines schlauen Fuchses in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-fuchs.mp3",
+        "path": "audio/tier-fuchs.mp3"
+      },
+      "character_emotions": ["curious", "exploring", "thinking"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_014",
+      "name": "Wildschwein",
+      "slug": "wildschwein",
+      "description": "",
+      "categories": ["waldtiere", "grosse-tiere", "saeugetiere", "allesfresser"],
+      "image": {
+        "filename": "tier-wildschwein.png",
+        "path": "images/tier-wildschwein.png",
+        "alt": "Handgezeichnete Illustration eines starken Wildschweins in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-wildschwein.mp3",
+        "path": "audio/tier-wildschwein.mp3"
+      },
+      "character_emotions": ["excited", "curious", "thinking"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_015",
+      "name": "Dachs",
+      "slug": "dachs",
+      "description": "",
+      "categories": ["waldtiere", "mittelgrosse-tiere", "saeugetiere", "allesfresser"],
+      "image": {
+        "filename": "tier-dachs.png",
+        "path": "images/tier-dachs.png",
+        "alt": "Handgezeichnete Illustration eines grabenden Dachses in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-dachs.mp3",
+        "path": "audio/tier-dachs.mp3"
+      },
+      "character_emotions": ["curious", "thinking", "exploring"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_016",
+      "name": "Delfin",
+      "slug": "delfin",
+      "description": "",
+      "categories": ["meerestiere", "grosse-tiere", "saeugetiere", "fleischfresser", "wassertiere", "schnelle-tiere", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-delfin.png",
+        "path": "images/tier-delfin.png",
+        "alt": "Handgezeichnete Illustration eines springenden Delfins in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-delfin.mp3",
+        "path": "audio/tier-delfin.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_017",
+      "name": "Wal",
+      "slug": "wal",
+      "description": "",
+      "categories": ["meerestiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "wassertiere"],
+      "image": {
+        "filename": "tier-wal.png",
+        "path": "images/tier-wal.png",
+        "alt": "Handgezeichnete Illustration eines majestätischen Wals in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-wal.mp3",
+        "path": "audio/tier-wal.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "curious"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_018",
+      "name": "Seestern",
+      "slug": "seestern",
+      "description": "",
+      "categories": ["meerestiere", "kleine-tiere", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-seestern.png",
+        "path": "images/tier-seestern.png",
+        "alt": "Handgezeichnete Illustration eines bunten Seesterns in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-seestern.mp3",
+        "path": "audio/tier-seestern.mp3"
+      },
+      "character_emotions": ["curious", "exploring", "surprised"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_019",
+      "name": "Oktopus",
+      "slug": "oktopus",
+      "description": "",
+      "categories": ["meerestiere", "mittelgrosse-tiere", "fleischfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-oktopus.png",
+        "path": "images/tier-oktopus.png",
+        "alt": "Handgezeichnete Illustration eines schlauen Oktopus in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-oktopus.mp3",
+        "path": "audio/tier-oktopus.mp3"
+      },
+      "character_emotions": ["surprised", "excited", "thinking"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_020",
+      "name": "Robbe",
+      "slug": "robbe",
+      "description": "",
+      "categories": ["meerestiere", "mittelgrosse-tiere", "saeugetiere", "fleischfresser", "wassertiere", "poltiere"],
+      "image": {
+        "filename": "tier-robbe.png",
+        "path": "images/tier-robbe.png",
+        "alt": "Handgezeichnete Illustration einer süßen Robbe in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-robbe.mp3",
+        "path": "audio/tier-robbe.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_021",
+      "name": "Löwe",
+      "slug": "loewe",
+      "description": "",
+      "categories": ["fleischfresser", "grosse-tiere", "saeugetiere", "raubtiere", "exotische-tiere"],
+      "image": {
+        "filename": "tier-loewe.png",
+        "path": "images/tier-loewe.png",
+        "alt": "Handgezeichnete Illustration eines majestätischen Löwen in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-loewe.mp3",
+        "path": "audio/tier-loewe.mp3"
+      },
+      "character_emotions": ["excited", "curious", "thinking"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_022",
+      "name": "Elefant",
+      "slug": "elefant",
+      "description": "",
+      "categories": ["pflanzenfresser", "grosse-tiere", "saeugetiere", "exotische-tiere"],
+      "image": {
+        "filename": "tier-elefant.png",
+        "path": "images/tier-elefant.png",
+        "alt": "Handgezeichnete Illustration eines freundlichen Elefanten in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-elefant.mp3",
+        "path": "audio/tier-elefant.mp3"
+      },
+      "character_emotions": ["curious", "excited", "thinking"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_023",
+      "name": "Giraffe",
+      "slug": "giraffe",
+      "description": "",
+      "categories": ["pflanzenfresser", "grosse-tiere", "saeugetiere", "exotische-tiere"],
+      "image": {
+        "filename": "tier-giraffe.png",
+        "path": "images/tier-giraffe.png",
+        "alt": "Handgezeichnete Illustration einer eleganten Giraffe in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-giraffe.mp3",
+        "path": "audio/tier-giraffe.mp3"
+      },
+      "character_emotions": ["curious", "excited", "thinking"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_024",
+      "name": "Bär",
+      "slug": "baer",
+      "description": "",
+      "categories": ["allesfresser", "grosse-tiere", "saeugetiere", "raubtiere"],
+      "image": {
+        "filename": "tier-baer.png",
+        "path": "images/tier-baer.png",
+        "alt": "Handgezeichnete Illustration eines kuscheligen Bären in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-baer.mp3",
+        "path": "audio/tier-baer.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "excited"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_025",
+      "name": "Pinguin",
+      "slug": "pinguin",
+      "description": "",
+      "categories": ["poltiere", "mittelgrosse-tiere", "voegel", "fleischfresser", "wassertiere"],
+      "image": {
+        "filename": "tier-pinguin.png",
+        "path": "images/tier-pinguin.png",
+        "alt": "Handgezeichnete Illustration eines watschelnden Pinguins in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-pinguin.mp3",
+        "path": "audio/tier-pinguin.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_026",
+      "name": "Kamel",
+      "slug": "kamel",
+      "description": "",
+      "categories": ["wuestentiere", "grosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-kamel.png",
+        "path": "images/tier-kamel.png",
+        "alt": "Handgezeichnete Illustration eines Kamels in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-kamel.mp3",
+        "path": "audio/tier-kamel.mp3"
+      },
+      "character_emotions": ["excited", "curious", "thinking"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_027",
+      "name": "Wüstenfuchs",
+      "slug": "wuestenfuchs",
+      "description": "",
+      "categories": ["wuestentiere", "kleine-tiere", "saeugetiere", "fleischfresser"],
+      "image": {
+        "filename": "tier-wuestenfuchs.png",
+        "path": "images/tier-wuestenfuchs.png",
+        "alt": "Handgezeichnete Illustration eines Wüstenfuchses in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-wuestenfuchs.mp3",
+        "path": "audio/tier-wuestenfuchs.mp3"
+      },
+      "character_emotions": ["excited", "curious", "thinking"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_028",
+      "name": "Eidechse",
+      "slug": "eidechse",
+      "description": "",
+      "categories": ["wuestentiere", "kleine-tiere", "reptilien", "fleischfresser", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-eidechse.png",
+        "path": "images/tier-eidechse.png",
+        "alt": "Handgezeichnete Illustration einer flinken Eidechse in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-eidechse.mp3",
+        "path": "audio/tier-eidechse.mp3"
+      },
+      "character_emotions": ["curious", "excited", "thinking"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_029",
+      "name": "Schlange",
+      "slug": "schlange",
+      "description": "",
+      "categories": ["wuestentiere", "mittelgrosse-tiere", "reptilien", "fleischfresser"],
+      "image": {
+        "filename": "tier-schlange.png",
+        "path": "images/tier-schlange.png",
+        "alt": "Handgezeichnete Illustration einer Schlange in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-schlange.mp3",
+        "path": "audio/tier-schlange.mp3"
+      },
+      "character_emotions": ["curious", "excited", "thinking"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_030",
+      "name": "Skorpion",
+      "slug": "skorpion",
+      "description": "",
+      "categories": ["wuestentiere", "kleine-tiere", "giftige-tiere", "nachtaktive-tiere"],
+      "image": {
+        "filename": "tier-skorpion.png",
+        "path": "images/tier-skorpion.png",
+        "alt": "Handgezeichnete Illustration eines Skorpions in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-skorpion.mp3",
+        "path": "audio/tier-skorpion.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "surprised"],
+      "safety_score": 5
+    },
+    {
+      "id": "tier_031",
+      "name": "Affe",
+      "slug": "affe",
+      "description": "",
+      "categories": ["dschungeltiere", "mittelgrosse-tiere", "saeugetiere", "allesfresser"],
+      "image": {
+        "filename": "tier-affe.png",
+        "path": "images/tier-affe.png",
+        "alt": "Handgezeichnete Illustration eines schlauen Affen in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-affe.mp3",
+        "path": "audio/tier-affe.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "exploring"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_032",
+      "name": "Papagei",
+      "slug": "papagei",
+      "description": "",
+      "categories": ["dschungeltiere", "mittelgrosse-tiere", "voegel", "flugtiere", "allesfresser"],
+      "image": {
+        "filename": "tier-papagei.png",
+        "path": "images/tier-papagei.png",
+        "alt": "Handgezeichnete Illustration eines bunten Papageis in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-papagei.mp3",
+        "path": "audio/tier-papagei.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_033",
+      "name": "Tiger",
+      "slug": "tiger",
+      "description": "",
+      "categories": ["dschungeltiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere"],
+      "image": {
+        "filename": "tier-tiger.png",
+        "path": "images/tier-tiger.png",
+        "alt": "Handgezeichnete Illustration eines majestätischen Tigers in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-tiger.mp3",
+        "path": "audio/tier-tiger.mp3"
+      },
+      "character_emotions": ["excited", "curious", "thinking"],
+      "safety_score": 5
+    },
+    {
+      "id": "tier_034",
+      "name": "Faultier",
+      "slug": "faultier",
+      "description": "",
+      "categories": ["dschungeltiere", "mittelgrosse-tiere", "saeugetiere", "pflanzenfresser", "langsame-tiere"],
+      "image": {
+        "filename": "tier-faultier.png",
+        "path": "images/tier-faultier.png",
+        "alt": "Handgezeichnete Illustration eines entspannten Faultiers in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-faultier.mp3",
+        "path": "audio/tier-faultier.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_035",
+      "name": "Kolibri",
+      "slug": "kolibri",
+      "description": "",
+      "categories": ["dschungeltiere", "kleine-tiere", "voegel", "flugtiere", "pflanzenfresser", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-kolibri.png",
+        "path": "images/tier-kolibri.png",
+        "alt": "Handgezeichnete Illustration eines schillernden Kolibris in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-kolibri.mp3",
+        "path": "audio/tier-kolibri.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "curious"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_036",
+      "name": "Eisbär",
+      "slug": "eisbaer",
+      "description": "",
+      "categories": ["poltiere", "grosse-tiere", "saeugetiere", "fleischfresser"],
+      "image": {
+        "filename": "tier-eisbaer.png",
+        "path": "images/tier-eisbaer.png",
+        "alt": "Handgezeichnete Illustration eines weißen Eisbären in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-eisbaer.mp3",
+        "path": "audio/tier-eisbaer.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_037",
+      "name": "Walross",
+      "slug": "walross",
+      "description": "",
+      "categories": ["poltiere", "grosse-tiere", "saeugetiere", "fleischfresser", "wassertiere"],
+      "image": {
+        "filename": "tier-walross.png",
+        "path": "images/tier-walross.png",
+        "alt": "Handgezeichnete Illustration eines Walrosses in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-walross.mp3",
+        "path": "audio/tier-walross.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_038",
+      "name": "Polarfuchs",
+      "slug": "polarfuchs",
+      "description": "",
+      "categories": ["poltiere", "mittelgrosse-tiere", "saeugetiere", "fleischfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-polarfuchs.png",
+        "path": "images/tier-polarfuchs.png",
+        "alt": "Handgezeichnete Illustration eines weißen Polarfuchses in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-polarfuchs.mp3",
+        "path": "audio/tier-polarfuchs.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_039",
+      "name": "Igel",
+      "slug": "igel",
+      "description": "",
+      "categories": ["gartentiere", "kleine-tiere", "saeugetiere", "fleischfresser", "nachtaktive-tiere"],
+      "image": {
+        "filename": "tier-igel.png",
+        "path": "images/tier-igel.png",
+        "alt": "Handgezeichnete Illustration eines stacheligen Igels in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-igel.mp3",
+        "path": "audio/tier-igel.mp3"
+      },
+      "character_emotions": ["curious", "excited", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_040",
+      "name": "Schmetterling",
+      "slug": "schmetterling",
+      "description": "",
+      "categories": ["gartentiere", "kleine-tiere", "insekten", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-schmetterling.png",
+        "path": "images/tier-schmetterling.png",
+        "alt": "Handgezeichnete Illustration eines bunten Schmetterlings in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-schmetterling.mp3",
+        "path": "audio/tier-schmetterling.mp3"
+      },
+      "character_emotions": ["curious", "excited", "exploring"],
+      "safety_score": 10
+    },
+    {
+      "id": "tier_041",
+      "name": "Biene",
+      "slug": "biene",
+      "description": "",
+      "categories": ["gartentiere", "kleine-tiere", "insekten", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-biene.png",
+        "path": "images/tier-biene.png",
+        "alt": "Handgezeichnete Illustration einer fleißigen Biene in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-biene.mp3",
+        "path": "audio/tier-biene.mp3"
+      },
+      "character_emotions": ["curious", "excited", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_042",
+      "name": "Marienkäfer",
+      "slug": "marienkafer",
+      "description": "",
+      "categories": ["gartentiere", "kleine-tiere", "insekten", "fleischfresser"],
+      "image": {
+        "filename": "tier-marienkafer.png",
+        "path": "images/tier-marienkafer.png",
+        "alt": "Handgezeichnete Illustration eines roten Marienkäfers in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-marienkafer.mp3",
+        "path": "audio/tier-marienkafer.mp3"
+      },
+      "character_emotions": ["curious", "excited", "exploring"],
+      "safety_score": 10
+    },
+    {
+      "id": "tier_043",
+      "name": "Regenwurm",
+      "slug": "regenwurm",
+      "description": "",
+      "categories": ["gartentiere", "kleine-tiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-regenwurm.png",
+        "path": "images/tier-regenwurm.png",
+        "alt": "Handgezeichnete Illustration eines nützlichen Regenwurms in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-regenwurm.mp3",
+        "path": "audio/tier-regenwurm.mp3"
+      },
+      "character_emotions": ["curious", "excited", "exploring"],
+      "safety_score": 10
+    },
+    {
+      "id": "tier_044",
+      "name": "Adler",
+      "slug": "adler",
+      "description": "",
+      "categories": ["fleischfresser", "grosse-tiere", "voegel", "flugtiere", "raubtiere"],
+      "image": {
+        "filename": "tier-adler.png",
+        "path": "images/tier-adler.png",
+        "alt": "Handgezeichnete Illustration eines majestätischen Adlers in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-adler.mp3",
+        "path": "audio/tier-adler.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "curious"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_045",
+      "name": "Hai",
+      "slug": "hai",
+      "description": "",
+      "categories": ["fleischfresser", "grosse-tiere", "fische", "meerestiere", "wassertiere", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-hai.png",
+        "path": "images/tier-hai.png",
+        "alt": "Handgezeichnete Illustration eines Hais in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-hai.mp3",
+        "path": "audio/tier-hai.mp3"
+      },
+      "character_emotions": ["excited", "curious", "thinking"],
+      "safety_score": 5
+    },
+    {
+      "id": "tier_046",
+      "name": "Wolf",
+      "slug": "wolf",
+      "description": "",
+      "categories": ["fleischfresser", "grosse-tiere", "saeugetiere", "raubtiere"],
+      "image": {
+        "filename": "tier-wolf.png",
+        "path": "images/tier-wolf.png",
+        "alt": "Handgezeichnete Illustration eines Wolfs in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-wolf.mp3",
+        "path": "audio/tier-wolf.mp3"
+      },
+      "character_emotions": ["excited", "curious", "thinking"],
+      "safety_score": 5
+    },
+    {
+      "id": "tier_047",
+      "name": "Krokodil",
+      "slug": "krokodil",
+      "description": "",
+      "categories": ["fleischfresser", "grosse-tiere", "reptilien", "wassertiere"],
+      "image": {
+        "filename": "tier-krokodil.png",
+        "path": "images/tier-krokodil.png",
+        "alt": "Handgezeichnete Illustration eines Krokodils in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-krokodil.mp3",
+        "path": "audio/tier-krokodil.mp3"
+      },
+      "character_emotions": ["excited", "curious", "thinking"],
+      "safety_score": 4
+    },
+    {
+      "id": "tier_048",
+      "name": "Panda",
+      "slug": "panda",
+      "description": "",
+      "categories": ["pflanzenfresser", "grosse-tiere", "saeugetiere", "exotische-tiere"],
+      "image": {
+        "filename": "tier-panda.png",
+        "path": "images/tier-panda.png",
+        "alt": "Handgezeichnete Illustration eines süßen Pandas in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-panda.mp3",
+        "path": "audio/tier-panda.mp3"
+      },
+      "character_emotions": ["curious", "excited", "thinking"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_049",
+      "name": "Koala",
+      "slug": "koala",
+      "description": "",
+      "categories": ["pflanzenfresser", "mittelgrosse-tiere", "saeugetiere", "exotische-tiere", "langsame-tiere"],
+      "image": {
+        "filename": "tier-koala.png",
+        "path": "images/tier-koala.png",
+        "alt": "Handgezeichnete Illustration eines kuscheligen Koalas in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-koala.mp3",
+        "path": "audio/tier-koala.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_050",
+      "name": "Hase",
+      "slug": "hase",
+      "description": "",
+      "categories": ["pflanzenfresser", "kleine-tiere", "saeugetiere", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-hase.png",
+        "path": "images/tier-hase.png",
+        "alt": "Handgezeichnete Illustration eines springenden Hasen in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-hase.mp3",
+        "path": "audio/tier-hase.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "curious"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_051",
+      "name": "Blauwal",
+      "slug": "blauwal",
+      "description": "",
+      "categories": ["grosse-tiere", "saeugetiere", "meerestiere", "wassertiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-blauwal.png",
+        "path": "images/tier-blauwal.png",
+        "alt": "Handgezeichnete Illustration eines riesigen Blauwals in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-blauwal.mp3",
+        "path": "audio/tier-blauwal.mp3"
+      },
+      "character_emotions": ["surprised", "excited", "curious"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_052",
+      "name": "Maus",
+      "slug": "maus",
+      "description": "",
+      "categories": ["kleine-tiere", "saeugetiere", "allesfresser"],
+      "image": {
+        "filename": "tier-maus.png",
+        "path": "images/tier-maus.png",
+        "alt": "Handgezeichnete Illustration einer niedlichen Maus in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-maus.mp3",
+        "path": "audio/tier-maus.mp3"
+      },
+      "character_emotions": ["excited", "curious", "laughing"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_053",
+      "name": "Meerschweinchen",
+      "slug": "meerschweinchen",
+      "description": "",
+      "categories": ["kleine-tiere", "saeugetiere", "haustiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-meerschweinchen.png",
+        "path": "images/tier-meerschweinchen.png",
+        "alt": "Handgezeichnete Illustration eines süßen Meerschweinchens in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-meerschweinchen.mp3",
+        "path": "audio/tier-meerschweinchen.mp3"
+      },
+      "character_emotions": ["curious", "excited", "exploring"],
+      "safety_score": 10
+    },
+    {
+      "id": "tier_054",
+      "name": "Käfer",
+      "slug": "kafer",
+      "description": "",
+      "categories": ["insekten", "kleine-tiere", "allesfresser"],
+      "image": {
+        "filename": "tier-kafer.png",
+        "path": "images/tier-kafer.png",
+        "alt": "Handgezeichnete Illustration eines glänzenden Käfers in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-kafer.mp3",
+        "path": "audio/tier-kafer.mp3"
+      },
+      "character_emotions": ["curious", "excited", "surprised"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_055",
+      "name": "Ameise",
+      "slug": "ameise",
+      "description": "",
+      "categories": ["insekten", "kleine-tiere", "allesfresser"],
+      "image": {
+        "filename": "tier-ameise.png",
+        "path": "images/tier-ameise.png",
+        "alt": "Handgezeichnete Illustration einer fleißigen Ameise in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-ameise.mp3",
+        "path": "audio/tier-ameise.mp3"
+      },
+      "character_emotions": ["curious", "excited", "surprised"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_056",
+      "name": "Eule",
+      "slug": "eule",
+      "description": "",
+      "categories": ["voegel", "mittelgrosse-tiere", "fleischfresser", "nachtaktive-tiere", "flugtiere"],
+      "image": {
+        "filename": "tier-eule.png",
+        "path": "images/tier-eule.png",
+        "alt": "Handgezeichnete Illustration einer weisen Eule in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-eule.mp3",
+        "path": "audio/tier-eule.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "curious"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_057",
+      "name": "Schildkröte",
+      "slug": "schildkroete",
+      "description": "",
+      "categories": ["reptilien", "mittelgrosse-tiere", "pflanzenfresser", "langsame-tiere", "wassertiere"],
+      "image": {
+        "filename": "tier-schildkroete.png",
+        "path": "images/tier-schildkroete.png",
+        "alt": "Handgezeichnete Illustration einer gemütlichen Schildkröte in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-schildkroete.mp3",
+        "path": "audio/tier-schildkroete.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_058",
+      "name": "Chamäleon",
+      "slug": "chamaeleon",
+      "description": "",
+      "categories": ["reptilien", "kleine-tiere", "fleischfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-chamaeleon.png",
+        "path": "images/tier-chamaeleon.png",
+        "alt": "Handgezeichnete Illustration eines farbwechselnden Chamäleons in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-chamaeleon.mp3",
+        "path": "audio/tier-chamaeleon.mp3"
+      },
+      "character_emotions": ["surprised", "excited", "thinking"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_059",
+      "name": "Clownfisch",
+      "slug": "clownfisch",
+      "description": "",
+      "categories": ["fische", "kleine-tiere", "meerestiere", "wassertiere", "fleischfresser"],
+      "image": {
+        "filename": "tier-clownfisch.png",
+        "path": "images/tier-clownfisch.png",
+        "alt": "Handgezeichnete Illustration eines bunten Clownfisches in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-clownfisch.mp3",
+        "path": "audio/tier-clownfisch.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_060",
+      "name": "Goldfisch",
+      "slug": "goldfisch",
+      "description": "",
+      "categories": ["fische", "kleine-tiere", "haustiere", "wassertiere", "allesfresser"],
+      "image": {
+        "filename": "tier-goldfisch.png",
+        "path": "images/tier-goldfisch.png",
+        "alt": "Handgezeichnete Illustration eines goldenen Goldfisches in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-goldfisch.mp3",
+        "path": "audio/tier-goldfisch.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 10
+    },
+    {
+      "id": "tier_061",
+      "name": "Thunfisch",
+      "slug": "thunfisch",
+      "description": "",
+      "categories": ["fische", "grosse-tiere", "meerestiere", "wassertiere", "fleischfresser", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-thunfisch.png",
+        "path": "images/tier-thunfisch.png",
+        "alt": "Handgezeichnete Illustration eines schnellen Thunfisches in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-thunfisch.mp3",
+        "path": "audio/tier-thunfisch.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_062",
+      "name": "Seepferdchen",
+      "slug": "seepferdchen",
+      "description": "",
+      "categories": ["fische", "kleine-tiere", "meerestiere", "wassertiere", "fleischfresser"],
+      "image": {
+        "filename": "tier-seepferdchen.png",
+        "path": "images/tier-seepferdchen.png",
+        "alt": "Handgezeichnete Illustration eines eleganten Seepferdchens in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-seepferdchen.mp3",
+        "path": "audio/tier-seepferdchen.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_063",
+      "name": "Känguru",
+      "slug": "kaenguru",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-kaenguru.png",
+        "path": "images/tier-kaenguru.png",
+        "alt": "Handgezeichnete Illustration eines hüpfenden Kängurus in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-kaenguru.mp3",
+        "path": "audio/tier-kaenguru.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "curious"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_064",
+      "name": "Lama",
+      "slug": "lama",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-lama.png",
+        "path": "images/tier-lama.png",
+        "alt": "Handgezeichnete Illustration eines flauschigen Lamas in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-lama.mp3",
+        "path": "audio/tier-lama.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "curious"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_065",
+      "name": "Zebra",
+      "slug": "zebra",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-zebra.png",
+        "path": "images/tier-zebra.png",
+        "alt": "Handgezeichnete Illustration eines gestreiften Zebras in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-zebra.mp3",
+        "path": "audio/tier-zebra.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "curious"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_066",
+      "name": "Gepard",
+      "slug": "gepard",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-gepard.png",
+        "path": "images/tier-gepard.png",
+        "alt": "Handgezeichnete Illustration eines schnellen Gepards in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-gepard.mp3",
+        "path": "audio/tier-gepard.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "curious"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_067",
+      "name": "Lemur",
+      "slug": "lemur",
+      "description": "",
+      "categories": ["exotische-tiere", "mittelgrosse-tiere", "saeugetiere", "allesfresser"],
+      "image": {
+        "filename": "tier-lemur.png",
+        "path": "images/tier-lemur.png",
+        "alt": "Handgezeichnete Illustration eines neugierigen Lemurs in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-lemur.mp3",
+        "path": "audio/tier-lemur.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "curious"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_068",
+      "name": "T-Rex",
+      "slug": "t-rex",
+      "description": "",
+      "categories": ["dinosaurier", "grosse-tiere", "fleischfresser"],
+      "image": {
+        "filename": "tier-t-rex.png",
+        "path": "images/tier-t-rex.png",
+        "alt": "Handgezeichnete Illustration eines mächtigen T-Rex in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-t-rex.mp3",
+        "path": "audio/tier-t-rex.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "thinking"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_069",
+      "name": "Brontosaurus",
+      "slug": "brontosaurus",
+      "description": "",
+      "categories": ["dinosaurier", "grosse-tiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-brontosaurus.png",
+        "path": "images/tier-brontosaurus.png",
+        "alt": "Handgezeichnete Illustration eines langhalsigen Brontosaurus in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-brontosaurus.mp3",
+        "path": "audio/tier-brontosaurus.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "thinking"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_070",
+      "name": "Triceratops",
+      "slug": "triceratops",
+      "description": "",
+      "categories": ["dinosaurier", "grosse-tiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-triceratops.png",
+        "path": "images/tier-triceratops.png",
+        "alt": "Handgezeichnete Illustration eines dreihörnigen Triceratops in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-triceratops.mp3",
+        "path": "audio/tier-triceratops.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "thinking"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_071",
+      "name": "Stegosaurus",
+      "slug": "stegosaurus",
+      "description": "",
+      "categories": ["dinosaurier", "grosse-tiere", "pflanzenfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-stegosaurus.png",
+        "path": "images/tier-stegosaurus.png",
+        "alt": "Handgezeichnete Illustration eines stacheligen Stegosaurus in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-stegosaurus.mp3",
+        "path": "audio/tier-stegosaurus.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "thinking"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_072",
+      "name": "Spinne",
+      "slug": "spinne",
+      "description": "",
+      "categories": ["insekten", "kleine-tiere", "fleischfresser", "giftige-tiere", "gartentiere"],
+      "image": {
+        "filename": "tier-spinne.png",
+        "path": "images/tier-spinne.png",
+        "alt": "Handgezeichnete Illustration einer kleinen Spinne in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-spinne.mp3",
+        "path": "audio/tier-spinne.mp3"
+      },
+      "character_emotions": ["thinking", "surprised", "exploring"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_073",
+      "name": "Ameise",
+      "slug": "ameise",
+      "description": "",
+      "categories": ["insekten", "kleine-tiere", "allesfresser", "gartentiere"],
+      "image": {
+        "filename": "tier-ameise.png",
+        "path": "images/tier-ameise.png",
+        "alt": "Handgezeichnete Illustration einer fleißigen Ameise in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-ameise.mp3",
+        "path": "audio/tier-ameise.mp3"
+      },
+      "character_emotions": ["thinking", "excited", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_074",
+      "name": "Käfer",
+      "slug": "kaefer",
+      "description": "",
+      "categories": ["insekten", "kleine-tiere", "allesfresser", "gartentiere"],
+      "image": {
+        "filename": "tier-kaefer.png",
+        "path": "images/tier-kaefer.png",
+        "alt": "Handgezeichnete Illustration eines glänzenden Käfers in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-kaefer.mp3",
+        "path": "audio/tier-kaefer.mp3"
+      },
+      "character_emotions": ["thinking", "excited", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_075",
+      "name": "Libelle",
+      "slug": "libelle",
+      "description": "",
+      "categories": ["insekten", "kleine-tiere", "fleischfresser", "flugtiere", "gartentiere"],
+      "image": {
+        "filename": "tier-libelle.png",
+        "path": "images/tier-libelle.png",
+        "alt": "Handgezeichnete Illustration einer schillernden Libelle in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-libelle.mp3",
+        "path": "audio/tier-libelle.mp3"
+      },
+      "character_emotions": ["excited", "surprised", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_076",
+      "name": "Kobra",
+      "slug": "kobra",
+      "description": "",
+      "categories": ["reptilien", "mittelgrosse-tiere", "fleischfresser", "giftige-tiere"],
+      "image": {
+        "filename": "tier-kobra.png",
+        "path": "images/tier-kobra.png",
+        "alt": "Handgezeichnete Illustration einer aufgerichteten Kobra in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-kobra.mp3",
+        "path": "audio/tier-kobra.mp3"
+      },
+      "character_emotions": ["thinking", "surprised", "exploring"],
+      "safety_score": 4
+    },
+    {
+      "id": "tier_077",
+      "name": "Qualle",
+      "slug": "qualle",
+      "description": "",
+      "categories": ["meerestiere", "kleine-tiere", "fleischfresser", "giftige-tiere", "wassertiere"],
+      "image": {
+        "filename": "tier-qualle.png",
+        "path": "images/tier-qualle.png",
+        "alt": "Handgezeichnete Illustration einer schwebenden Qualle in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-qualle.mp3",
+        "path": "audio/tier-qualle.mp3"
+      },
+      "character_emotions": ["thinking", "surprised", "exploring"],
+      "safety_score": 5
+    },
+    {
+      "id": "tier_078",
+      "name": "Frosch",
+      "slug": "frosch",
+      "description": "",
+      "categories": ["kleine-tiere", "allesfresser", "wassertiere", "gartentiere"],
+      "image": {
+        "filename": "tier-frosch.png",
+        "path": "images/tier-frosch.png",
+        "alt": "Handgezeichnete Illustration eines hüpfenden Frosches in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-frosch.mp3",
+        "path": "audio/tier-frosch.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_079",
+      "name": "Kröte",
+      "slug": "kroete",
+      "description": "",
+      "categories": ["kleine-tiere", "allesfresser", "wassertiere", "gartentiere", "giftige-tiere"],
+      "image": {
+        "filename": "tier-kroete.png",
+        "path": "images/tier-kroete.png",
+        "alt": "Handgezeichnete Illustration einer warzen Kröte in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-kroete.mp3",
+        "path": "audio/tier-kroete.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_080",
+      "name": "Fledermaus",
+      "slug": "fledermaus",
+      "description": "",
+      "categories": ["kleine-tiere", "fleischfresser", "flugtiere", "nachtaktive-tiere"],
+      "image": {
+        "filename": "tier-fledermaus.png",
+        "path": "images/tier-fledermaus.png",
+        "alt": "Handgezeichnete Illustration einer fliegenden Fledermaus in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-fledermaus.mp3",
+        "path": "audio/tier-fledermaus.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_081",
+      "name": "Motte",
+      "slug": "motte",
+      "description": "",
+      "categories": ["insekten", "kleine-tiere", "allesfresser", "flugtiere", "nachtaktive-tiere"],
+      "image": {
+        "filename": "tier-motte.png",
+        "path": "images/tier-motte.png",
+        "alt": "Handgezeichnete Illustration einer flauschigen Motte in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-motte.mp3",
+        "path": "audio/tier-motte.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_082",
+      "name": "Waschbär",
+      "slug": "waschbaer",
+      "description": "",
+      "categories": ["mittelgrosse-tiere", "saeugetiere", "allesfresser", "nachtaktive-tiere"],
+      "image": {
+        "filename": "tier-waschbaer.png",
+        "path": "images/tier-waschbaer.png",
+        "alt": "Handgezeichnete Illustration eines neugierigen Waschbären in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-waschbaer.mp3",
+        "path": "audio/tier-waschbaer.mp3"
+      },
+      "character_emotions": ["excited", "curious", "thinking"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_083",
+      "name": "Alpenveilchen",
+      "slug": "alpenveilchen",
+      "description": "",
+      "categories": ["voegel", "kleine-tiere", "allesfresser", "flugtiere"],
+      "image": {
+        "filename": "tier-alpenveilchen.png",
+        "path": "images/tier-alpenveilchen.png",
+        "alt": "Handgezeichnete Illustration eines kleinen Alpenveilchens in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-alpenveilchen.mp3",
+        "path": "audio/tier-alpenveilchen.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_084",
+      "name": "Adler",
+      "slug": "adler",
+      "description": "",
+      "categories": ["voegel", "grosse-tiere", "fleischfresser", "flugtiere", "raubtiere"],
+      "image": {
+        "filename": "tier-adler.png",
+        "path": "images/tier-adler.png",
+        "alt": "Handgezeichnete Illustration eines majestätischen Adlers in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-adler.mp3",
+        "path": "audio/tier-adler.mp3"
+      },
+      "character_emotions": ["excited", "thinking", "surprised"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_085",
+      "name": "Falke",
+      "slug": "falke",
+      "description": "",
+      "categories": ["voegel", "mittelgrosse-tiere", "fleischfresser", "flugtiere", "raubtiere", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-falke.png",
+        "path": "images/tier-falke.png",
+        "alt": "Handgezeichnete Illustration eines schnellen Falken in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-falke.mp3",
+        "path": "audio/tier-falke.mp3"
+      },
+      "character_emotions": ["excited", "thinking", "surprised"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_086",
+      "name": "Schnecke",
+      "slug": "schnecke",
+      "description": "",
+      "categories": ["kleine-tiere", "allesfresser", "langsame-tiere", "gartentiere"],
+      "image": {
+        "filename": "tier-schnecke.png",
+        "path": "images/tier-schnecke.png",
+        "alt": "Handgezeichnete Illustration einer gemütlichen Schnecke in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-schnecke.mp3",
+        "path": "audio/tier-schnecke.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 10
+    },
+    {
+      "id": "tier_087",
+      "name": "Seestern",
+      "slug": "seestern",
+      "description": "",
+      "categories": ["meerestiere", "kleine-tiere", "fleischfresser", "wassertiere", "langsame-tiere"],
+      "image": {
+        "filename": "tier-seestern.png",
+        "path": "images/tier-seestern.png",
+        "alt": "Handgezeichnete Illustration eines bunten Seesterns in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-seestern.mp3",
+        "path": "audio/tier-seestern.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_088",
+      "name": "Elefant",
+      "slug": "elefant",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-elefant.png",
+        "path": "images/tier-elefant.png",
+        "alt": "Handgezeichnete Illustration eines weisen Elefanten in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-elefant.mp3",
+        "path": "audio/tier-elefant.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_089",
+      "name": "Echolot",
+      "slug": "echolot",
+      "description": "",
+      "categories": ["meerestiere", "grosse-tiere", "saeugetiere", "fleischfresser", "wassertiere", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-echolot.png",
+        "path": "images/tier-echolot.png",
+        "alt": "Handgezeichnete Illustration eines Echoortungstieres in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-echolot.mp3",
+        "path": "audio/tier-echolot.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_090",
+      "name": "Schimpanse",
+      "slug": "schimpanse",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "allesfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-schimpanse.png",
+        "path": "images/tier-schimpanse.png",
+        "alt": "Handgezeichnete Illustration eines intelligenten Schimpansen in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-schimpanse.mp3",
+        "path": "audio/tier-schimpanse.mp3"
+      },
+      "character_emotions": ["excited", "curious", "thinking"],
+      "safety_score": 7
+    },
+    {
+      "id": "tier_091",
+      "name": "Gorilla",
+      "slug": "gorilla",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-gorilla.png",
+        "path": "images/tier-gorilla.png",
+        "alt": "Handgezeichnete Illustration eines starken Gorillas in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-gorilla.mp3",
+        "path": "audio/tier-gorilla.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_092",
+      "name": "Löwe",
+      "slug": "loewe",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-loewe.png",
+        "path": "images/tier-loewe.png",
+        "alt": "Handgezeichnete Illustration eines majestätischen Löwen in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-loewe.mp3",
+        "path": "audio/tier-loewe.mp3"
+      },
+      "character_emotions": ["excited", "thinking", "surprised"],
+      "safety_score": 5
+    },
+    {
+      "id": "tier_093",
+      "name": "Giraffe",
+      "slug": "giraffe",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-giraffe.png",
+        "path": "images/tier-giraffe.png",
+        "alt": "Handgezeichnete Illustration einer langen Giraffe in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-giraffe.mp3",
+        "path": "audio/tier-giraffe.mp3"
+      },
+      "character_emotions": ["excited", "curious", "surprised"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_094",
+      "name": "Nashorn",
+      "slug": "nashorn",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "image": {
+        "filename": "tier-nashorn.png",
+        "path": "images/tier-nashorn.png",
+        "alt": "Handgezeichnete Illustration eines starken Nashorns in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-nashorn.mp3",
+        "path": "audio/tier-nashorn.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_095",
+      "name": "Nilpferd",
+      "slug": "nilpferd",
+      "description": "",
+      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "wassertiere"],
+      "image": {
+        "filename": "tier-nilpferd.png",
+        "path": "images/tier-nilpferd.png",
+        "alt": "Handgezeichnete Illustration eines gemütlichen Nilpferds in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-nilpferd.mp3",
+        "path": "audio/tier-nilpferd.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_096",
+      "name": "Bär",
+      "slug": "baer",
+      "description": "",
+      "categories": ["waldtiere", "grosse-tiere", "saeugetiere", "allesfresser"],
+      "image": {
+        "filename": "tier-baer.png",
+        "path": "images/tier-baer.png",
+        "alt": "Handgezeichnete Illustration eines freundlichen Bären in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-baer.mp3",
+        "path": "audio/tier-baer.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_097",
+      "name": "Wolf",
+      "slug": "wolf",
+      "description": "",
+      "categories": ["waldtiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere"],
+      "image": {
+        "filename": "tier-wolf.png",
+        "path": "images/tier-wolf.png",
+        "alt": "Handgezeichnete Illustration eines würdevollen Wolfs in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-wolf.mp3",
+        "path": "audio/tier-wolf.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 5
+    },
+    {
+      "id": "tier_098",
+      "name": "Hirsch",
+      "slug": "hirsch",
+      "description": "",
+      "categories": ["waldtiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-hirsch.png",
+        "path": "images/tier-hirsch.png",
+        "alt": "Handgezeichnete Illustration eines stolzen Hirschs in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-hirsch.mp3",
+        "path": "audio/tier-hirsch.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_099",
+      "name": "Eichhörnchen",
+      "slug": "eichhoernchen",
+      "description": "",
+      "categories": ["waldtiere", "kleine-tiere", "saeugetiere", "allesfresser", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-eichhoernchen.png",
+        "path": "images/tier-eichhoernchen.png",
+        "alt": "Handgezeichnete Illustration eines flinken Eichhörnchens in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-eichhoernchen.mp3",
+        "path": "audio/tier-eichhoernchen.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_100",
+      "name": "Schaf",
+      "slug": "schaf",
+      "description": "",
+      "categories": ["bauernhoftiere", "mittelgrosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-schaf.png",
+        "path": "images/tier-schaf.png",
+        "alt": "Handgezeichnete Illustration eines flauschigen Schafs in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-schaf.mp3",
+        "path": "audio/tier-schaf.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_101",
+      "name": "Ente",
+      "slug": "ente",
+      "description": "",
+      "categories": ["bauernhoftiere", "kleine-tiere", "voegel", "allesfresser", "wassertiere", "flugtiere"],
+      "image": {
+        "filename": "tier-ente.png",
+        "path": "images/tier-ente.png",
+        "alt": "Handgezeichnete Illustration einer schwimmenden Ente in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-ente.mp3",
+        "path": "audio/tier-ente.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_102",
+      "name": "Gans",
+      "slug": "gans",
+      "description": "",
+      "categories": ["bauernhoftiere", "grosse-tiere", "voegel", "pflanzenfresser", "wassertiere", "flugtiere"],
+      "image": {
+        "filename": "tier-gans.png",
+        "path": "images/tier-gans.png",
+        "alt": "Handgezeichnete Illustration einer stolzen Gans in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-gans.mp3",
+        "path": "audio/tier-gans.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_103",
+      "name": "Esel",
+      "slug": "esel",
+      "description": "",
+      "categories": ["bauernhoftiere", "grosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "image": {
+        "filename": "tier-esel.png",
+        "path": "images/tier-esel.png",
+        "alt": "Handgezeichnete Illustration eines geduldigen Esels in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-esel.mp3",
+        "path": "audio/tier-esel.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_104",
+      "name": "Jaguar",
+      "slug": "jaguar",
+      "description": "",
+      "categories": ["dschungeltiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-jaguar.png",
+        "path": "images/tier-jaguar.png",
+        "alt": "Handgezeichnete Illustration eines gefleckten Jaguars in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-jaguar.mp3",
+        "path": "audio/tier-jaguar.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 5
+    },
+    {
+      "id": "tier_105",
+      "name": "Panther",
+      "slug": "panther",
+      "description": "",
+      "categories": ["dschungeltiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere", "schnelle-tiere", "nachtaktive-tiere"],
+      "image": {
+        "filename": "tier-panther.png",
+        "path": "images/tier-panther.png",
+        "alt": "Handgezeichnete Illustration eines eleganten Panthers in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-panther.mp3",
+        "path": "audio/tier-panther.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 4
+    },
+    {
+      "id": "tier_106",
+      "name": "Dromedar",
+      "slug": "dromedar",
+      "description": "",
+      "categories": ["wuestentiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "langsame-tiere"],
+      "image": {
+        "filename": "tier-dromedar.png",
+        "path": "images/tier-dromedar.png",
+        "alt": "Handgezeichnete Illustration eines einhöckrigen Dromedars in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-dromedar.mp3",
+        "path": "audio/tier-dromedar.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_107",
+      "name": "Fennek",
+      "slug": "fennek",
+      "description": "",
+      "categories": ["wuestentiere", "kleine-tiere", "saeugetiere", "allesfresser", "nachtaktive-tiere"],
+      "image": {
+        "filename": "tier-fennek.png",
+        "path": "images/tier-fennek.png",
+        "alt": "Handgezeichnete Illustration eines niedlichen Fenneks in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-fennek.mp3",
+        "path": "audio/tier-fennek.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_108",
+      "name": "Waran",
+      "slug": "waran",
+      "description": "",
+      "categories": ["wuestentiere", "grosse-tiere", "reptilien", "fleischfresser"],
+      "image": {
+        "filename": "tier-waran.png",
+        "path": "images/tier-waran.png",
+        "alt": "Handgezeichnete Illustration eines beeindruckenden Warans in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-waran.mp3",
+        "path": "audio/tier-waran.mp3"
+      },
+      "character_emotions": ["thinking", "curious", "exploring"],
+      "safety_score": 6
+    },
+    {
+      "id": "tier_109",
+      "name": "Robbe",
+      "slug": "robbe",
+      "description": "",
+      "categories": ["poltiere", "grosse-tiere", "saeugetiere", "fleischfresser", "wassertiere"],
+      "image": {
+        "filename": "tier-robbe.png",
+        "path": "images/tier-robbe.png",
+        "alt": "Handgezeichnete Illustration einer verspielten Robbe in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-robbe.mp3",
+        "path": "audio/tier-robbe.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 8
+    },
+    {
+      "id": "tier_110",
+      "name": "Schneehase",
+      "slug": "schneehase",
+      "description": "",
+      "categories": ["poltiere", "kleine-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-schneehase.png",
+        "path": "images/tier-schneehase.png",
+        "alt": "Handgezeichnete Illustration eines weißen Schneehasen in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-schneehase.mp3",
+        "path": "audio/tier-schneehase.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 9
+    },
+    {
+      "id": "tier_111",
+      "name": "Rentier",
+      "slug": "rentier",
+      "description": "",
+      "categories": ["poltiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "image": {
+        "filename": "tier-rentier.png",
+        "path": "images/tier-rentier.png",
+        "alt": "Handgezeichnete Illustration eines majestätischen Rentiers in warmem Kinderbuch-Stil"
+      },
+      "audio": {
+        "filename": "tier-rentier.mp3",
+        "path": "audio/tier-rentier.mp3"
+      },
+      "character_emotions": ["excited", "curious", "exploring"],
+      "safety_score": 8
+    }
+  ]
+} 

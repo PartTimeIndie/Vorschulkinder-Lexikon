@@ -1,0 +1,16 @@
+# KINDERLEXIKON IMAGE PROMPTS
+# Finalisierte Prompts für OpenAI GPT Image API
+# Verwendung: Ersetze {CATEGORY} oder {ITEM_NAME} mit dem gewünschten Begriff
+
+## KATEGORIE-PROMPT (für Hauptkategorien und Unterkategorien)
+Hand-drawn children's book illustration showing multiple different examples from the {CATEGORY} category arranged in a friendly group composition. Watercolor and colored pencil style with visible brush strokes and paper texture. Show 4-6 different types, varieties, or breeds that belong to this category, each with distinct characteristics, arranged in a whimsical hand-sketched layout. Show only the main subjects themselves - no accessories, tools, or related objects. Soft organic lines, warm natural colors, gentle watercolor washes. Style reminiscent of classic children's picture books like Eric Carle or Beatrix Potter. No text, no words, no letters anywhere in the image. Square composition perfectly centered for 1024x1024 format. No digital perfection, charming hand-drawn imperfections. Textured paper background, artistic and cozy feeling. Perfect square tile design.
+
+## EINZELEINTRAG-PROMPT (für spezifische Tiere, Objekte, etc.)
+Hand-drawn children's book illustration showing an {ITEM_NAME}. Watercolor and colored pencil style with visible brush strokes and paper texture. Show 4-6 different types, varieties, or breeds that belong to this category, each with distinct characteristics, arranged in a whimsical hand-sketched layout. Show only the main subjects themselves - no accessories, tools, or related objects. Soft organic lines, warm natural colors, gentle watercolor washes. Style reminiscent of classic children's picture books like Eric Carle or Beatrix Potter. No text, no words, no letters anywhere in the image. Square composition perfectly centered for 1024x1024 format. No digital perfection, charming hand-drawn imperfections. Textured paper background, artistic and cozy feeling. Perfect square tile design.
+
+## VERWENDUNG:
+- Für Kategorien: Ersetze {CATEGORY} mit "Hunde", "Katzen", "Fahrzeuge", etc.
+- Für Einzeleinträge: Ersetze {ITEM_NAME} mit "Golden Retriever", "Feuerwehrauto", etc.
+- Alle Bilder werden als 1024x1024 Kacheln generiert
+- Handgezeichneter Kinderbuch-Stil
+- Keine Texte oder Beschriftungen im Bild 

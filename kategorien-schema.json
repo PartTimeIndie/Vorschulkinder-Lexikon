@@ -1,0 +1,199 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Kinderlexikon Category Schema",
+  "description": "Schema für Kategorie- und Subkategorie-Dateien im Kinderlexikon",
+  "type": "object",
+  "required": [
+    "id",
+    "name", 
+    "slug",
+    "description",
+    "image",
+    "audio",
+    "character_emotions",
+    "safety_score"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Eindeutige ID für die Kategorie (z.B. 'cat_001' für Hauptkategorien, 'subcat_001_001' für Subkategorien)",
+      "pattern": "^(cat|subcat)_[0-9]+(_[0-9]+)?$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Anzeigename der Kategorie",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "slug": {
+      "type": "string", 
+      "description": "URL-freundlicher Slug für die Kategorie",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "description": {
+      "type": "string",
+      "description": "Character-generierte Beschreibung mit integriertem Exploration-Teaser",
+      "minLength": 50,
+      "maxLength": 500
+    },
+    "image": {
+      "type": "object",
+      "required": ["filename", "path", "alt"],
+      "properties": {
+        "filename": {
+          "type": "string",
+          "description": "Dateiname des Bildes",
+          "pattern": "^category-[A-Za-z0-9-]+\\.(png|jpg|jpeg)$"
+        },
+        "path": {
+          "type": "string", 
+          "description": "Relativer Pfad vom kategorien/ Ordner",
+          "pattern": "^images/category-[A-Za-z0-9-]+\\.(png|jpg|jpeg)$"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Alt-Text für Accessibility",
+          "minLength": 10,
+          "maxLength": 200
+        }
+      }
+    },
+    "audio": {
+      "type": ["object", "null"],
+      "description": "Audio-Datei für die Kategorie, null wenn noch nicht vorhanden",
+      "properties": {
+        "filename": {
+          "type": "string",
+          "description": "Dateiname der Audio-Datei",
+          "pattern": "^category-[a-z0-9-]+\\.mp3$"
+        },
+        "path": {
+          "type": "string",
+          "description": "Vollständiger Pfad zur Audio-Datei",
+          "pattern": "^audio/de/categories/category-[a-z0-9-]+\\.mp3$"
+        }
+      },
+      "required": ["filename", "path"]
+    },
+    "character_emotions": {
+      "type": "array",
+      "description": "Array von passenden Character-Emotionen für diese Kategorie",
+      "items": {
+        "type": "string",
+        "enum": [
+          "idle",
+          "excited", 
+          "curious",
+          "surprised",
+          "scared",
+          "exploring",
+          "thinking",
+          "laughing"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 4,
+      "uniqueItems": true
+    },
+    "safety_score": {
+      "type": "integer",
+      "description": "Safety-Bewertung von 1 (nicht sicher) bis 10 (sehr sicher für Kinder 3-7 Jahre)",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "subcategories": {
+      "type": "array",
+      "description": "Array von Subkategorien (nur bei Hauptkategorien)",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "slug", 
+          "description",
+          "image",
+          "audio",
+          "character_emotions",
+          "safety_score"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^subcat_[0-9]+_[0-9]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 50,
+            "maxLength": 500
+          },
+          "image": {
+            "type": "object",
+            "required": ["filename", "path", "alt"],
+            "properties": {
+              "filename": {
+                "type": "string",
+                "pattern": "^category-[A-Za-z0-9-]+\\.(png|jpg|jpeg)$"
+              },
+              "path": {
+                "type": "string",
+                "pattern": "^images/category-[A-Za-z0-9-]+\\.(png|jpg|jpeg)$"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 10,
+                "maxLength": 200
+              }
+            }
+          },
+          "audio": {
+            "type": ["object", "null"],
+            "properties": {
+              "filename": {
+                "type": "string",
+                "pattern": "^category-[a-z0-9-]+\\.mp3$"
+              },
+              "path": {
+                "type": "string",
+                "pattern": "^audio/de/categories/category-[a-z0-9-]+\\.mp3$"
+              }
+            },
+            "required": ["filename", "path"]
+          },
+          "character_emotions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "idle",
+                "excited",
+                "curious", 
+                "surprised",
+                "scared",
+                "exploring",
+                "thinking",
+                "laughing"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 4,
+            "uniqueItems": true
+          },
+          "safety_score": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          }
+        }
+      }
+    }
+  }
+} 

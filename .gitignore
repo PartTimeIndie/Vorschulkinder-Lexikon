@@ -1,0 +1,36 @@
+# OpenAI API Key - never commit this!
+api-key.txt
+
+# Node.js / Web development
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+*.log
+
+# IDE files
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Processed Images backup
+ProcessedImages/backup/
+
+# PowerShell execution logs
+*.ps1.log 

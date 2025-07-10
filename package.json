@@ -1,0 +1,39 @@
+{
+  "name": "kinderlexikon",
+  "version": "1.0.0",
+  "description": "Interaktives Kinderlexikon für Vorschulkinder (3-7 Jahre)",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "nodemon server/index.js",
+    "client:dev": "next dev",
+    "build": "next build",
+    "start": "node server/index.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "framer-motion": "^10.16.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "kinderlexikon",
+    "education",
+    "children",
+    "react",
+    "nextjs"
+  ],
+  "author": "Kinderlexikon Team",
+  "license": "MIT"
+} 
