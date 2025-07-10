@@ -70,9 +70,19 @@ const CategoryTile = ({
     animateState = 'normal';
   }
 
+  // CSS-Klassen für Tile
+  const getTileClasses = () => {
+    let classes = "category-tile";
+    if (isAnimal && isCurrentlyPlaying) {
+      classes += " currently-playing";
+      console.log(`🟢 CSS: Adding 'currently-playing' class to ${category.name}`);
+    }
+    return classes;
+  };
+
   return (
     <motion.div 
-      className="category-tile"
+      className={getTileClasses()}
       onClick={handleClick}
       variants={tileVariants}
       initial="normal"
@@ -116,10 +126,7 @@ const CategoryTile = ({
         </p>
       </div>
 
-      {/* Grüne Outline für aktuell spielendes Tier */}
-      {isAnimal && isCurrentlyPlaying && (
-        <div className="currently-playing-outline" />
-      )}
+
     </motion.div>
   );
 };

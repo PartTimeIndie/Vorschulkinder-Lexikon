@@ -199,7 +199,6 @@ export default function Home() {
         setRecentItems(categoryRecentItems); // State aktualisieren
         
         setSubcategories(arrangedSubcats);
-        setCharacterContext(slug); // Character-Context auf Kategorie setzen
         setError(null);
       } else {
         throw new Error('Category not found');
@@ -416,8 +415,6 @@ export default function Home() {
         // Animals setzen
         setAnimals(arrangedAnimals);
         
-        // Character-Context auf Subkategorie setzen
-        setCharacterContext(subcategorySlug);
         setError(null);
       } else {
         // Keine Tiere gefunden - leeres Array setzen
@@ -445,7 +442,8 @@ export default function Home() {
       window.currentAudio.currentTime = 0;
     }
     
-    // Setze aktuell spielendes Tier
+    // Setze aktuell spielendes Tier (ohne Verzögerung für sofortige grüne Outline)
+    console.log(`🎵 OLD currentlyPlaying: ${currentlyPlaying}, NEW: ${animal.id}`);
     setCurrentlyPlaying(animal.id);
     // HIERARCHISCH: Animal zu Animals Recent Items hinzufügen (bestimme Subcategory dynamisch)
     const currentSubcategory = animals.find(a => a.id === animal.id)?.category || 'unknown';
@@ -461,12 +459,19 @@ export default function Home() {
     // Audio abspielen
     if (animal.audio && animal.audio.path) {
       playAudio(`/${animal.audio.path}`);
+      
+      // Reset currently playing wenn Audio beendet ist
+      if (window.currentAudio) {
+        window.currentAudio.addEventListener('ended', () => {
+          setCurrentlyPlaying(null);
+        }, { once: true }); // Event nur einmal verwenden
+      }
+    } else {
+      // Kein Audio vorhanden - nach kurzer Zeit reset
+      setTimeout(() => {
+        setCurrentlyPlaying(null);
+      }, 2000);
     }
-    
-    // Reset currently playing nach Audio Ende
-    setTimeout(() => {
-      setCurrentlyPlaying(null);
-    }, 5000); // Grober Schätzwert für Audio-Länge
   };
 
   // Zurück zu Hauptkategorien mit Animation
@@ -498,6 +503,7 @@ export default function Home() {
         setSubcategories([]);
         setAnimals([]);
         setCharacterContext('idle');
+        setCurrentlyPlaying(null); // Reset grüne Outline
         
         // DANN View wechseln
         setCurrentView('main');
@@ -537,6 +543,7 @@ export default function Home() {
       React.startTransition(() => {
         // ERST Daten clearen
         setAnimals([]);
+        setCurrentlyPlaying(null); // Reset grüne Outline beim Zurück zu Subcategories
         setCharacterContext(selectedCategory ? selectedCategory.slug : 'idle');
         
         // DANN View wechseln
@@ -653,6 +660,11 @@ export default function Home() {
             tile.isAnimal = true;
             tile.isPlayed = playedAnimals.includes(item.id);
             tile.isCurrentlyPlaying = currentlyPlaying === item.id;
+            
+            // Debug für grüne Outline
+            if (tile.isCurrentlyPlaying) {
+              console.log(`🟢 TILE: '${item.name}' ist currentlyPlaying (currentlyPlaying=${currentlyPlaying}, item.id=${item.id})`);
+            }
           }
         }
       });
@@ -725,68 +737,6 @@ export default function Home() {
   // Kategorien, Subkategorien und Animals werden automatisch mit Recent Items angeordnet
   // beim Laden durch arrangeItemsWithRecent() - kein separates useEffect nötig
 
-  // Loading State
-  if (loading) {
-    return (
-      <div className="container">
-        <Head>
-          <title>Kinderlexikon - Lade Kategorien...</title>
-          <meta name="description" content="Kinderlexikon für Vorschulkinder wird geladen" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        
-        <div className="loading-spinner">
-          <div className="spinner"></div>
-        </div>
-        
-        <Character 
-          currentContext="idle"
-          onEmotionChange={handleCharacterEmotionChange}
-        />
-      </div>
-    );
-  }
-
-  // Error State
-  if (error) {
-    return (
-      <div className="container">
-        <Head>
-          <title>Kinderlexikon - Fehler</title>
-          <meta name="description" content="Fehler beim Laden des Kinderlexikons" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        
-        <div className="error-message">
-          <h2>Oops! 😅</h2>
-          <p>{error}</p>
-          <button 
-            onClick={loadCategories}
-            style={{
-              background: '#4caf50',
-              color: 'white',
-              border: 'none',
-              borderRadius: '10px',
-              padding: '12px 24px',
-              fontSize: '1rem',
-              cursor: 'pointer',
-              marginTop: '1rem'
-            }}
-          >
-            Nochmal versuchen
-          </button>
-        </div>
-        
-        <Character 
-          currentContext="idle"
-          onEmotionChange={handleCharacterEmotionChange}
-        />
-      </div>
-    );
-  }
-
   return (
     <div className="container">
       <Head>
@@ -796,7 +746,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Character Section */}
+      {/* Character Section - IMMER gerendert */}
       <div className="character-section">
         {/* Back Button im Character Panel */}
         {(selectedCategory || currentView === 'animals') && (
@@ -809,7 +759,8 @@ export default function Home() {
         )}
         
         <Character 
-          currentContext={characterContext}
+          key="main-character" // Fester Key - wird nur EINMAL gemountet
+          currentContext={loading || error ? 'idle' : characterContext}
           onEmotionChange={handleCharacterEmotionChange}
         />
       </div>
@@ -820,55 +771,90 @@ export default function Home() {
         ref={scrollContainerRef}
         onScroll={handleScroll}
       >
-        {/* TILE POOL GRID - 100 feste DOM-Elemente, nur Inhalte wechseln */}
-        {shouldUseGridAnimation() ? (
-          <motion.div 
-            className="tile-grid"
-            variants={animationManager.getGridVariants(currentGridAnimation)}
-            initial="hidden"
-            animate="visible"
-            style={{ 
-              opacity: tilePool.some(tile => tile.isVisible) ? 1 : 0,
-              transition: 'opacity 0.1s ease' 
-            }}
-          >
-            {tilePool.map((poolTile, index) => (
-              <CategoryTile
-                key={poolTile.id} // Feste IDs - niemals ändern!
-                poolTile={poolTile}
-                delay={poolTile.isVisible ? animationManager.getTileDelay(
-                  tilePool.filter((t, i) => t.isVisible && i <= index).length - 1, 
-                  tilePool.filter(t => t.isVisible).length, 
-                  currentGridAnimation
-                ) : 0}
-              />
-            ))}
-          </motion.div>
-        ) : (
-          <div 
-            className="tile-grid"
-            style={{ 
-              opacity: tilePool.some(tile => tile.isVisible) ? 1 : 0,
-              transition: 'opacity 0.1s ease' 
-            }}
-          >
-            {tilePool.map((poolTile) => (
-              <CategoryTile
-                key={poolTile.id} // Feste IDs - niemals ändern!
-                poolTile={poolTile}
-                delay={0}
-              />
-            ))}
+        {/* Loading State */}
+        {loading && (
+          <div className="loading-spinner">
+            <div className="spinner"></div>
           </div>
         )}
 
-        {/* Placeholder für leere Subkategorien */}
-        {selectedCategory && subcategories.length === 0 && currentView === 'category' && (
-          <div style={{ textAlign: 'center', padding: '3rem' }}>
-            <p style={{ fontSize: '1.2rem', color: '#666' }}>
-              Hier entstehen bald spannende Unterkategorien! 🚧
-            </p>
+        {/* Error State */}
+        {error && (
+          <div className="error-message">
+            <h2>Oops! 😅</h2>
+            <p>{error}</p>
+            <button 
+              onClick={loadCategories}
+              style={{
+                background: '#4caf50',
+                color: 'white',
+                border: 'none',
+                borderRadius: '10px',
+                padding: '12px 24px',
+                fontSize: '1rem',
+                cursor: 'pointer',
+                marginTop: '1rem'
+              }}
+            >
+              Nochmal versuchen
+            </button>
           </div>
+        )}
+
+        {/* Normal Content - nur wenn nicht loading/error */}
+        {!loading && !error && (
+          <>
+            {/* TILE POOL GRID - 100 feste DOM-Elemente, nur Inhalte wechseln */}
+            {shouldUseGridAnimation() ? (
+              <motion.div 
+                className="tile-grid"
+                variants={animationManager.getGridVariants(currentGridAnimation)}
+                initial="hidden"
+                animate="visible"
+                style={{ 
+                  opacity: tilePool.some(tile => tile.isVisible) ? 1 : 0,
+                  transition: 'opacity 0.1s ease' 
+                }}
+              >
+                {tilePool.map((poolTile, index) => (
+                  <CategoryTile
+                    key={poolTile.id} // Feste IDs - niemals ändern!
+                    poolTile={poolTile}
+                    delay={poolTile.isVisible ? animationManager.getTileDelay(
+                      tilePool.filter((t, i) => t.isVisible && i <= index).length - 1, 
+                      tilePool.filter(t => t.isVisible).length, 
+                      currentGridAnimation
+                    ) : 0}
+                  />
+                ))}
+              </motion.div>
+            ) : (
+              <div 
+                className="tile-grid"
+                style={{ 
+                  opacity: tilePool.some(tile => tile.isVisible) ? 1 : 0,
+                  transition: 'opacity 0.1s ease' 
+                }}
+              >
+                {tilePool.map((poolTile) => (
+                  <CategoryTile
+                    key={poolTile.id} // Feste IDs - niemals ändern!
+                    poolTile={poolTile}
+                    delay={0}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Placeholder für leere Subkategorien */}
+            {selectedCategory && subcategories.length === 0 && currentView === 'category' && (
+              <div style={{ textAlign: 'center', padding: '3rem' }}>
+                <p style={{ fontSize: '1.2rem', color: '#666' }}>
+                  Hier entstehen bald spannende Unterkategorien! 🚧
+                </p>
+              </div>
+            )}
+          </>
         )}
       </div>
 

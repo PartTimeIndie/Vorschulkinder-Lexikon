@@ -1,12 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
+// Statische Variable um sicherzustellen dass Character nur EINMAL initialisiert wird
+let characterInitialized = false;
+
 const Character = ({ currentContext = 'idle', onEmotionChange }) => {
   const [currentEmotion, setCurrentEmotion] = useState('idle');
   const [isRotating, setIsRotating] = useState(false);
   const [rotationPhase, setRotationPhase] = useState('idle'); // 'idle', 'out', 'in'
   const [availableEmotions, setAvailableEmotions] = useState(['idle', 'curious']);
-  const [hasLoaded, setHasLoaded] = useState(false); // Für initiale Fly-In Animation
+  const [hasLoaded, setHasLoaded] = useState(characterInitialized); // Für initiale Fly-In Animation - einmal für immer
+  const [lastProcessedContext, setLastProcessedContext] = useState(null); // Verhindert mehrfache Emotion-Wechsel
+  const [lastEmotionChangeTime, setLastEmotionChangeTime] = useState(0); // Cooldown für Emotion-Changes
   
   const autoResetTimer = useRef(null);
   const emotionChangeTimer = useRef(null);
@@ -91,38 +96,50 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
     return filtered[Math.floor(Math.random() * filtered.length)];
   };
 
-  // Rotation Animation mit Emotion-Wechsel
+  // Emotion-Wechsel mit ursprünglicher Flip-Animation
   const changeEmotion = (newEmotion, immediate = false) => {
-    if (newEmotion === currentEmotion && !immediate) return;
+    console.log(`🎭 Emotion change: ${currentEmotion} → ${newEmotion} (immediate: ${immediate})`);
+    
+    if (newEmotion === currentEmotion) {
+      console.log(`🎭 Same emotion, skipping`);
+      return;
+    }
     
     if (immediate) {
+      // Direkter Wechsel ohne Animation
+      console.log(`🎭 Immediate change to ${newEmotion}`);
       setCurrentEmotion(newEmotion);
       selectVariantForEmotion(newEmotion);
       return;
     }
-
-    // Start rotate-out
+    
+    // Flip-Animation: Raus -> Bild wechseln -> Rein
+    console.log(`🎭 Starting flip animation: out → change → in`);
     setIsRotating(true);
     setRotationPhase('out');
     
-    // Nach 150ms (halbe Rotation) Emotion wechseln und rotate-in starten - doppelt so schnell
-    emotionChangeTimer.current = setTimeout(() => {
+    // Nach Raus-Animation (200ms): Bild wechseln
+    setTimeout(() => {
+      console.log(`🎭 Flip animation: Changing image to ${newEmotion}`);
       setCurrentEmotion(newEmotion);
-      selectVariantForEmotion(newEmotion); // Neue Variante wählen
+      selectVariantForEmotion(newEmotion);
       setRotationPhase('in');
       
-      // Nach weiteren 150ms Rotation vollständig beenden - doppelt so schnell
+      // Nach Rein-Animation (200ms): Animation beenden
       setTimeout(() => {
-        setIsRotating(false);
+        console.log(`🎭 Flip animation: Complete!`);
         setRotationPhase('idle');
-      }, 150);
-    }, 150);
+        setIsRotating(false);
+      }, 200);
+    }, 200);
   };
 
   // Auto-Reset entfernt - Character wechselt nur bei Interaktionen
 
   // Context-abhängige Emotionen laden
   const loadContextEmotions = async (context) => {
+    console.log(`🎭 loadContextEmotions called with context: '${context}' (lastProcessed: '${lastProcessedContext}')`);
+    
     try {
       const response = await fetch(`/api/character/random-emotion/${context}`);
       const data = await response.json();
@@ -130,10 +147,28 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
       if (data.emotions) {
         setAvailableEmotions(data.emotions);
         
-        // Wenn sich der Context ändert, zufällige Emotion aus verfügbaren wählen
-        if (context !== 'idle') {
+        // Cooldown prüfen: Keine Emotion-Wechsel wenn der letzte vor weniger als 2 Sekunden war
+        const now = Date.now();
+        const timeSinceLastChange = now - lastEmotionChangeTime;
+        const EMOTION_COOLDOWN = 2000; // 2 Sekunden Cooldown
+        
+        console.log(`🎭 Context check: context=${context}, lastProcessed=${lastProcessedContext}, cooldown=${timeSinceLastChange}ms`);
+        
+        if (context !== 'idle' && context !== lastProcessedContext && timeSinceLastChange >= EMOTION_COOLDOWN) {
+          console.log(`🎭 TRIGGERING emotion change for context '${context}'`);
           const randomEmotion = data.emotions[Math.floor(Math.random() * data.emotions.length)];
-          changeEmotion(randomEmotion, false);
+          changeEmotion(randomEmotion, false); // Mit Flip-Animation
+          setLastProcessedContext(context); // Merke dass wir diesen Context schon verarbeitet haben
+          setLastEmotionChangeTime(now); // Setze Cooldown-Timer
+        } else if (context === lastProcessedContext) {
+          console.log(`🎭 BLOCKED: Context '${context}' already processed`);
+        } else if (timeSinceLastChange < EMOTION_COOLDOWN) {
+          console.log(`🎭 BLOCKED: Cooldown active (${timeSinceLastChange}ms < ${EMOTION_COOLDOWN}ms)`);
+        } else if (context === 'idle') {
+          // Bei idle-Context: Reset lastProcessedContext für nächste Interaktion (aber kein Cooldown Reset)
+          console.log(`🎭 RESET: Idle context, clearing lastProcessedContext`);
+          setLastProcessedContext(null);
+          // Character wird NICHT neu instanziert, nur hasLoaded bleibt true
         }
       }
     } catch (error) {
@@ -189,7 +224,8 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
       randomHappyEmotion = happyEmotions[Math.floor(Math.random() * happyEmotions.length)];
     }
     
-    changeEmotion(randomHappyEmotion);
+    changeEmotion(randomHappyEmotion, false); // Mit Flip-Animation
+    setLastEmotionChangeTime(Date.now()); // Cooldown-Timer auch bei direktem Character-Klick setzen
     
     // Zufälliges Lachen abspielen (parallel zu Voice-Overs)
     playRandomLaughter();
@@ -200,19 +236,32 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
     }
   };
 
-  // Initial Fly-In Animation starten
+  // Initial Fly-In Animation starten - NUR EINMAL in der gesamten App-Laufzeit
   useEffect(() => {
-    // Nach kurzer Verzögerung Character reinfliegen lassen
-    const loadTimer = setTimeout(() => {
-      setHasLoaded(true);
-    }, 300);
-    
-    return () => clearTimeout(loadTimer);
+    if (!characterInitialized) {
+      console.log(`🎭 Character FIRST TIME INITIALIZATION`);
+      characterInitialized = true; // Setze statische Variable
+      
+      // Nach kurzer Verzögerung Character reinfliegen lassen
+      const loadTimer = setTimeout(() => {
+        console.log(`🎭 Setting hasLoaded to true`);
+        setHasLoaded(true);
+      }, 300);
+      
+      return () => clearTimeout(loadTimer);
+    } else {
+      console.log(`🎭 Character ALREADY INITIALIZED - setting hasLoaded immediately`);
+      setHasLoaded(true); // Bei Re-Render sofort auf loaded setzen
+    }
   }, []);
 
-  // Context-Änderungen überwachen
+  // Context-Änderungen überwachen - mit Ref um doppelte Aufrufe zu verhindern
+  const lastContextRef = useRef(null);
+  
   useEffect(() => {
-    if (currentContext) {
+    if (currentContext && currentContext !== lastContextRef.current) {
+      console.log(`🎭 Processing NEW context: '${currentContext}'`);
+      lastContextRef.current = currentContext;
       loadContextEmotions(currentContext);
     }
   }, [currentContext]);
@@ -232,18 +281,23 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
     // Initial Fly-In Animation beim ersten Laden
     if (!hasLoaded) {
       classes += ' character-fly-in';
+      console.log(`🎨 CSS Classes: ${classes} (fly-in)`);
       return classes;
     }
     
+    // Rotation-Animation hat Priorität
     if (rotationPhase === 'out') {
       classes += ' character-rotate-out';
+      console.log(`🎨 CSS Classes: ${classes} (rotating OUT)`);
     } else if (rotationPhase === 'in') {
       classes += ' character-rotate-in';
-    }
-    
-    // Subtile Loop-Animation wenn keine Rotation läuft
-    if (rotationPhase === 'idle') {
+      console.log(`🎨 CSS Classes: ${classes} (rotating IN)`);
+    } else if (rotationPhase === 'idle' && !isRotating) {
+      // Subtile Loop-Animation nur wenn wirklich idle
       classes += ' character-subtle-animation';
+      console.log(`🎨 CSS Classes: ${classes} (subtle idle)`);
+    } else {
+      console.log(`🎨 CSS Classes: ${classes} (no extra animation)`);
     }
     
     return classes;
