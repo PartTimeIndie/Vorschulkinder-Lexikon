@@ -1,16 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { animationManager } from '../utils/animationManager';
 
 const CategoryTile = ({ 
   category, 
   onClick, 
   delay = 0, 
-  animationMode = 'loaded',
+  animationMode = null,
   isAnimal = false,
   isPlayed = false,
   isCurrentlyPlaying = false 
 }) => {
-  const [currentAnimation, setCurrentAnimation] = useState('loaded');
   const [imageLoaded, setImageLoaded] = useState(false);
 
   // Image-URL für Backend
@@ -18,53 +19,54 @@ const CategoryTile = ({
     return `http://localhost:5000/images/${category.image.filename}`;
   };
 
-  // Animation-Management basierend auf animationMode prop
-  useEffect(() => {
-    if (animationMode === 'clicked') {
-      setCurrentAnimation('selected');
-    } else if (animationMode && animationMode.startsWith('fall-out-')) {
-      setCurrentAnimation(animationMode);
-    } else if (animationMode && animationMode.startsWith('fly-in-from-')) {
-      setCurrentAnimation(animationMode);
-      
-      // Nach Animation zurück zur normalen Position
-      setTimeout(() => {
-        setCurrentAnimation('loaded');
-      }, 800);
-    } else {
-      setCurrentAnimation('loaded');
-    }
-  }, [animationMode]);
-
   // Tile-Klick Handler
   const handleClick = () => {
-    // Nur klicken wenn in normaler Position
-    if (currentAnimation !== 'loaded') return;
+    // Nur klicken wenn keine Animation läuft
+    if (animationMode) return;
     
     if (onClick) {
       onClick(category);
     }
   };
 
-  // CSS-Klassen zusammenstellen
-  const getTileClasses = () => {
-    let classes = `category-tile ${currentAnimation}`;
-    
-    // Grüne Outline für aktuell spielendes Tier
-    if (isAnimal && isCurrentlyPlaying) {
-      classes += ' currently-playing';
-    }
-    
-    return classes;
-  };
+  // ===== NUR ANIMATION MANAGER - KEINE CSS-ANIMATIONEN =====
+  const isClicked = animationMode === 'clicked';
+  const isFlyingOut = animationMode && animationMode.startsWith('fall-out-');
+  
+  let tileVariants;
+  let animateState;
+  
+  if (isClicked) {
+    // Geklicktes Tile: Wächst und verblasst SOFORT
+    tileVariants = animationManager.getClickedTileVariants();
+    animateState = 'clicked';
+  } else if (isFlyingOut) {
+    // Nicht-geklicktes Tile: Fliegt weg SOFORT
+    const direction = animationMode.replace('fall-out-', '');
+    tileVariants = animationManager.getFlyOutTileVariants(direction);
+    animateState = 'flyOut';
+  } else {
+    // Normales Tile - statisch sichtbar
+    tileVariants = {
+      normal: { opacity: 1, scale: 1, x: 0, y: 0 }
+    };
+    animateState = 'normal';
+  }
 
   return (
-    <div 
-      className={getTileClasses()}
+    <motion.div 
+      className="category-tile"
       onClick={handleClick}
+      variants={tileVariants}
+      initial="normal"
+      animate={animateState}
+      transition={{ 
+        duration: 1.8, 
+        ease: "easeInOut" 
+      }}
       style={{ 
-        animationDelay: `${delay}ms`,
-        pointerEvents: currentAnimation === 'loaded' ? 'auto' : 'none'
+        pointerEvents: animationMode ? 'none' : 'auto',
+        zIndex: isClicked ? 1000 : 'auto'
       }}
     >
       {/* Abzeichen für gehörte Tiere (nur bei Animals) */}
@@ -96,7 +98,12 @@ const CategoryTile = ({
           {category.description || ''}
         </p>
       </div>
-    </div>
+
+      {/* Grüne Outline für aktuell spielendes Tier */}
+      {isAnimal && isCurrentlyPlaying && (
+        <div className="currently-playing-outline" />
+      )}
+    </motion.div>
   );
 };
 

@@ -66,7 +66,7 @@ button {
     display: flex;
     align-items: flex-end; /* Character komplett unten */
     justify-content: center;
-    padding: 0.1rem 0.1rem 0.1rem 0.1rem; /* MINIMAL Padding - Character fast ganz unten */
+    padding: 0.1rem 0.1rem 0 0.1rem; /* KEIN BOTTOM PADDING - Character direkt am unteren Rand */
     box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.1); /* Schatten von RECHTS statt links */
     border: 3px solid #654321; /* Dunkelbraune Outline für Baumhaus */
     position: relative; /* Für Back Button Positionierung */
@@ -104,7 +104,7 @@ button {
     display: flex;
     align-items: flex-end; /* Character unten */
     justify-content: center;
-    padding: 0.05rem 0.05rem 0.05rem 0.05rem; /* EXTREM wenig Padding für Mobile - Character fast am Rand */
+    padding: 0.05rem 0.05rem 0 0.05rem; /* KEIN BOTTOM PADDING für Mobile - Character direkt am unteren Rand */
     box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.1); /* Schatten von rechts wie Desktop */
     border: 3px solid #654321; /* Dunkelbraune Outline für Baumhaus */
     position: relative; /* Für Back Button Positionierung */
@@ -255,105 +255,7 @@ button {
   100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
 }
 
-/* AUSGEWÄHLTE TILE: Nur skalieren und ausblenden - LÄNGER als andere Tiles */
-.category-tile.selected {
-  z-index: 1000 !important;
-  pointer-events: none !important;
-  animation: selectedGrowAndFade 1.8s linear forwards;
-}
-
-@keyframes selectedGrowAndFade {
-  0% { 
-    opacity: 1; 
-    transform: translateY(0) scale(1);
-  }
-  100% { 
-    opacity: 0; 
-    transform: translateY(0) scale(1.15);
-  }
-}
-
-/* ANDERE TILES: In verschiedene Richtungen fliegen - KÜRZER als selected tile */
-.category-tile.fall-out-down {
-  animation: fallOutDown 1.2s linear forwards;
-  pointer-events: none;
-}
-
-.category-tile.fall-out-up {
-  animation: fallOutUp 1.2s linear forwards;
-  pointer-events: none;
-}
-
-.category-tile.fall-out-left {
-  animation: fallOutLeft 1.2s linear forwards;
-  pointer-events: none;
-}
-
-.category-tile.fall-out-right {
-  animation: fallOutRight 1.2s linear forwards;
-  pointer-events: none;
-}
-
-.category-tile.fall-out-up-left {
-  animation: fallOutUpLeft 1.2s linear forwards;
-  pointer-events: none;
-}
-
-.category-tile.fall-out-up-right {
-  animation: fallOutUpRight 1.2s linear forwards;
-  pointer-events: none;
-}
-
-.category-tile.fall-out-down-left {
-  animation: fallOutDownLeft 1.2s linear forwards;
-  pointer-events: none;
-}
-
-.category-tile.fall-out-down-right {
-  animation: fallOutDownRight 1.2s linear forwards;
-  pointer-events: none;
-}
-
-/* FALL-OUT KEYFRAMES */
-@keyframes fallOutDown {
-  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-  100% { opacity: 0; transform: translateY(120vh) translateX(0) scale(0.8); }
-}
-
-@keyframes fallOutUp {
-  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-  100% { opacity: 0; transform: translateY(-120vh) translateX(0) scale(0.8); }
-}
-
-@keyframes fallOutLeft {
-  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-  100% { opacity: 0; transform: translateY(0) translateX(-120vw) scale(0.8); }
-}
-
-@keyframes fallOutRight {
-  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-  100% { opacity: 0; transform: translateY(0) translateX(120vw) scale(0.8); }
-}
-
-@keyframes fallOutUpLeft {
-  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-  100% { opacity: 0; transform: translateY(-120vh) translateX(-120vw) scale(0.8); }
-}
-
-@keyframes fallOutUpRight {
-  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-  100% { opacity: 0; transform: translateY(-120vh) translateX(120vw) scale(0.8); }
-}
-
-@keyframes fallOutDownLeft {
-  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-  100% { opacity: 0; transform: translateY(120vh) translateX(-120vw) scale(0.8); }
-}
-
-@keyframes fallOutDownRight {
-  0% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-  100% { opacity: 0; transform: translateY(120vh) translateX(120vw) scale(0.8); }
-}
+/* ===== ALLE TILE-ANIMATIONEN JETZT NUR ÜBER ANIMATION MANAGER ===== */
 
 /* Category Image */
 .category-image {
@@ -460,46 +362,51 @@ button {
 
 /* Entfernt: Veraltete Character Bounce und Breathing Animationen */
 
-/* Completion Badge für gehörte Einträge */
+/* Completion Badge für gehörte Einträge - VOLLSTÄNDIG TRANSPARENT */
 .completion-badge {
   position: absolute;
   top: 8px;
   right: 8px;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
-  padding: 8px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background: none; /* Absolut kein Hintergrund */
+  border-radius: 0; /* Kein runder Kreis */
+  padding: 0; /* Kein Padding */
+  box-shadow: none; /* Kein Schatten */
   animation: badgeBounce 0.6s ease-out;
-  border: 2px solid #4caf50;
+  border: none; /* Kein Border */
 }
 
 @keyframes badgeBounce {
   0% { 
-    transform: scale(0) rotate(-180deg);
+    transform: scale(0);
     opacity: 0;
   }
   60% { 
-    transform: scale(1.2) rotate(10deg);
+    transform: scale(1.1);
     opacity: 1;
   }
   100% { 
-    transform: scale(1) rotate(0deg);
+    transform: scale(1);
     opacity: 1;
   }
 }
 
-/* Grüne Outline für aktuell spielendes Tier */
-.category-tile.currently-playing {
-  outline: 4px solid #2e7d32 !important; /* Dunkelgrün */
-  outline-offset: 2px;
-  animation: playingPulse 2s ease-in-out infinite;
+/* Outline für aktuell spielendes Tier */
+.currently-playing-outline {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 3px solid #4caf50;
+  border-radius: 15px;
+  pointer-events: none;
+  animation: playingPulse 1s ease-in-out infinite alternate;
 }
 
 @keyframes playingPulse {
-  0% { outline-color: #2e7d32; }
-  50% { outline-color: #4caf50; }
-  100% { outline-color: #2e7d32; }
+  0% { border-color: #4caf50; }
+  100% { border-color: #8bc34a; }
 }
 
 /* Subkategorien Container */
@@ -677,3 +584,4 @@ button {
 /* Fehlende Fly-In Animationen - URSPRÜNGLICHE VERSION */
  
 /* LOADING-OVERLAY ENTFERNT */ 
+ 
