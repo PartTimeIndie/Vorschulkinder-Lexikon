@@ -686,6 +686,28 @@ button {
   }
 }
 
+@media (max-width: 767px) and (orientation: landscape) {
+  .back-button {
+    width: 60px;
+    height: 60px;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #654321;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    width: 50px;
+    height: 50px;
+    top: 0.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #654321;
+  }
+}
+
 /* Scroll Indikator - Zwischen Tiles und Character - VERSTECKT */
 .scroll-indicator {
   position: fixed;
