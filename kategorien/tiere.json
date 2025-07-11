@@ -365,7 +365,10 @@
         "path": "images/category-ExotischeTiere.png",
         "alt": "Handgezeichnete Illustration von exotischen Tieren wie Kängurus, Koalas, Zebras und Geparden in warmem Kinderbuch-Stil"
       },
-      "audio": null,
+      "audio": {
+        "filename": "subcat-exotische-tiere.mp3",
+        "path": "audio/subcat-exotische-tiere.mp3"
+      },
       "character_emotions": ["excited", "surprised", "curious"],
       "safety_score": 8
     },
@@ -379,7 +382,10 @@
         "path": "images/category-Raubtiere.png",
         "alt": "Handgezeichnete Illustration von Raubtieren wie Löwen, Tigern, Leoparden und Wölfen in warmem Kinderbuch-Stil"
       },
-      "audio": null,
+      "audio": {
+        "filename": "subcat-raubtiere.mp3",
+        "path": "audio/subcat-raubtiere.mp3"
+      },
       "character_emotions": ["excited", "curious", "thinking"],
       "safety_score": 7
     },
@@ -393,7 +399,10 @@
         "path": "images/category-Dinosaurier.png",
         "alt": "Handgezeichnete Illustration von Dinosauriern wie T-Rex, Brontosaurus, Triceratops und Stegosaurus in warmem Kinderbuch-Stil"
       },
-      "audio": null,
+      "audio": {
+        "filename": "subcat-dinosaurier.mp3",
+        "path": "audio/subcat-dinosaurier.mp3"
+      },
       "character_emotions": ["excited", "surprised", "thinking"],
       "safety_score": 8
     },
@@ -407,7 +416,10 @@
         "path": "images/category-Wassertiere.png",
         "alt": "Handgezeichnete Illustration von Wassertieren wie Delfinen, Walen, Robben und Ottern in warmem Kinderbuch-Stil"
       },
-      "audio": null,
+      "audio": {
+        "filename": "subcat-wassertiere.mp3",
+        "path": "audio/subcat-wassertiere.mp3"
+      },
       "character_emotions": ["excited", "curious", "exploring"],
       "safety_score": 8
     },
@@ -421,7 +433,10 @@
         "path": "images/category-Flugtiere.png",
         "alt": "Handgezeichnete Illustration von Flugtieren wie Adlern, Kolibris, Fledermäusen und Störchen in warmem Kinderbuch-Stil"
       },
-      "audio": null,
+      "audio": {
+        "filename": "subcat-flugtiere.mp3",
+        "path": "audio/subcat-flugtiere.mp3"
+      },
       "character_emotions": ["excited", "surprised", "curious"],
       "safety_score": 9
     },
@@ -435,7 +450,10 @@
         "path": "images/category-Saeugetiere.png",
         "alt": "Handgezeichnete Illustration von Säugetieren wie Hunden, Katzen, Pferden und Elefanten in warmem Kinderbuch-Stil"
       },
-      "audio": null,
+      "audio": {
+        "filename": "subcat-saeugetiere.mp3",
+        "path": "audio/subcat-saeugetiere.mp3"
+      },
       "character_emotions": ["curious", "excited", "thinking"],
       "safety_score": 9
     },
@@ -450,7 +468,10 @@
         "path": "images/category-SchnelleTiere.png",
         "alt": "Handgezeichnete Illustration von schnellen Tieren wie Geparden, Falken, Delfinen und Hasen in warmem Kinderbuch-Stil"
       },
-      "audio": null,
+      "audio": {
+        "filename": "subcat-schnelle-tiere.mp3",
+        "path": "audio/subcat-schnelle-tiere.mp3"
+      },
       "character_emotions": ["excited", "surprised", "curious"],
       "safety_score": 8
     },
@@ -464,7 +485,10 @@
         "path": "images/category-LangsameTiere.png",
         "alt": "Handgezeichnete Illustration von langsamen Tieren wie Schildkröten, Faultieren, Schnecken und Koalas in warmem Kinderbuch-Stil"
       },
-      "audio": null,
+      "audio": {
+        "filename": "subcat-langsame-tiere.mp3",
+        "path": "audio/subcat-langsame-tiere.mp3"
+      },
       "character_emotions": ["thinking", "curious", "exploring"],
       "safety_score": 9
     },
@@ -478,7 +502,10 @@
         "path": "images/category-Tiere-mit-besonderen-Faehigkeiten.png",
         "alt": "Handgezeichnete Illustration von Tieren mit besonderen Fähigkeiten wie Chamäleons, Delfinen, Oktopussen und Geckos in warmem Kinderbuch-Stil"
       },
-      "audio": null,
+      "audio": {
+        "filename": "subcat-tiere-mit-besonderen-faehigkeiten.mp3",
+        "path": "audio/subcat-tiere-mit-besonderen-faehigkeiten.mp3"
+      },
       "character_emotions": ["surprised", "excited", "thinking"],
       "safety_score": 8
     }
