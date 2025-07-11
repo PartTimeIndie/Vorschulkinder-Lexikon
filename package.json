@@ -5,10 +5,14 @@
   "main": "server/index.js",
   "scripts": {
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "dev-network": "concurrently \"npm run server:dev-network\" \"npm run client:dev-network\"",
     "server:dev": "nodemon server/index.js",
+    "server:dev-network": "nodemon server/index.js --host 0.0.0.0",
     "client:dev": "next dev",
+    "client:dev-network": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "node server/index.js",
+    "start-network": "node server/index.js --host 0.0.0.0",
     "lint": "next lint"
   },
   "dependencies": {

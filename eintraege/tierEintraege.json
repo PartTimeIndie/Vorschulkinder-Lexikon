@@ -5,7 +5,12 @@
       "name": "Hund",
       "slug": "hund",
       "description": "Hallo du kleiner Forscher! Ich bin so aufgeregt, dir von meinen liebsten vierbeinigen Freunden zu erzählen - den Hunden! Weißt du, Hunde sind schon seit über 15.000 Jahren die besten Freunde der Menschen. Das ist länger als es Städte gibt! Stell dir vor, schon die Menschen in der Steinzeit hatten Hunde als Freunde. Hunde haben eine superstarke Nase - sie können 10.000 Mal besser riechen als wir Menschen! Während wir vielleicht den Duft von frischen Keksen riechen, kann ein Hund jeden einzelnen Krümel erschnüffeln. Ihre Nasen sind wie magische Superkräfte! Sie können sogar riechen, wenn du traurig oder fröhlich bist. Und ihre Ohren! Hunde können Töne hören, die für uns Menschen völlig stumm sind. Sie hören fast doppelt so hohe Töne wie wir. Deshalb drehen sie manchmal den Kopf, wenn scheinbar nichts da ist - sie hören etwas, was wir nicht hören können! Das Coolste an Hunden ist aber ihr Herz. Sie lieben uns Menschen so sehr, dass ihr Herzschlag sich an unseren anpasst, wenn sie bei uns sind. Ist das nicht wunderbar? Hunde gibt es in allen Größen - von winzig kleinen Chihuahuas, die in eine Handtasche passen, bis hin zu riesigen Deutsche Doggen, die größer sind als manche Ponys! Jede Hunderasse hat ihre eigenen besonderen Talente. Manche sind super schnell, andere können schwimmen wie Fische, und wieder andere sind so klug, dass sie Menschen helfen können, die nicht sehen können. Hunde sprechen auch mit uns - nicht mit Worten, aber mit ihrem ganzen Körper! Wenn sie mit dem Schwanz wedeln, sind sie glücklich. Wenn sie die Ohren nach hinten legen, sind sie vielleicht ein bisschen nervös. Und wenn sie dir ihre Pfote geben, wollen sie dein Freund sein!",
-      "categories": ["haustiere", "mittelgrosse-tiere", "saeugetiere", "allesfresser"],
+      "categories": [
+        "haustiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-hund.png",
         "path": "images/tier-hund.png",
@@ -15,15 +20,24 @@
         "filename": "tier-hund.mp3",
         "path": "audio/tier-hund.mp3"
       },
-      "character_emotions": ["excited", "curious", "laughing"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "laughing"
+      ],
       "safety_score": 10
     },
     {
       "id": "tier_002",
       "name": "Katze",
       "slug": "katze",
-      "description": "",
-      "categories": ["haustiere", "mittelgrosse-tiere", "saeugetiere", "fleischfresser"],
+      "description": "Hallo mein neugieriger Forscher! Heute erzähle ich dir von einem der faszinierendsten Tiere überhaupt - der Hauskatze! Weißt du, dass diese flauschigen Freunde echte Superhelden sind? Stell dir vor: Eine Katze sitzt völlig entspannt auf dem Sofa und plötzlich - SPRUNG! Sie landet elegant auf einem zwei Meter hohen Schrank! Das ist so, als würdest du auf das Dach eines Hauses springen! Ihre kräftigen Hinterbeine sind wie kleine Sprungfedern gebaut. Aber das Coolste kommt noch: In der Dunkelheit werden Katzen zu echten Nachtsichtexperten! Ihre Augen leuchten dann grün oder golden, weil sie das Licht sammeln wie kleine Taschenlampen. Während du im Dunkeln fast nichts siehst, kann eine Katze jede kleine Maus im Garten entdecken. Kennst du das beruhigende \"Schnurr, schnurr, schnurr\"? Das ist ihre Art zu sagen: \"Ich bin glücklich!\" Aber es ist auch wie eine Heilmaschine - das Schnurren hilft ihrer Knochen und Muskeln, stark zu bleiben. Ziemlich clever, oder? Das Allerbeste: Katzen sind seit 9000 Jahren unsere Freunde! Das ist länger als es Burgen und Ritter gab. Sie haben sich Menschen als Mitbewohner ausgesucht - und seitdem kuscheln, spielen und beschützen sie uns jeden Tag.",
+      "categories": [
+        "haustiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "fleischfresser"
+      ],
       "image": {
         "filename": "tier-katze.png",
         "path": "images/tier-katze.png",
@@ -33,15 +47,24 @@
         "filename": "tier-katze.mp3",
         "path": "audio/tier-katze.mp3"
       },
-      "character_emotions": ["curious", "exploring", "excited"],
+      "character_emotions": [
+        "curious",
+        "exploring",
+        "excited"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_003",
       "name": "Kaninchen",
       "slug": "kaninchen",
-      "description": "",
-      "categories": ["haustiere", "kleine-tiere", "saeugetiere", "pflanzenfresser"],
+      "description": "Hallo du kleiner Entdecker! Heute hüpfen wir zusammen in die wunderbare Welt der Kaninchen! Hast du schon mal gesehen, wie schnell ein Kaninchen hoppelt? Diese flauschigen Freunde sind echte Hüpf-Champions! Stell dir vor: Ein Kaninchen kann so schnell rennen wie ein Auto in der Stadt - bis zu 50 Kilometer pro Stunde! Das ist so schnell, dass du es kaum mit den Augen verfolgen könntest. Ihre kräftigen Hinterbeine sind wie kleine Sprungfedern, die sie hoch in die Luft katapultieren können. Das Allercoolste sind aber ihre riesigen Ohren! Die sind nicht nur zum Kuscheln da - sie sind wie Superhelden-Antennen! Kaninchen können Geräusche hören, die für uns Menschen viel zu leise sind. Wenn Gefahr droht, drehen sie ihre Ohren wie kleine Radarschüsseln und wissen sofort, was um sie herum passiert. Weißt du, was Kaninchen am liebsten machen? Sie graben! In der Natur bauen sie ganze unterirdische Städte mit vielen Tunneln und Zimmern. Das ist wie ein riesiges Spielhaus unter der Erde, wo die ganze Kaninchenfamilie zusammen wohnt und spielt. Kaninchen sind auch die besten Freunde überhaupt! Sie kuscheln gerne miteinander und \"sprechen\" durch süße kleine Hüpfer und Purzelbäume. Wenn sie richtig glücklich sind, machen sie einen lustigen Sprung in die Luft - das nennt man \"Bocksprung\"!",
+      "categories": [
+        "haustiere",
+        "kleine-tiere",
+        "saeugetiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-kaninchen.png",
         "path": "images/tier-kaninchen.png",
@@ -51,15 +74,24 @@
         "filename": "tier-kaninchen.mp3",
         "path": "audio/tier-kaninchen.mp3"
       },
-      "character_emotions": ["curious", "excited", "exploring"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "exploring"
+      ],
       "safety_score": 10
     },
     {
       "id": "tier_004",
       "name": "Hamster",
       "slug": "hamster",
-      "description": "",
-      "categories": ["haustiere", "kleine-tiere", "saeugetiere", "allesfresser"],
+      "description": " Ich möchte dir heute von einem ganz besonderen kleinen Tier erzählen - dem Hamster! Diese flauschigen kleinen Freunde sind echte Meister im Sammeln und Verstecken. Stell dir vor: In ihren dehnbaren Backentaschen können sie Futter transportieren, das dreimal so groß ist wie ihr Kopf! Das ist, als würdest du einen ganzen Rucksack in deiner Wange tragen können.\n\nHamster sind richtige Nachtschwärmer. Tagsüber schlafen sie gemütlich in ihrem kuschligen Nest, aber wenn es dunkel wird, werden sie richtig aktiv. Sie lieben es, durch Tunnel zu krabbeln und in ihrem Laufrad zu rennen - manchmal laufen sie in einer Nacht so weit wie ein Mensch einen ganzen Marathon!\n\nBesonders spannend ist ihr Zuhause: Hamster sind super Baumeister und graben sich tolle unterirdische Höhlen. Dort haben sie verschiedene 'Zimmer' - eines zum Schlafen, eines für ihr Futter und sogar ein extra Zimmer als Vorratskammer! Sie sind auch sehr ordentlich und halten ihre Höhle immer schön sauber.\n\nObwohl Hamster nicht besonders gut sehen können, haben sie dafür eine super feine Nase und tolle Ohren. Sie können sogar ganz hohe Töne hören, die wir Menschen gar nicht wahrnehmen können! Mit ihren Tasthaaren - so ähnlich wie bei einer Katze - finden sie sich auch im Dunkeln super zurecht.\n\nUnd weißt du was? Hamster sind richtige Feinschmecker! Am liebsten mögen sie Körner und Samen, aber auch kleine Stückchen Obst und Gemüse schmecken ihnen gut. Alles, was sie finden, packen sie in ihre Backentaschen und bringen es nach Hause in ihre Vorratskammer.",
+      "categories": [
+        "haustiere",
+        "kleine-tiere",
+        "saeugetiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-hamster.png",
         "path": "images/tier-hamster.png",
@@ -69,15 +101,25 @@
         "filename": "tier-hamster.mp3",
         "path": "audio/tier-hamster.mp3"
       },
-      "character_emotions": ["curious", "excited", "laughing"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "laughing"
+      ],
       "safety_score": 10
     },
     {
       "id": "tier_005",
       "name": "Wellensittich",
       "slug": "wellensittich",
-      "description": "",
-      "categories": ["haustiere", "kleine-tiere", "voegel", "flugtiere", "pflanzenfresser"],
+      "description": "Heute erzähle ich dir von einem der faszinierendsten Vögel der Welt - dem Wellensittich! Diese kleinen, bunten Akrobaten sind echte Superhelden der Lüfte. Stell dir vor: Mit ihren winzigen Schnäbeln können sie nicht nur Körner knacken, sondern sogar sprechen lernen! Sie sind so klug, dass sie bis zu 100 Wörter verstehen und nachsprechen können. Das ist fast so, als würden sie eine eigene, kleine Sprache mit uns Menschen entwickeln! Weißt du, was das Allercoolste an Wellensittichen ist? Sie sind echte Gefühlskünstler! An ihrer Körpersprache kannst du genau erkennen, wie es ihnen geht. Wenn sie glücklich sind, stellen sie ihre bunten Federn am Kopf auf wie eine kleine Krone. Und wenn sie aufgeregt sind, wippen sie mit dem Schwanz wie bei einem fröhlichen Tanz! In ihrer Heimat Australien leben sie in riesigen Schwärmen und fliegen wie bunte Wolken durch die Luft. Sie sind super geschickt und können sogar rückwärts an Ästen entlang klettern! Zum Schlafen kuscheln sie sich eng aneinander, denn Wellensittiche sind echte Familienvögel. Sie putzen sich gegenseitig die Federn und teilen sogar ihr Futter miteinander. Besonders spannend: Mit ihren Füßchen können sie Dinge greifen wie mit kleinen Händen und sie lieben es, mit Spielzeug zu spielen. Manchmal nehmen sie sogar ein Bad und plantschen vergnügt im Wasser - das sieht so lustig aus, als würden sie eine wilde Poolparty feiern!",
+      "categories": [
+        "haustiere",
+        "kleine-tiere",
+        "voegel",
+        "flugtiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-wellensittich.png",
         "path": "images/tier-wellensittich.png",
@@ -87,15 +129,24 @@
         "filename": "tier-wellensittich.mp3",
         "path": "audio/tier-wellensittich.mp3"
       },
-      "character_emotions": ["excited", "curious", "laughing"],
-      "safety_score": 9
+      "character_emotions": [
+        "excited",
+        "curious",
+        "laughing"
+      ],
+      "safety_score": 10
     },
     {
       "id": "tier_006",
       "name": "Kuh",
       "slug": "kuh",
-      "description": "",
-      "categories": ["bauernhoftiere", "grosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "description": "Hallo du neugieriger Entdecker! Heute besuchen wir eine gemächliche Kuh auf ihrer sonnigen Weide. Ihr weiches Fell fühlt sich an wie ein kuscheliger Teppich und ihre großen Augen schauen freundlich in die Welt. Weißt du, dass eine Kuh gleich vier Mägen hat? Sie schluckt das Gras erst hinunter, schickt es auf eine Bauch-Reise und würgt es später wieder hoch, um genüsslich darauf herumzukauen. Das nennt man Wiederkäuen – wie ein gemütliches Kaugummi, nur aus Gras!\n\nMit ihrer langen, rauen Zunge kann sie an einem Tag bis zu 50 Kilo Futter sammeln. Dabei hilft ihr die super Nase: Kühe können Gerüche noch aus acht Kilometern Entfernung wittern! Und jede Kuh hat einen einzigartigen Nasenabdruck, so wie wir Menschen Fingerabdrücke haben.\n\nWenn eine Kuh fröhlich ist, wedelt sie mit ihrem Schwanz wie mit einer Fliegenklatsche. Sie redet auch mit uns – mit einem tiefen \"Muuuuh\", das je nach Stimmung laut, leise, kurz oder lang sein kann. Am Ende des Tages gibt unsere Kuh köstliche Milch, aus der wir Joghurt, Käse und leckeres Eis machen können. Ist das nicht fantastisch?",
+      "categories": [
+        "bauernhoftiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-kuh.png",
         "path": "images/tier-kuh.png",
@@ -105,15 +156,24 @@
         "filename": "tier-kuh.mp3",
         "path": "audio/tier-kuh.mp3"
       },
-      "character_emotions": ["curious", "excited", "exploring"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_007",
       "name": "Schwein",
       "slug": "schwein",
-      "description": "",
-      "categories": ["bauernhoftiere", "mittelgrosse-tiere", "saeugetiere", "allesfresser"],
+      "description": "Hallo kleiner Forscher! In der warmen Strohstube grunzt ein neugieriges Schwein und wedelt fröhlich mit seinem lockigen Schwänzchen. Wusstest du, dass Schweine fast so schlau sind wie Hunde? Sie lösen Rätsel, merken sich Wege und erkennen sogar ihre Lieblingsmenschen an der Stimme.\n\nIhre Nase ist eine Super-Spürnase: Damit können sie kostbare Trüffel tief unter der Erde aufspüren – ein echtes Nasen-Abenteuer! Wenn es heiß wird, legen sie sich gern in eine kühle Schlamm-Pfütze. Das sieht vielleicht schmutzig aus, ist aber ihr natürlicher Sonnenschutz und wirkt wie eine Schlammpackung gegen Mücken.\n\nSchweine erzählen einander ganze Geschichten mit über zwanzig unterschiedlichen Grunzlauten. Mama-Schwein summt ihren Ferkeln sogar ein Wiegenlied, noch bevor sie geboren werden! Und sie kümmern sich fürsorglich: Ferkel dürfen immer zuerst fressen.\n\nObwohl Schweine kleine Beinchen haben, können sie in kurzen Sprints schneller laufen, als du denkst. Vielleicht begegnest du ihnen ja bald wieder – dann hör genau hin, was sie dir erzählen!",
+      "categories": [
+        "bauernhoftiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-schwein.png",
         "path": "images/tier-schwein.png",
@@ -123,15 +183,24 @@
         "filename": "tier-schwein.mp3",
         "path": "audio/tier-schwein.mp3"
       },
-      "character_emotions": ["excited", "curious", "laughing"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "laughing"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_008",
       "name": "Huhn",
       "slug": "huhn",
-      "description": "",
-      "categories": ["bauernhoftiere", "kleine-tiere", "voegel", "allesfresser"],
+      "description": "Hallo du neugieriger Entdecker! Lass uns in den Hühnerhof schleichen, wo ein buntes Huhn geschäftig gackert. Jeden Morgen legt es ein warmes Ei – fast so regelmäßig, wie du Zähne putzt! Unter seinem Gefieder verstecken sich über 8.000 Federn, die es wie eine Kuscheldecke warmhalten.\n\nHühner sehen die Welt in Super-Farben, sogar ultraviolettes Licht, das für uns unsichtbar ist. Darum finden sie selbst winzige Körner im Gras. Wenn Gefahr naht, hebt das Leithuhn den Kopf und warnt die anderen mit einem speziellen Ruf – eine richtige Hof-Alarmanlage!\n\nNoch im Ei spricht die Hühner-Mama leise mit ihren Küken, damit sie ihre Stimme kennen. Sobald die Küken schlüpfen, zeigt sie ihnen, wie man Körner pickt und Würmer schnappt. Zum Schlafen hüpfen alle auf die Stange und kuscheln sich eng aneinander.\n\nSie nehmen gern Staubbäder: Dabei wirbeln sie Sand auf, um ihr Gefieder zu putzen – wie ein natürliches Schaumbad. Hörst du das fröhliche \"Gack-gack\"? Das Huhn bedankt sich für deinen Besuch!",
+      "categories": [
+        "bauernhoftiere",
+        "kleine-tiere",
+        "voegel",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-huhn.png",
         "path": "images/tier-huhn.png",
@@ -141,15 +210,25 @@
         "filename": "tier-huhn.mp3",
         "path": "audio/tier-huhn.mp3"
       },
-      "character_emotions": ["curious", "excited", "exploring"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_009",
       "name": "Pferd",
       "slug": "pferd",
-      "description": "",
-      "categories": ["bauernhoftiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "description": "Hallihallo, kleiner Reiter! Stell dir vor, wir stehen neben einem stolzen Pferd, dessen Mähne im Wind tanzt. Pferde besitzen ein riesiges Herz, fast so groß wie ein Basketball, das ihnen hilft, blitzschnell über Wiesen zu galoppieren – bis zu 60 Kilometer pro Stunde!\n\nIhre Hufe sind harte Schutzschalen, die bei jedem Schritt laut \"Klack\" machen. Aus den Ohren kannst du ihre Laune lesen: Nach vorne bedeutet neugierig, zur Seite entspannt. Und ihre weichen Nüstern verraten: Pferde können sogar deine Gefühle riechen!\n\nWeißt du, dass Pferde im Stehen dösen? Ihre Beine haben eine clevere Sperre, sodass sie nicht umfallen. Doch für tiefen Traumschlaf legen sie sich gern bei ihren Freunden auf die Wiese.\n\nPferde sind echte Herden-Tiere: Sie flüstern leise mit Wiehern, Schnauben und sanften Stupsern. Ein Pferd merkt sich, wer nett ist, und kann Freundschaften ein Leben lang behalten. Vielleicht hast du ja Lust, ihm eine Karotte zu schenken?",
+      "categories": [
+        "bauernhoftiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-pferd.png",
         "path": "images/tier-pferd.png",
@@ -159,15 +238,24 @@
         "filename": "tier-pferd.mp3",
         "path": "audio/tier-pferd.mp3"
       },
-      "character_emotions": ["excited", "curious", "exploring"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_010",
       "name": "Ziege",
       "slug": "ziege",
-      "description": "",
-      "categories": ["bauernhoftiere", "mittelgrosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "description": "Mähhh, hörst du das? Eine flinke Ziege begrüßt dich auf dem steinigen Hang! Ziegen sind wahre Kletterkünstler: Mit ihren gummiartigen Hufen können sie sogar auf beinahe senkrechten Felsen balancieren, als hätten sie Superkleber unter den Füßen.\n\nIhre rechteckigen Pupillen schenken ihnen Panorama-Blick, sodass sie Raubtiere früh entdecken. Außerdem kauen sie wie Kühe ihr Futter zweimal und haben damit immer einen Vorrat an Berg-Gras dabei.\n\nZiegen sind neugierig und probieren gern alles aus – nicht weil sie alles fressen, sondern weil sie mit den Lippen Gegenstände erkunden, fast wie du mit den Fingern. Wenn eine Ziege zufrieden ist, wackelt ihr kleiner Bart wie ein lustiger Pinsel.\n\nSie rufen einander mit unterschiedlichen \"Mäh\"-Tönen, und jede Mutter erkennt ihr Kitz sofort an der Stimme. Und wusstest du, dass Ziegen leckere Milch liefern, aus der würziger Käse entsteht? Wenn du sie freundlich kraulst, zeigt sie dir vielleicht ein echtes Ziegen-Lächeln!",
+      "categories": [
+        "bauernhoftiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-ziege.png",
         "path": "images/tier-ziege.png",
@@ -177,15 +265,24 @@
         "filename": "tier-ziege.mp3",
         "path": "audio/tier-ziege.mp3"
       },
-      "character_emotions": ["curious", "excited", "exploring"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_011",
       "name": "Reh",
       "slug": "reh",
-      "description": "",
-      "categories": ["waldtiere", "mittelgrosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "description": "Psst, wir schleichen durch den stillen Wald und treffen auf ein zartes Reh mit leuchtenden Augen. Seine langen Beine tragen es in großen Sprüngen über Baumstämme – manchmal gleich sechs Meter weit! So entkommt es flink jeder Gefahr.\n\nRehe wechseln ihr Fell wie einen Jahreszeiten-Mantel: Im Sommer ist es rotbraun, im Winter graubraun und tarnend. Die Böcke tragen schicke Geweihe, die sie jedes Jahr abwerfen und neu wachsen lassen – wie ein natürlicher Hut-Wechsel!\n\nIhre großen Ohren drehen sich wie Satellitenschüsseln und fangen jedes Knacken auf. Dazu haben Rehe eine fantastische Nase, die Düfte von Kräutern, Pilzen und sogar Menschen wahrnimmt.\n\nWenn ein Reh hungrig ist, knabbert es zart an jungen Trieben und Blättern. Nach dem Essen legt es sich in eine versteckte Mulde, die man \"Kessel\" nennt, und ruht. Begegnen wir einem Rehkitz, bleibt es reglos liegen – es vertraut darauf, dass die weißen Flecken auf seinem Fell es unsichtbar machen. Ist das nicht listig?",
+      "categories": [
+        "waldtiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-reh.png",
         "path": "images/tier-reh.png",
@@ -195,33 +292,53 @@
         "filename": "tier-reh.mp3",
         "path": "audio/tier-reh.mp3"
       },
-      "character_emotions": ["curious", "exploring", "excited"],
+      "character_emotions": [
+        "curious",
+        "exploring",
+        "excited"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_012",
       "name": "Eichhörnchen",
       "slug": "eichhoernchen",
-      "description": "",
-      "categories": ["waldtiere", "kleine-tiere", "saeugetiere", "pflanzenfresser", "gartentiere"],
+      "description": "Hallo du Baumkletter-Profi! Über unseren Köpfen flitzt ein rotes Eichhörnchen von Ast zu Ast. Mit seinem buschigen Schwanz balanciert es wie mit einem Steuerruder und kann bis zu fünf Meter weit springen – das ist länger als dein Bett!\n\nEichhörnchen besitzen scharfe Krallen und können ihre Hinterfüße um fast 180 Grad drehen, damit sie kopfüber einen Baumstamm hinunterrennen können. Im Herbst vergraben sie hunderte Nüsse als Wintervorrat. Manchmal vergessen sie ein paar – daraus wachsen neue Bäume. Kleine Wald-Gärtner!\n\nIhr weiches Fell wechselt im Winter in ein dickeres Kostüm, damit sie nicht frieren. Wenn es sehr kalt wird, rollen sie sich in ihrem Kobel, einem kugeligen Nest aus Zweigen, zusammen.\n\nSie plaudern mit zwitschernden Tönen und klopfenden Schwanzbewegungen. Hast du schon mal ein Eichhörnchen zähneklappern gehört? Das bedeutet \"Das ist meine Nuss!\" Vielleicht teilt es ja trotzdem eine Nuss mit uns?",
+      "categories": [
+        "waldtiere",
+        "kleine-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "gartentiere"
+      ],
       "image": {
-        "filename": "tier-eichhoernchen.png",
-        "path": "images/tier-eichhoernchen.png",
+        "filename": "tier-eichh-rnchen.png",
+        "path": "images/tier-eichh-rnchen.png",
         "alt": "Handgezeichnete Illustration eines flinken Eichhörnchens in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-eichhoernchen.mp3",
         "path": "audio/tier-eichhoernchen.mp3"
       },
-      "character_emotions": ["excited", "curious", "exploring"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_013",
       "name": "Fuchs",
       "slug": "fuchs",
-      "description": "",
-      "categories": ["waldtiere", "mittelgrosse-tiere", "saeugetiere", "fleischfresser", "nachtaktive-tiere"],
+      "description": "Sei leise, denn in der Abenddämmerung schleicht ein Fuchs mit rotem Fell durchs Gras. Seine Pfoten sind so weich, dass er nahezu lautlos läuft – perfekt für seine nächtlichen Abenteuer. Mit seinen großen Ohren hört er Mäuse unter einer dicken Schneedecke piepsen!\n\nWenn er eine Beute sieht, macht er einen hohen Maus-Sprung: Er klappt sich fast wie ein Taschenmesser zusammen und landet punktgenau – ein echtes Akrobatik-Kunststück.\n\nDer Fuchs hat ein praktisches Multifunktions-Schwänzchen, die \"Lunte\". Damit hält er beim Rennen Balance, deckt sich im Schlaf zu und sendet Duftbotschaften an andere Füchse. Er ist auch sehr schlau: Forscher haben beobachtet, dass Füchse kleine Werkzeuge benutzen, um Futter aus engen Spalten zu holen.\n\nAm Abend ruft Familie Fuchs sich mit verschiedenen Lauten – vom zaghaften Bellen bis zum geheimnisvollen Heulen. Wenn du im Wald ein fernes \"Wau\" hörst, könnte das sein \"Gute Nacht\" sein.",
+      "categories": [
+        "waldtiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "fleischfresser",
+        "nachtaktive-tiere"
+      ],
       "image": {
         "filename": "tier-fuchs.png",
         "path": "images/tier-fuchs.png",
@@ -231,15 +348,24 @@
         "filename": "tier-fuchs.mp3",
         "path": "audio/tier-fuchs.mp3"
       },
-      "character_emotions": ["curious", "exploring", "thinking"],
+      "character_emotions": [
+        "curious",
+        "exploring",
+        "thinking"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_014",
       "name": "Wildschwein",
       "slug": "wildschwein",
-      "description": "",
-      "categories": ["waldtiere", "grosse-tiere", "saeugetiere", "allesfresser"],
+      "description": "Knack! Hörst du das? Ein kräftiges Wildschwein wühlt mit seinem rüsseligen Riechkolben den Waldboden auf. Seine Nase ist so stark, dass es versteckte Eicheln noch in 20 Zentimetern Tiefe erschnuppert.\n\nWildschweine tragen Borsten wie eine stachelige Rüstung und die Männchen besitzen gebogene Hauer-Zähne, die ständig nachwachsen. Die niedlichen Frischlinge rennen mit gestreiften Pyjamas hinter Mama her – diese Streifen tarnen sie perfekt im Unterholz.\n\nWenn Gefahr droht, brummt Leitbache \"Chrrr!\" und die ganze Rotte zischt in Deckung. Doch meistens sind Wildschweine friedliche Wald-Gärtner: Indem sie graben, lockern sie den Boden und pflanzen neue Samen ein.\n\nSie lieben matschige Schlammbäder gegen lästige Parasiten – ein echtes Wildschwein-Spa! Im Herbst futtern sie sich eine dicke Speckschicht an, um den kalten Winter zu überstehen. Hast du Lust, weiter zuzuhören, wie der Wald dank ihnen lebendig bleibt?",
+      "categories": [
+        "waldtiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-wildschwein.png",
         "path": "images/tier-wildschwein.png",
@@ -249,15 +375,24 @@
         "filename": "tier-wildschwein.mp3",
         "path": "audio/tier-wildschwein.mp3"
       },
-      "character_emotions": ["excited", "curious", "thinking"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "thinking"
+      ],
       "safety_score": 6
     },
     {
       "id": "tier_015",
       "name": "Dachs",
       "slug": "dachs",
-      "description": "",
-      "categories": ["waldtiere", "mittelgrosse-tiere", "saeugetiere", "allesfresser"],
+      "description": "In der Dämmerung erwacht ein stämmiger Dachs mit schwarz-weißer Maske. Mit seinen kräftigen Beinen gräbt er blitzschnell Tunnel – seine Wohnhöhle, der Bau, kann mehr Zimmer haben als ein kleines Haus, sogar mit separater Toilette!\n\nDer Dachs ist ein echter Erd-Bagger: Jede Nacht bewegt er bis zu 50 Kilo Erde. Seine langen Krallen sind perfekte Schaufeln. Wenn er fertig ist, rollt er sich auf frischem Moos zusammen und schnarcht zufrieden.\n\nDank seines feinen Geruchssinns findet er Regenwürmer, Beeren und sogar reife Äpfel unter einer Laubdecke. Er teilt seinen Bau manchmal mit Kaninchen oder Füchsen – als freundlicher Untermieter.\n\nWenn du nachts ein tiefes \"knurr-grunz\" hörst, könnte das sein Abendgespräch sein. Im Frühjahr putzt er seinen Bau gründlich – man nennt das den \"Dachse-Frühjahrsputz\". Ziemlich ordentlich, oder?",
+      "categories": [
+        "waldtiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-dachs.png",
         "path": "images/tier-dachs.png",
@@ -267,15 +402,27 @@
         "filename": "tier-dachs.mp3",
         "path": "audio/tier-dachs.mp3"
       },
-      "character_emotions": ["curious", "thinking", "exploring"],
+      "character_emotions": [
+        "curious",
+        "thinking",
+        "exploring"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_016",
       "name": "Delfin",
       "slug": "delfin",
-      "description": "",
-      "categories": ["meerestiere", "grosse-tiere", "saeugetiere", "fleischfresser", "wassertiere", "schnelle-tiere", "tiere-mit-besonderen-faehigkeiten"],
+      "description": "Hallo du Wellenreiter! Ein fröhlicher Delfin springt aus dem türkisblauen Meer und klatscht mit seiner Schwanzflosse aufs Wasser. Delfine sind wahre Akrobaten: Mit kräftigen Flossenschlägen sausen sie schneller als ein Rennrad durchs Wasser und hüpfen spielend hoch hinaus.\n\nIhr cleveres Echolot schickt Klick-Geräusche aus, die zurückprallen wie ein Wasser-Bumerang – so finden sie Fische selbst bei Dunkelheit. Jeder Delfin hat einen eigenen Pfeifton-Namen, mit dem Freunde ihn rufen. Wenn sie sich freuen, reiben sie sanft ihre Schnauzen aneinander – das ist delfinisches \"Gib mir fünf\"!\n\nBeim Schlafen bleibt immer ein Auge offen, denn nur eine Gehirnhälfte ruht, die andere passt auf. So können sie atmen und trotzdem träumen. Und stell dir vor: Delfine retten manchmal sogar andere Tiere aus Netzen! Ein echter Meeresheld, oder?",
+      "categories": [
+        "meerestiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "fleischfresser",
+        "wassertiere",
+        "schnelle-tiere",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
         "filename": "tier-delfin.png",
         "path": "images/tier-delfin.png",
@@ -285,15 +432,25 @@
         "filename": "tier-delfin.mp3",
         "path": "audio/tier-delfin.mp3"
       },
-      "character_emotions": ["excited", "curious", "surprised"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "surprised"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_017",
       "name": "Wal",
       "slug": "wal",
-      "description": "",
-      "categories": ["meerestiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "wassertiere"],
+      "description": "Tauche ein in die tiefe, blaue See, wo ein majestätischer Wal vorbeizieht – länger als zwei Schulbusse! Sein Herz ist so groß wie ein kleines Auto und pumpt Kraft für riesige Wanderungen durch die Ozeane.\n\nWale singen Lieder, die kilometerweit durch das Wasser klingen. Manche Töne sind so tief, dass wir Menschen sie kaum hören können. Mit jedem kräftigen Flossenschlag stoßen sie gewaltige Wasserfontänen aus ihrem Blasloch – wie ein Meeres-Geysir!\n\nObwohl Wale Giganten sind, fressen viele nur winzige Krill-Krebse. Mit ihrem Bartenkamm sieben sie das Plankton aus riesigen Wasserschlucken, fast wie du Spaghetti durch ein Sieb schüttest.\n\nIm Familienverband schwimmen sie Seite an Seite und kümmern sich liebevoll um ihre Kälber. Wenn ein Wal an die Oberfläche kommt, kannst du vielleicht sein tiefes, wohliges Brummen spüren – ein Gruß aus der Unterwasserwelt!",
+      "categories": [
+        "meerestiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "fleischfresser",
+        "wassertiere"
+      ],
       "image": {
         "filename": "tier-wal.png",
         "path": "images/tier-wal.png",
@@ -303,15 +460,24 @@
         "filename": "tier-wal.mp3",
         "path": "audio/tier-wal.mp3"
       },
-      "character_emotions": ["excited", "surprised", "curious"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "curious"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_018",
       "name": "Seestern",
       "slug": "seestern",
-      "description": "",
-      "categories": ["meerestiere", "kleine-tiere", "tiere-mit-besonderen-faehigkeiten"],
+      "description": "Schau mal zum Meeresboden: Dort liegt ein leuchtend bunter Seestern mit fünf Armen, die sich wie kleine Saugnapf-Füßchen bewegen. Seesterne haben weder Kopf noch Gehirn, aber jede Armspitze sieht und fühlt!\n\nWenn ein Arm verloren geht, wächst einfach ein neuer nach – ein echtes Regenerations-Wunder. Um zu fressen, stülpen sie sogar ihren Magen nach außen und schlemmen gemütlich Muschelfleisch.\n\nSeesterne gibt es in allen Regenbogenfarben, manche funkeln nachts wie Mini-Sterne im Wasser. Mit ihrem Kalkskelett sind sie hart wie Ritterrüstungen, fühlen sich aber rau und samtig zugleich an.\n\nSie bewegen sich langsam, doch mit überraschender Kraft: Ihre winzigen Röhrenfüße können eine Muschel lange festhalten, bis diese müde wird und sich öffnet. Ein stiller, aber beeindruckender Held des Ozeans!",
+      "categories": [
+        "meerestiere",
+        "kleine-tiere",
+        "wassertiere",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
         "filename": "tier-seestern.png",
         "path": "images/tier-seestern.png",
@@ -321,15 +487,26 @@
         "filename": "tier-seestern.mp3",
         "path": "audio/tier-seestern.mp3"
       },
-      "character_emotions": ["curious", "exploring", "surprised"],
+      "character_emotions": [
+        "curious",
+        "exploring",
+        "surprised"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_019",
       "name": "Oktopus",
       "slug": "oktopus",
-      "description": "",
-      "categories": ["meerestiere", "mittelgrosse-tiere", "fleischfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "description": "Achtung, Tarnkünstler unterwegs! Ein schlauer Oktopus gleitet durchs Wasser und wechselt in Sekunden seine Farbe – von sandbeige zu leuchtend rot. Mit acht starken Armen erkundet er Höhlen und öffnet sogar Schraubverschlüsse, fast wie ein Unterwasser-Dieb.\n\nJeder Arm besitzt eigene Mini-Gehirne und über 2.000 Saugnäpfe, die schmecken und fühlen können. Wenn Gefahr droht, pustet der Oktopus eine dunkle Tintenschwade aus und verschwindet wie ein geheimer Zauberer.\n\nSein weicher Körper passt durch Löcher kleiner als eine Orange, denn er hat keine Knochen. Nachts jagt er Krabben und Fische und kehrt dann in seine gemütliche Felsenhöhle zurück.\n\nForscher staunen über seine Intelligenz: Oktopusse lösen Labyrinthe und merken sich Abkürzungen. Vielleicht überlegt er gerade, wie er dich mit einem Augenzwinkern verblüffen kann!",
+      "categories": [
+        "meerestiere",
+        "mittelgrosse-tiere",
+        "fleischfresser",
+        "wassertiere",
+        "nachtaktive-tiere",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
         "filename": "tier-oktopus.png",
         "path": "images/tier-oktopus.png",
@@ -339,15 +516,26 @@
         "filename": "tier-oktopus.mp3",
         "path": "audio/tier-oktopus.mp3"
       },
-      "character_emotions": ["surprised", "excited", "thinking"],
+      "character_emotions": [
+        "surprised",
+        "excited",
+        "thinking"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_020",
       "name": "Robbe",
       "slug": "robbe",
-      "description": "",
-      "categories": ["meerestiere", "mittelgrosse-tiere", "saeugetiere", "fleischfresser", "wassertiere", "poltiere"],
+      "description": "Platsch! Eine verspielte Robbe taucht auf und klopft mit der Flosse aufs Wasser, als würde sie \"Komm spiel mit!\" rufen. Ihr runder Körper ist von einer dicken Speckschicht umgeben, die sie im eiskalten Meer warm hält – wie ein eingebauter Schlafsack.\n\nUnter Wasser ist die Robbe ein Turbo-Schwimmer: Mit seitlich schlängelnden Bewegungen jagt sie Fische und Tintenfische. Über Wasser ruht sie gern auf Felsen und sonnt sich schnaufend.\n\nIhre Schnurrhaare sind Super-Sensoren – sie spüren selbst kleinste Wellen, die ein Fisch verursacht. Beim Schlafen hält sie oft die Nase an der Luft, während der Körper schwebt.\n\nRobben leben in großen Kolonien und \"singen\" mit röhrenden Lauten. Wenn du ihr lustiges Watscheln siehst, vergiss nicht, dass sie unter Wasser fast so elegant ist wie ein Delfin!",
+      "categories": [
+        "meerestiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "fleischfresser",
+        "wassertiere",
+        "poltiere"
+      ],
       "image": {
         "filename": "tier-robbe.png",
         "path": "images/tier-robbe.png",
@@ -357,33 +545,52 @@
         "filename": "tier-robbe.mp3",
         "path": "audio/tier-robbe.mp3"
       },
-      "character_emotions": ["excited", "curious", "exploring"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_021",
       "name": "Löwe",
       "slug": "loewe",
-      "description": "",
-      "categories": ["fleischfresser", "grosse-tiere", "saeugetiere", "raubtiere", "exotische-tiere"],
+      "description": "Brüllend hallt es über die Savanne – der Löwe, König der Tiere, begrüßt seine Familie. Sein imposantes Brüllen ist so laut wie ein startendes Flugzeug und kann acht Kilometer weit gehört werden!\n\nDas goldene Mähnenkleid des Löwenmännchens schützt ihn bei Raufereien und zeigt anderen: \"Ich bin stark!\" Löwinnen sind die cleveren Jägerinnen: Im Team schleichen sie sich an Zebras und Antilopen heran, während das Männchen die Jungen bewacht.\n\nLöwen verbringen viel Zeit mit Schlafen – bis zu 20 Stunden täglich, um Energie für die Jagd zu sparen. Wenn sie zufrieden sind, lecken sie sich liebevoll das Fell und schnurren tief.\n\nIn einer Gruppe, dem Rudel, teilen sie Mahlzeiten gerecht. Wenn ein Löwenbaby geboren wird, tragen alle es vorsichtig im Maul zum sicheren Versteck. Ein majestätisches Familienleben, findest du nicht?",
+      "categories": [
+        "fleischfresser",
+        "grosse-tiere",
+        "saeugetiere",
+        "raubtiere",
+        "exotische-tiere"
+      ],
       "image": {
-        "filename": "tier-loewe.png",
-        "path": "images/tier-loewe.png",
+        "filename": "tier-l-we.png",
+        "path": "images/tier-l-we.png",
         "alt": "Handgezeichnete Illustration eines majestätischen Löwen in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-loewe.mp3",
         "path": "audio/tier-loewe.mp3"
       },
-      "character_emotions": ["excited", "curious", "thinking"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "thinking"
+      ],
       "safety_score": 6
     },
     {
       "id": "tier_022",
       "name": "Elefant",
       "slug": "elefant",
-      "description": "",
-      "categories": ["pflanzenfresser", "grosse-tiere", "saeugetiere", "exotische-tiere"],
+      "description": "Trompetenalarm in der Steppe! Ein riesiger Elefant winkt dir mit seinen Ohren zu – die sind so groß, dass sie ihn wie Ventilatoren kühlen. Sein langer Rüssel ist ein Superwerkzeug: Er kann damit Wasser duschen, Äste zerbrechen und sogar winzige Erdnüsse aufheben.\n\nElefanten haben ein fantastisches Gedächtnis und merken sich Wasserstellen viele Jahre lang. Ihre Füße spüren ferne Erdbeben, sodass sie Gewitter oder wandernde Herden früh entdecken.\n\nDas dicke Grau-Haut-Kostüm ist so stark wie Ritterpanzer, aber empfindlich gegen Sonne – deshalb baden Elefanten gern in Schlamm, der wie Sonnencreme wirkt.\n\nIn der Herde führt eine erfahrene Elefantendame, die Matriarchin, alle sicher durchs Land. Die Jüngsten laufen in der Mitte und werden von allen Onkeln und Tanten beschützt. Ein wahrer Riese mit weichem Herzen!",
+      "categories": [
+        "pflanzenfresser",
+        "grosse-tiere",
+        "saeugetiere",
+        "exotische-tiere"
+      ],
       "image": {
         "filename": "tier-elefant.png",
         "path": "images/tier-elefant.png",
@@ -393,15 +600,24 @@
         "filename": "tier-elefant.mp3",
         "path": "audio/tier-elefant.mp3"
       },
-      "character_emotions": ["curious", "excited", "thinking"],
-      "safety_score": 8
+      "character_emotions": [
+        "curious",
+        "excited",
+        "thinking"
+      ],
+      "safety_score": 9
     },
     {
       "id": "tier_023",
       "name": "Giraffe",
       "slug": "giraffe",
-      "description": "",
-      "categories": ["pflanzenfresser", "grosse-tiere", "saeugetiere", "exotische-tiere"],
+      "description": "Streck deinen Hals, denn hier kommt die gigantische Giraffe – fast so hoch wie ein Haus mit zwei Stockwerken! Mit ihrer blauen Zunge, länger als dein Unterarm, pflückt sie zarte Blätter von akazienbäumen, ohne sich an Dornen zu piksen.\n\nObwohl der Hals meterlang ist, hat er nur sieben Wirbel – genau wie du! Das Blut zum Kopf zu pumpen, schafft ihr riesiges Herz, schwerer als drei Fußbälle.\n\nGiraffen schlafen höchstens eine halbe Stunde am Tag und das in kurzen Nickerchen. Beim Trinken spreizt sie ihre Beine wie einen Spagat, damit der lange Hals bis zum Wasser reicht.\n\nIhre Flecken sind wie Fingerabdrücke – jedes Muster ist einzigartig. Wenn Gefahr droht, kann eine Giraffe mit langen Beinen schneller laufen als ein Auto in der Stadt. Eleganz und Power in einem Paket!",
+      "categories": [
+        "pflanzenfresser",
+        "grosse-tiere",
+        "saeugetiere",
+        "exotische-tiere"
+      ],
       "image": {
         "filename": "tier-giraffe.png",
         "path": "images/tier-giraffe.png",
@@ -411,33 +627,52 @@
         "filename": "tier-giraffe.mp3",
         "path": "audio/tier-giraffe.mp3"
       },
-      "character_emotions": ["curious", "excited", "thinking"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "thinking"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_024",
       "name": "Bär",
       "slug": "baer",
-      "description": "",
-      "categories": ["allesfresser", "grosse-tiere", "saeugetiere", "raubtiere"],
+      "description": "Ein leiser Ast knackt, und ein mächtiger Braunbär erscheint zwischen den Bäumen, seine Schnauze voll von süßen Blaubeeren. Sein Fell wirkt wie ein flauschiger Mantel, der ihn vor Frost und Regen schützt.\n\nVor dem Winter frisst sich der Bär eine gemütliche Speckschicht an, dann verschließt er seine Höhle mit Zweigen und schläft monatelang – ohne zu essen, zu trinken oder einmal zur Toilette zu müssen. Während dieser Winterruhe behalten Mutterbären genug Energie, um winzige, nackte Junge zu säugen.\n\nIm Frühling stapft er zum Fluss und fängt blitzschnell Lachse, die stromaufwärts springen. Manchmal stellt sich der Koloss auf die Hinterbeine, nicht um zu drohen, sondern um besser zu riechen.\n\nTrifft er auf einen Baum voller Honig, ignoriert er brummende Bienen – der süße Lohn ist die pieksenden Stachel wert. So zeigt der Braunbär: Stärke und Sanftmut können wunderbar zusammengehen.",
+      "categories": [
+        "allesfresser",
+        "grosse-tiere",
+        "saeugetiere",
+        "waldtiere"
+      ],
       "image": {
-        "filename": "tier-baer.png",
-        "path": "images/tier-baer.png",
+        "filename": "tier-b-r.png",
+        "path": "images/tier-b-r.png",
         "alt": "Handgezeichnete Illustration eines kuscheligen Bären in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-baer.mp3",
         "path": "audio/tier-baer.mp3"
       },
-      "character_emotions": ["thinking", "curious", "excited"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "excited"
+      ],
       "safety_score": 6
     },
     {
       "id": "tier_025",
       "name": "Pinguin",
       "slug": "pinguin",
-      "description": "",
-      "categories": ["poltiere", "mittelgrosse-tiere", "voegel", "fleischfresser", "wassertiere"],
+      "description": "Watschelnd kommt ein schicker Pinguin in seinem schwarz-weißen Frack über das Eis getippelt. An Land wirkt er lustig tapsig, doch unter Wasser schießt er wie ein Silberpfeil voran – schneller als ein Schwimmer im Olympia-Becken!\n\nSeine dichten Federn bilden eine wasserdichte Jacke, und eine dicke Speckschicht hält ihn bei Minusgraden warm. Um nicht auszurutschen, haben Pinguine Krallen an den Füßen und eine raue Sohlenhaut.\n\nBei der Partnersuche schenken sich Pinguine bunte Kieselsteine – ein romantisches Stein-Geschenk! Mama und Papa wechseln sich beim Brüten ab, balancieren das Ei dabei auf ihren Füßen und decken es mit einer Bauchfalte zu.\n\nWenn das Küken schlüpft, erkennt es die Eltern am einzigartigen Ruf. Und mit einer Bauch-Rutschpartie gleitet der Pinguin über das Eis, als wäre es eine Schneerutsche. Ein cooler Schneestar!",
+      "categories": [
+        "poltiere",
+        "mittelgrosse-tiere",
+        "voegel",
+        "fleischfresser",
+        "wassertiere"
+      ],
       "image": {
         "filename": "tier-pinguin.png",
         "path": "images/tier-pinguin.png",
@@ -447,15 +682,24 @@
         "filename": "tier-pinguin.mp3",
         "path": "audio/tier-pinguin.mp3"
       },
-      "character_emotions": ["excited", "curious", "surprised"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "surprised"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_026",
       "name": "Kamel",
       "slug": "kamel",
-      "description": "",
-      "categories": ["wuestentiere", "grosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "description": "Hallo du Sand-Abenteurer! Vor uns stapft ein Kamel durch die heiße Wüste und schaukelt dabei wie ein Schiff auf dem Meer – deshalb nennen viele es das \"Wüstenschiff\". In seinem großen Höcker speichert es Fett, aus dem es wochenlang Energie gewinnt, wenn kein Futter da ist.\n\nSeine breiten, gepolsterten Füße wirken wie eingebaute Schneeschuhe und verhindern, dass es im weichen Sand einsinkt. Lange Wimpern und schließbare Nasenlöcher schützen es vor wehenden Sandkörnern.\n\nWenn das Kamel Durst hat, kann es in wenigen Minuten über hundert Liter Wasser trinken – das sind hunderte Trinkflaschen! Trotz Hitze bleibt sein Fell erstaunlich kühl.\n\nKamelfamilien sind neugierig und brummen sanft, wenn sie sich begrüßen. Vielleicht hörst du gleich ein tiefes \"Grrooo\" – das bedeutet: \"Schön, dich kennenzulernen!\"",
+      "categories": [
+        "wuestentiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-kamel.png",
         "path": "images/tier-kamel.png",
@@ -465,33 +709,52 @@
         "filename": "tier-kamel.mp3",
         "path": "audio/tier-kamel.mp3"
       },
-      "character_emotions": ["excited", "curious", "thinking"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "thinking"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_027",
       "name": "Wüstenfuchs",
       "slug": "wuestenfuchs",
-      "description": "",
-      "categories": ["wuestentiere", "kleine-tiere", "saeugetiere", "fleischfresser"],
+      "description": "Sssst – ein Wüstenfuchs namens Fennek streckt seine riesigen Ohren in den Nachthimmel. Diese Ohren dienen wie Kühler: Sie geben Wärme ab und helfen ihm, das heiße Wüstenklima zu ertragen.\n\nMit den Spitzen hört er das leiseste Käferkrabbeln unter dem Sand. Sein helles Fell reflektiert Sonnenlicht am Tag und tarnt ihn nachts im Mondschein.\n\nWenn der Sand brennend heiß ist, gräbt sich der Fennek blitzschnell einen kühlen Bau, in dem er schläft. Zum Trinken reicht ihm das Wasser aus saftigen Wüstenpflanzen und Insekten – er ist ein echter Überlebenskünstler.\n\nBeim Spielen hüpfen junge Fenneks wie kleine Gummibälle. Sie winseln, bellen und quieken, um einander zu rufen. Hörst du ihr zartes \"Iiik\"? Das ist ihr geheimer Gute-Nacht-Gruß!",
+      "categories": [
+        "wuestentiere",
+        "kleine-tiere",
+        "saeugetiere",
+        "fleischfresser"
+      ],
       "image": {
-        "filename": "tier-wuestenfuchs.png",
-        "path": "images/tier-wuestenfuchs.png",
+        "filename": "tier-w-stenfuchs.png",
+        "path": "images/tier-w-stenfuchs.png",
         "alt": "Handgezeichnete Illustration eines Wüstenfuchses in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-wuestenfuchs.mp3",
         "path": "audio/tier-wuestenfuchs.mp3"
       },
-      "character_emotions": ["excited", "curious", "thinking"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "thinking"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_028",
       "name": "Eidechse",
       "slug": "eidechse",
-      "description": "",
-      "categories": ["wuestentiere", "kleine-tiere", "reptilien", "fleischfresser", "schnelle-tiere"],
+      "description": "Flitz! Eine flinke Eidechse zischt über die heißen Steine. Ihre Schuppen glänzen wie kleine Panzer und schützen sie vor Sonnenbrand. Mit jedem Atemzug pumpt sie Energie in ihre Beine und kann in Sekundenschnelle verschwinden.\n\nWenn Gefahr droht, wirft die Eidechse ihren Schwanz ab – dieser zappelt weiter und lenkt Feinde ab. Bald wächst ein neuer nach, ganz ohne Arztbesuch!\n\nIhre Augen bewegen sich unabhängig voneinander: Ein Auge sucht nach Fliegen, das andere behält Raubtiere im Blick – ein echtes Super-Feature.\n\nZum Klettern nutzt sie winzige Krallen und Haftpolster, mit denen sie Mauern hochrennen kann. Bleib ruhig stehen und beobachte, wie sie mit einer blitzschnellen Zunge eine Ameise schnappt. Schnell weg – Abenteuer warten!",
+      "categories": [
+        "wuestentiere",
+        "kleine-tiere",
+        "reptilien",
+        "fleischfresser",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-eidechse.png",
         "path": "images/tier-eidechse.png",
@@ -501,15 +764,24 @@
         "filename": "tier-eidechse.mp3",
         "path": "audio/tier-eidechse.mp3"
       },
-      "character_emotions": ["curious", "excited", "thinking"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "thinking"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_029",
       "name": "Schlange",
       "slug": "schlange",
-      "description": "",
-      "categories": ["wuestentiere", "mittelgrosse-tiere", "reptilien", "fleischfresser"],
+      "description": "Schlängelnde Spuren im Sand verraten uns eine neugierige Schlange. Sie gleitet lautlos, weil ihr Körper aus Tausenden glitzernden Schuppen besteht, die wie winzige Schlitten über den Boden gleiten.\n\nMit ihrer geteilten Zunge \"schmeckt\" sie die Luft und findet Beute, selbst im Dunkeln. Ihre Augen sind von einer klaren Haut geschützt – so braucht sie keine Augenlider.\n\nEinmal im Jahr schlüpft die Schlange aus ihrer alten Haut und hinterlässt ein perfektes Schuppen-Kleid. So wirkt sie immer frisch gebügelt!\n\nZum Schlucken klappt sie ihren Unterkiefer weit aus und verschlingt eine Mahlzeit am Stück. Danach ruht sie sich tagelang aus und verdaut in Ruhe. Wenn du ganz still bist, hörst du vielleicht ihr leises Zischen: \"Ich bin nur auf der Durchreise!\"",
+      "categories": [
+        "wuestentiere",
+        "mittelgrosse-tiere",
+        "reptilien",
+        "fleischfresser"
+      ],
       "image": {
         "filename": "tier-schlange.png",
         "path": "images/tier-schlange.png",
@@ -519,15 +791,25 @@
         "filename": "tier-schlange.mp3",
         "path": "audio/tier-schlange.mp3"
       },
-      "character_emotions": ["curious", "excited", "thinking"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "thinking"
+      ],
       "safety_score": 6
     },
     {
       "id": "tier_030",
       "name": "Skorpion",
       "slug": "skorpion",
-      "description": "",
-      "categories": ["wuestentiere", "kleine-tiere", "giftige-tiere", "nachtaktive-tiere"],
+      "description": "In der Dämmerung hebt ein Skorpion seinen gebogenen Stachel wie ein Ritter sein Schwert. Unter UV-Licht leuchtet sein Panzer geheimnisvoll grün – ein echtes Natur-Neonschild!\n\nSkorpione haben acht Beine und zwei Greifscheren, mit denen sie Beute festhalten. Trotz furchterregendem Aussehen sind die meisten Arten für Menschen harmlos.\n\nSie mögen es trocken und verstecken sich tagsüber unter Steinen. Nachts lauschen sie Bodenerschütterungen, um Heuschrecken aufzuspüren. Mit winzigen Härchen fühlen sie jedes Zittern – wie ein Erdbeben-Radar.\n\nBei Gefahr macht der Skorpion einen Warn-Tanz, bevor er zusticht. Doch meist flieht er lieber. Wenn du sein leises Knistern hörst, sagt er wohl: \"Keine Sorge, ich gehe schon!\"",
+      "categories": [
+        "wuestentiere",
+        "kleine-tiere",
+        "fleischfresser",
+        "giftige-tiere",
+        "nachtaktive-tiere"
+      ],
       "image": {
         "filename": "tier-skorpion.png",
         "path": "images/tier-skorpion.png",
@@ -537,15 +819,24 @@
         "filename": "tier-skorpion.mp3",
         "path": "audio/tier-skorpion.mp3"
       },
-      "character_emotions": ["thinking", "curious", "surprised"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "surprised"
+      ],
       "safety_score": 5
     },
     {
       "id": "tier_031",
       "name": "Affe",
       "slug": "affe",
-      "description": "",
-      "categories": ["dschungeltiere", "mittelgrosse-tiere", "saeugetiere", "allesfresser"],
+      "description": "Holla, Tarzan! Ein schlauer Affe schwingt sich mit kräftigen Armen von Liane zu Liane. Sein Greifschwanz wirkt wie ein fünfte Hand – damit kann er sogar kleine Früchte pflücken.\n\nAffen sind Teamplayer: Sie putzen sich gegenseitig das Fell, um Freundschaft zu zeigen. Dabei plaudern sie in einer eigenen Sprachmusik aus Rufen, Quietschen und Klopfen.\n\nMit Kieselsteinen knacken sie Nüsse und zeigen so echtes Werkzeug-Talent. In der Mittagshitze suchen sie Schatten und teilen saftige Mangos.\n\nWenn ein Affenkind Quatsch macht, lacht die ganze Truppe mit lautem \"Hu-hu-ha!\". Vielleicht blinzelt dir dieser Affe gleich zu – das heißt: \"Willkommen im Dschungel-Club!\"",
+      "categories": [
+        "dschungeltiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-affe.png",
         "path": "images/tier-affe.png",
@@ -555,15 +846,25 @@
         "filename": "tier-affe.mp3",
         "path": "audio/tier-affe.mp3"
       },
-      "character_emotions": ["excited", "surprised", "exploring"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "exploring"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_032",
       "name": "Papagei",
       "slug": "papagei",
-      "description": "",
-      "categories": ["dschungeltiere", "mittelgrosse-tiere", "voegel", "flugtiere", "allesfresser"],
+      "description": "Papageien-Alarm! Ein bunt gefiederter Papagei flattert heran und ruft laut \"Halloooo!\". Er kann Worte nachahmen, weil seine Zunge und sein Stimmorgan superschnell Bewegungen wechseln.\n\nSein Regenbogenkleid hilft ihm, sich in tropischen Blättern zu verstecken. Mit dem kräftigen Schnabel knackt er Kokosnüsse wie ein Nussknacker.\n\nPapageien besitzen Zygodaktylen-Füße: Zwei Zehen vorne, zwei hinten, ideal zum Klettern. Sie benutzen ihre Füße fast wie Hände und führen Leckerbissen zum Schnabel.\n\nWenn ein Papagei verliebt ist, teilt er Futter mit seinem Partner und zupft ihm sanft die Federn – ein Federkuschel. Sein lautes Gekreische hört man kilometerweit. Na, ruft er dir vielleicht gerade ein lustiges Wort zu?",
+      "categories": [
+        "dschungeltiere",
+        "mittelgrosse-tiere",
+        "voegel",
+        "flugtiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-papagei.png",
         "path": "images/tier-papagei.png",
@@ -573,15 +874,25 @@
         "filename": "tier-papagei.mp3",
         "path": "audio/tier-papagei.mp3"
       },
-      "character_emotions": ["excited", "surprised", "exploring"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_033",
       "name": "Tiger",
       "slug": "tiger",
-      "description": "",
-      "categories": ["dschungeltiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere"],
+      "description": "Leise wie ein Schatten pirscht ein Tiger durch das hohe Gras. Seine schwarz-orangen Streifen tarnen ihn perfekt; jedes Streifenmuster ist einzigartig wie ein Fingerabdruck.\n\nMit kräftigen Hinterbeinen springt er weiter als ein Auto lang ist. Sein Brüllen schallt über Berge und klingt fast wie Donner – damit markiert er sein Revier.\n\nTiger lieben Wasser und schwimmen gern, um sich zu kühlen. Beim Schleichen rollt er seine weichen Pfoten ein, sodass keine Äste knacken.\n\nEr lebt meist allein und patrouilliert riesige Gebiete. Findet er eine Spur, prüft er sie mit feinen Schnurrhaaren. Wenn du das tiefe \"Grrruu\" hörst, sagt er vielleicht: \"Keine Sorge, ich beobachte nur!\"",
+      "categories": [
+        "dschungeltiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "fleischfresser",
+        "raubtiere"
+      ],
       "image": {
         "filename": "tier-tiger.png",
         "path": "images/tier-tiger.png",
@@ -591,15 +902,25 @@
         "filename": "tier-tiger.mp3",
         "path": "audio/tier-tiger.mp3"
       },
-      "character_emotions": ["excited", "curious", "thinking"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "thinking"
+      ],
       "safety_score": 5
     },
     {
       "id": "tier_034",
       "name": "Faultier",
       "slug": "faultier",
-      "description": "",
-      "categories": ["dschungeltiere", "mittelgrosse-tiere", "saeugetiere", "pflanzenfresser", "langsame-tiere"],
+      "description": "Gähn – ein gemütliches Faultier hängt kopfüber im Regenwald. Es bewegt sich so langsam, dass Algen auf seinem Fell wachsen und ihm einen Tarn-Grünschimmer verleihen!\n\nMit Hakenkrallen hält es sich fast ohne Kraftaufwand an Ästen fest. Sein Stoffwechsel ist superruhig: Es schläft bis zu 18 Stunden pro Tag und klettert nur einmal pro Woche auf den Boden, um sein Geschäft zu erledigen.\n\nTrotz Langsamkeit ist es ein guter Schwimmer und kann Flüsse überqueren. Wenn es Gefahr wittert, schlägt es überraschend schnell mit seinen Armen.\n\nFaultiere kauen Blätter wie Kaugummi und brauchen Tage zum Verdauen. Das leise \"Mmmm-mmh\" bedeutet: \"Alles entspannt!\" Bleib auch du mal langsam und genieße die Aussicht!",
+      "categories": [
+        "dschungeltiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "langsame-tiere"
+      ],
       "image": {
         "filename": "tier-faultier.png",
         "path": "images/tier-faultier.png",
@@ -609,15 +930,26 @@
         "filename": "tier-faultier.mp3",
         "path": "audio/tier-faultier.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_035",
       "name": "Kolibri",
       "slug": "kolibri",
-      "description": "",
-      "categories": ["dschungeltiere", "kleine-tiere", "voegel", "flugtiere", "pflanzenfresser", "schnelle-tiere"],
+      "description": "Schwirr, schwirr – ein winziger Kolibri schwebt vor einer Blüte. Seine Flügel schlagen bis zu 80-mal pro Sekunde, sodass er rückwärts, seitwärts und sogar kopfüber fliegen kann!\n\nKolibris trinken süßen Nektar mit einer langen, röhrenartigen Zunge, die wie ein Strohhalm funktioniert. Ihr Herz tickt extrem schnell – über 1.000 Schläge pro Minute, wenn sie in der Luft stehen.\n\nDie Federn schillern metallisch, weil sie Licht wie bunte Spiegel brechen. Um Energie zu sparen, fallen sie nachts in einen Mini-Winterschlaf, den \"Torpor\".\n\nBei Balztänzen schießen Männchen im Sturzflug nach unten und erzeugen dabei pfeifende Geräusche. Hör hin – vielleicht ruft dir dieser Kolibri ein leises \"Zzzip!\" zu, während er den nächsten Blüten-Smoothie schlürft.",
+      "categories": [
+        "dschungeltiere",
+        "kleine-tiere",
+        "voegel",
+        "flugtiere",
+        "pflanzenfresser",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-kolibri.png",
         "path": "images/tier-kolibri.png",
@@ -627,33 +959,52 @@
         "filename": "tier-kolibri.mp3",
         "path": "audio/tier-kolibri.mp3"
       },
-      "character_emotions": ["excited", "surprised", "curious"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "curious"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_036",
       "name": "Eisbär",
       "slug": "eisbaer",
-      "description": "",
-      "categories": ["poltiere", "grosse-tiere", "saeugetiere", "fleischfresser"],
+      "description": "BrRRR – im eisigen Norden stapft ein weißer Eisbär über schimmernde Schneefelder. Sein Fell wirkt wie Schnee, doch darunter steckt schwarze Haut, die jeden Sonnenstrahl aufsaugt und ihn wohlig wärmt.\n\nMit riesigen Tatzen, so groß wie Bratpfannen, verteilt er sein Gewicht und bricht nicht ins Eis ein. Die Tatzen sind außerdem Super-Schwimmflossen: Ein Eisbär kann stundenlang durchs eiskalte Wasser paddeln, ohne zu frieren, denn eine dicke Speckschicht hält ihn kuschelig warm.\n\nSeine Nase erschnüffelt eine Robbe noch aus fast zwei Kilometern Entfernung! Wenn er eine findet, wartet er geduldig und schlägt im richtigen Moment blitzschnell zu.\n\nEisbärmütter bauen Schneehöhlen, in denen winzige, felllose Jungtiere sicher heranwachsen. Sobald sie herauskrabbeln, toben sie im Schnee und rutschen wie Kinder auf dem Bauch – ein frostiges Vergnügen!",
+      "categories": [
+        "poltiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "fleischfresser"
+      ],
       "image": {
-        "filename": "tier-eisbaer.png",
-        "path": "images/tier-eisbaer.png",
+        "filename": "tier-eisb-r.png",
+        "path": "images/tier-eisb-r.png",
         "alt": "Handgezeichnete Illustration eines weißen Eisbären in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-eisbaer.mp3",
         "path": "audio/tier-eisbaer.mp3"
       },
-      "character_emotions": ["excited", "curious", "surprised"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "surprised"
+      ],
       "safety_score": 6
     },
     {
       "id": "tier_037",
       "name": "Walross",
       "slug": "walross",
-      "description": "",
-      "categories": ["poltiere", "grosse-tiere", "saeugetiere", "fleischfresser", "wassertiere"],
+      "description": "OOOORR – ein gewaltiges Walross ruft laut übers Eis, seine langen Stoßzähne glänzen wie Elfenbein-Säbel. Mit ihnen kann es sich auf Schollen hochziehen – das nennt man \"Eis-Hoopser\".\n\nSein Schnurrbart aus hunderten Steifhaaren fühlt selbst winzige Muscheln im schlammigen Meeresboden. Die werden dann wie Spaghetti eingesaugt!\n\nUnter der dicken Haut liegt eine Speckschicht, schwerer als ein kleines Auto, die ihn wie eine Thermoskanne warm hält. In der Sonne kühlt er sich ab, indem er mehr Blut in die Haut pumpt – dann wird sie rosa!\n\nWalrosse lieben Gesellschaft: In einer \"Herde\" liegen sie dicht an dicht und brummen freundliche Lieder. Wenn Streit entsteht, klappern sie spielerisch mit den Stoßzähnen. Ziemlich coole Riesen, oder?",
+      "categories": [
+        "poltiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "fleischfresser",
+        "wassertiere"
+      ],
       "image": {
         "filename": "tier-walross.png",
         "path": "images/tier-walross.png",
@@ -663,15 +1014,25 @@
         "filename": "tier-walross.mp3",
         "path": "audio/tier-walross.mp3"
       },
-      "character_emotions": ["excited", "curious", "surprised"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "surprised"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_038",
       "name": "Polarfuchs",
       "slug": "polarfuchs",
-      "description": "",
-      "categories": ["poltiere", "mittelgrosse-tiere", "saeugetiere", "fleischfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "description": "Pffft – ein Polarfuchs huscht lautlos durchs Schneegestöber. Im Winter trägt er einen schneeweißen Mantel, im Sommer ein braun-graues Outfit. So bleibt er das ganze Jahr perfekt getarnt!\n\nSein buschiger Schwanz ist länger als sein Körper; darin kuschelt er seine Nase, wenn ein Sturm weht. Die kleinen, runden Ohren sparen Wärme, hören aber trotzdem das leiseste Piepsen einer Maus unter dicker Schneedecke.\n\nDer Polarfuchs läuft auf Fell-\"Schneeschuhen\": Dichte Haare sogar an den Pfotenballen verhindern Rutschen. Er frisst fast alles – von Beeren bis Fischresten. Wenn etwas knapp ist, folgt er großen Eisbären und sammelt deren Reste auf.\n\nIm Frühling gräbt er einen Bau mit vielen Eingängen. Dort tollen die Jungen wie weiße Fellbälle herum. Ihr fröhliches \"Yip-Yip\" klingt fast wie Lachen!",
+      "categories": [
+        "poltiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "allesfresser",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
         "filename": "tier-polarfuchs.png",
         "path": "images/tier-polarfuchs.png",
@@ -681,15 +1042,25 @@
         "filename": "tier-polarfuchs.mp3",
         "path": "audio/tier-polarfuchs.mp3"
       },
-      "character_emotions": ["excited", "curious", "surprised"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "surprised"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_039",
       "name": "Igel",
       "slug": "igel",
-      "description": "",
-      "categories": ["gartentiere", "kleine-tiere", "saeugetiere", "fleischfresser", "nachtaktive-tiere"],
+      "description": "Schlurf – im abendlichen Garten schnuppert ein Igel zwischen Blättern. Über 6.000 spitze Stacheln schützen ihn wie winzige Schwertchen. Bei Gefahr rollt er sich zu einer stacheligen Kugel, und Räuber sagen lieber: \"Aua, nein danke!\"\n\nDer Igel hört und riecht hervorragend, sieht dafür nicht so gut. Mit seinem feuchten Rüssel findet er knackige Käfer und Schnecken.\n\nBevor der Winter kommt, frisst er sich eine Speckschicht an und baut ein Blätter-Nest. In der Winterruhe schlägt sein Herz ganz langsam – nur wenige Male pro Minute.\n\nIgelbabys kommen nackt zur Welt, aber schon nach wenigen Stunden brechen weiche Mini-Stacheln durch. Wenn Mama Igel grunzend schmatzt, bedeutet das: \"Zeit fürs Abendbuffet!\"",
+      "categories": [
+        "gartentiere",
+        "kleine-tiere",
+        "saeugetiere",
+        "allesfresser",
+        "nachtaktive-tiere"
+      ],
       "image": {
         "filename": "tier-igel.png",
         "path": "images/tier-igel.png",
@@ -699,15 +1070,24 @@
         "filename": "tier-igel.mp3",
         "path": "audio/tier-igel.mp3"
       },
-      "character_emotions": ["curious", "excited", "exploring"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_040",
       "name": "Schmetterling",
       "slug": "schmetterling",
-      "description": "",
-      "categories": ["gartentiere", "kleine-tiere", "insekten", "pflanzenfresser"],
+      "description": "Flatter – ein bunter Schmetterling tanzt durch die Luft wie ein lebendiger Konfetti-Fetzen. Seine Flügel bestehen aus hauchdünnen Schuppen, die Licht brechen und schillernde Farben zaubern. Berührst du sie, bleiben Glitzerpuder-Körner an deinen Fingern hängen!\n\nDoch er war nicht immer so schön: Zuerst war er eine winzige Raupe, fraß Blätter und legte dann eine Pause in einer glitzernden Puppe ein. Dort verwandelte er sich komplett – ein echtes Zauberkunststück namens Metamorphose.\n\nMit einem langen Rüssel schlürft er Blütennektar wie mit einem Trinkhalm. Seine Füße schmecken den Zucker schon beim Landen.\n\nWenn die Tage kälter werden, fliegen manche Schmetterlinge tausende Kilometer in wärmere Länder. Ein zarter Weltenbummler mit Superkräften!",
+      "categories": [
+        "gartentiere",
+        "kleine-tiere",
+        "insekten",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-schmetterling.png",
         "path": "images/tier-schmetterling.png",
@@ -717,15 +1097,24 @@
         "filename": "tier-schmetterling.mp3",
         "path": "audio/tier-schmetterling.mp3"
       },
-      "character_emotions": ["curious", "excited", "exploring"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "exploring"
+      ],
       "safety_score": 10
     },
     {
       "id": "tier_041",
       "name": "Biene",
       "slug": "biene",
-      "description": "",
-      "categories": ["gartentiere", "kleine-tiere", "insekten", "pflanzenfresser"],
+      "description": "Summ-summ – eine fleißige Biene brummt von Blüte zu Blüte. Mit winzigen Härchen sammelt sie klebrigen Pollen und bestäubt damit Pflanzen – sie ist eine echte Gartenheldin!\n\nZu Hause im Bienenstock lebt eine Supergesellschaft: Königin, Arbeiterinnen und Drohnen, jede hat ihre Aufgabe. Finden Bienen ein neues Blumenfeld, tanzen sie den berühmten \"Schwänzeltanz\". Die Richtung und Dauer zeigen den anderen genau, wo das Buffet wartet.\n\nIhr Honigmagen verwandelt Blütennektar zu süßem Honig, den wir so lieben. Eine Arbeiterin fliegt in ihrem Leben bis zu 40.000 Kilometer – das ist weiter als einmal um die Erde!\n\nBienen sehen sogar Ultraviolett und entdecken damit geheime Blütenmuster. Wenn eine Gefahr naht, summen sie lauter, als wollten sie sagen: \"Bleib weg, wir arbeiten!\"",
+      "categories": [
+        "gartentiere",
+        "kleine-tiere",
+        "insekten",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-biene.png",
         "path": "images/tier-biene.png",
@@ -735,33 +1124,50 @@
         "filename": "tier-biene.mp3",
         "path": "audio/tier-biene.mp3"
       },
-      "character_emotions": ["curious", "excited", "exploring"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_042",
       "name": "Marienkäfer",
       "slug": "marienkafer",
-      "description": "",
-      "categories": ["gartentiere", "kleine-tiere", "insekten", "fleischfresser"],
+      "description": "Klack – ein leuchtend roter Marienkäfer landet auf deiner Hand. Seine schwarzen Punkte verraten sein Alter nicht, sie sind einfach schicke Flecken!\n\nMarienkäfer sind Blattlaus-Jäger: Ein einziger Käfer frisst bis zu 100 Läuse am Tag und rettet so Pflanzen vor Schädlingen – ein Mini-Superheld.\n\nWenn sich jemand an ihm verschlucken will, sondern seine Knie gelbe Tropfen aus, die bitter schmecken. Das nennt man \"Reflexbluten\".\n\nIm Herbst kuscheln sich viele Käfer zusammen in Baumrinden-Spalten, um gemeinsam Winter zu halten.\n\nIn vielen Ländern bringt er Glück. Fliegt er davon, kannst du einen Wunsch flüstern – vielleicht erfüllt er ihn mit einem \"Flieg, Käferlein, flieg!\"",
+      "categories": [
+        "gartentiere",
+        "kleine-tiere",
+        "insekten",
+        "fleischfresser"
+      ],
       "image": {
-        "filename": "tier-marienkafer.png",
-        "path": "images/tier-marienkafer.png",
+        "filename": "tier-marienk-fer.png",
+        "path": "images/tier-marienk-fer.png",
         "alt": "Handgezeichnete Illustration eines roten Marienkäfers in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-marienkafer.mp3",
         "path": "audio/tier-marienkafer.mp3"
       },
-      "character_emotions": ["curious", "excited", "exploring"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "exploring"
+      ],
       "safety_score": 10
     },
     {
       "id": "tier_043",
       "name": "Regenwurm",
       "slug": "regenwurm",
-      "description": "",
-      "categories": ["gartentiere", "kleine-tiere", "pflanzenfresser"],
+      "description": "Plitsch – unter der Erde arbeitet ein Regenwurm als stiller Garten-Baumeister. Sein Körper besteht aus vielen Ringeln, die sich wie eine Ziehharmonika strecken und zusammenziehen.\n\nWinzige Borstchen geben ihm Halt, sodass er durch die Erde kriechen kann. Dabei frisst er Laub und Erde, verdaut sie und hinterlässt fruchtbaren Humus – ein natürlicher Dünger!\n\nRegenwürmer haben kein Herz, sondern fünf Muskelringe, die Blut pumpen. Sie atmen durch die Haut, deshalb mögen sie es feucht.\n\nSchneidet man ihn versehentlich, kann manchmal ein Teil nachwachsen. Und wusstest du? Regenwürmer sind Zwitter: Jeder Wurm ist gleichzeitig Mama und Papa.\n\nWenn es regnet, kommen sie an die Oberfläche – vielleicht winkt dir einer mit seinem Ringel-Popo!",
+      "categories": [
+        "gartentiere",
+        "kleine-tiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-regenwurm.png",
         "path": "images/tier-regenwurm.png",
@@ -771,15 +1177,25 @@
         "filename": "tier-regenwurm.mp3",
         "path": "audio/tier-regenwurm.mp3"
       },
-      "character_emotions": ["curious", "excited", "exploring"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "exploring"
+      ],
       "safety_score": 10
     },
     {
       "id": "tier_044",
       "name": "Adler",
       "slug": "adler",
-      "description": "",
-      "categories": ["fleischfresser", "grosse-tiere", "voegel", "flugtiere", "raubtiere"],
+      "description": "Majestätisch schraubt sich ein Adler in weiten Spiralen in den Himmel und nutzt warme Aufwinde wie unsichtbare Fahrstühle. Mit Augen achtmal schärfer als die eines Menschen erspäht er eine Maus aus mehr als einem Kilometer Entfernung.\n\nPlötzlich faltet er seine mächtigen Flügel, stürzt wie ein Pfeil hinab und greift blitzschnell mit kräftigen Krallen zu. Sein Nest, der Horst, kann so groß werden wie ein Planschbecken und wird jedes Jahr liebevoll mit frischen Zweigen ausgebaut.\n\nAdlerpaare bleiben meist ihr Leben lang zusammen und teilen sich das Brüten der Eier. Als König der Lüfte erinnert er uns daran, die Welt hin und wieder aus großer Höhe zu betrachten.",
+      "categories": [
+        "fleischfresser",
+        "grosse-tiere",
+        "voegel",
+        "flugtiere",
+        "raubtiere"
+      ],
       "image": {
         "filename": "tier-adler.png",
         "path": "images/tier-adler.png",
@@ -789,15 +1205,26 @@
         "filename": "tier-adler.mp3",
         "path": "audio/tier-adler.mp3"
       },
-      "character_emotions": ["excited", "surprised", "curious"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "curious"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_045",
       "name": "Hai",
       "slug": "hai",
-      "description": "",
-      "categories": ["fleischfresser", "grosse-tiere", "fische", "meerestiere", "wassertiere", "schnelle-tiere"],
+      "description": "Daaa-dum, daaa-dum – die Kinomusik für Spannung gehört Haien! Diese uralten Fische haben ein Skelett aus flexiblem Knorpel statt harter Knochen, darum schwimmen sie leise und wendig.\n\nMehrere Zahnreihen sorgen dafür, dass ständig neue Zähne nachwachsen – ein endloses Ersatzteil-Lager. Ihre Nase kann einen Tropfen Blut in einem Schwimmbecken erschnuppern.\n\nHaie besitzen das \"Ampullen-Organ\", das elektrische Felder spürt. So merken sie das Zucken eines Fisches, selbst wenn dieser sich im Sand versteckt.\n\nAnders als viele Fische haben sie keine Schwimmblase. Deshalb müssen sie in Bewegung bleiben, um nicht zu sinken. Manche Arten können dabei schneller schwimmen als ein Rennrad!\n\nObwohl sie gefährlich aussehen, sind die meisten Haie harmlos und wichtig für das Gleichgewicht des Meeres. Wenn du ein Flossenwedeln siehst, sagt er vielleicht nur: \"Hallo aus der Tiefe!\"",
+      "categories": [
+        "fleischfresser",
+        "grosse-tiere",
+        "fische",
+        "meerestiere",
+        "wassertiere",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-hai.png",
         "path": "images/tier-hai.png",
@@ -807,15 +1234,24 @@
         "filename": "tier-hai.mp3",
         "path": "audio/tier-hai.mp3"
       },
-      "character_emotions": ["excited", "curious", "thinking"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "thinking"
+      ],
       "safety_score": 5
     },
     {
       "id": "tier_046",
       "name": "Wolf",
       "slug": "wolf",
-      "description": "",
-      "categories": ["fleischfresser", "grosse-tiere", "saeugetiere", "raubtiere"],
+      "description": "Heulooo! In der Dämmerung hebt ein Wolf seine Schnauze und ruft sein berühmtes \"Auuuu!\" Damit spricht er mit seinem Rudel, auch wenn es kilometerweit entfernt ist.\n\nWölfe sind echte Teamspieler – beim Jagen laufen sie wie eine perfekt einstudierte Sportmannschaft. Ihre Nase ist so stark, dass sie einen Hasen riechen, der sich unter einer Schneedecke versteckt.\n\nDie Pfoten haben eine Art Schneeketten: Haarbüschel zwischen den Zehen geben Halt auf Eis. Im Sommer wechseln sie auf ein dünneres Fell, im Winter tragen sie einen kuscheligen Mantel.\n\nWolfswelpen spielen Fangen und verstecken sich hinter Mama, während Onkel und Tante aufpassen. Wenn ein Wolf dir zwinkert, bedeutet das: \"Keine Angst, ich bin neugierig!\"",
+      "categories": [
+        "fleischfresser",
+        "grosse-tiere",
+        "saeugetiere",
+        "raubtiere"
+      ],
       "image": {
         "filename": "tier-wolf.png",
         "path": "images/tier-wolf.png",
@@ -825,15 +1261,24 @@
         "filename": "tier-wolf.mp3",
         "path": "audio/tier-wolf.mp3"
       },
-      "character_emotions": ["excited", "curious", "thinking"],
+      "character_emotions": [
+        "thinking",
+        "surprised",
+        "exploring"
+      ],
       "safety_score": 5
     },
     {
       "id": "tier_047",
       "name": "Krokodil",
       "slug": "krokodil",
-      "description": "",
-      "categories": ["fleischfresser", "grosse-tiere", "reptilien", "wassertiere"],
+      "description": "Platsch – ein mächtiges Krokodil sonnt sich am Flussufer, das Maul weit geöffnet wie ein lebendiger Hitzeregler. Dadurch kühlt es sich ab, denn Krokodile schwitzen nicht!\n\nSeine Haut ist ein natürlicher Panzer aus Knochenplatten, doch der Bauch fühlt sich überraschend weich an. Mit dem kräftigen Schwanz kann es blitzartig losschießen und Beute überraschen.\n\nKrokodile haben zwei Augendeckel: Einen zum Zwinkern, einen durchsichtigen zum Tauchen. Unter Wasser sehen sie perfekt und halten den Atem über eine Stunde an.\n\nIhre Zähne sitzen nicht fest: Fällt einer aus, wächst sofort ein neuer nach – bis zu 3.000-mal im Leben! Die Jungen piepsen im Ei, und Mama gräbt sie behutsam aus. Dann trägt sie sie vorsichtig im Maul zum Wasser. Ganz schön fürsorglich, oder?",
+      "categories": [
+        "fleischfresser",
+        "grosse-tiere",
+        "reptilien",
+        "wassertiere"
+      ],
       "image": {
         "filename": "tier-krokodil.png",
         "path": "images/tier-krokodil.png",
@@ -843,15 +1288,24 @@
         "filename": "tier-krokodil.mp3",
         "path": "audio/tier-krokodil.mp3"
       },
-      "character_emotions": ["excited", "curious", "thinking"],
+      "character_emotions": [
+        "thinking",
+        "surprised",
+        "exploring"
+      ],
       "safety_score": 4
     },
     {
       "id": "tier_048",
       "name": "Panda",
       "slug": "panda",
-      "description": "",
-      "categories": ["pflanzenfresser", "grosse-tiere", "saeugetiere", "exotische-tiere"],
+      "description": "Knusper, knusper – ein putziger Panda sitzt gemütlich im Bambuswald und knabbert grüne Stängel. Dabei benutzt er seinen \"falschen Daumen\", einen speziellen Knochen, um die Halme festzuhalten – fast wie wir mit Stäbchen essen!\n\nSein schwarz-weißes Fell tarnt ihn in Licht und Schatten des Waldes. Pandas verbringen bis zu 14 Stunden am Tag mit Fressen, brauchen aber trotzdem Nickerchen, weil Bambus wenig Energie liefert.\n\nNeugeborene Pandas sind so klein wie eine Tafel Schokolade und völlig nackt. Mama trägt sie liebevoll am Bauch und wärmt sie mit dem dicken Fell.\n\nWenn Pandas spielen, rollen sie hangabwärts wie flauschige Schneebälle und machen dabei schnaufende \"Honk-Honk\"-Laute. Ziemlich niedlich, findest du nicht?",
+      "categories": [
+        "pflanzenfresser",
+        "grosse-tiere",
+        "saeugetiere",
+        "exotische-tiere"
+      ],
       "image": {
         "filename": "tier-panda.png",
         "path": "images/tier-panda.png",
@@ -861,15 +1315,25 @@
         "filename": "tier-panda.mp3",
         "path": "audio/tier-panda.mp3"
       },
-      "character_emotions": ["curious", "excited", "thinking"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "thinking"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_049",
       "name": "Koala",
       "slug": "koala",
-      "description": "",
-      "categories": ["pflanzenfresser", "mittelgrosse-tiere", "saeugetiere", "exotische-tiere", "langsame-tiere"],
+      "description": "Gääähn – ein verschlafener Koala klammert sich an einen Eukalyptusbaum. Von 24 Stunden döst er bis zu 20! Eukalyptusblätter sind sein Lieblingsgericht, aber schwer verdaulich, deshalb muss er viel ruhen.\n\nKoalas haben Fingerabdrücke, die fast so aussehen wie unsere. Mit rauen Pfotenballen klettern sie ohne Rutschen.\n\nEin Baby-Koala, Joey genannt, passt bei der Geburt in einen Teelöffel! Es krabbelt in Mamas Beutel und kuschelt dort monatelang.\n\nWenn Koalas miteinander reden, brummen sie tief wie kleine Motoren. Hör genau hin – vielleicht murmelt er: \"Lass mich weiterschlafen, bitte!\"",
+      "categories": [
+        "pflanzenfresser",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "exotische-tiere",
+        "langsame-tiere"
+      ],
       "image": {
         "filename": "tier-koala.png",
         "path": "images/tier-koala.png",
@@ -879,15 +1343,24 @@
         "filename": "tier-koala.mp3",
         "path": "audio/tier-koala.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_050",
       "name": "Hase",
       "slug": "hase",
-      "description": "",
-      "categories": ["pflanzenfresser", "kleine-tiere", "saeugetiere", "schnelle-tiere"],
+      "description": "Zack – ein flinker Hase schießt übers Feld, macht plötzlich einen Haken und verwirrt so alle Verfolger. Mit kräftigen Hinterbeinen springt er höher als ein Erwachsene groß ist!\n\nSeine langen Löffelohren funktionieren wie Satelliten: Sie drehen sich unabhängig und hören Gefahren früh. Sie helfen auch beim Kühlen, weil Blut durch die dünne Haut fließt.\n\nHasenaugen liegen seitlich, damit er fast rundum sehen kann. Zum Schlafen macht er nur ein Mini-Loch im Boden, das nennt man Sasse.\n\nWenn es Frühling wird, liefern sich Hasen Boxkämpfe – das ist Balz und sieht sehr lustig aus! Das leise \"Mmpf\" bedeutet: \"Alles sicher, hopp weiter!\"",
+      "categories": [
+        "pflanzenfresser",
+        "kleine-tiere",
+        "saeugetiere",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-hase.png",
         "path": "images/tier-hase.png",
@@ -897,15 +1370,25 @@
         "filename": "tier-hase.mp3",
         "path": "audio/tier-hase.mp3"
       },
-      "character_emotions": ["excited", "surprised", "curious"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "curious"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_051",
       "name": "Blauwal",
       "slug": "blauwal",
-      "description": "",
-      "categories": ["grosse-tiere", "saeugetiere", "meerestiere", "wassertiere", "pflanzenfresser"],
+      "description": "Staunend blickst du aufs Meer: Ein Blauwal gleitet vorbei, länger als ein Flugzeug! Seine Zunge wiegt so viel wie ein Elefant, und sein Herz ist so groß wie ein Auto.\n\nDer Blauton entsteht durch Licht in der Wassersäule, sein Rücken glitzert wie flüssiges Metall. Mit jedem Atemzug stößt er eine 9 Meter hohe Wasserfontäne aus – wie ein Meeres-Geysir.\n\nEr frisst winzigen Krill: Mit weit geöffnetem Maul nimmt er tonnenweise Wasser auf und presst es durch Barten heraus. Ein Krill-Shake!\n\nBlauwale singen tiefe Lieder, die über Ozeane wandern. Vielleicht hörst du ein fernes Dröhnen – das ist sein Gruß an andere Giganten!",
+      "categories": [
+        "grosse-tiere",
+        "saeugetiere",
+        "meerestiere",
+        "wassertiere",
+        "fleischfresser"
+      ],
       "image": {
         "filename": "tier-blauwal.png",
         "path": "images/tier-blauwal.png",
@@ -915,15 +1398,23 @@
         "filename": "tier-blauwal.mp3",
         "path": "audio/tier-blauwal.mp3"
       },
-      "character_emotions": ["surprised", "excited", "curious"],
+      "character_emotions": [
+        "surprised",
+        "excited",
+        "curious"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_052",
       "name": "Maus",
       "slug": "maus",
-      "description": "",
-      "categories": ["kleine-tiere", "saeugetiere", "allesfresser"],
+      "description": "Piep – eine kleine Maus huscht entlang der Wand, ihre Schnurrhaare tasten jede Ritze ab wie Antennen. Sie kann durch Löcher schlüpfen, die kaum größer sind als eine Münze.\n\nMäuse haben flinke Pfoten und sammeln Körner, die sie in Backentaschen zu ihrem Nest tragen. Ihr Herz schlägt so schnell, dass du es als Trommel hören würdest.\n\nWeil sie kurzsichtig sind, hilft ihnen ihr guter Geruchssinn. Sie kommunizieren sogar mit Ultraschall-Piepsen, die wir nicht hören.\n\nIm Nest kuscheln sie sich eng, um warm zu bleiben. Wenn du ein leises \"Zit-zit\" hörst, sagen sie vielleicht: \"Danke für den Käse!\"",
+      "categories": [
+        "kleine-tiere",
+        "saeugetiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-maus.png",
         "path": "images/tier-maus.png",
@@ -933,15 +1424,24 @@
         "filename": "tier-maus.mp3",
         "path": "audio/tier-maus.mp3"
       },
-      "character_emotions": ["excited", "curious", "laughing"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "laughing"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_053",
       "name": "Meerschweinchen",
       "slug": "meerschweinchen",
-      "description": "",
-      "categories": ["kleine-tiere", "saeugetiere", "haustiere", "pflanzenfresser"],
+      "description": "Quiek-quiek – ein Meerschweinchen sprintet durch sein Gehege wie ein kleines Rennauto. Es stammt ursprünglich aus Südamerika und liebt es, in Gruppen zu leben. Alle unterhalten sich mit über 10 verschiedenen Lauten: Purren, Pfeifen, Murmeln.\n\nStreichelt man es, hört man ein wohliges \"Brrr\" – das bedeutet: \"Ich fühl mich sicher!\"\n\nIhre Zähne wachsen ständig weiter; knackige Zweige halten sie kurz, so wie du Fingernägel kürzt.\n\nMeerschweinchen können nicht springen wie Kaninchen, dafür laufen sie im Zickzack, wenn sie erschrecken. Am liebsten knabbern sie Gemüse und brauchen Vitamin C, sonst werden sie krank. Also immer schön Paprika servieren!",
+      "categories": [
+        "kleine-tiere",
+        "saeugetiere",
+        "haustiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-meerschweinchen.png",
         "path": "images/tier-meerschweinchen.png",
@@ -951,33 +1451,49 @@
         "filename": "tier-meerschweinchen.mp3",
         "path": "audio/tier-meerschweinchen.mp3"
       },
-      "character_emotions": ["curious", "excited", "exploring"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "exploring"
+      ],
       "safety_score": 10
     },
     {
       "id": "tier_054",
       "name": "Käfer",
       "slug": "kafer",
-      "description": "",
-      "categories": ["insekten", "kleine-tiere", "allesfresser"],
+      "description": "Krrr – ein glänzender Käfer krabbelt über einen Ast. Seine harte Panzerdecke, das Elytron, schützt die empfindlichen Flügel darunter. Wenn er startet, klappt er die Deckel auf wie eine Schatztruhe.\n\nKäfer sind wahre Kraftpakete: Manche können das 50-fache ihres Körpergewichts tragen – so als würdest du einen Elefanten hochheben!\n\nMit Fühlern \"riechen\" sie die Luft nach leckeren Pflanzen oder Freunden ab. Einige Arten leuchten nachts mit biochemischem Licht – Glühkäfer!\n\nWenn Gefahr droht, spielen manche Tot, andere geben übelriechende Tropfen ab. Beobachte ihn genau – vielleicht putzt er gerade seine Fühler wie ein winziger Friseur!",
+      "categories": [
+        "insekten",
+        "kleine-tiere",
+        "allesfresser"
+      ],
       "image": {
-        "filename": "tier-kafer.png",
-        "path": "images/tier-kafer.png",
+        "filename": "tier-k-fer.png",
+        "path": "images/tier-k-fer.png",
         "alt": "Handgezeichnete Illustration eines glänzenden Käfers in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-kafer.mp3",
         "path": "audio/tier-kafer.mp3"
       },
-      "character_emotions": ["curious", "excited", "surprised"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "surprised"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_055",
       "name": "Ameise",
       "slug": "ameise",
-      "description": "",
-      "categories": ["insekten", "kleine-tiere", "allesfresser"],
+      "description": "Wusel-wusel – eine Ameise marschiert in perfekter Reihe mit ihren Schwestern. Gemeinsam können sie Brücken aus ihren Körpern bauen, um Schluchten zu überwinden – echte Ingenieure!\n\nAmeisen heben das 20-fache ihres Gewichts. Ihr Nest unter der Erde hat viele Kammern: Kinderstube, Pilzgarten, Vorratslager.\n\nSie sprechen über Duftspuren; folgt eine Ameise Zucker, legt sie eine \"Duftstraße\" für alle an. Die Königin legt täglich Hundert Eier, während Arbeiterinnen alles organisieren.\n\nBei Gefahr verteidigen sie sich mit Säure oder Bissen. Aber meistens pflegen sie Blattläuse wie Bauern Kühe. Hör genau: Das leise \"Tss-tss\" ihrer Fühler ist ihre Geheimsprache!",
+      "categories": [
+        "insekten",
+        "kleine-tiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-ameise.png",
         "path": "images/tier-ameise.png",
@@ -987,15 +1503,25 @@
         "filename": "tier-ameise.mp3",
         "path": "audio/tier-ameise.mp3"
       },
-      "character_emotions": ["curious", "excited", "surprised"],
+      "character_emotions": [
+        "curious",
+        "excited",
+        "surprised"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_056",
       "name": "Eule",
       "slug": "eule",
-      "description": "",
-      "categories": ["voegel", "mittelgrosse-tiere", "fleischfresser", "nachtaktive-tiere", "flugtiere"],
+      "description": "Huuu-huuu – in der stillen Nacht gleitet eine Eule lautlos durch die Luft. Ihre Flügelkanten sind gezackt wie Kammzähne und brechen den Wind, damit kein Geräusch entsteht.\n\nIhre riesigen Augen sehen sechsmal besser im Dunkeln als unsere. Sie sind so groß, dass sie sich nicht bewegen lassen – dafür dreht die Eule einfach ihren Kopf fast ganz herum, bis zu 270 Grad!\n\nFederohren auf dem Kopf sind nur Deko, die echten Ohren sitzen versetzt im Gesicht. So kann sie ein Rascheln unter Laub millimetergenau orten.\n\nEulen schlucken Mäuse im Ganzen und würgen später Fell und Knochen als \"Gewölle\" wieder aus. Findest du eines, ist es wie ein Mini-Schatz!\n\nWenn sie leise \"Wuu\" ruft, sagt sie vielleicht: \"Gute Nacht, Wald!\"",
+      "categories": [
+        "voegel",
+        "mittelgrosse-tiere",
+        "fleischfresser",
+        "nachtaktive-tiere",
+        "flugtiere"
+      ],
       "image": {
         "filename": "tier-eule.png",
         "path": "images/tier-eule.png",
@@ -1005,51 +1531,80 @@
         "filename": "tier-eule.mp3",
         "path": "audio/tier-eule.mp3"
       },
-      "character_emotions": ["excited", "surprised", "curious"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "curious"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_057",
       "name": "Schildkröte",
       "slug": "schildkroete",
-      "description": "",
-      "categories": ["reptilien", "mittelgrosse-tiere", "pflanzenfresser", "langsame-tiere", "wassertiere"],
+      "description": "Klack – eine gemütliche Schildkröte trottet über den Pfad, ihr Haus immer dabei. Der Panzer besteht aus über 50 Knochenplatten, zusammengewachsen wie ein Ritterpanzer.\n\nSchildkröten haben keinen Zahn, sondern einen hornigen Schnabel, mit dem sie Algen oder Gemüse abzupfen. Manche Arten können über 100 Jahre alt werden – echte Zeitreisende!\n\nZum Atmen schiebt sie den Hals wie einen Blasebalg vor und zurück, weil sich der Brustkorb nicht bewegen kann. Bei Gefahr zieht sie Beine und Kopf ein – *zack*, Tür zu!\n\nIm Wasser paddeln sie gemächlich, an Land genießen sie Sonnenbäder. Das leise \"Schlurf\" bedeutet wohl: \"Nur keine Eile!\"",
+      "categories": [
+        "reptilien",
+        "mittelgrosse-tiere",
+        "pflanzenfresser",
+        "langsame-tiere",
+        "wassertiere"
+      ],
       "image": {
-        "filename": "tier-schildkroete.png",
-        "path": "images/tier-schildkroete.png",
+        "filename": "tier-schildkr-te.png",
+        "path": "images/tier-schildkr-te.png",
         "alt": "Handgezeichnete Illustration einer gemütlichen Schildkröte in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-schildkroete.mp3",
         "path": "audio/tier-schildkroete.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_058",
       "name": "Chamäleon",
       "slug": "chamaeleon",
-      "description": "",
-      "categories": ["reptilien", "kleine-tiere", "fleischfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "description": "Farbwechsel-Alarm! Ein Chamäleon sitzt auf dem Ast und wird vor deinen Augen von grün zu gelb. Es steuert seine Hautpigmente mit winzigen Zellen, die wie Farbpaletten funktionieren.\n\nSeine Augen drehen sich unabhängig – eins schaut nach vorne, eins nach hinten. So entgeht ihm nichts. Wenn es Beute erspäht, richten sich beide gleichzeitig aus, und *schnapp!* eine lange Schleuderzunge schießt los, schneller als ein Wimpernschlag.\n\nAm Schwanz kann es sich fest aufwickeln wie ein lebendes Karabinerhaken. Das hilft beim Klettern in dünnen Zweigen.\n\nFarben zeigen nicht nur Tarnung, sondern auch Laune: Dunkle Töne bedeuten Ärger, helle Freude. Vielleicht flüstert das Chamäleon gerade: \"Bin gut gelaunt!\"",
+      "categories": [
+        "reptilien",
+        "kleine-tiere",
+        "fleischfresser",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
-        "filename": "tier-chamaeleon.png",
-        "path": "images/tier-chamaeleon.png",
+        "filename": "tier-cham-leon.png",
+        "path": "images/tier-cham-leon.png",
         "alt": "Handgezeichnete Illustration eines farbwechselnden Chamäleons in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-chamaeleon.mp3",
         "path": "audio/tier-chamaeleon.mp3"
       },
-      "character_emotions": ["surprised", "excited", "thinking"],
+      "character_emotions": [
+        "surprised",
+        "excited",
+        "thinking"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_059",
       "name": "Clownfisch",
       "slug": "clownfisch",
-      "description": "",
-      "categories": ["fische", "kleine-tiere", "meerestiere", "wassertiere", "fleischfresser"],
+      "description": "Nemo lässt grüßen – ein orange-weißer Clownfisch wuselt zwischen giftigen Seeanemonen-Tentakeln. Seine Haut trägt ein Schutzschleim, der ihn vor dem Nesselgift bewahrt – wie ein Geheimumhang.\n\nClownfische leben in Familien mit fester Rangordnung. Die Chefin ist immer ein Weibchen. Wenn sie stirbt, verwandelt sich das größte Männchen in ein Weibchen – ein echter Rollenwechsel!\n\nMit Flossenzittern und kleinen Knackgeräuschen reden sie miteinander. Sie putzen ihre Anemone, und die beschützt sie – eine perfekte WG.\n\nWenn Gefahr droht, huschen sie blitzschnell zwischen die Tentakel zurück. Ein leises \"Pop-Pop\" unter Wasser heißt: \"Hier wohne ich!\"",
+      "categories": [
+        "fische",
+        "kleine-tiere",
+        "meerestiere",
+        "wassertiere",
+        "fleischfresser"
+      ],
       "image": {
         "filename": "tier-clownfisch.png",
         "path": "images/tier-clownfisch.png",
@@ -1059,15 +1614,25 @@
         "filename": "tier-clownfisch.mp3",
         "path": "audio/tier-clownfisch.mp3"
       },
-      "character_emotions": ["excited", "curious", "surprised"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "surprised"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_060",
       "name": "Goldfisch",
       "slug": "goldfisch",
-      "description": "",
-      "categories": ["fische", "kleine-tiere", "haustiere", "wassertiere", "allesfresser"],
+      "description": "Glitzernd dreht ein Goldfisch seine Runden im Teich. Seine Schuppen reflektieren das Licht wie kleine Goldmünzen. Goldfische merken sich Wege – ihr Gedächtnis hält Wochen, nicht nur Sekunden!\n\nMit seitlichen Linienorganen spüren sie Wasserbewegungen, selbst bei Dunkelheit. Dadurch finden sie Futterkrümel schnell.\n\nGoldfische können in kaltem Wasser fast einfrieren und doch überleben. Sie verlangsamen dann den Stoffwechsel auf Super-Sparflamme.\n\nWenn sie glücklich sind, schwimmen sie Schleifen und blubbern kleine Luftblasen. Vielleicht heißt das: \"Danke fürs Füttern!\"",
+      "categories": [
+        "fische",
+        "kleine-tiere",
+        "haustiere",
+        "wassertiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-goldfisch.png",
         "path": "images/tier-goldfisch.png",
@@ -1077,15 +1642,26 @@
         "filename": "tier-goldfisch.mp3",
         "path": "audio/tier-goldfisch.mp3"
       },
-      "character_emotions": ["excited", "curious", "surprised"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "surprised"
+      ],
       "safety_score": 10
     },
     {
       "id": "tier_061",
       "name": "Thunfisch",
       "slug": "thunfisch",
-      "description": "",
-      "categories": ["fische", "grosse-tiere", "meerestiere", "wassertiere", "fleischfresser", "schnelle-tiere"],
+      "description": "Whoosh – ein silberner Thunfisch schießt durchs offene Meer, so schnell wie ein Auto auf der Landstraße. Sein stromlinienförmiger Körper und die eingeklappten Flossen wirken wie ein lebendiger Torpedo.\n\nThunfische sind Warmblüter unter Fischen: Sie halten ihre Muskeln wärmer als das Wasser, das gibt Extra-Power.\n\nSie legen auf Wanderungen tausende Kilometer zurück und können tief tauchen, um kühles Wasser zu suchen. Große Augen helfen, Beute auch in Dunkelheit zu erspähen.\n\nIhr Schwarm schwimmt im Kreis, um Sardinen zusammenzutreiben – ein blitzschnelles Wirbel-Ballett. Ein leises Rauschen im Wasser könnte ihr heimlicher Jagdplan sein!",
+      "categories": [
+        "fische",
+        "grosse-tiere",
+        "meerestiere",
+        "wassertiere",
+        "fleischfresser",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-thunfisch.png",
         "path": "images/tier-thunfisch.png",
@@ -1095,15 +1671,25 @@
         "filename": "tier-thunfisch.mp3",
         "path": "audio/tier-thunfisch.mp3"
       },
-      "character_emotions": ["excited", "curious", "surprised"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "surprised"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_062",
       "name": "Seepferdchen",
       "slug": "seepferdchen",
-      "description": "",
-      "categories": ["fische", "kleine-tiere", "meerestiere", "wassertiere", "fleischfresser"],
+      "description": "Zierlich schwebt ein Seepferdchen senkrecht im Wasser, den Ringelschwanz an einer Pflanze verankert. Papa trägt hier die Babys: Er hat eine Bauchtasche, in der hunderte winzige Seepferdchen heranwachsen.\n\nMit einem langen Röhrenschnabel saugt es Plankton ein wie Staub mit einem Mini-Staubsauger. Es ändert seine Farbe, um sich zwischen Korallen zu verstecken.\n\nSeepferdchen haben keine Schuppen, sondern Knochenplatten wie Ritterrüstung. Trotz fehlender Flossen können sie mit einer Rückenflosse rasch vorwärts wackeln.\n\nBeim Balztanz verflechten sie ihre Schwänze und drehen sich umeinander – ein romantischer Unterwasser-Walzer. Vielleicht siehst du gerade ein zartes Farb-Blitzen: \"Ich hab dich lieb!\"",
+      "categories": [
+        "fische",
+        "kleine-tiere",
+        "meerestiere",
+        "wassertiere",
+        "fleischfresser"
+      ],
       "image": {
         "filename": "tier-seepferdchen.png",
         "path": "images/tier-seepferdchen.png",
@@ -1113,33 +1699,52 @@
         "filename": "tier-seepferdchen.mp3",
         "path": "audio/tier-seepferdchen.mp3"
       },
-      "character_emotions": ["excited", "curious", "surprised"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "surprised"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_063",
       "name": "Känguru",
       "slug": "kaenguru",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "description": "Boing – ein Känguru springt durchs Outback, jeder Satz bis zu neun Meter weit! Sein langer, muskulöser Schwanz dient als Balance-Stab und Stütze beim Boxen.\n\nKängurus sind echte Beuteltiere: Das winzige, rosige Baby krabbelt direkt nach der Geburt in Mamas Beutel und wächst dort heran. Später guckt es neugierig heraus und genießt die Aussicht.\n\nBeim Ruhen lehnt das Känguru sich auf den Schwanz wie auf einen Hocker. Seine großen Füße wirken wie Sprungfedern: Beim Laufen speichern Sehnen Energie, so spart es Kraft.\n\nIn der Hitze leckt es die Unterarme; verdunstender Speichel kühlt das Blut – eine natürliche Klimaanlage. Ein freundliches Schwanz-Klopfen bedeutet: \"Alles okay hier!\"",
+      "categories": [
+        "exotische-tiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "schnelle-tiere"
+      ],
       "image": {
-        "filename": "tier-kaenguru.png",
-        "path": "images/tier-kaenguru.png",
+        "filename": "tier-k-nguru.png",
+        "path": "images/tier-k-nguru.png",
         "alt": "Handgezeichnete Illustration eines hüpfenden Kängurus in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-kaenguru.mp3",
         "path": "audio/tier-kaenguru.mp3"
       },
-      "character_emotions": ["excited", "surprised", "curious"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "curious"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_064",
       "name": "Lama",
       "slug": "lama",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "description": "Mmmh – ein flauschiges Lama kaut gemütlich Heu und blickt neugierig über den Zaun. Wird ihm etwas zu bunt, spuckt es einen Wasser-Speichelmix – seine höfliche Art zu sagen: \"Abstand, bitte!\"\n\nSein Wollkleid ist warm, leicht und wasserabweisend. Aus der Wolle werden weiche Pullover gestrickt.\n\nLamas leben in Herden und summen, um Kontakt zu halten. Jungtiere heißen Cria und rennen schon wenige Stunden nach der Geburt.\n\nBeim Transport in den Anden können Lamas ein Viertel ihres Körpergewichts tragen. Doch wenn es zu schwer wird, setzen sie sich einfach hin. Cleveres Lasttier!",
+      "categories": [
+        "exotische-tiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-lama.png",
         "path": "images/tier-lama.png",
@@ -1149,15 +1754,25 @@
         "filename": "tier-lama.mp3",
         "path": "audio/tier-lama.mp3"
       },
-      "character_emotions": ["excited", "surprised", "curious"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "curious"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_065",
       "name": "Zebra",
       "slug": "zebra",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "description": "Streifen-Rätsel: Kein Zebra hat das gleiche Muster! Die schwarz-weißen Linien verwirren Raubtiere und wirken wie bewegte Optik-Illusion.\n\nZebras gehören zur Pferdefamilie, können aber viel besser Hitze aushalten. Dunkle Streifen erwärmen sich stärker, Luft wirbelt auf und kühlt den Körper.\n\nBeim Galopp erreichen sie 65 km/h. In der Herde stehen sie Kopf an Schwanz, damit jeder Abschnitt von Fliegen-Schwänzen verscheucht wird.\n\nWenn ein Zebra lacht (Zähne zeigen), ist das eigentlich ein Dufttest: Es fächert Gerüche zur Nase. Hörst du ein lautes \"Wha-haaa!\"? Dann erzählt es vielleicht einen Zebra-Witz!",
+      "categories": [
+        "exotische-tiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-zebra.png",
         "path": "images/tier-zebra.png",
@@ -1167,15 +1782,26 @@
         "filename": "tier-zebra.mp3",
         "path": "audio/tier-zebra.mp3"
       },
-      "character_emotions": ["excited", "surprised", "curious"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "curious"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_066",
       "name": "Gepard",
       "slug": "gepard",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere", "schnelle-tiere"],
+      "description": "Zisch – ein Gepard beschleunigt in drei Sekunden von 0 auf 100 km/h, schneller als ein Sportwagen! Seine schlanke Taille, lange Beine und federnde Rückenmuskeln wirken wie Sprungfedern.\n\nSchwarze Tränenstreifen unter den Augen mindern Sonnenblendung – eine eingebaute Sonnenbrille. Beim Sprint hält der lange Schwanz das Gleichgewicht, während halb eingezogene Krallen wie Spikes greifen.\n\nNach dem Rennen hechelt er laut, um sich abzukühlen. Geparden brüllen nicht, sie schnurren wie große Katzen. Wenn er leise \"Prrt\" ruft, begrüßt er seine Geschwister.",
+      "categories": [
+        "exotische-tiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "fleischfresser",
+        "raubtiere",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-gepard.png",
         "path": "images/tier-gepard.png",
@@ -1185,15 +1811,24 @@
         "filename": "tier-gepard.mp3",
         "path": "audio/tier-gepard.mp3"
       },
-      "character_emotions": ["excited", "surprised", "curious"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "curious"
+      ],
       "safety_score": 6
     },
     {
       "id": "tier_067",
       "name": "Lemur",
       "slug": "lemur",
-      "description": "",
-      "categories": ["exotische-tiere", "mittelgrosse-tiere", "saeugetiere", "allesfresser"],
+      "description": "Hopp – ein Ringelschwanz-Lemur springt 3 Meter weit von Ast zu Ast. Sein schwarz-weißer Schweif dient als Flagge, damit die Familie im dichten Wald Madagaskars zusammenbleibt.\n\nLemuren reiben Duftdrüsen an Ästen ab – so schreiben sie Parfum-Nachrichten. Morgens sonnen sie sich mit ausgebreiteten Armen wie kleine Yogis.\n\nIhre großen Augen sehen bei Dämmerung hervorragend. Wenn sie fröhlich sind, quieken sie \"Mwa-mwa!\" und kuscheln die Schwänze zusammen.",
+      "categories": [
+        "exotische-tiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "allesfresser"
+      ],
       "image": {
         "filename": "tier-lemur.png",
         "path": "images/tier-lemur.png",
@@ -1203,15 +1838,23 @@
         "filename": "tier-lemur.mp3",
         "path": "audio/tier-lemur.mp3"
       },
-      "character_emotions": ["excited", "surprised", "curious"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "curious"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_068",
       "name": "T-Rex",
       "slug": "t-rex",
-      "description": "",
-      "categories": ["dinosaurier", "grosse-tiere", "fleischfresser"],
+      "description": "RUMMS – vor 66 Millionen Jahren stampfte T-Rex durch Wälder. Er war so lang wie ein Bus und seine Bananen-großen Zähne konnten Knochen knacken.\n\nTrotz winziger Arme hatte er kräftige Schenkel und konnte schätzungsweise 20 km/h laufen – schneller als ein Mensch joggt.\n\nSein Geruchssinn war superstark: Wissenschaftler denken, er roch Aas viele Kilometer weit. Heute bestaunen wir seine riesigen Fossilien in Museen – ein echter Superstar der Urzeit!",
+      "categories": [
+        "dinosaurier",
+        "grosse-tiere",
+        "fleischfresser"
+      ],
       "image": {
         "filename": "tier-t-rex.png",
         "path": "images/tier-t-rex.png",
@@ -1221,15 +1864,23 @@
         "filename": "tier-t-rex.mp3",
         "path": "audio/tier-t-rex.mp3"
       },
-      "character_emotions": ["excited", "surprised", "thinking"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "thinking"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_069",
       "name": "Brontosaurus",
       "slug": "brontosaurus",
-      "description": "",
-      "categories": ["dinosaurier", "grosse-tiere", "pflanzenfresser"],
+      "description": "Donner-Riese Brontosaurus! Mit einem 15-Meter-Hals reichte er an Baumkronen wie an ein Salatbuffet. Jeder Schritt ließ den Boden beben – daher der Name \"Donner-Echse\".\n\nSein langer Hals hatte nur wenige dicke Wirbel, innen hohl wie Vogelknochen, damit er nicht zu schwer war.\n\nForscher meinen, er lebte in Herden und watschelte durch Sümpfe. Ein sanfter Riese, der täglich eine Badewanne voller Blätter futterte!",
+      "categories": [
+        "dinosaurier",
+        "grosse-tiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-brontosaurus.png",
         "path": "images/tier-brontosaurus.png",
@@ -1239,15 +1890,23 @@
         "filename": "tier-brontosaurus.mp3",
         "path": "audio/tier-brontosaurus.mp3"
       },
-      "character_emotions": ["excited", "surprised", "thinking"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "thinking"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_070",
       "name": "Triceratops",
       "slug": "triceratops",
-      "description": "",
-      "categories": ["dinosaurier", "grosse-tiere", "pflanzenfresser"],
+      "description": "Triceratops trug drei Hörner wie ein Ritterhelm und einen großen Nackenschild als Kühler und Schutz. Er war so lang wie zwei Autos und wog mehr als ein Elefant.\n\nDie Hörner halfen beim Rangeln und Abschrecken von Räubern wie T-Rex. Seine Schnabelschnauze schnitt harte Pflanzen ab.\n\nFossile Spuren zeigen, dass Triceratops vielleicht in kleinen Gruppen herumlief. Ein Dino mit eingebautem Schutzschild!",
+      "categories": [
+        "dinosaurier",
+        "grosse-tiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-triceratops.png",
         "path": "images/tier-triceratops.png",
@@ -1257,15 +1916,24 @@
         "filename": "tier-triceratops.mp3",
         "path": "audio/tier-triceratops.mp3"
       },
-      "character_emotions": ["excited", "surprised", "thinking"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "thinking"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_071",
       "name": "Stegosaurus",
       "slug": "stegosaurus",
-      "description": "",
-      "categories": ["dinosaurier", "grosse-tiere", "pflanzenfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "description": "Stegosaurus spazierte mit zweireihigen Knochenplatten auf dem Rücken, die wie Ritterplatten glänzten. Die Platten enthielten Blutgefäße: Vielleicht regulierten sie Wärme oder leuchteten rötlich zur Warnung.\n\nSein Gehirn war nur so groß wie eine Walnuss, aber sein Schwanz, der \"Thagomizer\" genannt wird, hatte vier spitze Stacheln zum Verteidigen.\n\nObwohl er so gefährlich aussah, futterte er lieber Farne als Fleisch.",
+      "categories": [
+        "dinosaurier",
+        "grosse-tiere",
+        "pflanzenfresser",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
         "filename": "tier-stegosaurus.png",
         "path": "images/tier-stegosaurus.png",
@@ -1275,15 +1943,24 @@
         "filename": "tier-stegosaurus.mp3",
         "path": "audio/tier-stegosaurus.mp3"
       },
-      "character_emotions": ["excited", "surprised", "thinking"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "thinking"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_072",
       "name": "Spinne",
       "slug": "spinne",
-      "description": "",
-      "categories": ["insekten", "kleine-tiere", "fleischfresser", "giftige-tiere", "gartentiere"],
+      "description": "Psst – eine Spinne spinnt seidenfeine Fäden, dünner als Menschenhaar, aber stärker als Stahl. Mit acht Beinen tastet sie ihr Netz nach Vibrationen ab, um Beute zu orten.\n\nSpinnenaugen sehen Bewegungen blitzschnell. Manche Arten hüpfen weit, andere bauen Trichter oder klebrige Kugelfäden.\n\nWenn Gefahr droht, lässt sie sich am Sicherheitsfaden abseilen. Das leise \"Pling\" im Netz bedeutet: \"Zeit fürs Abendbrot!\"",
+      "categories": [
+        "kleine-tiere",
+        "fleischfresser",
+        "giftige-tiere",
+        "gartentiere"
+      ],
       "image": {
         "filename": "tier-spinne.png",
         "path": "images/tier-spinne.png",
@@ -1293,51 +1970,25 @@
         "filename": "tier-spinne.mp3",
         "path": "audio/tier-spinne.mp3"
       },
-      "character_emotions": ["thinking", "surprised", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "surprised",
+        "exploring"
+      ],
       "safety_score": 7
-    },
-    {
-      "id": "tier_073",
-      "name": "Ameise",
-      "slug": "ameise",
-      "description": "",
-      "categories": ["insekten", "kleine-tiere", "allesfresser", "gartentiere"],
-      "image": {
-        "filename": "tier-ameise.png",
-        "path": "images/tier-ameise.png",
-        "alt": "Handgezeichnete Illustration einer fleißigen Ameise in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-ameise.mp3",
-        "path": "audio/tier-ameise.mp3"
-      },
-      "character_emotions": ["thinking", "excited", "exploring"],
-      "safety_score": 9
-    },
-    {
-      "id": "tier_074",
-      "name": "Käfer",
-      "slug": "kaefer",
-      "description": "",
-      "categories": ["insekten", "kleine-tiere", "allesfresser", "gartentiere"],
-      "image": {
-        "filename": "tier-kaefer.png",
-        "path": "images/tier-kaefer.png",
-        "alt": "Handgezeichnete Illustration eines glänzenden Käfers in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-kaefer.mp3",
-        "path": "audio/tier-kaefer.mp3"
-      },
-      "character_emotions": ["thinking", "excited", "exploring"],
-      "safety_score": 9
     },
     {
       "id": "tier_075",
       "name": "Libelle",
       "slug": "libelle",
-      "description": "",
-      "categories": ["insekten", "kleine-tiere", "fleischfresser", "flugtiere", "gartentiere"],
+      "description": "Schwirr – eine Libelle steht wie ein Helikopter in der Luft. Ihre vier durchsichtigen Flügel schlagen unabhängig, so kann sie abrupt stoppen oder rückwärts fliegen.\n\nLibellenlarven leben im Wasser und jagen mit einer ausklappbaren Fangmaske kleine Tiere. Nach der Metamorphose klettert die junge Libelle aus dem Wasser und entfaltet ihre Flügel.\n\nAus Tausenden Facettenaugen sieht sie fast rundum und fängt Mücken im Flug. Ein echter Akrobat des Sommers!",
+      "categories": [
+        "insekten",
+        "kleine-tiere",
+        "fleischfresser",
+        "flugtiere",
+        "gartentiere"
+      ],
       "image": {
         "filename": "tier-libelle.png",
         "path": "images/tier-libelle.png",
@@ -1347,15 +1998,24 @@
         "filename": "tier-libelle.mp3",
         "path": "audio/tier-libelle.mp3"
       },
-      "character_emotions": ["excited", "surprised", "exploring"],
+      "character_emotions": [
+        "excited",
+        "surprised",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_076",
       "name": "Kobra",
       "slug": "kobra",
-      "description": "",
-      "categories": ["reptilien", "mittelgrosse-tiere", "fleischfresser", "giftige-tiere"],
+      "description": "Huuuusch, eine Kobra richtet sich kerzengerade auf und entfaltet ihre breite Haube, als würde sie einen glänzenden Kapuzenschirm aufspannen. Die Haube entsteht, weil Knochenrippen nach außen klappen und die Haut wie ein Trommelfell spannen – damit ruft sie mutig: Halt, hier komme ich!\n\nObwohl sie keine Ohrmuscheln besitzt, fühlt sie Bodenerschütterungen und entdeckt so lauende Mäuse. Ihre gespaltene Zunge schnippt wie eine feine Messgabel und bringt Duftteilchen zu einem Super-Nasenorgan im Gaumen, sodass sie fast riechend sehen kann.\n\nIst Beute nah, stößt sie blitzschnell vor und ihr Gift sorgt für eine ruhige Mahlzeit, die sie danach im Ganzen schluckt. Menschen greift sie nur, wenn sie sich bedroht fühlt, und verschwindet lieber in ihr warmes Laubversteck, sobald wir respektvoll Abstand halten.",
+      "categories": [
+        "reptilien",
+        "mittelgrosse-tiere",
+        "fleischfresser",
+        "giftige-tiere"
+      ],
       "image": {
         "filename": "tier-kobra.png",
         "path": "images/tier-kobra.png",
@@ -1365,15 +2025,25 @@
         "filename": "tier-kobra.mp3",
         "path": "audio/tier-kobra.mp3"
       },
-      "character_emotions": ["thinking", "surprised", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "surprised",
+        "exploring"
+      ],
       "safety_score": 4
     },
     {
       "id": "tier_077",
       "name": "Qualle",
       "slug": "qualle",
-      "description": "",
-      "categories": ["meerestiere", "kleine-tiere", "fleischfresser", "giftige-tiere", "wassertiere"],
+      "description": "Hauchzart treibt eine Qualle wie ein glitzernder Regenschirm durchs Wasser und drückt sich mit sanften Pulsbewegungen vorwärts. Ihr Körper besteht zu mehr als neunzig Prozent aus Wasser, darum wirkt sie fast unsichtbar.\n\nAn den Tentakeln sitzen tausende winzige Nesselzellen, die wie Mini-Pfeilchen zischen und kleine Beutetiere einschläfern, sobald sie sie berühren. Ein Gehirn braucht sie dafür nicht – ein einfacher Nervenring schickt Signale rund um die Glocke und koordiniert jeden Schlag.\n\nManche Quallen leuchten in geheimnisvollem Türkis, wenn sie gestört werden, und verwandeln das Dunkelmeer in eine funkelnde Unterwasser-Disco. Strandet das glibberige Wesen einmal, bleibt oft nur ein feuchter Fleck zurück, der verrät, wie viel Wasserzauber wirklich in ihm steckt.",
+      "categories": [
+        "meerestiere",
+        "kleine-tiere",
+        "fleischfresser",
+        "giftige-tiere",
+        "wassertiere"
+      ],
       "image": {
         "filename": "tier-qualle.png",
         "path": "images/tier-qualle.png",
@@ -1383,15 +2053,24 @@
         "filename": "tier-qualle.mp3",
         "path": "audio/tier-qualle.mp3"
       },
-      "character_emotions": ["thinking", "surprised", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "surprised",
+        "exploring"
+      ],
       "safety_score": 5
     },
     {
       "id": "tier_078",
       "name": "Frosch",
       "slug": "frosch",
-      "description": "",
-      "categories": ["kleine-tiere", "allesfresser", "wassertiere", "gartentiere"],
+      "description": "Plitsch! Ein grüner Frosch schnippt seine klebrige Zunge länger als sein Körper vor und schnappt sich eine ahnungslose Mücke im Flug. Danach hüpft er mit Federbeinsprüngen, die ihn zehnmal so weit tragen, wie er lang ist.\n\nSeine Haut kann durchatmen und muss deshalb stets feucht bleiben – darum sitzt er gern am Teichrand in der Abendkühle. Aus Kaulquappe mit Fischschwanz wird er nach Wochen der Verwandlung zu einem Land- und Wasserakrobaten mit starken Hinterbeinen.\n\nWenn die Nacht beginnt, erklingt sein Quak-Konzert, mit dem Männchen um ein gemütliches Laichplätzchen werben. So sorgt der kleine Sänger dafür, dass auch in Zukunft lauter Mini-Kaulquappen durchs Wasser wuseln.",
+      "categories": [
+        "kleine-tiere",
+        "allesfresser",
+        "wassertiere",
+        "gartentiere"
+      ],
       "image": {
         "filename": "tier-frosch.png",
         "path": "images/tier-frosch.png",
@@ -1401,33 +2080,52 @@
         "filename": "tier-frosch.mp3",
         "path": "audio/tier-frosch.mp3"
       },
-      "character_emotions": ["excited", "curious", "exploring"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_079",
       "name": "Kröte",
       "slug": "kroete",
-      "description": "",
-      "categories": ["kleine-tiere", "allesfresser", "wassertiere", "gartentiere", "giftige-tiere"],
+      "description": "Gemächlich stapft eine Kröte, als trüge sie schwere Stiefel, über den Waldboden und sammelt gierig Schnecken für ihr Abendessen. Ihre warzige Haut speichert Wasser und enthält milde Giftstoffe, die hungrige Räuber abschrecken.\n\nStatt zu springen läuft sie lieber, und bei Gefahr bläht sie sich wie ein kleiner Ballon auf, um größer zu wirken. Hinter den Augen sitzen Ohrdrüsen, die eine bittere Milch abgeben, falls sie doch gepackt wird.\n\nJedes Frühjahr wandert die Kröte tapfer zurück zu ihrem Geburts-Teich, sogar über Straßen, um dort Eier in langen Perlenschnüren abzulegen. Nach dem Frosch-Tanz der Kaulquappen kriechen winzige Jungkröten an Land und helfen bald beim Schneckenputzdienst im Garten.",
+      "categories": [
+        "kleine-tiere",
+        "allesfresser",
+        "wassertiere",
+        "gartentiere",
+        "giftige-tiere"
+      ],
       "image": {
-        "filename": "tier-kroete.png",
-        "path": "images/tier-kroete.png",
+        "filename": "tier-kr-te.png",
+        "path": "images/tier-kr-te.png",
         "alt": "Handgezeichnete Illustration einer warzen Kröte in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-kroete.mp3",
         "path": "audio/tier-kroete.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 6
     },
     {
       "id": "tier_080",
       "name": "Fledermaus",
       "slug": "fledermaus",
-      "description": "",
-      "categories": ["kleine-tiere", "fleischfresser", "flugtiere", "nachtaktive-tiere"],
+      "description": "Wenn der Mond aufgeht, flattern Fledermäuse wie winzige Düsenjets durch die Nacht und malen Kreise um Laternen. Sie sind die einzigen Säugetiere, die aktiv fliegen können, denn ihre Flügel bestehen aus dünner Haut, die über verlängerte Finger gespannt ist.\n\nMit ultraschnellen Rufen, die wir nicht hören, baut die Fledermaus ein Echo-Navigationssystem auf und fängt Mücken, noch bevor wir sie bemerken. In einer Sommernacht frisst sie bis zu tausend Insekten – ein perfekter Gartenhelfer.\n\nAm Tag hängt sie kopfüber in einer kühlen Höhle; spezielle Sehnen verriegeln ihre Krallen ganz ohne Kraft. Wenn es kalt wird, versetzt sie ihren Körper in Winterschlaf-Langsamkeit und spart Energie, bis der Frühling ruft.",
+      "categories": [
+        "kleine-tiere",
+        "fleischfresser",
+        "flugtiere",
+        "nachtaktive-tiere"
+      ],
       "image": {
         "filename": "tier-fledermaus.png",
         "path": "images/tier-fledermaus.png",
@@ -1437,15 +2135,25 @@
         "filename": "tier-fledermaus.mp3",
         "path": "audio/tier-fledermaus.mp3"
       },
-      "character_emotions": ["excited", "curious", "exploring"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_081",
       "name": "Motte",
       "slug": "motte",
-      "description": "",
-      "categories": ["insekten", "kleine-tiere", "allesfresser", "flugtiere", "nachtaktive-tiere"],
+      "description": "Flauschig und geheimnisvoll schwirrt eine Motte im Kerzenschein und folgt dem Licht, weil sie normalerweise den hellen Mond zum Navigieren nutzt. Ihre Flügel sind mit winzigen Schuppen bedeckt, die wie Zauberstaub wirken und bunte Muster bilden.\n\nTagsüber ruht sie reglos an der Baumrinde, wobei Tarnfarben sie fast unsichtbar machen. In der Nacht saugt sie mit ihrem Trinkrüssel Blütennektar, während ihre behaarte Brust wie ein kleiner Pullover Wärme speichert.\n\nBerührt man eine Motte, bleiben Schuppen an den Fingern – das ist ihr Schutz, denn verlorener Flügelstaub lenkt Feinde ab. Aus einem unscheinbaren Ei wird erst eine hungrige Raupe, dann eine Puppe, aus der schließlich das schillernde Nacht-Schmetterlingswesen schlüpft.",
+      "categories": [
+        "insekten",
+        "kleine-tiere",
+        "allesfresser",
+        "flugtiere",
+        "nachtaktive-tiere"
+      ],
       "image": {
         "filename": "tier-motte.png",
         "path": "images/tier-motte.png",
@@ -1455,69 +2163,80 @@
         "filename": "tier-motte.mp3",
         "path": "audio/tier-motte.mp3"
       },
-      "character_emotions": ["excited", "curious", "exploring"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_082",
       "name": "Waschbär",
       "slug": "waschbaer",
-      "description": "",
-      "categories": ["mittelgrosse-tiere", "saeugetiere", "allesfresser", "nachtaktive-tiere"],
+      "description": "Plötzlich raschelt es in der Dämmerung, und ein neugieriger Waschbär tappst über die Terrasse, sein schwarzweißes Banditengesicht im Mondlicht glänzend. Mit geschickten Vorderpfoten, die fast wie kleine Hände wirken, öffnet er mühelos Deckel und tastet nach Leckerbissen.\n\nSeinen Namen verdankt er der Gewohnheit, Futter im Wasser zu drehen, als würde er es waschen, obwohl er dabei hauptsächlich tastet. In Wäldern, Städten und Dachböden fühlt er sich wohl, denn er ist ein Allesfresser und liebt sowohl Obst als auch Käfer.\n\nDer geringelte Schwanz hilft beim Balancieren auf Ästen, und sein dickes Fell schützt ihn im Winter. Trotz seiner Schlaumeier-Tricks bleibt er meist friedlich und flüchtet, sobald Menschen zu nahe kommen.",
+      "categories": [
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "allesfresser",
+        "nachtaktive-tiere"
+      ],
       "image": {
-        "filename": "tier-waschbaer.png",
-        "path": "images/tier-waschbaer.png",
+        "filename": "tier-waschb-r.png",
+        "path": "images/tier-waschb-r.png",
         "alt": "Handgezeichnete Illustration eines neugierigen Waschbären in warmem Kinderbuch-Stil"
       },
       "audio": {
         "filename": "tier-waschbaer.mp3",
         "path": "audio/tier-waschbaer.mp3"
       },
-      "character_emotions": ["excited", "curious", "thinking"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "thinking"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_083",
-      "name": "Alpenveilchen",
-      "slug": "alpenveilchen",
-      "description": "",
-      "categories": ["voegel", "kleine-tiere", "allesfresser", "flugtiere"],
+      "name": "Steinbock",
+      "slug": "steinbock",
+      "description": "Hoch oben in den Bergen klettert ein Steinbock über steile Felswände, als wären es Treppen. Seine gebogenen Hörner wachsen jedes Jahr ein Stück und zeigen sein Alter wie Jahresringe bei Bäumen.\n\nMit speziellen Hufen, die wie Kletterschuhe funktionieren, springt er mühelos von Fels zu Fels. Die weichen Ballen in der Mitte geben Halt, während harte Ränder sich in kleinste Spalten krallen.\n\nIm Winter wächst ihm ein dichtes Fell, das ihn vor eisigen Stürmen schützt. Steinböcke leben in Gruppen und warnen sich gegenseitig mit lauten Pfiffen vor Gefahr.\n\nBesonders beeindruckend sind ihre Kämpfe: Männchen stoßen krachend ihre Hörner zusammen, um zu zeigen, wer der Stärkste ist. Trotzdem sind sie friedliche Pflanzenfresser, die Gräser und Kräuter knabbern.",
+      "categories": [
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
-        "filename": "tier-alpenveilchen.png",
-        "path": "images/tier-alpenveilchen.png",
-        "alt": "Handgezeichnete Illustration eines kleinen Alpenveilchens in warmem Kinderbuch-Stil"
+        "filename": "tier-steinbock.png",
+        "path": "images/tier-steinbock.png",
+        "alt": "Handgezeichnete Illustration eines kletternden Steinbocks in warmem Kinderbuch-Stil"
       },
       "audio": {
-        "filename": "tier-alpenveilchen.mp3",
-        "path": "audio/tier-alpenveilchen.mp3"
+        "filename": "tier-steinbock.mp3",
+        "path": "audio/tier-steinbock.mp3"
       },
-      "character_emotions": ["excited", "curious", "surprised"],
-      "safety_score": 9
-    },
-    {
-      "id": "tier_084",
-      "name": "Adler",
-      "slug": "adler",
-      "description": "",
-      "categories": ["voegel", "grosse-tiere", "fleischfresser", "flugtiere", "raubtiere"],
-      "image": {
-        "filename": "tier-adler.png",
-        "path": "images/tier-adler.png",
-        "alt": "Handgezeichnete Illustration eines majestätischen Adlers in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-adler.mp3",
-        "path": "audio/tier-adler.mp3"
-      },
-      "character_emotions": ["excited", "thinking", "surprised"],
-      "safety_score": 6
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
+      "safety_score": 8
     },
     {
       "id": "tier_085",
       "name": "Falke",
       "slug": "falke",
-      "description": "",
-      "categories": ["voegel", "mittelgrosse-tiere", "fleischfresser", "flugtiere", "raubtiere", "schnelle-tiere"],
+      "description": "Ein Falke steht scheinbar reglos in der Luft, obwohl der Wind weht – er rüttelt, schlägt mit schnellen Flügeln und späht nach Beute. Entdeckt er eine Feldmaus, klappt er die Flügel an und stürzt mit über dreihundert Stundenkilometern hinab, schneller als ein Rennwagen.\n\nSeine Augen besitzen eine Art Fernglas, das kleinste Bewegungen weit unten erkennt. Ein spezieller Knochensteg lenkt Luftströme von den Nasenlöchern ab, sodass er beim Sturzflug problemlos atmen kann.\n\nNach der Landung ruppt er Beute mit schnabelseitigen Kerben, die wie winzige Messer wirken. Falken nisten gern in alten Krähennestern oder auf Kirchturmspitzen und helfen Bauern, Mäuseplagen in Schach zu halten.",
+      "categories": [
+        "voegel",
+        "mittelgrosse-tiere",
+        "fleischfresser",
+        "flugtiere",
+        "raubtiere",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-falke.png",
         "path": "images/tier-falke.png",
@@ -1527,15 +2246,24 @@
         "filename": "tier-falke.mp3",
         "path": "audio/tier-falke.mp3"
       },
-      "character_emotions": ["excited", "thinking", "surprised"],
+      "character_emotions": [
+        "excited",
+        "thinking",
+        "surprised"
+      ],
       "safety_score": 6
     },
     {
       "id": "tier_086",
       "name": "Schnecke",
       "slug": "schnecke",
-      "description": "",
-      "categories": ["kleine-tiere", "allesfresser", "langsame-tiere", "gartentiere"],
+      "description": "Gemächlich zieht eine Schnecke eine glänzende Schleimspur durchs Gras. Auf ihrem Rücken trägt sie ein spiraliges Häuschen, das wie ein Mini-Rucksack mitwächst und sie vor Sonne und Feinden schützt.\n\nVorn strecken sich zwei lange Fühler mit Augen wie winzige Ferngläser, darunter ertasten kürzere Fühler den Weg. Zum Knabbern nutzt sie eine Raspelzunge, die Radula, mit der sie Salat in winzige Stückchen hobelt.\n\nObwohl sie nur kriechend vorankommt, kann sie senkrechte Wände erklimmen und sogar kopfüber hängen. Wird das Wetter zu trocken, baut sie eine Schleimtür vor das Haus und wartet geduldig auf den nächsten Regenschauer.",
+      "categories": [
+        "kleine-tiere",
+        "allesfresser",
+        "langsame-tiere",
+        "gartentiere"
+      ],
       "image": {
         "filename": "tier-schnecke.png",
         "path": "images/tier-schnecke.png",
@@ -1545,69 +2273,54 @@
         "filename": "tier-schnecke.mp3",
         "path": "audio/tier-schnecke.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 10
     },
     {
-      "id": "tier_087",
-      "name": "Seestern",
-      "slug": "seestern",
-      "description": "",
-      "categories": ["meerestiere", "kleine-tiere", "fleischfresser", "wassertiere", "langsame-tiere"],
-      "image": {
-        "filename": "tier-seestern.png",
-        "path": "images/tier-seestern.png",
-        "alt": "Handgezeichnete Illustration eines bunten Seesterns in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-seestern.mp3",
-        "path": "audio/tier-seestern.mp3"
-      },
-      "character_emotions": ["thinking", "curious", "exploring"],
-      "safety_score": 9
-    },
-    {
-      "id": "tier_088",
-      "name": "Elefant",
-      "slug": "elefant",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "tiere-mit-besonderen-faehigkeiten"],
-      "image": {
-        "filename": "tier-elefant.png",
-        "path": "images/tier-elefant.png",
-        "alt": "Handgezeichnete Illustration eines weisen Elefanten in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-elefant.mp3",
-        "path": "audio/tier-elefant.mp3"
-      },
-      "character_emotions": ["thinking", "curious", "exploring"],
-      "safety_score": 7
-    },
-    {
       "id": "tier_089",
-      "name": "Echolot",
-      "slug": "echolot",
-      "description": "",
-      "categories": ["meerestiere", "grosse-tiere", "saeugetiere", "fleischfresser", "wassertiere", "tiere-mit-besonderen-faehigkeiten"],
+      "name": "Pottwal",
+      "slug": "pottwal",
+      "description": "Tief im Ozean ruft ein gewaltiger Pottwal Klick-Klick-Klick und baut damit ein Echo-Bild seiner Umgebung. Diese Töne verraten ihm einen Tintenfisch in völliger Dunkelheit, obwohl beide sich nie sehen.\n\nDie Schnalzlaute entstehen in einem kopfgroßen Fettorgan, der \"Melone\", und werden als kräftiger Schallstrahl nach vorn geschickt; zurückkehrende Echos zeichnen ein akustisches Bild wie ein U-Boot-Radar. So kann der Meeresriese sogar in 2 000 Metern Tiefe sicher navigieren.\n\nMit seinem mächtigen Schwanz gleitet er lautlos durchs Wasser, holt an der Oberfläche Luft und taucht dann wieder ab – manchmal länger als eine Stunde. Währenddessen wartet die Familie oben und \"plaudert\" mit knackenden Lauten, fast wie geheime Unterwasser-Morsezeichen.",
+      "categories": [
+        "meerestiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "fleischfresser",
+        "wassertiere",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
-        "filename": "tier-echolot.png",
-        "path": "images/tier-echolot.png",
-        "alt": "Handgezeichnete Illustration eines Echoortungstieres in warmem Kinderbuch-Stil"
+        "filename": "tier-pottwal.png",
+        "path": "images/tier-pottwal.png",
+        "alt": "Handgezeichnete Illustration eines tauchenden Pottwals in warmem Kinderbuch-Stil"
       },
       "audio": {
-        "filename": "tier-echolot.mp3",
-        "path": "audio/tier-echolot.mp3"
+        "filename": "tier-pottwal.mp3",
+        "path": "audio/tier-pottwal.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_090",
       "name": "Schimpanse",
       "slug": "schimpanse",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "allesfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "description": "Ein Schimpanse hangelt sich mit kraftvollem Schwung von Ast zu Ast, fast als hätte er eingebaute Turnringe. Er teilt gerne Früchte und pflegt Freundschaften, indem er stundenlang Fell kämmt und Läuse snackt.\n\nMit Stöckchen angelt er Termiten aus ihren Bauten – ein echter Werkzeugprofi. Seine Laute reichen von fröhlichem Kichern bis zu lauten Huu-Rufen, die die ganze Gruppe warnen.\n\nAbends baut jedes Tier ein frisches Blätterbett hoch oben im Baum, weich wie ein Natursofa. Kein Wunder, dass Forscher ihn unseren nächsten Verwandten nennen!",
+      "categories": [
+        "exotische-tiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "allesfresser",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
         "filename": "tier-schimpanse.png",
         "path": "images/tier-schimpanse.png",
@@ -1617,15 +2330,25 @@
         "filename": "tier-schimpanse.mp3",
         "path": "audio/tier-schimpanse.mp3"
       },
-      "character_emotions": ["excited", "curious", "thinking"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "thinking"
+      ],
       "safety_score": 7
     },
     {
       "id": "tier_091",
       "name": "Gorilla",
       "slug": "gorilla",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "description": "Sanft knöchelt ein Gorilla auf seinen Fäusten durch den Nebelwald, während er Blätter und saftige Triebe mampft. Sein ernster Silberrücken sieht stark aus, doch er ist meist ein friedlicher Pflanzenfan.\n\nWird die Familie bedroht, trommelt der Chef dramatisch auf die Brust, und das Echo hallt wie eine Dschungeltrommel. Kleine Gorillababys turnen dabei fröhlich über seinen Rücken und üben das Klettern.\n\nJede Nacht baut sich die Gruppe ein Blätternest am Boden, kuschelig wie eine Waldmatratze. Am Morgen weckt sie die Sonne – Zeit für neuen Blatt-Snack!",
+      "categories": [
+        "exotische-tiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
         "filename": "tier-gorilla.png",
         "path": "images/tier-gorilla.png",
@@ -1635,51 +2358,25 @@
         "filename": "tier-gorilla.mp3",
         "path": "audio/tier-gorilla.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 6
-    },
-    {
-      "id": "tier_092",
-      "name": "Löwe",
-      "slug": "loewe",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere", "schnelle-tiere"],
-      "image": {
-        "filename": "tier-loewe.png",
-        "path": "images/tier-loewe.png",
-        "alt": "Handgezeichnete Illustration eines majestätischen Löwen in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-loewe.mp3",
-        "path": "audio/tier-loewe.mp3"
-      },
-      "character_emotions": ["excited", "thinking", "surprised"],
-      "safety_score": 5
-    },
-    {
-      "id": "tier_093",
-      "name": "Giraffe",
-      "slug": "giraffe",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "tiere-mit-besonderen-faehigkeiten"],
-      "image": {
-        "filename": "tier-giraffe.png",
-        "path": "images/tier-giraffe.png",
-        "alt": "Handgezeichnete Illustration einer langen Giraffe in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-giraffe.mp3",
-        "path": "audio/tier-giraffe.mp3"
-      },
-      "character_emotions": ["excited", "curious", "surprised"],
-      "safety_score": 8
     },
     {
       "id": "tier_094",
       "name": "Nashorn",
       "slug": "nashorn",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "tiere-mit-besonderen-faehigkeiten"],
+      "description": "Ein Nashorn wirkt wie ein Panzer auf vier Beinen, doch sein Horn besteht aus Keratin – dem gleichen Stoff wie unsere Fingernägel. Seine Haut ist bis zu fünf Zentimeter dick, wird aber mit Schlamm-Bädern weich gehalten und schützt vor Sonnenbrand.\n\nTrotz schwerem Körper kann es schneller sprinten als ein Fahrradfahrer. Nashörner sehen schlecht, vertrauen jedoch auf feine Ohren und eine Supernase, die Wasserquellen aus weiter Entfernung wittert.\n\nTrifft man auf eins, heißt es ruhig bleiben – meist trottet das friedliche Schwergewicht einfach weiter und knabbert Gras.",
+      "categories": [
+        "exotische-tiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "tiere-mit-besonderen-faehigkeiten"
+      ],
       "image": {
         "filename": "tier-nashorn.png",
         "path": "images/tier-nashorn.png",
@@ -1689,15 +2386,25 @@
         "filename": "tier-nashorn.mp3",
         "path": "audio/tier-nashorn.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 6
     },
     {
       "id": "tier_095",
       "name": "Nilpferd",
       "slug": "nilpferd",
-      "description": "",
-      "categories": ["exotische-tiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "wassertiere"],
+      "description": "Platsch! Ein Nilpferd taucht fast komplett unter, nur Augen, Ohren und Nüstern schauen wie kleine Periskope aus dem Fluss. Unter Wasser hält es den Atem bis zu fünf Minuten an und läuft schwerelos über den Boden.\n\nSeine Haut schwitzt eine rosa Flüssigkeit – eine natürliche Sonnencreme gegen Hitze und Keime. Abends verlässt der Koloss das Wasser und galoppiert überraschend flink zum Grasbüfett.\n\nAuch wenn er gemütlich aussieht, öffnet er das Maul breiter als eine Autotür, um Rivalen zu beeindrucken. Am liebsten verbringt das Nilpferd trotzdem friedliche Tage in kühlen Schlammbecken mit seiner Familie.",
+      "categories": [
+        "exotische-tiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "wassertiere"
+      ],
       "image": {
         "filename": "tier-nilpferd.png",
         "path": "images/tier-nilpferd.png",
@@ -1707,51 +2414,25 @@
         "filename": "tier-nilpferd.mp3",
         "path": "audio/tier-nilpferd.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 6
-    },
-    {
-      "id": "tier_096",
-      "name": "Bär",
-      "slug": "baer",
-      "description": "",
-      "categories": ["waldtiere", "grosse-tiere", "saeugetiere", "allesfresser"],
-      "image": {
-        "filename": "tier-baer.png",
-        "path": "images/tier-baer.png",
-        "alt": "Handgezeichnete Illustration eines freundlichen Bären in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-baer.mp3",
-        "path": "audio/tier-baer.mp3"
-      },
-      "character_emotions": ["thinking", "curious", "exploring"],
-      "safety_score": 6
-    },
-    {
-      "id": "tier_097",
-      "name": "Wolf",
-      "slug": "wolf",
-      "description": "",
-      "categories": ["waldtiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere"],
-      "image": {
-        "filename": "tier-wolf.png",
-        "path": "images/tier-wolf.png",
-        "alt": "Handgezeichnete Illustration eines würdevollen Wolfs in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-wolf.mp3",
-        "path": "audio/tier-wolf.mp3"
-      },
-      "character_emotions": ["thinking", "curious", "exploring"],
-      "safety_score": 5
     },
     {
       "id": "tier_098",
       "name": "Hirsch",
       "slug": "hirsch",
-      "description": "",
-      "categories": ["waldtiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "description": "Ein prächtiger Rothirsch trägt ein Geweih, das jedes Jahr abgeworfen und komplett neu gebaut wird – wie ein natürlicher 3-D-Druck! Im Frühnebel stößt er ein kraftvolles Röhren aus, um Rivalen zu warnen und Hirschkühe zu beeindrucken.\n\nSeine langen Beine funktionieren wie Sprungfedern und lassen ihn meterhoch über Büsche springen. Beim Äsen rollt er die Zunge, um zarte Knospen ganz vorsichtig abzuzupfen.\n\nDroht Gefahr, wippt sein weißer Spiegel am Hinterteil auf und ab, damit die Herde sofort weiß: \"Schnell weg hier!\" So bleibt der Wald-Marathonläufer stets aufmerksam und elegant zugleich.",
+      "categories": [
+        "pflanzenfresser",
+        "grosse-tiere",
+        "saeugetiere",
+        "schnelle-tiere",
+        "waldtiere"
+      ],
       "image": {
         "filename": "tier-hirsch.png",
         "path": "images/tier-hirsch.png",
@@ -1761,33 +2442,24 @@
         "filename": "tier-hirsch.mp3",
         "path": "audio/tier-hirsch.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 8
-    },
-    {
-      "id": "tier_099",
-      "name": "Eichhörnchen",
-      "slug": "eichhoernchen",
-      "description": "",
-      "categories": ["waldtiere", "kleine-tiere", "saeugetiere", "allesfresser", "schnelle-tiere"],
-      "image": {
-        "filename": "tier-eichhoernchen.png",
-        "path": "images/tier-eichhoernchen.png",
-        "alt": "Handgezeichnete Illustration eines flinken Eichhörnchens in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-eichhoernchen.mp3",
-        "path": "audio/tier-eichhoernchen.mp3"
-      },
-      "character_emotions": ["excited", "curious", "exploring"],
-      "safety_score": 9
     },
     {
       "id": "tier_100",
       "name": "Schaf",
       "slug": "schaf",
-      "description": "",
-      "categories": ["bauernhoftiere", "mittelgrosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "description": "Määäh! Ein wollig-weiches Schaf kaut gelassen auf einer blühenden Wiese. Sein gekräuseltes Vlies wächst das ganze Jahr, bis der Schäfer es im Frühling sanft schert – daraus entstehen kuschelige Pullover für uns.\n\nSchafe erkennen die Gesichter ihrer Herdenfreunde und merken sich sogar Stimmen. Rechteckige Pupillen schenken ihnen Panorama-Sicht, damit sie schnell Räuber bemerken.\n\nLämmer veranstalten Fangspiele und springen dabei mit allen vier Beinen gleichzeitig in die Luft – das sieht aus wie Wolkenhüpfen. Wenn Gefahr droht, ruft ein Schaf laut, und die Herde rückt eng zusammen – gemeinsam stark!",
+      "categories": [
+        "bauernhoftiere",
+        "mittelgrosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-schaf.png",
         "path": "images/tier-schaf.png",
@@ -1797,15 +2469,26 @@
         "filename": "tier-schaf.mp3",
         "path": "audio/tier-schaf.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_101",
       "name": "Ente",
       "slug": "ente",
-      "description": "",
-      "categories": ["bauernhoftiere", "kleine-tiere", "voegel", "allesfresser", "wassertiere", "flugtiere"],
+      "description": "Quak-quak! Eine Stockente gleitet wie ein kleiner Dampfer über den Teich. Ihre Federn sind mit speziellem Öl versiegelt, sodass kein Tropfen bis zur Haut dringt.\n\nZwischen den Zehen spannen sich Schwimmhäute, die sie beim Paddeln antreiben, doch an Land watschelt sie charmant wie in Gummistiefeln. Wenn sie kopfüber nach Wasserpflanzen taucht, ragt nur noch ihr Schwänzchen wie ein Fähnchen heraus.\n\nIm Frühling führt das Erpel-Männchen Balztänze auf und präsentiert seinen grün schillernden Kopf – ein echter Glamour-Auftritt am Weiher!",
+      "categories": [
+        "bauernhoftiere",
+        "kleine-tiere",
+        "voegel",
+        "allesfresser",
+        "wassertiere",
+        "flugtiere"
+      ],
       "image": {
         "filename": "tier-ente.png",
         "path": "images/tier-ente.png",
@@ -1815,15 +2498,26 @@
         "filename": "tier-ente.mp3",
         "path": "audio/tier-ente.mp3"
       },
-      "character_emotions": ["excited", "curious", "exploring"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_102",
       "name": "Gans",
       "slug": "gans",
-      "description": "",
-      "categories": ["bauernhoftiere", "grosse-tiere", "voegel", "pflanzenfresser", "wassertiere", "flugtiere"],
+      "description": "Gaa-gak! Eine Graugans fliegt mit ihrer Familie in perfekter V-Formation und spart dabei ein Fünftel Energie. Auf dem Boden steht stets ein Wächter gerade, während die anderen genüsslich Gras zupfen.\n\nBreite Füße wirken wie Schneeschuhe und tragen sie sicher über Matsch und Eis. Küken folgen dem ersten bewegten Objekt, das sie sehen – meistens die Mutter –, als seien sie flauschige Roboter.\n\nZur Brutzeit verteidigen Gänse ihr Nest tapfer mit fauchenden Flügeln, doch sonst sind sie friedliche Reisende zwischen Seen und Meer.",
+      "categories": [
+        "bauernhoftiere",
+        "grosse-tiere",
+        "voegel",
+        "pflanzenfresser",
+        "wassertiere",
+        "flugtiere"
+      ],
       "image": {
         "filename": "tier-gans.png",
         "path": "images/tier-gans.png",
@@ -1833,15 +2527,24 @@
         "filename": "tier-gans.mp3",
         "path": "audio/tier-gans.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_103",
       "name": "Esel",
       "slug": "esel",
-      "description": "",
-      "categories": ["bauernhoftiere", "grosse-tiere", "saeugetiere", "pflanzenfresser"],
+      "description": "Iaah! Ein Esel spitzt seine langen Ohren in alle Richtungen und hört Geräusche, die Menschen gar nicht wahrnehmen. In felsigem Gelände setzt er jeden Huf sicher, als hätte er eingebaute Kletterschuhe – deshalb tragen ihn Menschen seit Jahrhunderten über Bergpfade.\n\nSein kräftiges \"IA\" kann drei Kilometer weit schallen und sagt Freunden: \"Hier bin ich, alles gut!\" Trotz geduldiger Art merkt er sich gefährliche Wege genau und weigert sich, sie erneut zu gehen – cleverer Sturkopf.\n\nAbends knabbert er duftende Kräuter, während die Sonne den staubigen Hof in warmes Gold taucht.",
+      "categories": [
+        "bauernhoftiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser"
+      ],
       "image": {
         "filename": "tier-esel.png",
         "path": "images/tier-esel.png",
@@ -1851,15 +2554,26 @@
         "filename": "tier-esel.mp3",
         "path": "audio/tier-esel.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_104",
       "name": "Jaguar",
       "slug": "jaguar",
-      "description": "",
-      "categories": ["dschungeltiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere", "schnelle-tiere"],
+      "description": "Lautlos wie ein Schatten schleicht der Jaguar durch den Regenwald, sein goldener Pelz mit dunklen Rosetten verschmilzt mit Licht und Blättern. Er ist die einzige Großkatze, die gern schwimmt und sogar Kaimane aus dem Wasser zieht.\n\nSein Biss ist so kräftig, dass er Schildkrötenpanzer knacken kann – ein echtes Supergebiss. Nach der Jagd klettert er auf einen Ast und schnurrt, als wäre er wieder ein verspieltes Jungtier.\n\nDabei hängt sein langer Schwanz gemütlich herab, während die Nacht voller Dschungelgeräusche weiter rauscht.",
+      "categories": [
+        "dschungeltiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "fleischfresser",
+        "raubtiere",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-jaguar.png",
         "path": "images/tier-jaguar.png",
@@ -1869,15 +2583,27 @@
         "filename": "tier-jaguar.mp3",
         "path": "audio/tier-jaguar.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 5
     },
     {
       "id": "tier_105",
       "name": "Panther",
       "slug": "panther",
-      "description": "",
-      "categories": ["dschungeltiere", "grosse-tiere", "saeugetiere", "fleischfresser", "raubtiere", "schnelle-tiere", "nachtaktive-tiere"],
+      "description": "Samtig schwarz bewegt sich der Panther – eigentlich ein tief dunkel gefärbter Leopard – lautlos durch die Dschungelnacht. Obwohl sein Fell fast ganz schwarz wirkt, schimmern unter Mondlicht geheimnisvolle Rosetten.\n\nMit kräftigen Hinterbeinen springt er sechs Meter weit aus dem Stand und trägt Beute auf niedrige Äste, damit sie sicher ist. Seine Schnurrhaare dienen als Antennen im Dunkeln und verhindern, dass er Äste streift.\n\nIm Morgengrauen rollt er sich auf einem Ast zusammen, die Pfoten unter das Kinn gelegt, und lauscht den erwachenden Vögeln – ein unsichtbarer König des Schattenspieles.",
+      "categories": [
+        "dschungeltiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "fleischfresser",
+        "raubtiere",
+        "schnelle-tiere",
+        "nachtaktive-tiere"
+      ],
       "image": {
         "filename": "tier-panther.png",
         "path": "images/tier-panther.png",
@@ -1887,15 +2613,25 @@
         "filename": "tier-panther.mp3",
         "path": "audio/tier-panther.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 4
     },
     {
       "id": "tier_106",
       "name": "Dromedar",
       "slug": "dromedar",
-      "description": "",
-      "categories": ["wuestentiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "langsame-tiere"],
+      "description": "Durch die flirrende Hitze der Wüste schreitet ein Dromedar, sein einzelner Höcker wirkt wie ein tragbarer Proviant-Rucksack, denn darin lagert Fett statt Wasser. Breite, weiche Fußsohlen funktionieren wie Sand-Schneeschuhe und verhindern Einsinken.\n\nLange Wimpern und schmale Schlitznasen lassen sich wie Fensterläden schließen, wenn ein Sandsturm aufzieht. Das \"Wüstenschiff\" kann eine Woche ohne Trinken auskommen, doch wenn es endlich Wasser findet, schlürft es in zehn Minuten über hundert Liter.\n\nNachts kühlt der Körper stark ab, damit es am heißen Tag weniger schwitzt. Morgens spuckt es zur Begrüßung manchmal einen Schwall Grasbrei – kein Ärger, nur dromedarischer Smalltalk!",
+      "categories": [
+        "wuestentiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "langsame-tiere"
+      ],
       "image": {
         "filename": "tier-dromedar.png",
         "path": "images/tier-dromedar.png",
@@ -1905,15 +2641,25 @@
         "filename": "tier-dromedar.mp3",
         "path": "audio/tier-dromedar.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_107",
       "name": "Fennek",
       "slug": "fennek",
-      "description": "",
-      "categories": ["wuestentiere", "kleine-tiere", "saeugetiere", "allesfresser", "nachtaktive-tiere"],
+      "description": "Knisternder Wüstensand und riesige Ohren – der Fennek ist der Superhörer der Sahara. Seine Löffel heißen nicht nur so, sie wirken wie Kühlrippen: Über sie gibt er Wärme ab und bleibt trotz Mittagshitze fit.\n\nNachts lauscht er auf das Krabbeln von Käfern und das Huschen kleiner Echsen unter der Sandoberfläche. Blitzschnell gräbt er mit Pfotenschaufeln einen Tunnel und schnappt sein Abendbrot. Sein Fell ist hell wie Mondlicht, tarnt ihn und reflektiert Sonne.\n\nAm Tage döst er in kühlen Höhlen, die er zwei Meter tief gräbt. Stört man ihn, springt er mit allen vier Pfoten gleichzeitig hoch – ein Sandfuchs-Hopser, der sagt: \"Ich bin noch wach!\"",
+      "categories": [
+        "wuestentiere",
+        "kleine-tiere",
+        "saeugetiere",
+        "allesfresser",
+        "nachtaktive-tiere"
+      ],
       "image": {
         "filename": "tier-fennek.png",
         "path": "images/tier-fennek.png",
@@ -1923,15 +2669,24 @@
         "filename": "tier-fennek.mp3",
         "path": "audio/tier-fennek.mp3"
       },
-      "character_emotions": ["excited", "curious", "exploring"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 8
     },
     {
       "id": "tier_108",
       "name": "Waran",
       "slug": "waran",
-      "description": "",
-      "categories": ["wuestentiere", "grosse-tiere", "reptilien", "fleischfresser"],
+      "description": "Ein Waran sonnt sich reglos auf einem Felsen, doch seine Zunge zischt ständig hinaus wie ein blaues Band, sammelt Duftpartikel und liefert der Supernase im Gaumen Nachrichten: Beute in der Nähe!\n\nMit kräftigen Krallen klettert er mühelos auf Bäume, und sein peitschender Schwanz dient als Ruder, wenn er im Fluss schwimmt. Die Haut besteht aus harten Schuppenplatten – eine natürliche Ritterrüstung.\n\nBeim Fressen ist er nicht wählerisch: Eier, Insekten, kleine Säugetiere – alles verschwindet in seinem dehnbaren Rachen. Hat er genug, ruht er stundenlang im Schatten und speichert die Solarenergie für den nächsten Abenteuerlauf.",
+      "categories": [
+        "wuestentiere",
+        "grosse-tiere",
+        "reptilien",
+        "fleischfresser"
+      ],
       "image": {
         "filename": "tier-waran.png",
         "path": "images/tier-waran.png",
@@ -1941,33 +2696,25 @@
         "filename": "tier-waran.mp3",
         "path": "audio/tier-waran.mp3"
       },
-      "character_emotions": ["thinking", "curious", "exploring"],
+      "character_emotions": [
+        "thinking",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 6
-    },
-    {
-      "id": "tier_109",
-      "name": "Robbe",
-      "slug": "robbe",
-      "description": "",
-      "categories": ["poltiere", "grosse-tiere", "saeugetiere", "fleischfresser", "wassertiere"],
-      "image": {
-        "filename": "tier-robbe.png",
-        "path": "images/tier-robbe.png",
-        "alt": "Handgezeichnete Illustration einer verspielten Robbe in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-robbe.mp3",
-        "path": "audio/tier-robbe.mp3"
-      },
-      "character_emotions": ["excited", "curious", "exploring"],
-      "safety_score": 8
     },
     {
       "id": "tier_110",
       "name": "Schneehase",
       "slug": "schneehase",
-      "description": "",
-      "categories": ["poltiere", "kleine-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "description": "Husch! Ein Schneehase sprintet über weißen Pulverschnee, seine breiten Hinterpfoten wirken wie Feder-Schneeschuhe und verhindern Einsinken. Im Winter trägt er ein schneeweißes Tarnfell, im Sommer kleidet er sich braun – ein echter Jahreszeiten-Verwandlungskünstler.\n\nBei Sturm gräbt er blitzschnell einen Mini-Tunnel und wartet, bis die Flocken leiser rieseln. Seine Ohren sind kürzer als die des Feldhasen, so verliert er weniger Wärme.\n\nStellt sich Gefahr ein, macht er einen Zickzack-Haken und verschwindet hinter einer Schneewehe. Vielleicht siehst du nur noch den fluffigen Bommel, der kurz wippt und dann lautlos verschwindet.",
+      "categories": [
+        "poltiere",
+        "kleine-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-schneehase.png",
         "path": "images/tier-schneehase.png",
@@ -1977,15 +2724,25 @@
         "filename": "tier-schneehase.mp3",
         "path": "audio/tier-schneehase.mp3"
       },
-      "character_emotions": ["excited", "curious", "exploring"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 9
     },
     {
       "id": "tier_111",
       "name": "Rentier",
       "slug": "rentier",
-      "description": "",
-      "categories": ["poltiere", "grosse-tiere", "saeugetiere", "pflanzenfresser", "schnelle-tiere"],
+      "description": "Klirrende Kälte, Nordlicht am Himmel – ein Rentier stapft gemächlich durch knietiefen Schnee. Breite Hufschalen spreizen sich wie Schneeschuhe und haben scharfe Kanten, um Eis aufzukratzen und verstecktes Moos zu erreichen.\n\nAls einzige Hirschart tragen auch Weibchen ein Geweih; sie behalten es den Winter über, um an Futterstellen Vorrang zu haben. Eine spezielle Nase wärmt eiskalte Luft vor, damit die Lunge nicht friert.\n\nZweimal im Jahr wandern Herden tausende Kilometer, auf Hufen, die im Sommer weich und im Winter hart sind – ein eingebauter Wanderschuh-Wechsel. Hörst du das leise Knacken? Das sind Sehnen in ihren Beinen, die beim Gehen klicken und Artgenossen im Schneetreiben zusammenhalten.",
+      "categories": [
+        "poltiere",
+        "grosse-tiere",
+        "saeugetiere",
+        "pflanzenfresser",
+        "schnelle-tiere"
+      ],
       "image": {
         "filename": "tier-rentier.png",
         "path": "images/tier-rentier.png",
@@ -1995,8 +2752,12 @@
         "filename": "tier-rentier.mp3",
         "path": "audio/tier-rentier.mp3"
       },
-      "character_emotions": ["excited", "curious", "exploring"],
+      "character_emotions": [
+        "excited",
+        "curious",
+        "exploring"
+      ],
       "safety_score": 8
     }
   ]
-} 
+}

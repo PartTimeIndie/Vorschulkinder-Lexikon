@@ -192,8 +192,18 @@ app.use((error, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Kinderlexikon Server running on port ${PORT}`);
-  console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`📁 Categories API: http://localhost:${PORT}/api/categories`);
+// Check if we should bind to all interfaces for network access
+const HOST = process.argv.includes('--host') && process.argv[process.argv.indexOf('--host') + 1] === '0.0.0.0' 
+  ? '0.0.0.0' 
+  : 'localhost';
+
+app.listen(PORT, HOST, () => {
+  console.log(`🚀 Kinderlexikon Server running on ${HOST}:${PORT}`);
+  if (HOST === '0.0.0.0') {
+    console.log(`🌐 Network access enabled - accessible from other devices`);
+    console.log(`📱 Local network: http://192.168.178.151:${PORT}/api/health`);
+    console.log(`🏠 Custom domain: http://www.klex.home:${PORT}/api/health`);
+  }
+  console.log(`📊 Health check: http://${HOST === '0.0.0.0' ? '192.168.178.151' : 'localhost'}:${PORT}/api/health`);
+  console.log(`📁 Categories API: http://${HOST === '0.0.0.0' ? '192.168.178.151' : 'localhost'}:${PORT}/api/categories`);
 }); 
