@@ -1458,32 +1458,7 @@
       ],
       "safety_score": 10
     },
-    {
-      "id": "tier_054",
-      "name": "Käfer",
-      "slug": "kafer",
-      "description": "Krrr – ein glänzender Käfer krabbelt über einen Ast. Seine harte Panzerdecke, das Elytron, schützt die empfindlichen Flügel darunter. Wenn er startet, klappt er die Deckel auf wie eine Schatztruhe.\n\nKäfer sind wahre Kraftpakete: Manche können das 50-fache ihres Körpergewichts tragen – so als würdest du einen Elefanten hochheben!\n\nMit Fühlern \"riechen\" sie die Luft nach leckeren Pflanzen oder Freunden ab. Einige Arten leuchten nachts mit biochemischem Licht – Glühkäfer!\n\nWenn Gefahr droht, spielen manche Tot, andere geben übelriechende Tropfen ab. Beobachte ihn genau – vielleicht putzt er gerade seine Fühler wie ein winziger Friseur!",
-      "categories": [
-        "insekten",
-        "kleine-tiere",
-        "allesfresser"
-      ],
-      "image": {
-        "filename": "tier-k-fer.png",
-        "path": "images/tier-k-fer.png",
-        "alt": "Handgezeichnete Illustration eines glänzenden Käfers in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-kafer.mp3",
-        "path": "audio/tier-kafer.mp3"
-      },
-      "character_emotions": [
-        "curious",
-        "excited",
-        "surprised"
-      ],
-      "safety_score": 9
-    },
+    
     {
       "id": "tier_055",
       "name": "Ameise",
