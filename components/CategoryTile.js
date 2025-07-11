@@ -27,7 +27,7 @@ const CategoryTile = ({
   
   const { content: category, animationMode, isAnimal, isPlayed, isCurrentlyPlaying, onClick } = poolTile;
 
-  // Image-URL für Backend mit dynamischer Host-Erkennung
+  // Image-URL für Backend mit dynamischer Host-Erkennung und Resize-Optimierung
   const getImageUrl = () => {
     if (!category.image?.filename) {
       console.warn('❌ No image filename for category:', category.name);
@@ -39,7 +39,11 @@ const CategoryTile = ({
     const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
     const port = '5000';
     
-    return `${protocol}//${hostname}:${port}/images/${category.image.filename}`;
+    // Tile-optimierte Größe: 180x180px für bessere Performance
+    const tileSize = 180;
+    const quality = 75; // Gute Qualität, kleinere Dateigröße
+    
+    return `${protocol}//${hostname}:${port}/images/${category.image.filename}?w=${tileSize}&h=${tileSize}&q=${quality}`;
   };
 
   // Tile-Klick Handler

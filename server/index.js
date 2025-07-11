@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs').promises;
+const sharp = require('sharp');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -10,11 +11,83 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Statische Dateien für Bilder
-app.use('/images', express.static(path.join(__dirname, '../kategorien/images')));
+// Image Resizing Route für bessere Performance
+app.get('/images/:filename', async (req, res) => {
+  try {
+    const { filename } = req.params;
+    const { w, h, q } = req.query; // width, height, quality
+    
+    // Standard-Pfade für verschiedene Image-Ordner
+    let imagePath;
+    const kategorienPath = path.join(__dirname, '../kategorien/images', filename);
+    const publicPath = path.join(__dirname, '../public/images', filename);
+    
+    // Prüfe welcher Pfad existiert
+    try {
+      await fs.access(kategorienPath);
+      imagePath = kategorienPath;
+    } catch {
+      try {
+        await fs.access(publicPath);
+        imagePath = publicPath;
+      } catch {
+        return res.status(404).json({ error: 'Image not found' });
+      }
+    }
+    
+    // Wenn keine Resize-Parameter angegeben sind, sende Original
+    if (!w && !h) {
+      return res.sendFile(imagePath);
+    }
+    
+    // Parse Dimensionen
+    const width = w ? parseInt(w) : null;
+    const height = h ? parseInt(h) : null;
+    const quality = q ? parseInt(q) : 80;
+    
+    // Limitiere Dimensionen für Sicherheit
+    const maxSize = 1024;
+    const safeWidth = width && width <= maxSize ? width : null;
+    const safeHeight = height && height <= maxSize ? height : null;
+    
+    // Erstelle resized Image mit Sharp
+    let pipeline = sharp(imagePath);
+    
+    if (safeWidth || safeHeight) {
+      pipeline = pipeline.resize(safeWidth, safeHeight, {
+        fit: 'cover',
+        position: 'center'
+      });
+    }
+    
+    // Output-Format basierend auf Extension
+    const ext = path.extname(filename).toLowerCase();
+    if (ext === '.jpg' || ext === '.jpeg') {
+      pipeline = pipeline.jpeg({ quality });
+    } else if (ext === '.png') {
+      pipeline = pipeline.png({ quality });
+    } else if (ext === '.webp') {
+      pipeline = pipeline.webp({ quality });
+    }
+    
+    // Cache-Headers für bessere Performance
+    res.set({
+      'Cache-Control': 'public, max-age=31536000', // 1 Jahr
+      'Content-Type': `image/${ext.slice(1)}`
+    });
+    
+    // Stream das resized Image
+    pipeline.pipe(res);
+    
+  } catch (error) {
+    console.error('Error processing image:', error);
+    res.status(500).json({ error: 'Failed to process image' });
+  }
+});
+
+// Statische Dateien für andere Assets
 app.use('/character', express.static(path.join(__dirname, '../Characters')));
 app.use('/audio', express.static(path.join(__dirname, '../public/audio')));
-app.use('/images', express.static(path.join(__dirname, '../public/images')));
 
 // API Routes
 

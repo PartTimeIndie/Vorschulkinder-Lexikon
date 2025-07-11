@@ -263,17 +263,19 @@ export default function Home() {
         const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:';
         const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
         const port = '5000';
+        const tileSize = 180; // Tile-optimierte Größe
+        const quality = 75; // Performance-optimierte Qualität
         const baseImageUrl = `${protocol}//${hostname}:${port}/images/`;
         
-        // Preload Images
+        // Preload Images mit Resize-Parametern
         const imagesToPreload = [];
         if (type === 'category' && data.category?.subcategories) {
           imagesToPreload.push(...data.category.subcategories.map(sub => 
-            `${baseImageUrl}${sub.image.filename}`
+            `${baseImageUrl}${sub.image.filename}?w=${tileSize}&h=${tileSize}&q=${quality}`
           ));
         } else if (type === 'animals' && data.animals) {
           imagesToPreload.push(...data.animals.map(animal => 
-            `${baseImageUrl}${animal.image.filename}`
+            `${baseImageUrl}${animal.image.filename}?w=${tileSize}&h=${tileSize}&q=${quality}`
           ));
         }
         

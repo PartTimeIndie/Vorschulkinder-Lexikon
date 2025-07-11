@@ -30,7 +30,7 @@ button {
   font-family: inherit;
 }
 
-/* Main Layout Container - 5-Spalten-System */
+/* Main Layout Container - Responsive Design */
 .container {
   width: 100vw;
   height: 100vh;
@@ -39,129 +39,152 @@ button {
   display: grid;
 }
 
-/* Desktop Layout (Landscape) - 5-Spalten-Grid */
+/* Desktop Layout (Landscape) - Horizontal Layout */
 @media (min-width: 768px) and (orientation: landscape) {
   .container {
-    grid-template-columns: 1fr 4fr; /* 1/5 für Character, 4/5 für Tiles - LINKS statt RECHTS */
+    grid-template-columns: 1fr 4fr; /* 1/5 für Character, 4/5 für Tiles */
     grid-template-rows: 1fr;
     grid-template-areas:
-      "character categories"; /* Character LINKS, Categories RECHTS */
-  }
-  
-  /* Header-Bereich entfernt - keine ausgewählte Kategorie mehr */
-  
-  /* Selected tile styles entfernt */
-  
-  .categories-section {
-    grid-area: categories;
-    background: url('/background.png') center/cover, linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%); /* Hintergrundbild hinzugefügt */
-    overflow-y: auto;
-    padding: 2rem;
-    padding-left: 1rem; /* Platz für Scroll-Indikator LINKS statt rechts */
+      "character categories";
   }
   
   .character-section {
     grid-area: character;
     background: url('/websiteBaseImages/Baumhaus.png') center/cover, linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
     display: flex;
-    align-items: flex-end; /* Character komplett unten */
+    align-items: flex-end;
     justify-content: center;
-    padding: 0.1rem 0.1rem 0 0.1rem; /* KEIN BOTTOM PADDING - Character direkt am unteren Rand */
-    box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.1); /* Schatten von RECHTS statt links */
-    border: 3px solid #654321; /* Dunkelbraune Outline für Baumhaus */
-    position: relative; /* Für Back Button Positionierung */
+    padding: 0.1rem 0.1rem 0 0.1rem;
+    box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #654321;
+    position: relative;
+  }
+  
+  .categories-section {
+    grid-area: categories;
+    background: url('/background.png') center/cover, linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%);
+    overflow-y: auto;
+    padding: 2rem;
+    padding-left: 1rem;
   }
   
   .character-container {
     position: relative !important;
     width: 100% !important;
-    max-width: 400px !important; /* Doppelt so groß! */
-    height: 500px !important; /* Doppelt so groß! */
+    max-width: 400px !important;
+    height: 500px !important;
     right: auto !important;
     top: auto !important;
-    bottom: 10px !important; /* Kleiner Offset zum Boden */
+    bottom: 10px !important;
     transform: none !important;
-    margin-bottom: 0 !important; /* Kein extra Margin */
+    margin-bottom: 0 !important;
   }
 }
 
-/* Portrait Layout (Mobile/Tablet) - GLEICHE ANORDNUNG WIE LANDSCAPE */
+/* Portrait Layout (Mobile/Tablet) - Vertical Layout mit 50/50 Split */
 @media (max-width: 767px), (orientation: portrait) {
   .container {
-    grid-template-columns: 1fr 3fr; /* Character links, Categories rechts - wie Desktop */
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr; /* 50% oben für Character, 50% unten für Tiles */
     grid-template-areas:
-      "character categories"; /* Gleiche Anordnung wie Landscape */
+      "character"
+      "categories";
   }
-  
-  /* Header-Bereich entfernt - keine ausgewählte Kategorie mehr */
-  
-  /* Selected area styles entfernt */
   
   .character-section {
     grid-area: character;
-    background: url('/websiteBaseImages/Baumhaus.png') center/cover, linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
+    background: url('/websiteBaseImages/Baumhaus.png') bottom/cover, linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
     display: flex;
-    align-items: flex-end; /* Character unten */
+    align-items: flex-end; /* Character am unteren Ende des Baumhaus-Bildes */
     justify-content: center;
-    padding: 0.05rem 0.05rem 0 0.05rem; /* KEIN BOTTOM PADDING für Mobile - Character direkt am unteren Rand */
-    box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.1); /* Schatten von rechts wie Desktop */
-    border: 3px solid #654321; /* Dunkelbraune Outline für Baumhaus */
-    position: relative; /* Für Back Button Positionierung */
+    padding: 1rem 1rem 0 1rem; /* Kein bottom padding - Character direkt am Boden */
+    box-shadow: inset 0 -2px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #654321;
+    position: relative;
+    min-height: 0;
   }
   
   .categories-section {
     grid-area: categories;
-    background: url('/background.png') center/cover, linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%); /* Hintergrundbild hinzugefügt */
+    background: url('/background.png') center/cover, linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%);
     overflow-y: auto;
     padding: 1rem;
-    padding-left: 0.5rem; /* Platz für Scroll-Indikator links wie Desktop */
+    min-height: 0;
   }
   
   .character-container {
     position: relative !important;
-    width: 160px !important; /* Auch Portrait doppelt so groß */
-    height: 200px !important; /* Auch Portrait doppelt so groß */
+    width: 280px !important;
+    height: 350px !important;
     right: auto !important;
-    bottom: 8px !important; /* Kleiner Offset zum Boden für mobile */
+    bottom: 0px !important; /* Direkt am Boden, kein Offset */
     top: auto !important;
     transform: none !important;
-    margin-bottom: 0 !important; /* Kein extra Margin */
+    margin-bottom: 0 !important;
   }
 }
 
-/* ===== EINZIGE GRID DEFINITION - FÜR ALLE TILES ===== */
-.tile-grid {
-  display: grid;
-  gap: 1.5rem;
-  padding-bottom: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  max-width: none;
-}
+/* ===== TILE GRID DEFINITIONS ===== */
 
-/* Desktop Landscape: Exakt 4 Spalten */
+/* Desktop Landscape: Standard Multi-Column Grid */
 @media (min-width: 768px) and (orientation: landscape) {
   .tile-grid {
-    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    grid-template-columns: repeat(4, 1fr); /* 4 Spalten für Desktop */
     max-width: none;
   }
-}
-
-/* Kleinere Screens: 3 Spalten */
-@media (min-width: 768px) and (max-width: 1400px) and (orientation: landscape) {
-  .tile-grid {
-    grid-template-columns: repeat(3, 1fr);
+  
+  /* Kleinere Desktop Screens: 3 Spalten */
+  @media (max-width: 1400px) {
+    .tile-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
-/* Mobile Portrait: 2 Spalten */
+/* Portrait: 2 Tiles nebeneinander - bessere Platznutzung */
 @media (max-width: 767px), (orientation: portrait) {
   .tile-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Spalten nebeneinander */
+    gap: 1rem;
+    padding: 1rem;
+    justify-items: center; /* Tiles in Spalten zentriert */
+  }
+  
+  /* Portrait Tiles: Perfekt quadratisch - alle Seiten gleich lang */
+  .category-tile {
+    width: 180px !important; 
+    height: 180px !important; 
+    min-width: 180px !important; /* Zwingt exakte Breite */
+    min-height: 180px !important; /* Zwingt exakte Höhe */
+    max-width: 180px !important; /* Verhindert Dehnung */
+    max-height: 180px !important; /* Verhindert Dehnung */
+    aspect-ratio: 1 / 1 !important; /* Perfektes 1:1 Verhältnis */
+    display: block;
+    border-radius: 20px;
+    margin: 0;
+    flex-shrink: 0; /* Verhindert Schrumpfung */
+    flex-grow: 0; /* Verhindert Wachstum */
+  }
+  
+  /* Portrait: Content verstecken - nur Bilder wie Desktop */
+  .category-tile .category-content {
+    display: none !important; /* Kein Text im Portrait - nur Bilder */
+  }
+  
+  /* Portrait: Bild füllt komplettes Tile */
+  .category-tile .category-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: inherit;
   }
 }
 
-/* Kategorie Tile Styles - Simple & Working */
+/* Kategorie Tile Styles - Standard für Desktop */
 .category-tile {
   position: relative;
   background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
@@ -171,7 +194,7 @@ button {
   border: 3px solid #654321; 
   cursor: pointer;
   transition: all 0.3s ease;
-  aspect-ratio: 1;
+  aspect-ratio: 1; /* Quadratisch für Desktop */
 }
 
 /* Geladene Tiles - normal sichtbar und interaktiv */
