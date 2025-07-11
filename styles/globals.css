@@ -50,7 +50,7 @@ button {
   
   .character-section {
     grid-area: character;
-    background: url('/websiteBaseImages/Baumhaus.png') center/cover, linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
+    background-image: linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -58,6 +58,21 @@ button {
     box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.1);
     border: 3px solid #654321;
     position: relative;
+    overflow: hidden;
+  }
+  
+  /* Baumhaus als separates pseudo-element für bessere Kontrolle */
+  .character-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/websiteBaseImages/Baumhaus.png') no-repeat;
+    background-size: auto 100%; /* Höhe auf 100% fixiert, Breite automatisch */
+    background-position: center bottom; /* Am unteren Rand verankert */
+    z-index: 0;
   }
   
   .categories-section {
@@ -78,6 +93,87 @@ button {
     bottom: 10px !important;
     transform: none !important;
     margin-bottom: 0 !important;
+    z-index: 1; /* Über dem Baumhaus */
+  }
+}
+
+/* Mobile Landscape - Speziell für Mobile Geräte im Landscape-Modus */
+@media (max-width: 767px) and (orientation: landscape) {
+  .container {
+    grid-template-columns: 1fr 2fr; /* Gleiche horizontale Layout aber weniger Platz für Character */
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "character categories";
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .character-section {
+    grid-area: character;
+    background-image: linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0.1rem 0.1rem 0 0.1rem;
+    box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #654321;
+    position: relative;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Mobile Landscape Baumhaus */
+  .character-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/websiteBaseImages/Baumhaus.png') no-repeat;
+    background-size: auto 100%; /* Höhe fixiert auf Container */
+    background-position: center bottom;
+    z-index: 0;
+  }
+  
+  .categories-section {
+    grid-area: categories;
+    background: url('/background.png') center/cover, linear-gradient(135deg, #f5f5f5 0%, #e8f5e8 100%);
+    overflow-y: auto;
+    padding: 1rem;
+    max-height: 100vh; /* Begrenzt die Höhe auf Viewport */
+  }
+  
+  .character-container {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 250px !important; /* Noch kleinerer Character für Mobile Landscape */
+    height: calc(100vh - 100px) !important; /* Mehr Puffer - weniger Höhe */
+    max-height: 300px !important; /* Niedrigere Maximalhöhe */
+    right: auto !important;
+    top: auto !important;
+    bottom: 5px !important;
+    transform: none !important;
+    margin-bottom: 0 !important;
+    z-index: 1; /* Über dem Baumhaus */
+  }
+  
+  /* Mobile Landscape: Kleinere Tiles */
+  .tile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Spalten für Mobile Landscape */
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .category-tile {
+    width: 100px !important;
+    height: 100px !important;
+    min-width: 80px !important;
+    min-height: 80px !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
+    aspect-ratio: 1 / 1 !important;
   }
 }
 
@@ -93,15 +189,30 @@ button {
   
   .character-section {
     grid-area: character;
-    background: url('/websiteBaseImages/Baumhaus.png') bottom/cover, linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
+    background-image: linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
     display: flex;
-    align-items: flex-end; /* Character am unteren Ende des Baumhaus-Bildes */
+    align-items: flex-end;
     justify-content: center;
-    padding: 1rem 1rem 0 1rem; /* Kein bottom padding - Character direkt am Boden */
+    padding: 1rem 1rem 0 1rem;
     box-shadow: inset 0 -2px 8px rgba(0, 0, 0, 0.1);
     border: 3px solid #654321;
     position: relative;
     min-height: 0;
+    overflow: hidden;
+  }
+  
+  /* Portrait Baumhaus */
+  .character-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/websiteBaseImages/Baumhaus.png') no-repeat;
+    background-size: auto 100%; /* Höhe auf Container fixiert */
+    background-position: center bottom;
+    z-index: 0;
   }
   
   .categories-section {
@@ -121,6 +232,7 @@ button {
     top: auto !important;
     transform: none !important;
     margin-bottom: 0 !important;
+    z-index: 1; /* Über dem Baumhaus */
   }
 }
 
@@ -144,30 +256,30 @@ button {
   }
 }
 
-/* Portrait: 2 Tiles nebeneinander - bessere Platznutzung */
+/* Portrait: 2 Tiles nebeneinander - kleinere Margins */
 @media (max-width: 767px), (orientation: portrait) {
   .tile-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 Spalten nebeneinander */
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.5rem; /* Kleinerer Gap für mehr Platz */
+    padding: 0.5rem; /* Kleineres Padding */
     justify-items: center; /* Tiles in Spalten zentriert */
   }
   
-  /* Portrait Tiles: Perfekt quadratisch - alle Seiten gleich lang */
+  /* Portrait Tiles: Automatische Skalierung mit kleineren Margins */
   .category-tile {
-    width: 180px !important; 
-    height: 180px !important; 
-    min-width: 180px !important; /* Zwingt exakte Breite */
-    min-height: 180px !important; /* Zwingt exakte Höhe */
-    max-width: 180px !important; /* Verhindert Dehnung */
-    max-height: 180px !important; /* Verhindert Dehnung */
+    width: calc((100vw - 2rem) / 2) !important; /* Angepasst für kleinere Margins: (100% - 1rem padding + 0.5rem gap) / 2 */
+    height: calc((100vw - 2rem) / 2) !important; /* Gleiche Höhe für Quadrat */
+    min-width: 140px !important; /* Mindestgröße für sehr kleine Screens */
+    min-height: 140px !important;
+    max-width: 200px !important; /* Maximalgröße für sehr große Tablets */
+    max-height: 200px !important;
     aspect-ratio: 1 / 1 !important; /* Perfektes 1:1 Verhältnis */
     display: block;
     border-radius: 20px;
     margin: 0;
-    flex-shrink: 0; /* Verhindert Schrumpfung */
-    flex-grow: 0; /* Verhindert Wachstum */
+    flex-shrink: 0;
+    flex-grow: 0;
   }
   
   /* Portrait: Content verstecken - nur Bilder wie Desktop */
@@ -195,6 +307,82 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
   aspect-ratio: 1; /* Quadratisch für Desktop */
+  
+  /* Anti-Flicker: Hardware-Beschleunigung */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+}
+
+/* Mobile-spezifische Anti-Flicker-Optimierungen */
+@media (max-width: 767px), (orientation: portrait) {
+  .category-tile {
+    /* Aggressive mobile Anti-Flicker-Maßnahmen */
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Verhindere Repaints */
+    will-change: transform, opacity;
+    contain: layout style paint;
+    
+    /* iOS Safari spezifische Fixes */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    
+    /* Force Compositing Layer */
+    isolation: isolate;
+  }
+  
+  /* Mobile Image Anti-Flicker */
+  .category-tile .category-image {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    will-change: auto; /* Nur bei Tiles, nicht dauerhaft bei Images */
+  }
+  
+  /* Deaktiviere Transitions während Animationen für Mobile */
+  .category-tile[style*="transform"] {
+    transition: none !important;
+  }
+  
+  /* Firefox Mobile spezifische Fixes */
+  @supports (-moz-appearance: none) {
+    .category-tile {
+      /* Firefox spezifische Anti-Flicker-Maßnahmen */
+      -moz-transform: translate3d(0, 0, 0);
+      -moz-backface-visibility: hidden;
+      -moz-perspective: 1000px;
+      -moz-user-select: none;
+      -moz-osx-font-smoothing: grayscale;
+      
+      /* Firefox Layer-Isolation */
+      -moz-isolation: isolate;
+      opacity: 0.999; /* Firefox Hack für Layer-Forcing */
+    }
+    
+    .category-tile .category-image {
+      -moz-transform: translate3d(0, 0, 0);
+      -moz-backface-visibility: hidden;
+      opacity: 0.999; /* Firefox Image-Layer-Hack */
+    }
+  }
 }
 
 /* Geladene Tiles - normal sichtbar und interaktiv */
@@ -607,4 +795,37 @@ button {
 /* Fehlende Fly-In Animationen - URSPRÜNGLICHE VERSION */
  
 /* LOADING-OVERLAY ENTFERNT */ 
+
+/* Character Image Standard-Rendering für alle Geräte */
+.character-image {
+  /* Normales Image-Rendering ohne spezielle Optimierungen */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  image-rendering: auto;
+  -webkit-image-rendering: auto;
+} 
+ 
+/* Standard: Landscape (horizontal) - Bild füllt die Höhe */
+.character-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/websiteBaseImages/Baumhaus.png') no-repeat;
+  background-size: auto 100%; /* Höhe füllen, links/rechts ggf. abgeschnitten */
+  background-position: center bottom;
+  z-index: 0;
+}
+
+/* Portrait (vertical) - Bild füllt die Breite */
+@media (max-width: 767px), (orientation: portrait) {
+  .character-section::before {
+    background-size: 100% auto !important; /* Breite füllen, oben/unten ggf. abgeschnitten */
+    background-position: center bottom !important;
+  }
+} 
  

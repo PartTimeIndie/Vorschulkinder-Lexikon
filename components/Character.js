@@ -4,6 +4,8 @@ import Image from 'next/image';
 // Statische Variable um sicherzustellen dass Character nur EINMAL initialisiert wird
 let characterInitialized = false;
 
+// Entferne die Hilfsfunktion getCharacterImageUrl
+
 const Character = ({ currentContext = 'idle', onEmotionChange }) => {
   const [currentEmotion, setCurrentEmotion] = useState('idle');
   const [isRotating, setIsRotating] = useState(false);

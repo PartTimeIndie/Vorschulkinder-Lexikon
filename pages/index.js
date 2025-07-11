@@ -263,7 +263,7 @@ export default function Home() {
         const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:';
         const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
         const port = '5000';
-        const tileSize = 180; // Tile-optimierte Größe
+        const tileSize = 300; // Tile-optimierte Größe - höhere Qualität
         const quality = 75; // Performance-optimierte Qualität
         const baseImageUrl = `${protocol}//${hostname}:${port}/images/`;
         

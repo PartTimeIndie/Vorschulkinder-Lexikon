@@ -21,6 +21,7 @@ app.get('/images/:filename', async (req, res) => {
     let imagePath;
     const kategorienPath = path.join(__dirname, '../kategorien/images', filename);
     const publicPath = path.join(__dirname, '../public/images', filename);
+    const charactersPath = path.join(__dirname, '../public/Characters', filename); // <--- NEU
     
     // Prüfe welcher Pfad existiert
     try {
@@ -31,7 +32,12 @@ app.get('/images/:filename', async (req, res) => {
         await fs.access(publicPath);
         imagePath = publicPath;
       } catch {
-        return res.status(404).json({ error: 'Image not found' });
+        try {
+          await fs.access(charactersPath);
+          imagePath = charactersPath;
+        } catch {
+          return res.status(404).json({ error: 'Image not found' });
+        }
       }
     }
     
