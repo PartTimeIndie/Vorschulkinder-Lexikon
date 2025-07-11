@@ -259,15 +259,21 @@ export default function Home() {
         setPreloadedData({ type, slug, data });
         console.log(`✅ Preloaded ${type} data:`, data);
         
+        // Dynamische Host-Erkennung für mobile IP-Zugriffe
+        const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:';
+        const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
+        const port = '5000';
+        const baseImageUrl = `${protocol}//${hostname}:${port}/images/`;
+        
         // Preload Images
         const imagesToPreload = [];
         if (type === 'category' && data.category?.subcategories) {
           imagesToPreload.push(...data.category.subcategories.map(sub => 
-            `http://localhost:5000/images/${sub.image.filename}`
+            `${baseImageUrl}${sub.image.filename}`
           ));
         } else if (type === 'animals' && data.animals) {
           imagesToPreload.push(...data.animals.map(animal => 
-            `http://localhost:5000/images/${animal.image.filename}`
+            `${baseImageUrl}${animal.image.filename}`
           ));
         }
         

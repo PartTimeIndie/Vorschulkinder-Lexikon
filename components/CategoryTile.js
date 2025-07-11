@@ -27,13 +27,19 @@ const CategoryTile = ({
   
   const { content: category, animationMode, isAnimal, isPlayed, isCurrentlyPlaying, onClick } = poolTile;
 
-  // Image-URL für Backend mit Fallback
+  // Image-URL für Backend mit dynamischer Host-Erkennung
   const getImageUrl = () => {
     if (!category.image?.filename) {
       console.warn('❌ No image filename for category:', category.name);
       return '/websiteBaseImages/placeholder.png'; // Fallback
     }
-    return `http://localhost:5000/images/${category.image.filename}`;
+    
+    // Dynamische Host-Erkennung: funktioniert mit localhost und IP-Adressen
+    const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:';
+    const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
+    const port = '5000';
+    
+    return `${protocol}//${hostname}:${port}/images/${category.image.filename}`;
   };
 
   // Tile-Klick Handler
