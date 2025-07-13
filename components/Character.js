@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { getCachedImage } from '../utils/imageCache';
 
 // Statische Variable um sicherzustellen dass Character nur EINMAL initialisiert wird
 let characterInitialized = false;
@@ -63,6 +64,7 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
 
   // State für gewählte Variante pro Emotion
   const [selectedVariant, setSelectedVariant] = useState('/Characters/Character-idle.png');
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   // Zufällige Variante für Emotion wählen und speichern (NIEMALS die gleiche)
   const selectVariantForEmotion = (emotion) => {
@@ -276,6 +278,28 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
     };
   }, []);
 
+  // Preload image via Base64 cache, but do not use it for rendering
+  useEffect(() => {
+    if (!selectedVariant) return;
+    getCachedImage(selectedVariant).catch(() => {});
+  }, [selectedVariant]);
+
+  // Track loading state for the real image
+  useEffect(() => {
+    let didCancel = false;
+    let fallbackTimer;
+    setImgLoaded(false);
+    if (selectedVariant) {
+      fallbackTimer = setTimeout(() => {
+        if (!didCancel) setImgLoaded(true);
+      }, 500);
+    }
+    return () => {
+      didCancel = true;
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+    };
+  }, [selectedVariant]);
+
   // Animation-Klassen bestimmen
   const getAnimationClasses = () => {
     let classes = 'character-image';
@@ -311,14 +335,15 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
       onClick={handleCharacterClick}
       title="Character antippen für Emotionen!"
     >
-      <Image
+      <img
         src={selectedVariant}
         alt={`Character ${currentEmotion}`}
         width={120}
         height={150}
         className={getAnimationClasses()}
-        priority
-        unoptimized // Für lokale Entwicklung
+        style={{ objectFit: 'contain', position: 'relative', zIndex: 1, opacity: imgLoaded ? 1 : 0, transition: 'opacity 0.2s' }}
+        onLoad={() => setImgLoaded(true)}
+        onError={() => setImgLoaded(true)}
       />
     </div>
   );

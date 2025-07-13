@@ -1,15 +1,85 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { animationManager } from '../utils/animationManager';
+import { getCachedImage } from '../utils/imageCache';
+import questionmark from '../public/websiteBaseImages/questionmark.png';
 
 const CategoryTile = ({ 
   poolTile,  // Jetzt nehmen wir das komplette Tile aus dem Pool
-  delay = 0
+  delay = 0,
+  base64Image, // Füge base64Image als optionales Prop hinzu (für spätere Optimierung)
+  tileKey // <-- Add this prop to receive the key
 }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  
-  // Wenn Tile nicht sichtbar oder kein Content, dann verstecken
+  const isDebugTile = poolTile?.id === 'tile-0';
+
+  useEffect(() => {
+    if (isDebugTile) console.log(`[TILE] MOUNT id=${poolTile?.id}, contentId=${poolTile?.content?.id}, animationMode=${poolTile?.animationMode}, key=${tileKey}`);
+    return () => {
+      if (isDebugTile) console.log(`[TILE] UNMOUNT id=${poolTile?.id}, contentId=${poolTile?.content?.id}, animationMode=${poolTile?.animationMode}, key=${tileKey}`);
+    };
+  }, [tileKey]);
+
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const lastImageUrlRef = useRef(null);
+
+  // Bild-URL ermitteln (muss immer definiert sein, auch wenn das Tile nicht sichtbar ist)
+  const getImageUrl = () => {
+    const category = poolTile?.content;
+    if (!category?.image?.filename) {
+      return null; // No real image, use placeholder
+    }
+    const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:';
+    const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
+    const port = '5000';
+    const tileSize = 300;
+    const quality = 75;
+    return `${protocol}//${hostname}:${port}/images/${category.image.filename}?w=${tileSize}&h=${tileSize}&q=${quality}`;
+  };
+
+  const imageUrl = getImageUrl(); // immer berechnen
+
+  // State for the actual image source (Base64 or URL)
+  const [imgSrc, setImgSrc] = useState(imageUrl);
+  const [prevImgSrc, setPrevImgSrc] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    if (imageUrl) {
+      // Save previous image before loading new one
+      setPrevImgSrc(imgSrc);
+      getCachedImage(imageUrl)
+        .then(base64 => {
+          if (isMounted && base64) setImgSrc(base64);
+        })
+        .catch(() => {
+          if (isMounted) setImgSrc(imageUrl);
+        });
+    } else {
+      setPrevImgSrc(null);
+      setImgSrc(null);
+    }
+    return () => { isMounted = false; };
+  }, [imageUrl]);
+
+  // Only reset imgLoaded if the imageUrl actually changes
+  useEffect(() => {
+    if (lastImageUrlRef.current !== imageUrl) {
+      setImgLoaded(false);
+      if (isDebugTile) console.log(`[TILE] imgLoaded set to FALSE for id=${poolTile?.id}, imageUrl=${imageUrl}, key=${tileKey}`);
+      lastImageUrlRef.current = imageUrl;
+    }
+  }, [imageUrl, tileKey]);
+
+  useEffect(() => {
+    if (isDebugTile) console.log(`[IMG] MOUNT for tileId=${poolTile?.id}, imageUrl=${imageUrl}, key=${tileKey}`);
+    return () => {
+      if (isDebugTile) console.log(`[IMG] UNMOUNT for tileId=${poolTile?.id}, imageUrl=${imageUrl}, key=${tileKey}`);
+    };
+  }, [imageUrl, tileKey]);
+
+  if (isDebugTile) console.log(`[TILE] RENDER id=${poolTile?.id}, contentId=${poolTile?.content?.id}, animationMode=${poolTile?.animationMode}, imageUrl=${imageUrl}, imgLoaded=${imgLoaded}, key=${tileKey}`);
+
   if (!poolTile?.isVisible || !poolTile?.content) {
     return (
       <div 
@@ -27,80 +97,42 @@ const CategoryTile = ({
   
   const { content: category, animationMode, isAnimal, isPlayed, isCurrentlyPlaying, onClick } = poolTile;
 
-  // Image-URL für Backend mit dynamischer Host-Erkennung und Resize-Optimierung
-  const getImageUrl = () => {
-    if (!category.image?.filename) {
-      console.warn('❌ No image filename for category:', category.name);
-      return '/websiteBaseImages/placeholder.png'; // Fallback
-    }
-    
-    // Dynamische Host-Erkennung: funktioniert mit localhost und IP-Adressen
-    const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:';
-    const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-    const port = '5000';
-    
-    // Tile-optimierte Größe: 300x300px für bessere Qualität (einheitlich für alle Geräte)
-    const tileSize = 300;
-    const quality = 75; // Gute Qualität, kleinere Dateigröße
-    
-    return `${protocol}//${hostname}:${port}/images/${category.image.filename}?w=${tileSize}&h=${tileSize}&q=${quality}`;
-  };
-
-  // Tile-Klick Handler
   const handleClick = () => {
-    // Nur klicken wenn keine Animation läuft
     if (animationMode) return;
-    
     if (onClick) {
       onClick(category);
     }
   };
 
-  // ===== NUR ANIMATION MANAGER - KEINE CSS-ANIMATIONEN =====
   const isClicked = animationMode === 'clicked';
   const isFlyingOut = animationMode && animationMode.startsWith('fall-out-');
-  
-  // Mobile-Detection für optimierte Animationen
-  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 767;
-  const isFirefoxMobile = typeof window !== 'undefined' && 
-    /Android.*Firefox|Mobile.*Firefox/.test(window.navigator.userAgent);
 
   let tileVariants;
   let animateState;
-  
+
   if (isClicked) {
-    // Geklicktes Tile: Wächst und verblasst SOFORT
     tileVariants = animationManager.getClickedTileVariants();
     animateState = 'clicked';
   } else if (isFlyingOut) {
-    // Nicht-geklicktes Tile: Fliegt weg SOFORT
     const direction = animationMode.replace('fall-out-', '');
     tileVariants = animationManager.getFlyOutTileVariants(direction);
     animateState = 'flyOut';
   } else {
-    // Normales Tile - statisch sichtbar mit mobilen Optimierungen
     tileVariants = {
       normal: { 
         opacity: 1, 
         scale: 1, 
         x: 0, 
-        y: 0,
-        // Mobile-spezifische Stabilisierung
-        ...(isMobile && {
-          transform: 'translate3d(0, 0, 0) scale(1)',
-          transformOrigin: 'center center'
-        })
+        y: 0
       }
     };
     animateState = 'normal';
   }
 
-  // CSS-Klassen für Tile
   const getTileClasses = () => {
     let classes = "category-tile";
     if (isAnimal && isCurrentlyPlaying) {
       classes += " currently-playing";
-      console.log(`🟢 CSS: Adding 'currently-playing' class to ${category.name}`);
     }
     return classes;
   };
@@ -114,72 +146,82 @@ const CategoryTile = ({
       animate={animateState}
       transition={{ 
         duration: 1.8, 
-        ease: "easeInOut",
-        // Firefox Mobile spezifische Fixes - keine Spring-Animationen
-        ...(isFirefoxMobile && {
-          type: "tween", // Explizit Tween statt Spring
-          ease: [0.25, 0.1, 0.25, 1], // Cubic Bezier für smoothness
-        })
+        ease: "easeInOut"
       }}
       style={{ 
         pointerEvents: animationMode ? 'none' : 'auto',
         zIndex: isClicked ? 1000 : 'auto',
-        // Anti-Flicker: GPU-Beschleunigung und stabile Rendering-Eigenschaften
-        transform: 'translateZ(0)', // Force GPU layer
-        backfaceVisibility: 'hidden', // Prevent flickering
-        WebkitBackfaceVisibility: 'hidden', // Safari support
-        willChange: animationMode ? 'transform, opacity' : 'auto', // Optimize only when animating
-        // Mobile-spezifische Stabilisierung
-        ...(isMobile && {
-          WebkitTransform: 'translate3d(0, 0, 0)',
-          isolation: 'isolate',
-          contain: 'layout style paint'
-        }),
-        // Firefox Mobile spezifische Anti-Flicker-Fixes
-        ...(isFirefoxMobile && {
-          MozTransform: 'translate3d(0, 0, 0)',
-          MozBackfaceVisibility: 'hidden',
-          MozUserSelect: 'none',
-        })
+        transform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+        willChange: animationMode ? 'transform, opacity' : 'auto',
+        background: imgLoaded ? 'linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%)' : 'transparent',
       }}
     >
-      {/* Abzeichen für gehörte Tiere (nur bei Animals) */}
       {isAnimal && isPlayed && (
         <div className="completion-badge">
-          <Image
+          <img
             src="/websiteBaseImages/abzeichen.png"
             alt="Bereits gehört"
             width={40}
             height={40}
+            style={{ objectFit: 'contain' }}
           />
         </div>
       )}
-
-      <Image
-        src={getImageUrl()}
-        alt={category.image.alt}
-        width={300}
-        height={180}
-        className="category-image"
-        unoptimized
-        priority
-        onLoad={() => setImageLoaded(true)}
-        style={{
-          // Anti-Flicker für Images
-          transform: 'translateZ(0)',
-          backfaceVisibility: 'hidden',
-          WebkitBackfaceVisibility: 'hidden',
-        }}
-      />
-      
+      {/* Crossfade: show previous image until new one is loaded */}
+      <div style={{position: 'absolute', inset: 0, width: '100%', height: '100%'}}>
+        {prevImgSrc && !imgLoaded && (
+          <img
+            src={prevImgSrc}
+            alt=""
+            width={300}
+            height={180}
+            className="category-image"
+            style={{ objectFit: 'cover', position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0, opacity: 1, transition: 'opacity 0.2s' }}
+            draggable={false}
+          />
+        )}
+        {imgSrc && (
+          <img
+            key={imageUrl}
+            src={imgSrc}
+            alt={category.image?.alt || category.name}
+            width={300}
+            height={180}
+            className="category-image"
+            style={{ objectFit: 'cover', position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 1, opacity: imgLoaded ? 1 : 0, transition: 'opacity 0.2s' }}
+            onLoad={() => {
+              setImgLoaded(true);
+              setPrevImgSrc(null);
+              if (isDebugTile) console.log(`[IMG] onLoad for tileId=${poolTile?.id}, imageUrl=${imageUrl}`);
+            }}
+            onError={() => {
+              setImgLoaded(true);
+              setPrevImgSrc(null);
+              if (isDebugTile) console.log(`[IMG] onError for tileId=${poolTile?.id}, imageUrl=${imageUrl}`);
+            }}
+            draggable={false}
+          />
+        )}
+        {!imgSrc && (
+          <img
+            src={questionmark.src}
+            alt="?"
+            width={300}
+            height={180}
+            className="category-image"
+            style={{ objectFit: 'cover', position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 1, opacity: 1, transition: 'opacity 0.2s' }}
+            draggable={false}
+          />
+        )}
+      </div>
       <div className="category-content">
         <h3 className="category-title">{category.name}</h3>
         <p className="category-description">
           {category.description || ''}
         </p>
       </div>
-
-
     </motion.div>
   );
 };

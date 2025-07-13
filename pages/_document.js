@@ -1,13 +1,18 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
   render() {
     return (
       <Html lang="de">
         <Head>
-          <link rel="icon" href="/websiteBaseImages/lexiconFavIcon.png" type="image/png" />
-          <link rel="shortcut icon" href="/websiteBaseImages/lexiconFavIcon.png" type="image/png" />
-          <link rel="apple-touch-icon" href="/websiteBaseImages/lexiconFavIcon.png" />
+          {/* Favicon und Apple-Touch-Icon werden im CSR dynamisch gesetzt */}
+          <link rel="icon" id="dynamic-favicon" />
+          <link rel="apple-touch-icon" id="dynamic-appleicon" />
+          <link rel="shortcut icon" id="dynamic-shortcuticon" />
         </Head>
         <body>
           <Main />
