@@ -780,8 +780,14 @@ button {
   background: none;
   pointer-events: auto;
   overflow-x: hidden;
+  overflow-y: hidden;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE/Edge */
   padding-left: 0.7em;
   padding-right: 0.7em;
+}
+.character-buttons-row::-webkit-scrollbar {
+  display: none !important; /* Safari und Chrome */
 }
 
 .back-button, .fullscreen-button, .info-button {

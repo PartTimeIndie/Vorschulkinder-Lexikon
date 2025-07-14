@@ -170,16 +170,16 @@ export default function Home() {
       const randomAnimation = animationManager.getRandomGridAnimation();
       setCurrentGridAnimation(randomAnimation);
       
-      const response = await fetch('/api/categories');
+      // Statt API: Lade alle Kategorien aus public/kategorien/tiere.json (oder weitere, falls vorhanden)
+      const response = await fetch('/kategorien/tiere.json');
       const data = await response.json();
-      
-      if (data.categories) {
-        console.log(`✅ Loaded ${data.categories.length} categories`);
+      // Passe die Struktur an, falls nötig (z.B. data.categories -> [data] falls Einzeldatei)
+      if (data) {
+        const categories = Array.isArray(data) ? data : [data];
         // HIERARCHISCH: Kategorien mit Main-Recent-Logic anordnen
         const mainRecentItems = loadRecentItemsFromStorage('main');
-        const arrangedCategories = arrangeItemsWithRecent(data.categories, mainRecentItems);
+        const arrangedCategories = arrangeItemsWithRecent(categories, mainRecentItems);
         setRecentItems(mainRecentItems); // State aktualisieren
-        
         setCategories(arrangedCategories);
         setError(null);
       } else {
@@ -203,18 +203,16 @@ export default function Home() {
         setCurrentGridAnimation(randomAnimation);
       }
       
-      const response = await fetch(`/api/categories/${slug}`);
+      // Statt API: Lade Kategorie-Details aus public/kategorien/[slug].json
+      const response = await fetch(`/kategorien/${slug}.json`);
       const data = await response.json();
-      
-      if (data.category) {
-        setSelectedCategory(data.category);
-        
+      if (data) {
+        setSelectedCategory(data);
         // HIERARCHISCH: Subkategorien mit Category-spezifischen Recent Items anordnen
-        const subcats = data.category.subcategories || [];
+        const subcats = data.subcategories || [];
         const categoryRecentItems = loadRecentItemsFromStorage('category', slug);
         const arrangedSubcats = arrangeItemsWithRecent(subcats, categoryRecentItems);
         setRecentItems(categoryRecentItems); // State aktualisieren
-        
         setSubcategories(arrangedSubcats);
         setError(null);
       } else {
@@ -263,14 +261,19 @@ export default function Home() {
       setIsPreloading(true);
       console.log(`🔄 Preloading ${type}: ${slug}`);
       
-             let response;
-       if (type === 'category') {
-         response = await fetch(`/api/categories/${slug}`);
-       } else if (type === 'animals') {
-         response = await fetch(`/api/animals/category/${slug}`);
-       }
-      
+      let response;
+      // Statt API: Lade Kategorie-Details für Preloading
+      if (type === 'category') {
+        response = await fetch(`/kategorien/${slug}.json`);
+      } else if (type === 'animals') {
+        // Lade alle Tiere und filtere nach Kategorie
+        response = await fetch('/eintraege/tierEintraege.json');
+      }
       const data = await response.json();
+      if (type === 'animals') {
+        // Filtere Tiere nach Kategorie
+        data.animals = data.tiere.filter(tier => tier.categories.includes(slug));
+      }
       
       if (data) {
         setPreloadedData({ type, slug, data });
@@ -385,7 +388,7 @@ export default function Home() {
     if (category.audio && category.audio.path) playAudio(`/${category.audio.path}`);
 
     // 1. Lade Daten und starte Preloading SOFORT
-    const response = await fetch(`/api/categories/${category.slug}`);
+    const response = await fetch(`/kategorien/${category.slug}.json`);
     const data = await response.json();
     const imageUrls = getAllImageUrlsForCategory(data.category);
     const preloadPromise = preloadImages(imageUrls);
@@ -399,8 +402,8 @@ export default function Home() {
     await preloadPromise;
 
     // 4. Pool-Update etc.
-    setSelectedCategory(data.category);
-    const subcats = data.category.subcategories || [];
+    setSelectedCategory(data);
+    const subcats = data.subcategories || [];
     const categoryRecentItems = loadRecentItemsFromStorage('category', category.slug);
     const arrangedSubcats = arrangeItemsWithRecent(subcats, categoryRecentItems);
     setRecentItems(categoryRecentItems);
@@ -432,8 +435,9 @@ export default function Home() {
     if (subcategory.audio && subcategory.audio.path) playAudio(`/${subcategory.audio.path}`);
 
     // 1. Lade Daten und starte Preloading SOFORT
-    const response = await fetch(`/api/animals/category/${subcategory.slug}`);
+    const response = await fetch('/eintraege/tierEintraege.json');
     const data = await response.json();
+    data.animals = data.tiere.filter(tier => tier.categories.includes(subcategory.slug));
     const imageUrls = getAllImageUrlsForAnimals(data.animals || []);
     const preloadPromise = preloadImages(imageUrls);
 
@@ -461,9 +465,10 @@ export default function Home() {
     try {
       setLoading(true);
       
-      // FIXED: Verwende die Subkategorie-Slug direkt für das Filtering
-      const response = await fetch(`/api/animals/category/${subcategorySlug}`);
+      // Statt API: Lade Tiere für spezifische Subkategorie
+      const response = await fetch('/eintraege/tierEintraege.json');
       const data = await response.json();
+      data.animals = data.tiere.filter(tier => tier.categories.includes(subcategorySlug));
       
       if (data.animals && data.animals.length > 0) {
         // HIERARCHISCH: Animals mit Subcategory-spezifischen Recent Items anordnen
@@ -575,9 +580,9 @@ export default function Home() {
     setCurrentView('category');
     let preloadPromise = Promise.resolve();
     if (selectedCategory) {
-      // 1. Lade Daten und starte Preloading SOFORT
-      const data = await (await fetch(`/api/categories/${selectedCategory.slug}`)).json();
-      const imageUrls = getAllImageUrlsForCategory(data.category);
+      // Statt API: Lade Kategorie-Details für Back-Navigation
+      const data = await (await fetch(`/kategorien/${selectedCategory.slug}.json`)).json();
+      const imageUrls = getAllImageUrlsForCategory(data);
       preloadPromise = preloadImages(imageUrls);
       await loadCategoryDetails(selectedCategory.slug);
     }

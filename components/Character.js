@@ -143,37 +143,38 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
   // Context-abhängige Emotionen laden
   const loadContextEmotions = async (context) => {
     console.log(`🎭 loadContextEmotions called with context: '${context}' (lastProcessed: '${lastProcessedContext}')`);
-    
     try {
-      const response = await fetch(`/api/character/random-emotion/${context}`);
-      const data = await response.json();
-      
-      if (data.emotions) {
-        setAvailableEmotions(data.emotions);
-        
-        // Cooldown prüfen: Keine Emotion-Wechsel wenn der letzte vor weniger als 2 Sekunden war
-        const now = Date.now();
-        const timeSinceLastChange = now - lastEmotionChangeTime;
-        const EMOTION_COOLDOWN = 2000; // 2 Sekunden Cooldown
-        
-        console.log(`🎭 Context check: context=${context}, lastProcessed=${lastProcessedContext}, cooldown=${timeSinceLastChange}ms`);
-        
-        if (context !== 'idle' && context !== lastProcessedContext && timeSinceLastChange >= EMOTION_COOLDOWN) {
-          console.log(`🎭 TRIGGERING emotion change for context '${context}'`);
-          const randomEmotion = data.emotions[Math.floor(Math.random() * data.emotions.length)];
-          changeEmotion(randomEmotion, false); // Mit Flip-Animation
-          setLastProcessedContext(context); // Merke dass wir diesen Context schon verarbeitet haben
-          setLastEmotionChangeTime(now); // Setze Cooldown-Timer
-        } else if (context === lastProcessedContext) {
-          console.log(`🎭 BLOCKED: Context '${context}' already processed`);
-        } else if (timeSinceLastChange < EMOTION_COOLDOWN) {
-          console.log(`🎭 BLOCKED: Cooldown active (${timeSinceLastChange}ms < ${EMOTION_COOLDOWN}ms)`);
-        } else if (context === 'idle') {
-          // Bei idle-Context: Reset lastProcessedContext für nächste Interaktion (aber kein Cooldown Reset)
-          console.log(`🎭 RESET: Idle context, clearing lastProcessedContext`);
-          setLastProcessedContext(null);
-          // Character wird NICHT neu instanziert, nur hasLoaded bleibt true
-        }
+      // Statt API: Definiere die Emotions-Logik clientseitig oder lade aus statischer Datei
+      // Beispiel: Mapping von Context zu Emotions
+      const contextEmotionMap = {
+        idle: ['idle', 'curious'],
+        main: ['excited', 'curious', 'idle'],
+        category: ['curious', 'thinking', 'excited'],
+        animals: ['excited', 'surprised', 'laughing'],
+        default: ['idle', 'curious', 'excited', 'surprised', 'thinking', 'laughing']
+      };
+      const emotions = contextEmotionMap[context] || contextEmotionMap.default;
+      setAvailableEmotions(emotions);
+      // Der Rest bleibt gleich wie vorher
+      const now = Date.now();
+      const timeSinceLastChange = now - lastEmotionChangeTime;
+      const EMOTION_COOLDOWN = 2000; // 2 Sekunden Cooldown
+      console.log(`🎭 Context check: context=${context}, lastProcessed=${lastProcessedContext}, cooldown=${timeSinceLastChange}ms`);
+      if (context !== 'idle' && context !== lastProcessedContext && timeSinceLastChange >= EMOTION_COOLDOWN) {
+        console.log(`🎭 TRIGGERING emotion change for context '${context}'`);
+        const randomEmotion = emotions[Math.floor(Math.random() * emotions.length)];
+        changeEmotion(randomEmotion, false); // Mit Flip-Animation
+        setLastProcessedContext(context); // Merke dass wir diesen Context schon verarbeitet haben
+        setLastEmotionChangeTime(now); // Setze Cooldown-Timer
+      } else if (context === lastProcessedContext) {
+        console.log(`🎭 BLOCKED: Context '${context}' already processed`);
+      } else if (timeSinceLastChange < EMOTION_COOLDOWN) {
+        console.log(`🎭 BLOCKED: Cooldown active (${timeSinceLastChange}ms < ${EMOTION_COOLDOWN}ms)`);
+      } else if (context === 'idle') {
+        // Bei idle-Context: Reset lastProcessedContext für nächste Interaktion (aber kein Cooldown Reset)
+        console.log(`🎭 RESET: Idle context, clearing lastProcessedContext`);
+        setLastProcessedContext(null);
+        // Character wird NICHT neu instanziert, nur hasLoaded bleibt true
       }
     } catch (error) {
       console.error('Error loading context emotions:', error);
