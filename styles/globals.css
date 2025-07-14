@@ -949,3 +949,16 @@ html, body, .container, .character-section {
   color: #ff9800;
 } 
  
+/* Remove mobile tap/click highlight indicators for all interactive elements */
+.character-container, .category-tile, .back-button, .fullscreen-button, .info-button, .character-buttons-row > button {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.character-container:focus, .category-tile:focus, .back-button:focus, .fullscreen-button:focus, .info-button:focus, .character-buttons-row > button:focus,
+.character-container:active, .category-tile:active, .back-button:active, .fullscreen-button:active, .info-button:active, .character-buttons-row > button:active {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+} 
+ 
