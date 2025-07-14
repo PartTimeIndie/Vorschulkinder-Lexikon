@@ -1002,6 +1002,9 @@ html, body, .container, .character-section {
     display: block;
     position: relative;
   }
+  .category-tile {
+    margin-left: -0.15rem;
+  }
 } 
  
 @media (min-width: 768px) and (orientation: landscape) {
