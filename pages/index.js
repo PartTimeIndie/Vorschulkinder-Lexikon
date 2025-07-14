@@ -288,15 +288,12 @@ export default function Home() {
         const baseImageUrl = `${protocol}//${hostname}:${port}/images/`;
         
         // Preload Images mit Resize-Parametern
+        // Für Tiere/Einträge: immer /images/ verwenden
         const imagesToPreload = [];
-        if (type === 'category' && data.category?.subcategories) {
-          imagesToPreload.push(...data.category.subcategories.map(sub => 
-            `${baseImageUrl}${sub.image.filename}?w=${tileSize}&h=${tileSize}&q=${quality}`
-          ));
-        } else if (type === 'animals' && data.animals) {
-          imagesToPreload.push(...data.animals.map(animal => 
-            `${baseImageUrl}${animal.image.filename}?w=${tileSize}&h=${tileSize}&q=${quality}`
-          ));
+        if (type === 'category' && data.subcategories) {
+          imagesToPreload.push(...data.subcategories.map(sub => `/kategorien/images/${sub.image.filename}`));
+        } else if (type === 'animal' && data.image) {
+          imagesToPreload.push(`/images/${data.image.filename}`);
         }
         
         // Promise.all für alle Bilder
@@ -343,24 +340,15 @@ export default function Home() {
 
   // Hilfsfunktion: Sammle alle Bild-URLs für Kategorie/Subkategorie/Tiere
   function getAllImageUrlsForCategory(category) {
-    const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:';
-    const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-    const port = '5000';
-    const tileSize = 300;
-    const quality = 75;
     if (!category?.subcategories) return [];
     return category.subcategories.map(sub =>
-      `${protocol}//${hostname}:${port}/images/${sub.image.filename}?w=${tileSize}&h=${tileSize}&q=${quality}`
+      `/kategorien/images/${sub.image.filename}`
     );
   }
+  // Für Tiere/Einträge IMMER /images/ verwenden
   function getAllImageUrlsForAnimals(animals) {
-    const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:';
-    const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-    const port = '5000';
-    const tileSize = 300;
-    const quality = 75;
     return animals.map(animal =>
-      `${protocol}//${hostname}:${port}/images/${animal.image.filename}?w=${tileSize}&h=${tileSize}&q=${quality}`
+      `/images/${animal.image.filename}`
     );
   }
 

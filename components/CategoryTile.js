@@ -29,12 +29,12 @@ const CategoryTile = ({
     if (!category?.image?.filename) {
       return null; // No real image, use placeholder
     }
-    const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:';
-    const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-    const port = '5000';
-    const tileSize = 300;
-    const quality = 75;
-    return `${protocol}//${hostname}:${port}/images/${category.image.filename}?w=${tileSize}&h=${tileSize}&q=${quality}`;
+    // Wenn es ein Tier/Entry ist, immer /images/ verwenden
+    if (poolTile?.isAnimal) {
+      return `/images/${category.image.filename}`;
+    }
+    // Sonst Kategorie/Subkategorie
+    return `/kategorien/images/${category.image.filename}`;
   };
 
   const imageUrl = getImageUrl(); // immer berechnen
