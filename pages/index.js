@@ -48,6 +48,14 @@ export default function Home() {
     }));
   });
 
+  // Hilfsfunktion: Setzt alle animationModes im tilePool auf null
+  function resetAllTileAnimations() {
+    setTilePool(prev => prev.map(tile => ({
+      ...tile,
+      animationMode: null
+    })));
+  }
+
   // Zentraler Animation State
   const [currentGridAnimation, setCurrentGridAnimation] = useState('slideFromLeft');
   const [globalAnimationDirection, setGlobalAnimationDirection] = useState('down');
@@ -383,6 +391,9 @@ export default function Home() {
     // 2. Animation abwarten
     await new Promise(resolve => setTimeout(resolve, 1800));
 
+    // 2.1. Animation-Status aller Tiles zurücksetzen
+    resetAllTileAnimations();
+
     // 3. Warte auf Preloading (falls noch nicht fertig)
     await preloadPromise;
 
@@ -427,6 +438,9 @@ export default function Home() {
 
     // 2. Animation abwarten
     await new Promise(resolve => setTimeout(resolve, 1800));
+
+    // 2.1. Animation-Status aller Tiles zurücksetzen
+    resetAllTileAnimations();
 
     // 3. Warte auf Preloading (falls noch nicht fertig)
     await preloadPromise;
@@ -529,6 +543,9 @@ export default function Home() {
 
     await new Promise(resolve => setTimeout(resolve, 1800));
 
+    // 2.1. Animation-Status aller Tiles zurücksetzen
+    resetAllTileAnimations();
+
     setSelectedCategory(null);
     setSubcategories([]);
     setAnimals([]);
@@ -548,6 +565,9 @@ export default function Home() {
     setCurrentGridAnimation(animationManager.getRandomGridAnimation());
 
     await new Promise(resolve => setTimeout(resolve, 1800));
+
+    // 2.1. Animation-Status aller Tiles zurücksetzen
+    resetAllTileAnimations();
 
     setIsGridVisible(false); // Grid sofort unsichtbar machen
 
@@ -901,6 +921,7 @@ export default function Home() {
         {/* Normal Content - nur wenn nicht loading/error */}
         {!loading && !error && allImagesLoaded && isGridVisible && (
           <motion.div
+            key={animationKey}
             className={`tile-grid`}
             variants={animationManager.getGridVariants(currentGridAnimation)}
             initial="hidden"
