@@ -439,34 +439,7 @@
       ],
       "safety_score": 9
     },
-    {
-      "id": "tier_017",
-      "name": "Wal",
-      "slug": "wal",
-      "description": "Tauche ein in die tiefe, blaue See, wo ein majestätischer Wal vorbeizieht – länger als zwei Schulbusse! Sein Herz ist so groß wie ein kleines Auto und pumpt Kraft für riesige Wanderungen durch die Ozeane.\n\nWale singen Lieder, die kilometerweit durch das Wasser klingen. Manche Töne sind so tief, dass wir Menschen sie kaum hören können. Mit jedem kräftigen Flossenschlag stoßen sie gewaltige Wasserfontänen aus ihrem Blasloch – wie ein Meeres-Geysir!\n\nObwohl Wale Giganten sind, fressen viele nur winzige Krill-Krebse. Mit ihrem Bartenkamm sieben sie das Plankton aus riesigen Wasserschlucken, fast wie du Spaghetti durch ein Sieb schüttest.\n\nIm Familienverband schwimmen sie Seite an Seite und kümmern sich liebevoll um ihre Kälber. Wenn ein Wal an die Oberfläche kommt, kannst du vielleicht sein tiefes, wohliges Brummen spüren – ein Gruß aus der Unterwasserwelt!",
-      "categories": [
-        "meerestiere",
-        "grosse-tiere",
-        "saeugetiere",
-        "fleischfresser",
-        "wassertiere"
-      ],
-      "image": {
-        "filename": "tier-wal.png",
-        "path": "images/tier-wal.png",
-        "alt": "Handgezeichnete Illustration eines majestätischen Wals in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-wal.mp3",
-        "path": "audio/tier-wal.mp3"
-      },
-      "character_emotions": [
-        "excited",
-        "surprised",
-        "curious"
-      ],
-      "safety_score": 8
-    },
+    
     {
       "id": "tier_018",
       "name": "Seestern",
@@ -2623,34 +2596,7 @@
       ],
       "safety_score": 8
     },
-    {
-      "id": "tier_107",
-      "name": "Fennek",
-      "slug": "fennek",
-      "description": "Knisternder Wüstensand und riesige Ohren – der Fennek ist der Superhörer der Sahara. Seine Löffel heißen nicht nur so, sie wirken wie Kühlrippen: Über sie gibt er Wärme ab und bleibt trotz Mittagshitze fit.\n\nNachts lauscht er auf das Krabbeln von Käfern und das Huschen kleiner Echsen unter der Sandoberfläche. Blitzschnell gräbt er mit Pfotenschaufeln einen Tunnel und schnappt sein Abendbrot. Sein Fell ist hell wie Mondlicht, tarnt ihn und reflektiert Sonne.\n\nAm Tage döst er in kühlen Höhlen, die er zwei Meter tief gräbt. Stört man ihn, springt er mit allen vier Pfoten gleichzeitig hoch – ein Sandfuchs-Hopser, der sagt: \"Ich bin noch wach!\"",
-      "categories": [
-        "wuestentiere",
-        "kleine-tiere",
-        "saeugetiere",
-        "allesfresser",
-        "nachtaktive-tiere"
-      ],
-      "image": {
-        "filename": "tier-fennek.png",
-        "path": "images/tier-fennek.png",
-        "alt": "Handgezeichnete Illustration eines niedlichen Fenneks in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-fennek.mp3",
-        "path": "audio/tier-fennek.mp3"
-      },
-      "character_emotions": [
-        "excited",
-        "curious",
-        "exploring"
-      ],
-      "safety_score": 8
-    },
+    
     {
       "id": "tier_108",
       "name": "Waran",
