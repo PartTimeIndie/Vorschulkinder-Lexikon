@@ -14,7 +14,8 @@
     "start": "node server/index.js",
     "start-network": "node server/index.js --host 0.0.0.0",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "generate-lowres-images": "node scripts/generate-lowres-images.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

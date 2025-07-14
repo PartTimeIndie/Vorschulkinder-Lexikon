@@ -24,43 +24,42 @@ const CategoryTile = ({
   const lastImageUrlRef = useRef(null);
 
   // Bild-URL ermitteln (muss immer definiert sein, auch wenn das Tile nicht sichtbar ist)
-  const getImageUrl = () => {
+  const getImageUrl = (lowRes = true) => {
     const category = poolTile?.content;
     if (!category?.image?.filename) {
       return null; // No real image, use placeholder
     }
     // Wenn es ein Tier/Entry ist, immer /images/ verwenden
     if (poolTile?.isAnimal) {
-      return `/images/${category.image.filename}`;
+      return lowRes ? `/images/lowres/${category.image.filename}` : `/images/${category.image.filename}`;
     }
     // Sonst Kategorie/Subkategorie
-    return `/kategorien/images/${category.image.filename}`;
+    return lowRes ? `/kategorien/images/lowres/${category.image.filename}` : `/kategorien/images/${category.image.filename}`;
   };
 
   const imageUrl = getImageUrl(); // immer berechnen
 
   // State for the actual image source (Base64 or URL)
-  const [imgSrc, setImgSrc] = useState(imageUrl);
+  const [imgSrc, setImgSrc] = useState(getImageUrl(true));
   const [prevImgSrc, setPrevImgSrc] = useState(null);
 
   useEffect(() => {
     let isMounted = true;
-    if (imageUrl) {
-      // Save previous image before loading new one
+    if (imgSrc) {
       setPrevImgSrc(imgSrc);
-      getCachedImage(imageUrl)
+      getCachedImage(imgSrc)
         .then(base64 => {
           if (isMounted && base64) setImgSrc(base64);
         })
         .catch(() => {
-          if (isMounted) setImgSrc(imageUrl);
+          if (isMounted) setImgSrc(imgSrc);
         });
     } else {
       setPrevImgSrc(null);
       setImgSrc(null);
     }
     return () => { isMounted = false; };
-  }, [imageUrl]);
+  }, [imgSrc]);
 
   // Only reset imgLoaded if the imageUrl actually changes
   useEffect(() => {
@@ -70,6 +69,17 @@ const CategoryTile = ({
       lastImageUrlRef.current = imageUrl;
     }
   }, [imageUrl, tileKey]);
+
+  // Reset image state when the image filename changes (e.g., when tile content changes)
+  useEffect(() => {
+    const filename = poolTile?.content?.image?.filename;
+    if (filename) {
+      setImgSrc(getImageUrl(true));
+      setImgLoaded(false);
+      setPrevImgSrc(null);
+      if (isDebugTile) console.log(`[IMG] Reset imgSrc and imgLoaded for tileId=${poolTile?.id}, filename=${filename}`);
+    }
+  }, [poolTile?.content?.image?.filename]);
 
   useEffect(() => {
     if (isDebugTile) console.log(`[IMG] MOUNT for tileId=${poolTile?.id}, imageUrl=${imageUrl}, key=${tileKey}`);
@@ -184,7 +194,7 @@ const CategoryTile = ({
         )}
         {imgSrc && (
           <img
-            key={imageUrl}
+            key={imgSrc}
             src={imgSrc}
             alt={category.image?.alt || category.name}
             width={300}
@@ -194,12 +204,14 @@ const CategoryTile = ({
             onLoad={() => {
               setImgLoaded(true);
               setPrevImgSrc(null);
-              if (isDebugTile) console.log(`[IMG] onLoad for tileId=${poolTile?.id}, imageUrl=${imageUrl}`);
+              if (isDebugTile) console.log(`[IMG] onLoad for tileId=${poolTile?.id}, imageUrl=${imgSrc}`);
             }}
             onError={() => {
-              setImgLoaded(true);
+              // Fallback to original image if low-res not found
+              if (imgSrc !== getImageUrl(false)) setImgSrc(getImageUrl(false));
+              else setImgLoaded(true);
               setPrevImgSrc(null);
-              if (isDebugTile) console.log(`[IMG] onError for tileId=${poolTile?.id}, imageUrl=${imageUrl}`);
+              if (isDebugTile) console.log(`[IMG] onError for tileId=${poolTile?.id}, imageUrl=${imgSrc}`);
             }}
             draggable={false}
           />

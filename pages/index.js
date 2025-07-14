@@ -287,21 +287,30 @@ export default function Home() {
         const quality = 75; // Performance-optimierte Qualität
         const baseImageUrl = `${protocol}//${hostname}:${port}/images/`;
         
-        // Preload Images mit Resize-Parametern
-        // Für Tiere/Einträge: immer /images/ verwenden
+        // Preload Images mit LowRes und Fallback
         const imagesToPreload = [];
         if (type === 'category' && data.subcategories) {
-          imagesToPreload.push(...data.subcategories.map(sub => `/kategorien/images/${sub.image.filename}`));
+          imagesToPreload.push(...data.subcategories.map(sub => `/kategorien/images/lowres/${sub.image.filename}`));
         } else if (type === 'animal' && data.image) {
-          imagesToPreload.push(`/images/${data.image.filename}`);
+          imagesToPreload.push(`/images/lowres/${data.image.filename}`);
         }
-        
-        // Promise.all für alle Bilder
+        // Promise.all für alle Bilder mit Fallback auf Original
         await Promise.all(imagesToPreload.map(src => {
           return new Promise((resolve) => {
             const img = new Image();
             img.onload = () => resolve();
-            img.onerror = () => resolve(); // Auch bei Fehlern weitermachen
+            img.onerror = () => {
+              // Fallback to original image if low-res not found
+              const fallbackSrc = src.replace('/lowres/', '/');
+              if (fallbackSrc !== src) {
+                const fallbackImg = new Image();
+                fallbackImg.onload = () => resolve();
+                fallbackImg.onerror = () => resolve();
+                fallbackImg.src = fallbackSrc;
+              } else {
+                resolve();
+              }
+            };
             img.src = src;
           });
         }));
@@ -339,16 +348,16 @@ export default function Home() {
   }
 
   // Hilfsfunktion: Sammle alle Bild-URLs für Kategorie/Subkategorie/Tiere
-  function getAllImageUrlsForCategory(category) {
+  function getAllImageUrlsForCategory(category, lowRes = true) {
     if (!category?.subcategories) return [];
     return category.subcategories.map(sub =>
-      `/kategorien/images/${sub.image.filename}`
+      lowRes ? `/kategorien/images/lowres/${sub.image.filename}` : `/kategorien/images/${sub.image.filename}`
     );
   }
   // Für Tiere/Einträge IMMER /images/ verwenden
-  function getAllImageUrlsForAnimals(animals) {
+  function getAllImageUrlsForAnimals(animals, lowRes = true) {
     return animals.map(animal =>
-      `/images/${animal.image.filename}`
+      lowRes ? `/images/lowres/${animal.image.filename}` : `/images/${animal.image.filename}`
     );
   }
 
@@ -702,18 +711,52 @@ export default function Home() {
   // Zentrale Funktion: Welche Items sollen aktuell gerendert werden?
   const getCurrentItems = () => {
     if (currentView === 'main' || (!selectedCategory && currentView !== 'animals')) {
+      // Always use the full main category data for the main tile
+      if (categories.length > 0) {
+        // Find the main category (e.g., by slug or id)
+        const mainCat = categories.find(cat => cat.slug === 'tiere' || cat.id === 'cat_001');
+        if (mainCat) {
+          // Fetch full data from /kategorien/tiere.json for the main tile
+          // (Assume categories[0] is the main category if only one exists)
+          // This is a synchronous fetch for demonstration; in production, cache or prefetch this
+          try {
+            const req = new XMLHttpRequest();
+            req.open('GET', '/kategorien/tiere.json', false); // synchronous
+            req.send(null);
+            if (req.status === 200) {
+              const fullMainCat = JSON.parse(req.responseText);
+              if (fullMainCat && fullMainCat.image && fullMainCat.image.filename) {
+                console.log('[DEBUG] Main category (full):', fullMainCat);
+                return [{ ...fullMainCat }];
+              }
+            }
+          } catch (e) {
+            console.warn('[DEBUG] Could not fetch full main category:', e);
+          }
+          // Fallback: log and use as-is
+          console.log('[DEBUG] Main category (summary):', mainCat);
+          return [mainCat];
+        }
+      }
       return categories;
     } else if (currentView === 'category' || (selectedCategory && subcategories.length > 0 && currentView === 'transitioning')) {
       return subcategories;
     } else if (currentView === 'animals') {
       // Animals in CategoryTile-Format konvertieren
-      return animals.map(animal => ({
-        id: animal.id,
-        name: animal.name,
-        slug: animal.slug,
-        image: animal.image,
-        audio: animal.audio
-      }));
+      const mapped = animals.map(animal => {
+        console.log('[DEBUG] Animal for tile:', animal);
+        if (!animal.image || !animal.image.filename) {
+          console.warn('[DEBUG] Animal missing image or filename:', animal);
+        }
+        return {
+          id: animal.id,
+          name: animal.name,
+          slug: animal.slug,
+          image: animal.image,
+          audio: animal.audio
+        };
+      });
+      return mapped;
     }
     return [];
   };
@@ -923,30 +966,35 @@ export default function Home() {
 
         {/* Normal Content - nur wenn nicht loading/error */}
         {!loading && !error && allImagesLoaded && isGridVisible && (
-          <motion.div
-            key={animationKey}
-            className={`tile-grid`}
-            variants={animationManager.getGridVariants(currentGridAnimation)}
-            initial="hidden"
-            animate="visible"
-            style={{ 
-              opacity: tilePool.some(tile => tile.isVisible) ? 1 : 0,
-              transition: 'opacity 0.1s ease' 
-            }}
-          >
-            {tilePool.map((poolTile, index) => (
-              <CategoryTile
-                key={poolTile.id}
-                tileKey={poolTile.id}
-                poolTile={poolTile}
-                delay={poolTile.isVisible ? animationManager.getTileDelay(
-                  tilePool.filter((t, i) => t.isVisible && i <= index).length - 1, 
-                  tilePool.filter(t => t.isVisible).length, 
-                  currentGridAnimation
-                ) : 0}
-              />
-            ))}
-          </motion.div>
+          // Only render the grid if the main category (first visible tile) has image and image.filename
+          tilePool.some(tile => tile.isVisible && tile.content && tile.content.image && tile.content.image.filename)
+            ? (
+              <motion.div
+                key={animationKey}
+                className={`tile-grid`}
+                variants={animationManager.getGridVariants(currentGridAnimation)}
+                initial="hidden"
+                animate="visible"
+                style={{ 
+                  opacity: tilePool.some(tile => tile.isVisible) ? 1 : 0,
+                  transition: 'opacity 0.1s ease' 
+                }}
+              >
+                {tilePool.map((poolTile, index) => (
+                  <CategoryTile
+                    key={poolTile.id}
+                    tileKey={poolTile.id}
+                    poolTile={poolTile}
+                    delay={poolTile.isVisible ? animationManager.getTileDelay(
+                      tilePool.filter((t, i) => t.isVisible && i <= index).length - 1, 
+                      tilePool.filter(t => t.isVisible).length, 
+                      currentGridAnimation
+                    ) : 0}
+                  />
+                ))}
+              </motion.div>
+            )
+            : null
         )}
 
         {/* Placeholder für leere Subkategorien */}
