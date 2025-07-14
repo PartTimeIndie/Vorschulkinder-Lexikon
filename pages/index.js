@@ -390,8 +390,7 @@ export default function Home() {
 
     // 2. Animation abwarten
     await new Promise(resolve => setTimeout(resolve, 1800));
-
-    // 2.1. Animation-Status aller Tiles zurücksetzen
+    if (scrollContainerRef.current) scrollContainerRef.current.scrollTop = 0;
     resetAllTileAnimations();
 
     // 3. Warte auf Preloading (falls noch nicht fertig)
@@ -438,8 +437,7 @@ export default function Home() {
 
     // 2. Animation abwarten
     await new Promise(resolve => setTimeout(resolve, 1800));
-
-    // 2.1. Animation-Status aller Tiles zurücksetzen
+    if (scrollContainerRef.current) scrollContainerRef.current.scrollTop = 0;
     resetAllTileAnimations();
 
     // 3. Warte auf Preloading (falls noch nicht fertig)
@@ -542,8 +540,7 @@ export default function Home() {
     setCurrentGridAnimation(animationManager.getRandomGridAnimation());
 
     await new Promise(resolve => setTimeout(resolve, 1800));
-
-    // 2.1. Animation-Status aller Tiles zurücksetzen
+    if (scrollContainerRef.current) scrollContainerRef.current.scrollTop = 0;
     resetAllTileAnimations();
 
     setSelectedCategory(null);
@@ -565,8 +562,7 @@ export default function Home() {
     setCurrentGridAnimation(animationManager.getRandomGridAnimation());
 
     await new Promise(resolve => setTimeout(resolve, 1800));
-
-    // 2.1. Animation-Status aller Tiles zurücksetzen
+    if (scrollContainerRef.current) scrollContainerRef.current.scrollTop = 0;
     resetAllTileAnimations();
 
     setIsGridVisible(false); // Grid sofort unsichtbar machen

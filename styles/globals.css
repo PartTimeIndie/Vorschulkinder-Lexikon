@@ -81,6 +81,11 @@ button {
     overflow-y: auto;
     padding: 2rem;
     padding-left: 1rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  .categories-section::-webkit-scrollbar {
+    display: none; /* Safari und Chrome */
   }
   
   .character-container {
@@ -142,6 +147,11 @@ button {
     overflow-y: auto;
     padding: 1rem;
     max-height: 100vh; /* Begrenzt die Höhe auf Viewport */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  .categories-section::-webkit-scrollbar {
+    display: none; /* Safari und Chrome */
   }
   
   .character-container {
@@ -221,6 +231,11 @@ button {
     overflow-y: auto;
     padding: 1rem;
     min-height: 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  .categories-section::-webkit-scrollbar {
+    display: none; /* Safari und Chrome */
   }
   
   .character-container {
