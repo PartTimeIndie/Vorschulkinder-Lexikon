@@ -27,6 +27,8 @@ export default function Home() {
   const [allImagesLoaded, setAllImagesLoaded] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
+  const [showBackButton, setShowBackButton] = useState(false);
+  const [buttonsVisible, setButtonsVisible] = useState(true);
 
   // Image Preloading State
   const [preloadedData, setPreloadedData] = useState(null);
@@ -808,6 +810,18 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const shouldShow = selectedCategory || currentView === 'animals';
+    if (shouldShow !== showBackButton) {
+      setButtonsVisible(false); // fade out all
+      setTimeout(() => {
+        setShowBackButton(shouldShow); // update layout
+        setButtonsVisible(true); // fade in all
+      }, 450); // match CSS transition (was 250)
+    }
+    // eslint-disable-next-line
+  }, [selectedCategory, currentView]);
+
   return (
     <div className="container">
       <Head>
@@ -819,16 +833,16 @@ export default function Home() {
 
       {/* Character Section - IMMER gerendert */}
       <div className="character-section">
-        <div className="character-buttons-row">
-        {(selectedCategory || currentView === 'animals') && (
-          <button 
-            className="back-button"
-            onClick={currentView === 'animals' ? handleBackToSubcategories : handleBackToCategories}
-            title={currentView === 'animals' ? 'Zurück zu den Unterkategorien' : 'Zurück zu den Hauptkategorien'}
-          >
+        <div className={`character-buttons-row${!buttonsVisible ? ' buttons-fade-out' : ''}`}>
+          {showBackButton && (
+            <button
+              className="back-button"
+              onClick={currentView === 'animals' ? handleBackToSubcategories : handleBackToCategories}
+              title={currentView === 'animals' ? 'Zurück zu den Unterkategorien' : 'Zurück zu den Hauptkategorien'}
+            >
               <img src="/websiteBaseImages/back button.png" alt="Zurück" />
-          </button>
-        )}
+            </button>
+          )}
           <button
             className="fullscreen-button"
             onClick={handleToggleFullscreen}
