@@ -251,6 +251,12 @@ button {
   }
 }
 
+@media (max-width: 767px), (orientation: portrait) {
+  .character-section {
+    padding-bottom: 0.3rem !important;
+  }
+}
+
 /* ===== TILE GRID DEFINITIONS ===== */
 
 /* Desktop Landscape: Standard Multi-Column Grid */
@@ -960,5 +966,50 @@ html, body, .container, .character-section {
   outline: none !important;
   box-shadow: none !important;
   -webkit-tap-highlight-color: transparent !important;
+} 
+ 
+/* Separator between character and categories */
+.character-categories-separator {
+  background: #654321;
+  z-index: 10;
+}
+
+/* Desktop/Landscape: vertical line */
+@media (min-width: 768px) and (orientation: landscape) {
+  .character-categories-separator {
+    width: 3px;
+    height: 100vh;
+    min-height: 100%;
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    align-self: stretch;
+    justify-self: stretch;
+    display: block;
+    position: relative;
+  }
+}
+
+/* Mobile/Portrait: horizontal line */
+@media (max-width: 767px), (orientation: portrait) {
+  .character-categories-separator {
+    width: 100vw;
+    height: 3px;
+    min-width: 100%;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    align-self: stretch;
+    justify-self: stretch;
+    display: block;
+    position: relative;
+  }
+} 
+ 
+@media (min-width: 768px) and (orientation: landscape) {
+  .categories-section {
+    margin-left: 0 !important;
+  }
+  .category-tile {
+    margin-left: 1.5rem;
+  }
 } 
  

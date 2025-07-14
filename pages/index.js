@@ -891,8 +891,8 @@ export default function Home() {
           </div>
         )}
       </div>
-
-      {/* Categories Section mit Scroll */}
+      {/* Separator between character and categories */}
+      <div className="character-categories-separator" aria-hidden="true"></div>
       <div 
         className="categories-section"
         ref={scrollContainerRef}
