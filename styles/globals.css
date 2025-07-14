@@ -386,21 +386,9 @@ button {
   @supports (-moz-appearance: none) {
     .category-tile {
       /* Firefox spezifische Anti-Flicker-Maßnahmen */
-      -moz-transform: translate3d(0, 0, 0);
-      -moz-backface-visibility: hidden;
-      -moz-perspective: 1000px;
-      -moz-user-select: none;
-      -moz-osx-font-smoothing: grayscale;
-      
-      /* Firefox Layer-Isolation */
-      -moz-isolation: isolate;
-      opacity: 0.999; /* Firefox Hack für Layer-Forcing */
     }
     
     .category-tile .category-image {
-      -moz-transform: translate3d(0, 0, 0);
-      -moz-backface-visibility: hidden;
-      opacity: 0.999; /* Firefox Image-Layer-Hack */
     }
   }
 }

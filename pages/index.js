@@ -716,25 +716,7 @@ export default function Home() {
         // Find the main category (e.g., by slug or id)
         const mainCat = categories.find(cat => cat.slug === 'tiere' || cat.id === 'cat_001');
         if (mainCat) {
-          // Fetch full data from /kategorien/tiere.json for the main tile
-          // (Assume categories[0] is the main category if only one exists)
-          // This is a synchronous fetch for demonstration; in production, cache or prefetch this
-          try {
-            const req = new XMLHttpRequest();
-            req.open('GET', '/kategorien/tiere.json', false); // synchronous
-            req.send(null);
-            if (req.status === 200) {
-              const fullMainCat = JSON.parse(req.responseText);
-              if (fullMainCat && fullMainCat.image && fullMainCat.image.filename) {
-                console.log('[DEBUG] Main category (full):', fullMainCat);
-                return [{ ...fullMainCat }];
-              }
-            }
-          } catch (e) {
-            console.warn('[DEBUG] Could not fetch full main category:', e);
-          }
-          // Fallback: log and use as-is
-          console.log('[DEBUG] Main category (summary):', mainCat);
+          // Just return the mainCat; do not fetch synchronously
           return [mainCat];
         }
       }
