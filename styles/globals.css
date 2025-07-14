@@ -260,9 +260,8 @@ button {
 @media (max-width: 767px), (orientation: portrait) {
   .tile-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 Spalten nebeneinander */
+    grid-template-columns: repeat(2, 1fr);/* 2 Spalten nebeneinander */
     gap: 0.5rem; /* Kleinerer Gap für mehr Platz */
-    padding: 0.5rem; /* Kleineres Padding */
     justify-items: center; /* Tiles in Spalten zentriert */
   }
   
@@ -630,7 +629,6 @@ button {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   z-index: 900;
-  padding: 2rem;
   overflow-y: auto;
 }
 
@@ -644,7 +642,6 @@ button {
     height: 70px;
     top: 0.5rem;
     left: 50%;
-    border: 3px solid #654321; /* GLEICHE DUNKLE BRAUNE FARBE */
   }
   
   .back-button:hover {
@@ -663,7 +660,6 @@ button {
     height: 60px;
     top: 0.5rem;
     left: 50%;
-    transform: translateX(-50%);
     border: 2px solid #654321;
   }
 }
@@ -674,7 +670,6 @@ button {
     height: 50px;
     top: 0.25rem;
     left: 50%;
-    transform: translateX(-50%);
     border: 2px solid #654321;
   }
 }
@@ -761,9 +756,7 @@ button {
 
 /* Responsive Adjustments */
 @media (max-width: 480px) {
-  .container {
-    padding: 0.5rem;
-  }
+
   
   .category-tile {
     min-height: 200px;
