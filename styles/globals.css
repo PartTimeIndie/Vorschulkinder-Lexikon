@@ -636,34 +636,6 @@ button {
 
 /* ENTFERNT - Verwenden jetzt .tile-grid für alle Grids */
 
-/* Back Button - Im Character Panel oben */
-.back-button {
-  position: absolute;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%); /* Standard Position - bleibt konstant */
-  background: url('/websiteBaseImages/back button.png') center/cover;
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  z-index: 1010; /* Über allem anderen */
-  border: 3px solid #654321; /* GLEICHE DUNKLE BRAUNE FARBE */
-}
-
-.back-button:hover {
-  /* KEIN Transform beim Hover - nur Schatten-Verbesserung */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-}
-
-.back-button:active {
-  transform: translateX(-50%) scale(0.95); /* Nur beim Klick etwas kleiner skalieren */
-}
 
 /* Portrait Back Button */
 @media (max-width: 767px), (orientation: portrait) {
@@ -672,7 +644,6 @@ button {
     height: 70px;
     top: 0.5rem;
     left: 50%;
-    transform: translateX(-50%); /* Standard Position - bleibt konstant */
     border: 3px solid #654321; /* GLEICHE DUNKLE BRAUNE FARBE */
   }
   
@@ -849,5 +820,176 @@ button {
     background-size: 100% auto !important; /* Breite füllen, oben/unten ggf. abgeschnitten */
     background-position: center bottom !important;
   }
+} 
+ 
+/* Character Section Buttons Row */
+.character-buttons-row {
+  position: absolute;
+  top: 1.25em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: clamp(40px, 12vw, 64px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5em;
+  z-index: 1020;
+  background: none;
+  pointer-events: auto;
+  overflow-x: hidden;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+}
+
+.back-button, .fullscreen-button, .info-button {
+  border: none;
+  box-shadow: none;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  max-height: 64px;
+  min-height: 32px;
+  aspect-ratio: 1/1;
+  margin: 0;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button img, .fullscreen-button img, .info-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  background: transparent;
+  display: block;
+}
+
+/* Remove all hover/active effects for mobile-first approach */
+.back-button:hover, .fullscreen-button:hover, .info-button:hover,
+.back-button:active, .fullscreen-button:active, .info-button:active {
+  filter: none !important;
+  transform: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 767px), (orientation: portrait) {
+  /* --- PORTRAIT/MOBILE BUTTON STYLES (ONLY BLOCK THAT SHOULD APPLY) --- */
+  .character-section {
+    padding-top: clamp(60px, 18vw, 96px);
+  }
+  .character-buttons-row {
+    top: 1.5em;
+    height: clamp(60px, 18vw, 96px);
+    gap: 0.9em;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .back-button, .fullscreen-button, .info-button {
+    max-height: 96px;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-section {
+    padding-top: clamp(48px, 14vw, 72px);
+  }
+  .character-buttons-row {
+    height: clamp(48px, 14vw, 72px);
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .back-button, .fullscreen-button, .info-button {
+    max-height: 72px;
+    min-height: 36px;
+  }
+}
+
+/* Remove any outline, border, or box-shadow from html, body, .container, .character-section */
+html, body, .container, .character-section {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Info Overlay Modal */
+.info-overlay-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.97);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  animation: fadeInOverlay 0.3s;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.info-overlay-content {
+  background: #fffde7;
+  border: 3px solid #654321;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  max-width: 95vw;
+  max-height: 90vh;
+  padding: 2.5rem 2rem 2rem 2rem;
+  overflow-y: auto;
+  position: relative;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.info-overlay-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #b8860b;
+  text-align: center;
+}
+
+.info-overlay-content p {
+  margin: 1.5rem 0 0 0;
+  line-height: 1.7;
+  font-size: 1.08rem;
+}
+
+.info-overlay-content a {
+  color: #1976d2;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.info-overlay-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #b8860b;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.2s;
+}
+.info-overlay-close:hover {
+  color: #ff9800;
 } 
  

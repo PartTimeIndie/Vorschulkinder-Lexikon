@@ -25,6 +25,8 @@ export default function Home() {
   const [animationKey, setAnimationKey] = useState(0);
   const [isGridVisible, setIsGridVisible] = useState(true);
   const [allImagesLoaded, setAllImagesLoaded] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   // Image Preloading State
   const [preloadedData, setPreloadedData] = useState(null);
@@ -748,6 +750,48 @@ export default function Home() {
   // Kategorien, Subkategorien und Animals werden automatisch mit Recent Items angeordnet
   // beim Laden durch arrangeItemsWithRecent() - kein separates useEffect nötig
 
+  // Fullscreen logic
+  const handleToggleFullscreen = () => {
+    if (!isFullscreen) {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+  };
+
+  useEffect(() => {
+    const fullscreenChangeHandler = () => {
+      setIsFullscreen(!!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement));
+    };
+    document.addEventListener('fullscreenchange', fullscreenChangeHandler);
+    document.addEventListener('webkitfullscreenchange', fullscreenChangeHandler);
+    document.addEventListener('mozfullscreenchange', fullscreenChangeHandler);
+    document.addEventListener('MSFullscreenChange', fullscreenChangeHandler);
+    return () => {
+      document.removeEventListener('fullscreenchange', fullscreenChangeHandler);
+      document.removeEventListener('webkitfullscreenchange', fullscreenChangeHandler);
+      document.removeEventListener('mozfullscreenchange', fullscreenChangeHandler);
+      document.removeEventListener('MSFullscreenChange', fullscreenChangeHandler);
+    };
+  }, []);
+
   return (
     <div className="container">
       <Head>
@@ -759,21 +803,63 @@ export default function Home() {
 
       {/* Character Section - IMMER gerendert */}
       <div className="character-section">
-        {/* Back Button im Character Panel */}
+        <div className="character-buttons-row">
         {(selectedCategory || currentView === 'animals') && (
           <button 
             className="back-button"
             onClick={currentView === 'animals' ? handleBackToSubcategories : handleBackToCategories}
             title={currentView === 'animals' ? 'Zurück zu den Unterkategorien' : 'Zurück zu den Hauptkategorien'}
           >
+              <img src="/websiteBaseImages/back button.png" alt="Zurück" />
           </button>
         )}
-        
+          <button
+            className="fullscreen-button"
+            onClick={handleToggleFullscreen}
+            title={isFullscreen ? 'Vollbildmodus verlassen' : 'Vollbildmodus aktivieren'}
+          >
+            <img src={isFullscreen ? "/websiteBaseImages/closeButton.png" : "/websiteBaseImages/Fullscreen.png"} alt={isFullscreen ? "Schließen" : "Fullscreen"} />
+          </button>
+          <button
+            className="info-button"
+            onClick={() => setShowInfo(true)}
+            title="Info über das Lexikon"
+          >
+            <img src="/websiteBaseImages/info.png" alt="Info" />
+          </button>
+        </div>
         <Character 
           key="main-character" // Fester Key - wird nur EINMAL gemountet
           currentContext={loading || error ? 'idle' : characterContext}
           onEmotionChange={handleCharacterEmotionChange}
         />
+        {/* Info Overlay Modal */}
+        {showInfo && (
+          <div className="info-overlay-modal">
+            <div className="info-overlay-content">
+              <button className="info-overlay-close" onClick={() => setShowInfo(false)} title="Schließen">×</button>
+              <h2>Warum ich dieses Kinderlexikon gemacht habe</h2>
+              <p>
+                Ich habe dieses Kinderlexikon für meine eigenen Kinder erstellt, weil sie ein großes Interesse an Tieren und Wissen im Allgemeinen haben. Leider haben wir bisher kein Lexikon gefunden, das auch für Kinder geeignet ist, die noch nicht lesen können. Deshalb habe ich angefangen, ein interaktives, gesprochenes Lexikon zu entwickeln – mit Bildern, einfacher Sprache und Audiounterstützung.<br/><br/>
+                Derzeit gibt es nur die Kategorie „Tiere“, aber wenn meine Kinder oder auch andere Kinder Interesse an weiteren Kategorien haben, würde ich das Lexikon gerne erweitern. Ihr könnt mir gerne mitteilen, welche Themen ihr euch wünscht – ich freue mich über Vorschläge!<br/><br/>
+                Jede neue Hauptkategorie kostet mich jedoch rund 50 €, da ich die Bilder, Texte und Voiceovers mithilfe von KI generieren lasse. Diese Kosten kann ich aktuell nicht selbst tragen. Falls ihr das Projekt unterstützen wollt, könnt ihr gerne über den Donate-Button eine kleine Spende dalassen – ich würde dann die entsprechende Kategorie hinzufügen.<br/><br/>
+                Mein Ziel ist es, ein richtiges Lexikon für Kinder zu schaffen – zugänglich, unterhaltsam und kindgerecht, auch für die Jüngsten.<br/><br/>
+                Auch eine Übersetzung in andere Sprachen ist geplant. Dafür müsste ich jedoch noch zusätzliche Entwicklungszeit investieren, um den Support dafür technisch besser umzusetzen. Falls daran Interesse besteht, könnten wir gerne darüber sprechen.<br/><br/>
+                Wenn ihr mich zusätzlich unterstützen möchtet, schaut gerne bei meinen Spielen vorbei oder setzt sie auf eure Wunschliste:<br/>
+                👉 Meine Entwicklerseite auf Steam <a href="https://store.steampowered.com/curator/33183467" target="_blank" rel="noopener noreferrer">@https://store.steampowered.com/curator/33183467</a><br/><br/>
+                <b>Technischer Hinweis & Attribution:</b><br/>
+                Dieses Lexikon wurde mit Hilfe von Künstlicher Intelligenz erstellt:<br/>
+                <b>Bilder:</b> generiert mit OpenAI<br/>
+                <b>Voiceover:</b> erstellt mit ElevenLabs<br/>
+                <b>Code & Umsetzung:</b> mit Hilfe von Cursor und verschiedenen Language Models (LLMs)<br/>
+                <b>Soundeffekt:</b><br/>
+                „Boy Laughing (5 y.o.)“ von Nakhas – freesound.org/s/506937/ – Lizenz: Creative Commons 0<br/><br/>
+                <b>Bekannte Probleme:</b><br/>
+                ⚠️ Bei der Nutzung mit dem Firefox-Browser kann es aktuell zu Bildflackern kommen. Bitte nutzt in diesem Fall vorübergehend einen anderen Browser (z. B. Chrome, Edge oder Safari), bis das Problem behoben ist.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Categories Section mit Scroll */}
