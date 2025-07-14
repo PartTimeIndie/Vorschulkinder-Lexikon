@@ -11,6 +11,7 @@ const nextConfig = {
   
   // Bilder-Optimierung
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'http',
