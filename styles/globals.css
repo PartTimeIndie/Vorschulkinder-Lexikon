@@ -390,82 +390,9 @@ button {
   transform: translateY(0) scale(1);
   pointer-events: auto;
 }
+ 
 
-/* FLY-IN Animationen: Tiles kommen aus verschiedenen Richtungen */
-.category-tile.fly-in-from-down {
-  animation: flyInFromDown 0.8s ease-out forwards;
-}
-
-.category-tile.fly-in-from-up {
-  animation: flyInFromUp 0.8s ease-out forwards;
-}
-
-.category-tile.fly-in-from-left {
-  animation: flyInFromLeft 0.8s ease-out forwards;
-}
-
-.category-tile.fly-in-from-right {
-  animation: flyInFromRight 0.8s ease-out forwards;
-}
-
-.category-tile.fly-in-from-up-left {
-  animation: flyInFromUpLeft 0.8s ease-out forwards;
-}
-
-.category-tile.fly-in-from-up-right {
-  animation: flyInFromUpRight 0.8s ease-out forwards;
-}
-
-.category-tile.fly-in-from-down-left {
-  animation: flyInFromDownLeft 0.8s ease-out forwards;
-}
-
-.category-tile.fly-in-from-down-right {
-  animation: flyInFromDownRight 0.8s ease-out forwards;
-}
-
-/* FLY-IN KEYFRAMES */
-@keyframes flyInFromDown {
-  0% { opacity: 0; transform: translateY(120vh) translateX(0) scale(0.8); }
-  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-}
-
-@keyframes flyInFromUp {
-  0% { opacity: 0; transform: translateY(-120vh) translateX(0) scale(0.8); }
-  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-}
-
-@keyframes flyInFromLeft {
-  0% { opacity: 0; transform: translateY(0) translateX(-120vw) scale(0.8); }
-  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-}
-
-@keyframes flyInFromRight {
-  0% { opacity: 0; transform: translateY(0) translateX(120vw) scale(0.8); }
-  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-}
-
-@keyframes flyInFromUpLeft {
-  0% { opacity: 0; transform: translateY(-120vh) translateX(-120vw) scale(0.8); }
-  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-}
-
-@keyframes flyInFromUpRight {
-  0% { opacity: 0; transform: translateY(-120vh) translateX(120vw) scale(0.8); }
-  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-}
-
-@keyframes flyInFromDownLeft {
-  0% { opacity: 0; transform: translateY(120vh) translateX(-120vw) scale(0.8); }
-  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-}
-
-@keyframes flyInFromDownRight {
-  0% { opacity: 0; transform: translateY(120vh) translateX(120vw) scale(0.8); }
-  100% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
-}
-
-/* ===== ALLE TILE-ANIMATIONEN JETZT NUR ÜBER ANIMATION MANAGER ===== */
+/* ===== ALLE TILE-ANIMATIONEN JETZT NUR ÜBER ANIMATION MANAGER ===== */ 
 
 /* Category Image */
 .category-image {
