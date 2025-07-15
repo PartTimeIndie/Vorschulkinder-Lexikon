@@ -80,6 +80,92 @@ export async function getCachedJson(url, version = '') {
 }
 
 /**
+ * Holt ein Asset als Blob aus dem Cache oder lädt es per fetch und speichert es als Base64 im Cache.
+ * @param {string} url - Die Asset-URL.
+ * @param {string} version - Optionaler Versionsstring für Cache Busting.
+ * @returns {Promise<Blob|null>} - Das Asset als Blob oder null.
+ */
+export async function getCachedAssetAsBlob(url, version = '') {
+  if (!url || url === 'null' || url === '/null') return null;
+  const cacheKey = getCacheKey(url, version);
+  try {
+    const cached = await get(cacheKey);
+    if (cached) {
+      // cached ist ein Base64-String → in Blob umwandeln
+      const base64 = cached.split(',')[1];
+      const mimeString = cached.split(',')[0].split(':')[1].split(';')[0];
+      const byteString = atob(base64);
+      const ab = new ArrayBuffer(byteString.length);
+      const ia = new Uint8Array(ab);
+      for (let i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+      }
+      return new Blob([ab], { type: mimeString });
+    }
+  } catch (e) {
+    // IndexedDB nicht verfügbar oder Fehler
+  }
+  // Fallback: fetch und als Blob speichern
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('Asset download failed: ' + url);
+  const blob = await response.blob();
+  // Optional: als Base64 im Cache speichern (wie getCachedAsset)
+  const reader = new FileReader();
+  const base64 = await new Promise((resolve, reject) => {
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+  try {
+    await set(cacheKey, base64);
+  } catch (e) {}
+  return blob;
+}
+
+/**
+ * Holt eine Audio-Datei als Blob aus dem Cache oder lädt sie per fetch und speichert sie als Base64 im Cache.
+ * @param {string} url - Die Audio-URL.
+ * @param {string} version - Optionaler Versionsstring für Cache Busting.
+ * @returns {Promise<Blob|null>} - Die Audio-Datei als Blob oder null.
+ */
+export async function getCachedAudioAsBlob(url, version = '') {
+  if (!url || url === 'null' || url === '/null') return null;
+  const cacheKey = getCacheKey(url, version);
+  try {
+    const cached = await get(cacheKey);
+    if (cached) {
+      // cached ist ein Base64-String → in Blob umwandeln
+      const base64 = cached.split(',')[1];
+      const mimeString = cached.split(',')[0].split(':')[1].split(';')[0];
+      const byteString = atob(base64);
+      const ab = new ArrayBuffer(byteString.length);
+      const ia = new Uint8Array(ab);
+      for (let i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+      }
+      return new Blob([ab], { type: mimeString });
+    }
+  } catch (e) {
+    // IndexedDB nicht verfügbar oder Fehler
+  }
+  // Fallback: fetch und als Blob speichern
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('Audio download failed: ' + url);
+  const blob = await response.blob();
+  // Optional: als Base64 im Cache speichern (wie getCachedAsset)
+  const reader = new FileReader();
+  const base64 = await new Promise((resolve, reject) => {
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+  try {
+    await set(cacheKey, base64);
+  } catch (e) {}
+  return blob;
+}
+
+/**
  * Extracts all referenced image and audio asset URLs from category and animal data.
  * @param {object} categoryData - The main category JSON (with subcategories).
  * @param {object} animalData - The animal entries JSON (with tiere array).

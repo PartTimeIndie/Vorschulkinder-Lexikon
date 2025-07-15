@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { getCachedAsset } from '../utils/assetCache';
+import { getCachedAsset, getCachedAssetAsBlob, getCachedAudioAsBlob } from '../utils/assetCache';
 
 // Statische Variable um sicherzustellen dass Character nur EINMAL initialisiert wird
 let characterInitialized = false;
@@ -69,17 +69,25 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
 
   // Whenever selectedVariant changes, try to load from cache
   useEffect(() => {
+    let objectUrl;
     let isMounted = true;
     if (!selectedVariant) return;
-    getCachedAsset(selectedVariant)
-      .then(base64 => {
-        if (isMounted && base64) setImgSrc(base64);
-        else if (isMounted) setImgSrc(selectedVariant);
+    getCachedAssetAsBlob(selectedVariant)
+      .then(blob => {
+        if (blob && isMounted) {
+          objectUrl = URL.createObjectURL(blob);
+          setImgSrc(objectUrl);
+        } else if (isMounted) {
+          setImgSrc(selectedVariant);
+        }
       })
       .catch(() => {
         if (isMounted) setImgSrc(selectedVariant);
       });
-    return () => { isMounted = false; };
+    return () => {
+      isMounted = false;
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+    };
   }, [selectedVariant]);
 
   // Zufällige Variante für Emotion wählen und speichern (NIEMALS die gleiche)
@@ -199,7 +207,7 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
   };
 
   // Zufälliges Lachen abspielen (ohne Voice-Overs zu unterbrechen)
-  const playRandomLaughter = () => {
+  const playRandomLaughter = async () => {
     const laughterFiles = [
       '/audio/LaughingKid/laughing-1.wav',
       '/audio/LaughingKid/laughing-2.wav',
@@ -209,21 +217,31 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
       '/audio/LaughingKid/laughing-6.wav',
       '/audio/LaughingKid/laughing-7.wav'
     ];
-    
     // Zufällige Lacher-Datei auswählen
     const randomLaughter = laughterFiles[Math.floor(Math.random() * laughterFiles.length)];
-    
     try {
-      // SEPARATES Audio-Element für Lacher (nicht global!)
-      const laughterAudio = new Audio(randomLaughter);
+      let laughterAudio;
+      let blobUrl = null;
+      try {
+        const blob = await getCachedAudioAsBlob(randomLaughter);
+        if (blob) {
+          blobUrl = URL.createObjectURL(blob);
+          laughterAudio = new Audio(blobUrl);
+          laughterAudio._blobUrl = blobUrl;
+        } else {
+          laughterAudio = new Audio(randomLaughter);
+        }
+      } catch (e) {
+        laughterAudio = new Audio(randomLaughter);
+      }
       laughterAudio.volume = 0.7; // Etwas leiser als Voice-Overs
-      
       laughterAudio.play().catch(err => {
         console.log('Lacher-Audio autoplay verhindert:', err);
       });
-      
+      laughterAudio.addEventListener('ended', () => {
+        if (laughterAudio._blobUrl) URL.revokeObjectURL(laughterAudio._blobUrl);
+      });
       console.log('🤣 Lacher abgespielt:', randomLaughter);
-      
     } catch (error) {
       console.error('Lacher-Audio-Fehler:', error);
     }

@@ -5,7 +5,7 @@ import CategoryTile from '../components/CategoryTile';
 import { motion } from 'framer-motion';
 import { animationManager } from '../utils/animationManager';
 // REMOVE: import { AnimatePresence } from 'framer-motion';
-import { getCachedAsset, getOfflineAssetFileList, getCachedJson } from '../utils/assetCache';
+import { getCachedAsset, getOfflineAssetFileList, getCachedJson, getCachedAssetAsBlob, getCachedAudioAsBlob } from '../utils/assetCache';
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
@@ -224,7 +224,7 @@ export default function Home() {
   };
 
   // Audio-Wiedergabe Funktion mit Stop-Management
-  const playAudio = (audioPath) => {
+  const playAudio = async (audioPath) => {
     if (!audioPath || audioPath === 'null' || audioPath === '/null') {
       console.warn('[AUDIO] Überspringe ungültigen Audio-Pfad:', audioPath);
       return;
@@ -233,14 +233,31 @@ export default function Home() {
       if (window.currentAudio) {
         window.currentAudio.pause();
         window.currentAudio.currentTime = 0;
+        if (window.currentAudio._blobUrl) {
+          URL.revokeObjectURL(window.currentAudio._blobUrl);
+        }
       }
-      const audio = new Audio(audioPath);
+      let audio;
+      let blobUrl = null;
+      try {
+        const blob = await getCachedAudioAsBlob(audioPath);
+        if (blob) {
+          blobUrl = URL.createObjectURL(blob);
+          audio = new Audio(blobUrl);
+          audio._blobUrl = blobUrl;
+        } else {
+          audio = new Audio(audioPath);
+        }
+      } catch (e) {
+        audio = new Audio(audioPath);
+      }
       window.currentAudio = audio;
       audio.play().catch(err => {
         console.log('Audio autoplay verhindert:', err);
       });
       audio.addEventListener('ended', () => {
         if (window.currentAudio === audio) {
+          if (audio._blobUrl) URL.revokeObjectURL(audio._blobUrl);
           window.currentAudio = null;
         }
       });

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { animationManager } from '../utils/animationManager';
-import { getCachedAsset } from '../utils/assetCache';
+import { getCachedAsset, getCachedAssetAsBlob } from '../utils/assetCache';
 import questionmark from '../public/websiteBaseImages/questionmark.png';
 
 const CategoryTile = ({ 
@@ -40,26 +40,32 @@ const CategoryTile = ({
   const imageUrl = getImageUrl(); // immer berechnen
 
   // State for the actual image source (Base64 or URL)
-  const [imgSrc, setImgSrc] = useState(imageUrl || questionmark.src);
+  const [imgSrc, setImgSrc] = useState(getImageUrl(true));
   const [prevImgSrc, setPrevImgSrc] = useState(null);
 
   useEffect(() => {
+    let objectUrl;
     let isMounted = true;
-    if (imgSrc) {
-      setPrevImgSrc(imgSrc);
-      getCachedAsset(imgSrc)
-        .then(base64 => {
-          if (isMounted && base64) setImgSrc(base64);
-        })
-        .catch(() => {
-          if (isMounted) setImgSrc(imgSrc);
-        });
-    } else {
-      setPrevImgSrc(null);
-      setImgSrc(null);
-    }
-    return () => { isMounted = false; };
-  }, [imgSrc]);
+    if (!poolTile) return;
+    const url = getImageUrl(true);
+    if (!url) return;
+    getCachedAssetAsBlob(url)
+      .then(blob => {
+        if (blob && isMounted) {
+          objectUrl = URL.createObjectURL(blob);
+          setImgSrc(objectUrl);
+        } else if (isMounted) {
+          setImgSrc(url);
+        }
+      })
+      .catch(() => {
+        if (isMounted) setImgSrc(url);
+      });
+    return () => {
+      isMounted = false;
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+    };
+  }, [poolTile]);
 
   // Only reset imgLoaded if the imageUrl actually changes
   useEffect(() => {
