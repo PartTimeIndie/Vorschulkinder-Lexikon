@@ -65,6 +65,22 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
   // State für gewählte Variante pro Emotion
   const [selectedVariant, setSelectedVariant] = useState('/Characters/Character-idle.png');
   const [imgLoaded, setImgLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState('/Characters/Character-idle.png');
+
+  // Whenever selectedVariant changes, try to load from cache
+  useEffect(() => {
+    let isMounted = true;
+    if (!selectedVariant) return;
+    getCachedAsset(selectedVariant)
+      .then(base64 => {
+        if (isMounted && base64) setImgSrc(base64);
+        else if (isMounted) setImgSrc(selectedVariant);
+      })
+      .catch(() => {
+        if (isMounted) setImgSrc(selectedVariant);
+      });
+    return () => { isMounted = false; };
+  }, [selectedVariant]);
 
   // Zufällige Variante für Emotion wählen und speichern (NIEMALS die gleiche)
   const selectVariantForEmotion = (emotion) => {
@@ -337,7 +353,7 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
       title="Character antippen für Emotionen!"
     >
       <img
-        src={selectedVariant}
+        src={imgSrc}
         alt={`Character ${currentEmotion}`}
         width={120}
         height={150}

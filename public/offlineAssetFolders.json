@@ -4,9 +4,9 @@
     { "path": "/audio/LaughingKid/", "recursive": true },
     { "path": "/Characters/", "recursive": true },
     { "path": "/eintraege/", "recursive": false },
-    { "path": "/eintraege/lowres/", "recursive": true },
     { "path": "/kategorien/", "recursive": false },
     { "path": "/kategorien/images/lowres/", "recursive": true },
+    { "path": "/images/lowres/", "recursive": true },
     { "path": "/websiteBaseImages/", "recursive": true }
   ],
   "rootImages": true
