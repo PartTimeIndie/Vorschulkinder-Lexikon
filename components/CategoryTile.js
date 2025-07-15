@@ -78,12 +78,38 @@ const CategoryTile = ({
     }
   }, [poolTile?.content?.id, poolTile?.content?.image?.filename]);
 
+  // Reset Bild-State bei Wechsel von Kategorie/Subkategorie zu Tier (oder umgekehrt), nach Fly-Out und vor Fly-In
+  const prevIsAnimal = useRef(poolTile?.isAnimal);
+  const prevAnimationMode = useRef(poolTile?.animationMode);
+  useEffect(() => {
+    const wasAnimal = prevIsAnimal.current;
+    const wasFlyOut = prevAnimationMode.current && prevAnimationMode.current.startsWith('fall-out-');
+    const isNowAnimal = poolTile?.isAnimal;
+    const isNowNormal = !poolTile?.animationMode || poolTile?.animationMode === 'normal';
+    // Reset, wenn von Kategorie zu Tier (oder umgekehrt) gewechselt wird und Fly-Out vorbei ist
+    if ((wasAnimal !== isNowAnimal && isNowNormal) || (wasFlyOut && isNowNormal)) {
+      setImgSrc(getImageUrl(true));
+      setImgLoaded(false);
+      setPrevImgSrc(null);
+      if (isDebugTile) console.log('[IMG] FULL RESET imgSrc/imgLoaded/prevImgSrc für tileId=' + poolTile?.id);
+    }
+    prevIsAnimal.current = isNowAnimal;
+    prevAnimationMode.current = poolTile?.animationMode;
+  }, [poolTile?.isAnimal, poolTile?.animationMode]);
+
   useEffect(() => {
     if (isDebugTile) console.log(`[IMG] MOUNT for tileId=${poolTile?.id}, imageUrl=${imageUrl}, key=${tileKey}`);
     return () => {
       if (isDebugTile) console.log(`[IMG] UNMOUNT for tileId=${poolTile?.id}, imageUrl=${imageUrl}, key=${tileKey}`);
     };
   }, [imageUrl, tileKey]);
+
+  // Debug-Log für Tiere: Name, Bild-URL, imgSrc, imgLoaded
+  useEffect(() => {
+    if (poolTile?.isAnimal && poolTile?.content) {
+      console.log('[DEBUG] Animal-Tile:', poolTile.content.name, getImageUrl(true), imgSrc, 'imgLoaded:', imgLoaded);
+    }
+  }, [poolTile?.content?.id, imgSrc, imgLoaded]);
 
   if (isDebugTile) console.log(`[TILE] RENDER id=${poolTile?.id}, contentId=${poolTile?.content?.id}, animationMode=${poolTile?.animationMode}, imageUrl=${imageUrl}, imgLoaded=${imgLoaded}, key=${tileKey}`);
 
