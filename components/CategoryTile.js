@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { animationManager } from '../utils/animationManager';
-import { getCachedImage } from '../utils/imageCache';
+import { getCachedAsset } from '../utils/assetCache';
 import questionmark from '../public/websiteBaseImages/questionmark.png';
 
 const CategoryTile = ({ 
@@ -47,7 +47,7 @@ const CategoryTile = ({
     let isMounted = true;
     if (imgSrc) {
       setPrevImgSrc(imgSrc);
-      getCachedImage(imgSrc)
+      getCachedAsset(imgSrc)
         .then(base64 => {
           if (isMounted && base64) setImgSrc(base64);
         })

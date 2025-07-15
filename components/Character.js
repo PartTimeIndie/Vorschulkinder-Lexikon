@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { getCachedImage } from '../utils/imageCache';
+import { getCachedAsset } from '../utils/assetCache';
 
 // Statische Variable um sicherzustellen dass Character nur EINMAL initialisiert wird
 let characterInitialized = false;
@@ -282,7 +282,7 @@ const Character = ({ currentContext = 'idle', onEmotionChange }) => {
   // Preload image via Base64 cache, but do not use it for rendering
   useEffect(() => {
     if (!selectedVariant) return;
-    getCachedImage(selectedVariant).catch(() => {});
+    getCachedAsset(selectedVariant).catch(() => {});
   }, [selectedVariant]);
 
   // Track loading state for the real image

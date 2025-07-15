@@ -1,26 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
-
-function getAllImageCacheKeys() {
-  return Object.keys(localStorage).filter(key => key.startsWith('imgcache_') && !key.startsWith('imgcache_expiry_'));
-}
+import { keys, get, del } from 'idb-keyval';
 
 export default function DebugPage() {
   const [cacheKeys, setCacheKeys] = useState(null); // null = not loaded yet
   const [cleared, setCleared] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setCacheKeys(getAllImageCacheKeys());
-    }
+    keys().then(allKeys => {
+      const assetKeys = allKeys.filter(key => typeof key === 'string' && key.startsWith('assetcache_'));
+      setCacheKeys(assetKeys);
+    });
   }, []);
 
-  const handleClearCache = () => {
-    const keys = getAllImageCacheKeys();
-    keys.forEach(key => {
-      localStorage.removeItem(key);
-      localStorage.removeItem(key.replace('imgcache_', 'imgcache_expiry_'));
-    });
+  const handleClearCache = async () => {
+    const allKeys = await keys();
+    const assetKeys = allKeys.filter(key => typeof key === 'string' && key.startsWith('assetcache_'));
+    for (const key of assetKeys) {
+      await del(key);
+    }
     setCacheKeys([]);
     setCleared(true);
   };
@@ -32,15 +30,18 @@ export default function DebugPage() {
       </Head>
       <h1>Debug Tools</h1>
       <button onClick={handleClearCache} style={{ padding: '12px 24px', fontSize: 18, borderRadius: 8, background: '#4caf50', color: 'white', border: 'none', cursor: 'pointer' }}>
-        Clear Image Cache
+        Clear Asset Cache
       </button>
-      {cleared && <div style={{ color: 'green', marginTop: 16 }}>Image cache cleared!</div>}
-      <h2 style={{ marginTop: 32 }}>Cached Image Keys</h2>
+      {cleared && <div style={{ color: 'green', marginTop: 16 }}>Asset cache cleared!</div>}
+      <h2 style={{ marginTop: 32 }}>Cached Asset Keys</h2>
+      <div style={{ marginBottom: 8, color: '#555' }}>
+        {cacheKeys === null ? '' : `Total cached assets: ${cacheKeys.length}`}
+      </div>
       <ul style={{ maxHeight: 300, overflowY: 'auto', background: '#f5f5f5', padding: 16, borderRadius: 8 }}>
         {cacheKeys === null
           ? <li>Loading...</li>
           : cacheKeys.length === 0
-            ? <li>No cached images.</li>
+            ? <li>No cached assets.</li>
             : cacheKeys.map(key => <li key={key}>{key}</li>)}
       </ul>
     </div>

@@ -5,6 +5,7 @@ import CategoryTile from '../components/CategoryTile';
 import { motion } from 'framer-motion';
 import { animationManager } from '../utils/animationManager';
 // REMOVE: import { AnimatePresence } from 'framer-motion';
+import { getCachedAsset, getOfflineAssetFileList } from '../utils/assetCache';
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
@@ -840,6 +841,52 @@ export default function Home() {
     // eslint-disable-next-line
   }, [selectedCategory, currentView]);
 
+  const [downloadProgress, setDownloadProgress] = useState({ total: 0, done: 0, status: 'idle' });
+  const [downloadNotification, setDownloadNotification] = useState(null);
+
+  // Restore progress from localStorage on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('klex_download_progress');
+      if (saved) setDownloadProgress(JSON.parse(saved));
+    }
+  }, []);
+
+  // Persist progress to localStorage
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('klex_download_progress', JSON.stringify(downloadProgress));
+    }
+  }, [downloadProgress]);
+
+  // Download all offline asset files for offline use
+  const handleDownloadAllAssets = async () => {
+    setDownloadNotification('Download gestartet ...');
+    setDownloadProgress({ total: 0, done: 0, status: 'preparing' });
+    try {
+      // Fetch the offline asset file list
+      const assetUrls = await getOfflineAssetFileList();
+      setDownloadProgress({ total: assetUrls.length, done: 0, status: 'downloading' });
+      let done = 0;
+      for (const url of assetUrls) {
+        try {
+          await getCachedAsset(url);
+        } catch (e) {
+          // Ignore individual errors, continue
+        }
+        done++;
+        setDownloadProgress(prev => ({ ...prev, done, status: 'downloading' }));
+      }
+      setDownloadProgress(prev => ({ ...prev, done: prev.total, status: 'done' }));
+      setDownloadNotification('Alle Bilder und Audios sind jetzt offline verfügbar!');
+      setTimeout(() => setDownloadNotification(null), 3500);
+    } catch (e) {
+      setDownloadProgress({ total: 0, done: 0, status: 'error' });
+      setDownloadNotification('Fehler beim Download. Bitte versuche es erneut.');
+      setTimeout(() => setDownloadNotification(null), 3500);
+    }
+  };
+
   return (
     <div className="container">
       <Head>
@@ -905,6 +952,49 @@ export default function Home() {
                 <b>Bekannte Probleme:</b><br/>
                 ⚠️ Bei der Nutzung mit dem Firefox-Browser kann es aktuell zu Bildflackern kommen. Bitte nutzt in diesem Fall vorübergehend einen anderen Browser (z. B. Chrome, Edge oder Safari), bis das Problem behoben ist.
               </p>
+              <div style={{ marginTop: 32, marginBottom: 16 }}>
+                <button
+                  onClick={handleDownloadAllAssets}
+                  style={{
+                    padding: '12px 24px',
+                    fontSize: 18,
+                    borderRadius: 8,
+                    background: '#4caf50',
+                    color: 'white',
+                    border: 'none',
+                    cursor: 'pointer',
+                    marginBottom: 12
+                  }}
+                  disabled={downloadProgress.status === 'downloading' || downloadProgress.status === 'preparing'}
+                >
+                  {downloadProgress.status === 'done' ? 'Alle Assets offline verfügbar!' :
+                   downloadProgress.status === 'downloading' ? 'Download läuft ...' :
+                   downloadProgress.status === 'preparing' ? 'Vorbereitung ...' :
+                   'Für Offline-Nutzung herunterladen'}
+                </button>
+                {(downloadProgress.status === 'downloading' || downloadProgress.status === 'preparing' || downloadProgress.status === 'done') && (
+                  <div style={{ width: '100%', maxWidth: 400, margin: '0 auto', marginTop: 8 }}>
+                    <div style={{ height: 18, background: '#eee', borderRadius: 8, overflow: 'hidden', border: '1px solid #ccc' }}>
+                      <div style={{
+                        width: downloadProgress.total > 0 ? `${Math.round(100 * downloadProgress.done / downloadProgress.total)}%` : '0%',
+                        height: '100%',
+                        background: downloadProgress.status === 'done' ? '#4caf50' : '#1976d2',
+                        transition: 'width 0.3s'
+                      }} />
+                    </div>
+                    <div style={{ textAlign: 'center', fontSize: 14, marginTop: 4 }}>
+                      {downloadProgress.status === 'done'
+                        ? 'Alle Bilder und Audios sind jetzt offline verfügbar!'
+                        : downloadProgress.status === 'preparing'
+                          ? 'Vorbereitung ...'
+                          : `${downloadProgress.done} / ${downloadProgress.total} Dateien gespeichert`}
+                    </div>
+                  </div>
+                )}
+                {downloadNotification && (
+                  <div style={{ marginTop: 10, color: '#388e3c', fontWeight: 600, textAlign: 'center' }}>{downloadNotification}</div>
+                )}
+              </div>
             </div>
           </div>
         )}

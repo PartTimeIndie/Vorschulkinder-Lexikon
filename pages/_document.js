@@ -13,6 +13,8 @@ class MyDocument extends Document {
           <link rel="icon" id="dynamic-favicon" />
           <link rel="apple-touch-icon" id="dynamic-appleicon" />
           <link rel="shortcut icon" id="dynamic-shortcuticon" />
+          <link rel="manifest" href="/manifest.json" />
+          <meta name="theme-color" content="#b8860b" />
         </Head>
         <body>
           <Main />

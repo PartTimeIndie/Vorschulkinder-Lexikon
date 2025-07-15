@@ -1,0 +1,21 @@
+{
+  "name": "Vorschulkinder Lexikon",
+  "short_name": "Kinderlexikon",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffde7",
+  "theme_color": "#b8860b",
+  "description": "Interaktives Lexikon für Vorschulkinder (3-7 Jahre)",
+  "icons": [
+    {
+      "src": "/websiteBaseImages/lexiconFavIcon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/websiteBaseImages/lexiconFavIcon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

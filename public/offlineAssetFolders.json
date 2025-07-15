@@ -1,0 +1,11 @@
+{
+  "folders": [
+    { "path": "/audio/", "recursive": true },
+    { "path": "/audio/LaughingKid/", "recursive": true },
+    { "path": "/Characters/", "recursive": true },
+    { "path": "/eintraege/lowres/", "recursive": true },
+    { "path": "/kategorien/images/lowres/", "recursive": true },
+    { "path": "/websiteBaseImages/", "recursive": true }
+  ],
+  "rootImages": true
+} 

@@ -199,3 +199,14 @@ MIT License - Siehe `LICENSE` Datei für Details.
 ---
 
 **🎨 Erstellt für die nächste Generation kleiner Entdecker! 🔍** 
+
+## Offline Asset Management
+
+**Important:**
+Whenever you add new images, audio files, entries, or categories, always re-run the offline file list generator script:
+
+```bash
+node scripts/generate-offline-filelist.js
+```
+
+This ensures that all new assets are included in offline support for the app. 

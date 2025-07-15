@@ -1,0 +1,7 @@
+# Cursor Project Rules
+
+- Whenever you add new images, audio files, entries, or categories, always re-run the offline file list generator script:
+
+  node scripts/generate-offline-filelist.js
+
+  This ensures that all new assets are included in offline support for the app. 

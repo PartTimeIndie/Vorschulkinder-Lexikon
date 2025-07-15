@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { getCachedImage } from '../utils/imageCache';
+import { getCachedAsset } from '../utils/assetCache';
 
 export default function FaviconManager() {
   useEffect(() => {
     (async () => {
       try {
-        const base64 = await getCachedImage('/websiteBaseImages/lexiconFavIcon.png');
+        const base64 = await getCachedAsset('/websiteBaseImages/lexiconFavIcon.png');
         document.getElementById('dynamic-favicon')?.setAttribute('href', base64);
         document.getElementById('dynamic-appleicon')?.setAttribute('href', base64);
         document.getElementById('dynamic-shortcuticon')?.setAttribute('href', base64);
