@@ -5,7 +5,7 @@ import CategoryTile from '../components/CategoryTile';
 import { motion } from 'framer-motion';
 import { animationManager } from '../utils/animationManager';
 // REMOVE: import { AnimatePresence } from 'framer-motion';
-import { getCachedAsset, getOfflineAssetFileList } from '../utils/assetCache';
+import { getCachedAsset, getOfflineAssetFileList, getCachedJson } from '../utils/assetCache';
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
@@ -172,8 +172,7 @@ export default function Home() {
       setCurrentGridAnimation(randomAnimation);
       
       // Statt API: Lade alle Kategorien aus public/kategorien/tiere.json (oder weitere, falls vorhanden)
-      const response = await fetch('/kategorien/tiere.json');
-      const data = await response.json();
+      const data = await getCachedJson('/kategorien/tiere.json');
       // Passe die Struktur an, falls nötig (z.B. data.categories -> [data] falls Einzeldatei)
       if (data) {
         const categories = Array.isArray(data) ? data : [data];
@@ -205,8 +204,7 @@ export default function Home() {
       }
       
       // Statt API: Lade Kategorie-Details aus public/kategorien/[slug].json
-      const response = await fetch(`/kategorien/${slug}.json`);
-      const data = await response.json();
+      const data = await getCachedJson(`/kategorien/${slug}.json`);
       if (data) {
         setSelectedCategory(data);
         // HIERARCHISCH: Subkategorien mit Category-spezifischen Recent Items anordnen
@@ -227,32 +225,27 @@ export default function Home() {
 
   // Audio-Wiedergabe Funktion mit Stop-Management
   const playAudio = (audioPath) => {
-    if (audioPath) {
-      try {
-        // Alle vorherigen Audios stoppen
-        if (window.currentAudio) {
-          window.currentAudio.pause();
-          window.currentAudio.currentTime = 0;
-        }
-        
-        // Neues Audio erstellen und abspielen
-        const audio = new Audio(audioPath);
-        window.currentAudio = audio; // Global speichern für Stop-Management
-        
-        audio.play().catch(err => {
-          console.log('Audio autoplay verhindert:', err);
-        });
-        
-        // Audio aus globalem Storage entfernen wenn beendet
-        audio.addEventListener('ended', () => {
-          if (window.currentAudio === audio) {
-            window.currentAudio = null;
-          }
-        });
-        
-      } catch (error) {
-        console.error('Audio-Fehler:', error);
+    if (!audioPath || audioPath === 'null' || audioPath === '/null') {
+      console.warn('[AUDIO] Überspringe ungültigen Audio-Pfad:', audioPath);
+      return;
+    }
+    try {
+      if (window.currentAudio) {
+        window.currentAudio.pause();
+        window.currentAudio.currentTime = 0;
       }
+      const audio = new Audio(audioPath);
+      window.currentAudio = audio;
+      audio.play().catch(err => {
+        console.log('Audio autoplay verhindert:', err);
+      });
+      audio.addEventListener('ended', () => {
+        if (window.currentAudio === audio) {
+          window.currentAudio = null;
+        }
+      });
+    } catch (error) {
+      console.error('Audio-Fehler:', error);
     }
   };
 
@@ -262,15 +255,14 @@ export default function Home() {
       setIsPreloading(true);
       console.log(`🔄 Preloading ${type}: ${slug}`);
       
-      let response;
+      let data;
       // Statt API: Lade Kategorie-Details für Preloading
       if (type === 'category') {
-        response = await fetch(`/kategorien/${slug}.json`);
+        data = await getCachedJson(`/kategorien/${slug}.json`);
       } else if (type === 'animals') {
         // Lade alle Tiere und filtere nach Kategorie
-        response = await fetch('/eintraege/tierEintraege.json');
+        data = await getCachedJson('/eintraege/tierEintraege.json');
       }
-      const data = await response.json();
       if (type === 'animals') {
         // Filtere Tiere nach Kategorie
         data.animals = data.tiere.filter(tier => tier.categories.includes(slug));
@@ -328,6 +320,10 @@ export default function Home() {
   // Hilfsfunktion: Preload mehrere Bilder, gibt Promise zurück
   async function preloadImages(urls) {
     await Promise.all(urls.map(url => {
+      if (!url || url === 'null' || url === '/null') {
+        console.warn('[PRELOAD] Überspringe ungültige Bild-URL:', url);
+        return Promise.resolve();
+      }
       // Prüfe, ob schon im Cache
       const cacheKey = `imgcache_${url}_`;
       if (localStorage.getItem(cacheKey)) return Promise.resolve();
@@ -351,15 +347,25 @@ export default function Home() {
   // Hilfsfunktion: Sammle alle Bild-URLs für Kategorie/Subkategorie/Tiere
   function getAllImageUrlsForCategory(category, lowRes = true) {
     if (!category?.subcategories) return [];
-    return category.subcategories.map(sub =>
-      lowRes ? `/kategorien/images/lowres/${sub.image.filename}` : `/kategorien/images/${sub.image.filename}`
-    );
+    return category.subcategories.map(sub => {
+      const url = lowRes ? `/kategorien/images/lowres/${sub.image.filename}` : `/kategorien/images/${sub.image.filename}`;
+      if (!sub.image || !sub.image.filename) {
+        console.warn('[IMGURL] Subkategorie ohne Bild:', sub);
+        return null;
+      }
+      return url;
+    }).filter(Boolean);
   }
   // Für Tiere/Einträge IMMER /images/ verwenden
   function getAllImageUrlsForAnimals(animals, lowRes = true) {
-    return animals.map(animal =>
-      lowRes ? `/images/lowres/${animal.image.filename}` : `/images/${animal.image.filename}`
-    );
+    return animals.map(animal => {
+      const url = lowRes ? `/images/lowres/${animal.image.filename}` : `/images/${animal.image.filename}`;
+      if (!animal.image || !animal.image.filename) {
+        console.warn('[IMGURL] Tier ohne Bild:', animal);
+        return null;
+      }
+      return url;
+    }).filter(Boolean);
   }
 
   // Hilfsfunktion: Warte, bis alle Base64-Bilder wirklich im <img> geladen sind
@@ -386,8 +392,7 @@ export default function Home() {
     if (category.audio && category.audio.path) playAudio(`/${category.audio.path}`);
 
     // 1. Lade Daten und starte Preloading SOFORT
-    const response = await fetch(`/kategorien/${category.slug}.json`);
-    const data = await response.json();
+    const data = await getCachedJson(`/kategorien/${category.slug}.json`);
     const imageUrls = getAllImageUrlsForCategory(data.category);
     const preloadPromise = preloadImages(imageUrls);
 
@@ -412,11 +417,14 @@ export default function Home() {
     setAnimationKey(k => k + 1);
 
     // Warte, bis alle Bilder wirklich geladen sind
-    const base64s = subcats.map(sub => {
-      const url = getAllImageUrlsForCategory({ subcategories: [sub] })[0];
-      const cacheKey = `imgcache_${url}_`;
-      return localStorage.getItem(cacheKey);
-    });
+    const base64s = subcats
+      .map(sub => {
+        const url = getAllImageUrlsForCategory({ subcategories: [sub] })[0];
+        if (!url || url === 'null' || url === '/null' || url === undefined) return null;
+        const cacheKey = `imgcache_${url}_`;
+        return localStorage.getItem(cacheKey);
+      })
+      .filter(Boolean); // entfernt null/undefined
     setAllImagesLoaded(false);
     waitForAllImagesToLoad(base64s).then(() => setAllImagesLoaded(true));
   };
@@ -433,8 +441,7 @@ export default function Home() {
     if (subcategory.audio && subcategory.audio.path) playAudio(`/${subcategory.audio.path}`);
 
     // 1. Lade Daten und starte Preloading SOFORT
-    const response = await fetch('/eintraege/tierEintraege.json');
-    const data = await response.json();
+    const data = await getCachedJson('/eintraege/tierEintraege.json');
     data.animals = data.tiere.filter(tier => tier.categories.includes(subcategory.slug));
     const imageUrls = getAllImageUrlsForAnimals(data.animals || []);
     const preloadPromise = preloadImages(imageUrls);
@@ -464,8 +471,7 @@ export default function Home() {
       setLoading(true);
       
       // Statt API: Lade Tiere für spezifische Subkategorie
-      const response = await fetch('/eintraege/tierEintraege.json');
-      const data = await response.json();
+      const data = await getCachedJson('/eintraege/tierEintraege.json');
       data.animals = data.tiere.filter(tier => tier.categories.includes(subcategorySlug));
       
       if (data.animals && data.animals.length > 0) {
@@ -579,7 +585,7 @@ export default function Home() {
     let preloadPromise = Promise.resolve();
     if (selectedCategory) {
       // Statt API: Lade Kategorie-Details für Back-Navigation
-      const data = await (await fetch(`/kategorien/${selectedCategory.slug}.json`)).json();
+      const data = await getCachedJson(`/kategorien/${selectedCategory.slug}.json`);
       const imageUrls = getAllImageUrlsForCategory(data);
       preloadPromise = preloadImages(imageUrls);
       await loadCategoryDetails(selectedCategory.slug);

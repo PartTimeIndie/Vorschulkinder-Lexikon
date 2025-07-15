@@ -11,6 +11,7 @@ function getCacheKey(url, version = '') {
  * @returns {Promise<string>} - Base64 string of the asset.
  */
 export async function getCachedAsset(url, version = '') {
+  if (!url || url === 'null' || url === '/null') return null;
   const cacheKey = getCacheKey(url, version);
   try {
     const cached = await get(cacheKey);
@@ -47,6 +48,35 @@ export async function getCachedAsset(url, version = '') {
 export async function clearCachedAsset(url, version = '') {
   const cacheKey = getCacheKey(url, version);
   await del(cacheKey);
+}
+
+/**
+ * Fetches a JSON file from cache or downloads and stores it as a string.
+ * @param {string} url - The JSON URL.
+ * @param {string} version - Optional version string for cache busting.
+ * @returns {Promise<any>} - Parsed JSON object.
+ */
+export async function getCachedJson(url, version = '') {
+  const cacheKey = getCacheKey(url, version) + '_json';
+  try {
+    const cached = await get(cacheKey);
+    if (cached) return JSON.parse(cached);
+  } catch (e) {
+    console.warn('AssetCache: IndexedDB not available', e);
+  }
+
+  // Fetch and cache JSON as text
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('JSON download failed: ' + url);
+  const text = await response.text();
+
+  try {
+    await set(cacheKey, text);
+  } catch (e) {
+    console.warn('AssetCache: IndexedDB full or error, cannot cache JSON', e);
+  }
+
+  return JSON.parse(text);
 }
 
 /**

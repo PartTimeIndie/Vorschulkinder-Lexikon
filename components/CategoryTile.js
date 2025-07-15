@@ -26,7 +26,7 @@ const CategoryTile = ({
   // Bild-URL ermitteln (muss immer definiert sein, auch wenn das Tile nicht sichtbar ist)
   const getImageUrl = (lowRes = true) => {
     const category = poolTile?.content;
-    if (!category?.image?.filename) {
+    if (!category || !category.image || !category.image.filename) {
       return null; // No real image, use placeholder
     }
     // Wenn es ein Tier/Entry ist, immer /images/ verwenden
@@ -40,7 +40,7 @@ const CategoryTile = ({
   const imageUrl = getImageUrl(); // immer berechnen
 
   // State for the actual image source (Base64 or URL)
-  const [imgSrc, setImgSrc] = useState(getImageUrl(true));
+  const [imgSrc, setImgSrc] = useState(imageUrl || questionmark.src);
   const [prevImgSrc, setPrevImgSrc] = useState(null);
 
   useEffect(() => {
@@ -192,7 +192,7 @@ const CategoryTile = ({
             draggable={false}
           />
         )}
-        {imgSrc && (
+        {imgSrc && imgSrc !== 'null' && imgSrc !== '/null' ? (
           <img
             key={imgSrc}
             src={imgSrc}
@@ -208,15 +208,14 @@ const CategoryTile = ({
             }}
             onError={() => {
               // Fallback to original image if low-res not found
-              if (imgSrc !== getImageUrl(false)) setImgSrc(getImageUrl(false));
+              if (imgSrc !== getImageUrl(false) && getImageUrl(false)) setImgSrc(getImageUrl(false));
               else setImgLoaded(true);
               setPrevImgSrc(null);
               if (isDebugTile) console.log(`[IMG] onError for tileId=${poolTile?.id}, imageUrl=${imgSrc}`);
             }}
             draggable={false}
           />
-        )}
-        {!imgSrc && (
+        ) : (
           <img
             src={questionmark.src}
             alt="?"
