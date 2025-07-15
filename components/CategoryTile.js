@@ -53,24 +53,33 @@ const CategoryTile = ({
       .then(blob => {
         if (blob && isMounted) {
           objectUrl = URL.createObjectURL(blob);
+          console.log(`[BLOB] Created blob URL for tileId=${poolTile?.id}:`, objectUrl, 'from', url);
           setImgSrc(objectUrl);
         } else if (isMounted) {
+          console.log(`[BLOB] No blob, fallback to url for tileId=${poolTile?.id}:`, url);
           setImgSrc(url);
         }
       })
       .catch(() => {
-        if (isMounted) setImgSrc(url);
+        if (isMounted) {
+          console.log(`[BLOB] Error fetching blob, fallback to url for tileId=${poolTile?.id}:`, url);
+          setImgSrc(url);
+        }
       });
     return () => {
       isMounted = false;
-      if (objectUrl) URL.revokeObjectURL(objectUrl);
+      if (objectUrl) {
+        console.log(`[BLOB] Revoking blob URL for tileId=${poolTile?.id}:`, objectUrl);
+        URL.revokeObjectURL(objectUrl);
+      }
     };
-  }, [poolTile]);
+  }, [poolTile?.content?.image?.filename, poolTile?.isAnimal]);
 
   // Trigger explizit auf Tier-ID und Bilddatei
   useEffect(() => {
     const filename = poolTile?.content?.image?.filename;
     if (filename) {
+      console.log(`[IMG] setImgSrc (reset) for tileId=${poolTile?.id}, filename=${filename}, url=${getImageUrl(true)}`);
       setImgSrc(getImageUrl(true));
       setImgLoaded(false);
       setPrevImgSrc(null);
@@ -88,6 +97,7 @@ const CategoryTile = ({
     const isNowNormal = !poolTile?.animationMode || poolTile?.animationMode === 'normal';
     // Reset, wenn von Kategorie zu Tier (oder umgekehrt) gewechselt wird und Fly-Out vorbei ist
     if ((wasAnimal !== isNowAnimal && isNowNormal) || (wasFlyOut && isNowNormal)) {
+      console.log(`[IMG] setImgSrc (full reset) for tileId=${poolTile?.id}, url=${getImageUrl(true)}`);
       setImgSrc(getImageUrl(true));
       setImgLoaded(false);
       setPrevImgSrc(null);
@@ -225,14 +235,20 @@ const CategoryTile = ({
             className="category-image"
             style={{ objectFit: 'cover', position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 1, opacity: imgLoaded ? 1 : 0, transition: 'opacity 0.2s' }}
             onLoad={() => {
+              console.log(`[IMG] onLoad for tileId=${poolTile?.id}, imgSrc=${imgSrc}`);
               setImgLoaded(true);
               setPrevImgSrc(null);
               if (isDebugTile) console.log(`[IMG] onLoad for tileId=${poolTile?.id}, imageUrl=${imgSrc}`);
             }}
             onError={() => {
+              console.log(`[IMG] onError for tileId=${poolTile?.id}, imgSrc=${imgSrc}`);
               // Fallback to original image if low-res not found
-              if (imgSrc !== getImageUrl(false) && getImageUrl(false)) setImgSrc(getImageUrl(false));
-              else setImgLoaded(true);
+              if (imgSrc !== getImageUrl(false) && getImageUrl(false)) {
+                console.log(`[IMG] onError fallback to high-res for tileId=${poolTile?.id}, url=${getImageUrl(false)}`);
+                setImgSrc(getImageUrl(false));
+              } else {
+                setImgLoaded(true);
+              }
               setPrevImgSrc(null);
               if (isDebugTile) console.log(`[IMG] onError for tileId=${poolTile?.id}, imageUrl=${imgSrc}`);
             }}
