@@ -67,16 +67,7 @@ const CategoryTile = ({
     };
   }, [poolTile]);
 
-  // Only reset imgLoaded if the imageUrl actually changes
-  useEffect(() => {
-    if (lastImageUrlRef.current !== imageUrl) {
-      setImgLoaded(false);
-      if (isDebugTile) console.log(`[TILE] imgLoaded set to FALSE for id=${poolTile?.id}, imageUrl=${imageUrl}, key=${tileKey}`);
-      lastImageUrlRef.current = imageUrl;
-    }
-  }, [imageUrl, tileKey]);
-
-  // Reset image state when the image filename changes (e.g., when tile content changes)
+  // Trigger explizit auf Tier-ID und Bilddatei
   useEffect(() => {
     const filename = poolTile?.content?.image?.filename;
     if (filename) {
@@ -85,7 +76,7 @@ const CategoryTile = ({
       setPrevImgSrc(null);
       if (isDebugTile) console.log(`[IMG] Reset imgSrc and imgLoaded for tileId=${poolTile?.id}, filename=${filename}`);
     }
-  }, [poolTile?.content?.image?.filename]);
+  }, [poolTile?.content?.id, poolTile?.content?.image?.filename]);
 
   useEffect(() => {
     if (isDebugTile) console.log(`[IMG] MOUNT for tileId=${poolTile?.id}, imageUrl=${imageUrl}, key=${tileKey}`);
