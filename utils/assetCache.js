@@ -1,4 +1,4 @@
-import { set, get, del } from 'idb-keyval';
+import { set, get, del, keys } from 'idb-keyval';
 
 function getCacheKey(url, version = '') {
   return `assetcache_${url}_${version}`;
@@ -206,4 +206,16 @@ export async function getOfflineAssetFileList() {
   const res = await fetch('/offlineAssetFileList.json');
   if (!res.ok) throw new Error('Failed to fetch offline asset file list');
   return await res.json();
+}
+
+/**
+ * Löscht alle gecachten Assets (Bilder, MP3s etc.) aus IndexedDB.
+ * Wird z.B. bei Versionswechsel aufgerufen.
+ */
+export async function clearAllAssetCache() {
+  const allKeys = await keys();
+  const assetKeys = allKeys.filter(key => typeof key === 'string' && key.startsWith('assetcache_'));
+  for (const key of assetKeys) {
+    await del(key);
+  }
 } 
