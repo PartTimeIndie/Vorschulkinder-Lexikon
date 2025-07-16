@@ -18,7 +18,6 @@ export default function Home() {
   const [currentView, setCurrentView] = useState('main'); // 'main', 'category', 'animals', 'transitioning'
   const [clickedItemId, setClickedItemId] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [recentItems, setRecentItems] = useState([]);
   const [playedAnimals, setPlayedAnimals] = useState([]); 
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null); 
   const scrollContainerRef = useRef(null);
@@ -82,37 +81,6 @@ export default function Home() {
     }
   };
 
-  // HIERARCHISCHES Recent Items Local Storage System
-  const getStorageKey = (level, categorySlug = null, subcategorySlug = null) => {
-    if (level === 'main') return 'kinderlexikon_recent_main';
-    if (level === 'category' && categorySlug) return `kinderlexikon_recent_cat_${categorySlug}`;
-    if (level === 'animals' && categorySlug && subcategorySlug) return `kinderlexikon_recent_animals_${categorySlug}_${subcategorySlug}`;
-    return 'kinderlexikon_recent_fallback'; // Fallback
-  };
-
-  const saveRecentItemsToStorage = (recentList, level, categorySlug = null, subcategorySlug = null) => {
-    try {
-      const key = getStorageKey(level, categorySlug, subcategorySlug);
-      localStorage.setItem(key, JSON.stringify(recentList));
-      console.log(`💾 Saved recent items for ${level}:`, recentList);
-    } catch (error) {
-      console.error('Error saving recent items to localStorage:', error);
-    }
-  };
-
-  const loadRecentItemsFromStorage = (level, categorySlug = null, subcategorySlug = null) => {
-    try {
-      const key = getStorageKey(level, categorySlug, subcategorySlug);
-      const saved = localStorage.getItem(key);
-      const result = saved ? JSON.parse(saved) : [];
-      console.log(`📂 Loaded recent items for ${level}:`, result);
-      return result;
-    } catch (error) {
-      console.error('Error loading recent items from localStorage:', error);
-      return [];
-    }
-  };
-
   // Utility-Funktionen für zufällige Anordnung
   const shuffleArray = (array) => {
     const shuffled = [...array];
@@ -123,30 +91,7 @@ export default function Home() {
     return shuffled;
   };
 
-  const arrangeItemsWithRecent = (items, recentIds = []) => {
-    // Recent Items in der richtigen Reihenfolge (zuletzt geklickt zuerst)
-    const recentItems = [];
-    recentIds.forEach(recentId => {
-      const item = items.find(item => item.id === recentId);
-      if (item) recentItems.push(item);
-    });
-    
-    // Andere Items zufällig anordnen
-    const otherItems = items.filter(item => !recentIds.includes(item.id));
-    const shuffledOthers = shuffleArray(otherItems);
-    
-    return [...recentItems, ...shuffledOthers];
-  };
-
-  // Hierarchisches Add-to-Recent System
-  const addToRecent = (itemId, level, categorySlug = null, subcategorySlug = null) => {
-    setRecentItems(prev => {
-      const newRecent = [itemId, ...prev.filter(id => id !== itemId)];
-      const limitedRecent = newRecent.slice(0, 4); // Nur letzte 4 behalten
-      saveRecentItemsToStorage(limitedRecent, level, categorySlug, subcategorySlug); // Hierarchisch speichern
-      return limitedRecent;
-    });
-  };
+  // Entferne die Funktion addToRecent und alle Aufrufe von setRecentItems, die nicht mehr benötigt werden
 
   // Context-abhängiges Recent Items laden
   const getCurrentRecentItems = () => {
@@ -176,11 +121,7 @@ export default function Home() {
       // Passe die Struktur an, falls nötig (z.B. data.categories -> [data] falls Einzeldatei)
       if (data) {
         const categories = Array.isArray(data) ? data : [data];
-        // HIERARCHISCH: Kategorien mit Main-Recent-Logic anordnen
-        const mainRecentItems = loadRecentItemsFromStorage('main');
-        const arrangedCategories = arrangeItemsWithRecent(categories, mainRecentItems);
-        setRecentItems(mainRecentItems); // State aktualisieren
-        setCategories(arrangedCategories);
+        setCategories(categories);
         setError(null);
       } else {
         throw new Error('No categories found');
@@ -209,10 +150,7 @@ export default function Home() {
         setSelectedCategory(data);
         // HIERARCHISCH: Subkategorien mit Category-spezifischen Recent Items anordnen
         const subcats = data.subcategories || [];
-        const categoryRecentItems = loadRecentItemsFromStorage('category', slug);
-        const arrangedSubcats = arrangeItemsWithRecent(subcats, categoryRecentItems);
-        setRecentItems(categoryRecentItems); // State aktualisieren
-        setSubcategories(arrangedSubcats);
+        setSubcategories(subcats);
         setError(null);
       } else {
         throw new Error('Category not found');
@@ -405,7 +343,6 @@ export default function Home() {
     setGlobalAnimationDirection(getRandomDirection());
     setCurrentGridAnimation(animationManager.getRandomGridAnimation());
     setCharacterContext(category.slug);
-    addToRecent(category.id, 'main');
     if (category.audio && category.audio.path) playAudio(`/${category.audio.path}`);
 
     // 1. Lade Daten und starte Preloading SOFORT
@@ -424,10 +361,7 @@ export default function Home() {
     // 4. Pool-Update etc.
     setSelectedCategory(data);
     const subcats = data.subcategories || [];
-    const categoryRecentItems = loadRecentItemsFromStorage('category', category.slug);
-    const arrangedSubcats = arrangeItemsWithRecent(subcats, categoryRecentItems);
-    setRecentItems(categoryRecentItems);
-    setSubcategories(arrangedSubcats);
+    setSubcategories(subcats);
     setError(null);
     setCurrentView('category');
     setClickedItemId(null);
@@ -454,7 +388,6 @@ export default function Home() {
     setGlobalAnimationDirection(getRandomDirection());
     setCurrentGridAnimation(animationManager.getRandomGridAnimation());
     setCharacterContext(subcategory.slug);
-    addToRecent(subcategory.id, 'category', selectedCategory?.slug);
     if (subcategory.audio && subcategory.audio.path) playAudio(`/${subcategory.audio.path}`);
 
     // 1. Lade Daten und starte Preloading SOFORT
@@ -472,10 +405,7 @@ export default function Home() {
     await preloadPromise;
 
     // 4. Pool-Update etc.
-    const animalRecentItems = loadRecentItemsFromStorage('animals', selectedCategory?.slug, subcategory.slug);
-    const arrangedAnimals = arrangeItemsWithRecent(data.animals || [], animalRecentItems);
-    setRecentItems(animalRecentItems);
-    setAnimals(arrangedAnimals);
+    setAnimals(data.animals || []);
     setError(null);
     setCurrentView('animals');
     setClickedItemId(null);
@@ -492,14 +422,8 @@ export default function Home() {
       data.animals = data.tiere.filter(tier => tier.categories.includes(subcategorySlug));
       
       if (data.animals && data.animals.length > 0) {
-        // HIERARCHISCH: Animals mit Subcategory-spezifischen Recent Items anordnen
-        const animalsRecentItems = loadRecentItemsFromStorage('animals', selectedCategory?.slug, subcategorySlug);
-        const arrangedAnimals = arrangeItemsWithRecent(data.animals, animalsRecentItems);
-        setRecentItems(animalsRecentItems); // State aktualisieren
-        
-        // Animals setzen
-        setAnimals(arrangedAnimals);
-        
+        // Animals setzen (in JSON-Reihenfolge)
+        setAnimals(data.animals);
         setError(null);
       } else {
         // Keine Tiere gefunden - leeres Array setzen
@@ -530,9 +454,6 @@ export default function Home() {
     // Setze aktuell spielendes Tier (ohne Verzögerung für sofortige grüne Outline)
     console.log(`🎵 OLD currentlyPlaying: ${currentlyPlaying}, NEW: ${animal.id}`);
     setCurrentlyPlaying(animal.id);
-    // HIERARCHISCH: Animal zu Animals Recent Items hinzufügen (bestimme Subcategory dynamisch)
-    const currentSubcategory = animals.find(a => a.id === animal.id)?.category || 'unknown';
-    addToRecent(animal.id, 'animals', selectedCategory?.slug, currentSubcategory);
     
     // Markiere als gehört (für Abzeichen) - mit Local Storage
     if (!playedAnimals.includes(animal.id)) {
@@ -801,10 +722,6 @@ export default function Home() {
   useEffect(() => {
     const savedPlayedAnimals = loadPlayedAnimalsFromStorage();
     setPlayedAnimals(savedPlayedAnimals);
-    
-    // HIERARCHISCH: Lade Initial Recent Items für Main-View
-    const savedRecentItems = loadRecentItemsFromStorage('main');
-    setRecentItems(savedRecentItems);
   }, []);
 
   // Kategorien, Subkategorien und Animals werden automatisch mit Recent Items angeordnet

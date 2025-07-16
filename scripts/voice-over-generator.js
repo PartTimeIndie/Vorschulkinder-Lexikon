@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const inquirer = require('inquirer');
 
 /**
  * Voice-Over Generator Script
@@ -155,6 +156,44 @@ async function generateAnimalSubcategoryVoiceOvers() {
   console.log(`❌ Fehlgeschlagen: ${animalSubcategories.length - successCount}/${animalSubcategories.length}`);
 }
 
+async function generateSubcategoryVoiceOverFromJson(subcatSlug) {
+  const tiereJsonPath = path.join(__dirname, '../public/kategorien/tiere.json');
+  if (!fs.existsSync(tiereJsonPath)) {
+    console.error('❌ tiere.json nicht gefunden!');
+    return;
+  }
+  const tiereData = JSON.parse(fs.readFileSync(tiereJsonPath, 'utf8'));
+  const subcat = tiereData.subcategories.find(s => s.slug === subcatSlug);
+  if (!subcat) {
+    console.error(`❌ Subkategorie mit slug '${subcatSlug}' nicht gefunden!`);
+    return;
+  }
+  const text = subcat.description;
+  let audioPath = subcat.audio && subcat.audio.path;
+  if (!audioPath) {
+    // Fallback: Standardpfad
+    audioPath = `audio/subcat-${subcatSlug}.mp3`;
+  }
+  const absAudioPath = path.resolve(__dirname, '../public', audioPath);
+  if (fs.existsSync(absAudioPath)) {
+    const { overwrite } = await inquirer.prompt([
+      {
+        type: 'confirm',
+        name: 'overwrite',
+        message: `⚠️  Die Datei ${audioPath} existiert bereits. Überschreiben?`,
+        default: false
+      }
+    ]);
+    if (!overwrite) {
+      console.log('⏩ Überspringe Generierung.');
+      return;
+    }
+  }
+  // Nutze generateVoiceOver(text, fileName) mit Dateiname ohne .mp3 und ohne Pfad
+  const fileName = path.basename(audioPath, '.mp3');
+  await generateVoiceOver(text, fileName);
+}
+
 // Command line interface
 const args = process.argv.slice(2);
 const command = args[0];
@@ -175,6 +214,12 @@ async function main() {
       );
       break;
     default:
+      if (command && command.startsWith('subcat-')) {
+        // z.B. node scripts/voice-over-generator.js subcat-wirbellose-tiere
+        const subcatSlug = command.replace(/^subcat-/, '');
+        await generateSubcategoryVoiceOverFromJson(subcatSlug);
+        break;
+      }
       console.log(`
 🎤 Voice-Over Generator für Kinderlexikon
 
@@ -185,11 +230,13 @@ Kommandos:
   test        - Teste Voice-Over mit Tiere-Kategorie
   categories  - Generiere Voice-Overs für alle Hauptkategorien
   animals     - Generiere Voice-Overs für Tier-Unterkategorien
+  subcat-<slug> - Generiere Voice-Over für eine Subkategorie aus tiere.json (z.B. subcat-wirbellose-tiere)
 
 Beispiele:
   node scripts/voice-over-generator.js test
   node scripts/voice-over-generator.js categories
   node scripts/voice-over-generator.js animals
+  node scripts/voice-over-generator.js subcat-wirbellose-tiere
       `);
   }
 }

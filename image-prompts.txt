@@ -13,4 +13,72 @@ Hand-drawn children's book illustration showing an {ITEM_NAME}. Watercolor and c
 - Für Einzeleinträge: Ersetze {ITEM_NAME} mit "Golden Retriever", "Feuerwehrauto", etc.
 - Alle Bilder werden als 1024x1024 Kacheln generiert
 - Handgezeichneter Kinderbuch-Stil
-- Keine Texte oder Beschriftungen im Bild 
+- Keine Texte oder Beschriftungen im Bild
+
+## SPEZIAL-PROMPTS FÜR KATEGORIEN
+
+### Haustiere und Nutztiere
+A cozy house and a lively farmyard with a few typical pets and farm animals together. The scene should feel warm, welcoming, and full of life.
+
+### Waldtiere
+A lush, green forest habitat with trees, moss, and bushes. No animals visible, just the natural environment.
+
+### Wiesentiere
+A colorful meadow with wildflowers, tall grass, and a blue sky. No animals visible, just the natural environment.
+
+### Gebirgstiere
+A mountain landscape with rocky peaks, snow, and alpine meadows. No animals visible, just the natural environment.
+
+### Steppentiere
+A wide, dry steppe landscape with tall yellow grass and a big sky. No animals visible, just the natural environment.
+
+### Meerestiere
+An underwater seascape with coral reefs, seaweed, and bubbles. No animals visible, just the natural environment.
+
+### Süßwassertiere
+A freshwater habitat with a river, pond, water lilies, and reeds. No animals visible, just the natural environment.
+
+### Wüstentiere
+A desert landscape with sand dunes, rocks, and a bright sky. No animals visible, just the natural environment.
+
+### Dschungeltiere
+A dense, colorful jungle with vines, big leaves, and tropical plants. No animals visible, just the natural environment.
+
+### Polartiere
+A polar landscape with snow, icebergs, and the northern lights. No animals visible, just the natural environment.
+
+### Fleischfresser
+A plate with a variety of meats (steak, fish, chicken) arranged in a friendly, appetizing way. No animals, just the food.
+
+### Pflanzenfresser
+A plate with a variety of plants, leaves, fruits, and vegetables arranged in a friendly, appetizing way. No animals, just the food.
+
+### Allesfresser
+A plate with both meat and plant foods together, arranged in a friendly, appetizing way. No animals, just the food.
+
+### Große Tiere
+A single large animal (e.g., elephant) next to a measuring stick or ruler, clearly showing its impressive size.
+
+### Kleine Tiere
+A single small animal (e.g., mouse) next to a measuring stick or ruler, clearly showing its tiny size.
+
+### Giftige Tiere
+A bottle or symbol of poison (e.g., skull and crossbones, green bubbling liquid) in a whimsical, non-scary way. No animals.
+
+### Nachtaktive Tiere
+A big moon and stars in a night sky, symbolizing nighttime. No animals.
+
+### Tagaktive Tiere
+A bright sun and blue sky, symbolizing daytime. No animals.
+
+### Raubtiere
+A dramatic scene of a predator animal chasing or hunting, but in a playful, non-violent way.
+
+### Fluchttiere
+A prey animal running away quickly, with a sense of movement and speed, but in a playful, non-scary way.
+
+### Schnelle Tiere
+A single animal (e.g., cheetah) with motion lines or a blurred background to show speed.
+
+### Langsame Tiere
+A single animal (e.g., turtle) moving slowly, maybe with a snail or a clock to show slowness. 
