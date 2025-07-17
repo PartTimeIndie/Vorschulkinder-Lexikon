@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { keys, get, del } from 'idb-keyval';
+import { clearAllCachesDeep } from '../utils/assetCache';
 
 export default function DebugPage() {
   const [cacheKeys, setCacheKeys] = useState(null); // null = not loaded yet
@@ -14,11 +15,7 @@ export default function DebugPage() {
   }, []);
 
   const handleClearCache = async () => {
-    const allKeys = await keys();
-    const assetKeys = allKeys.filter(key => typeof key === 'string' && key.startsWith('assetcache_'));
-    for (const key of assetKeys) {
-      await del(key);
-    }
+    await clearAllCachesDeep();
     setCacheKeys([]);
     setCleared(true);
   };
@@ -30,7 +27,7 @@ export default function DebugPage() {
       </Head>
       <h1>Debug Tools</h1>
       <button onClick={handleClearCache} style={{ padding: '12px 24px', fontSize: 18, borderRadius: 8, background: '#4caf50', color: 'white', border: 'none', cursor: 'pointer' }}>
-        Clear Asset Cache
+        Alle Caches löschen
       </button>
       {cleared && <div style={{ color: 'green', marginTop: 16 }}>Asset cache cleared!</div>}
       <h2 style={{ marginTop: 32 }}>Cached Asset Keys</h2>

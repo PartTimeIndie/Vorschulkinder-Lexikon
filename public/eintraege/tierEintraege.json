@@ -1077,8 +1077,7 @@
         "wirbellose-tiere",
         "gartentiere",
         "tagaktive-tiere",
-        "kleine-tiere",
-        "wiesentiere"
+        "kleine-tiere"
       ],
       "image": {
         "filename": "tier-schmetterling.png",
@@ -1105,8 +1104,7 @@
         "wirbellose-tiere",
         "gartentiere",
         "tagaktive-tiere",
-        "kleine-tiere",
-        "wiesentiere"
+        "kleine-tiere"
       ],
       "image": {
         "filename": "tier-biene.png",
@@ -1133,8 +1131,7 @@
         "wirbellose-tiere",
         "gartentiere",
         "kleine-tiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-marienk-fer.png",
@@ -1161,8 +1158,7 @@
         "wirbellose-tiere",
         "gartentiere",
         "kleine-tiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-regenwurm.png",
@@ -1356,8 +1352,7 @@
         "pflanzenfresser",
         "fluchttiere",
         "kleine-tiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-hase.png",
@@ -1412,8 +1407,7 @@
         "kleine-tiere",
         "nachtaktive-tiere",
         "fluchttiere",
-        "allesfresser",
-        "wiesentiere"
+        "allesfresser"
       ],
       "image": {
         "filename": "tier-maus.png",
@@ -1442,8 +1436,7 @@
         "pflanzenfresser",
         "kleine-tiere",
         "fluchttiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-meerschweinchen.png",
@@ -1472,8 +1465,7 @@
         "kleine-tiere",
         "gartentiere",
         "tagaktive-tiere",
-        "allesfresser",
-        "wiesentiere"
+        "allesfresser"
       ],
       "image": {
         "filename": "tier-ameise.png",
@@ -1500,8 +1492,7 @@
         "voegel",
         "nachtaktive-tiere",
         "fleischfresser",
-        "raubtiere",
-        "wiesentiere"
+        "raubtiere"
       ],
       "image": {
         "filename": "tier-eule.png",
@@ -1527,8 +1518,7 @@
       "categories": [
         "reptilien",
         "pflanzenfresser",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-schildkr-te.png",
@@ -1555,8 +1545,7 @@
         "reptilien",
         "fleischfresser",
         "tagaktive-tiere",
-        "kleine-tiere",
-        "wiesentiere"
+        "kleine-tiere"
       ],
       "image": {
         "filename": "tier-cham-leon.png",
@@ -1583,9 +1572,7 @@
         "fische",
         "meerestiere",
         "kleine-tiere",
-        "tagaktive-tiere",
-        "allesfresser",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-clownfisch.png",
@@ -1613,8 +1600,7 @@
         "haustiere-nutztiere",
         "kleine-tiere",
         "tagaktive-tiere",
-        "allesfresser",
-        "suesswassertiere"
+        "allesfresser"
       ],
       "image": {
         "filename": "tier-goldfisch.png",
@@ -1642,8 +1628,7 @@
         "meerestiere",
         "fleischfresser",
         "tagaktive-tiere",
-        "schnelle-tiere",
-        "wiesentiere"
+        "schnelle-tiere"
       ],
       "image": {
         "filename": "tier-thunfisch.png",
@@ -1670,9 +1655,7 @@
         "fische",
         "meerestiere",
         "kleine-tiere",
-        "tagaktive-tiere",
-        "allesfresser",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-seepferdchen.png",
@@ -1701,8 +1684,7 @@
         "exotische-tiere",
         "grosse-tiere",
         "tagaktive-tiere",
-        "schnelle-tiere",
-        "wiesentiere"
+        "schnelle-tiere"
       ],
       "image": {
         "filename": "tier-k-nguru.png",
@@ -1732,8 +1714,7 @@
         "grosse-tiere",
         "gebirgstiere",
         "tagaktive-tiere",
-        "fluchttiere",
-        "wiesentiere"
+        "fluchttiere"
       ],
       "image": {
         "filename": "tier-lama.png",
@@ -1764,8 +1745,7 @@
         "tagaktive-tiere",
         "schnelle-tiere",
         "steppentiere",
-        "fluchttiere",
-        "wiesentiere"
+        "fluchttiere"
       ],
       "image": {
         "filename": "tier-zebra.png",
@@ -1796,8 +1776,7 @@
         "tagaktive-tiere",
         "schnelle-tiere",
         "steppentiere",
-        "raubtiere",
-        "wiesentiere"
+        "raubtiere"
       ],
       "image": {
         "filename": "tier-gepard.png",
@@ -1827,8 +1806,7 @@
         "kleine-tiere",
         "tagaktive-tiere",
         "fluchttiere",
-        "dschungeltiere",
-        "wiesentiere"
+        "dschungeltiere"
       ],
       "image": {
         "filename": "tier-lemur.png",
@@ -1858,8 +1836,7 @@
         "grosse-tiere",
         "raubtiere",
         "schnelle-tiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-t-rex.png",
@@ -1888,8 +1865,7 @@
         "pflanzenfresser",
         "grosse-tiere",
         "langsame-tiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-brontosaurus.png",
@@ -1918,8 +1894,7 @@
         "pflanzenfresser",
         "grosse-tiere",
         "langsame-tiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-triceratops.png",
@@ -1971,8 +1946,7 @@
         "wirbellose-tiere",
         "kleine-tiere",
         "gartentiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-spinne.png",
@@ -2026,8 +2000,7 @@
         "fleischfresser",
         "kleine-tiere",
         "nachtaktive-tiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-kobra.png",
@@ -2055,8 +2028,7 @@
         "meerestiere",
         "giftige-tiere",
         "kleine-tiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-qualle.png",
@@ -2084,9 +2056,7 @@
         "gartentiere",
         "kleine-tiere",
         "tagaktive-tiere",
-        "schnelle-tiere",
-        "wiesentiere",
-        "suesswassertiere"
+        "schnelle-tiere"
       ],
       "image": {
         "filename": "tier-frosch.png",
@@ -2114,9 +2084,7 @@
         "gartentiere",
         "kleine-tiere",
         "tagaktive-tiere",
-        "langsame-tiere",
-        "wiesentiere",
-        "suesswassertiere"
+        "langsame-tiere"
       ],
       "image": {
         "filename": "tier-kr-te.png",
@@ -2145,8 +2113,7 @@
         "flugtiere",
         "kleine-tiere",
         "fleischfresser",
-        "tiere-mit-besonderen-faehigkeiten",
-        "wiesentiere"
+        "tiere-mit-besonderen-faehigkeiten"
       ],
       "image": {
         "filename": "tier-fledermaus.png",
@@ -2174,8 +2141,7 @@
         "kleine-tiere",
         "nachtaktive-tiere",
         "flugtiere",
-        "gartentiere",
-        "wiesentiere"
+        "gartentiere"
       ],
       "image": {
         "filename": "tier-motte.png",
@@ -2205,8 +2171,7 @@
         "mittelgrosse-tiere",
         "nachtaktive-tiere",
         "fluchttiere",
-        "gartentiere",
-        "wiesentiere"
+        "gartentiere"
       ],
       "image": {
         "filename": "tier-waschb-r.png",
@@ -2235,8 +2200,7 @@
         "grosse-tiere",
         "gebirgstiere",
         "tagaktive-tiere",
-        "fluchttiere",
-        "wiesentiere"
+        "fluchttiere"
       ],
       "image": {
         "filename": "tier-steinbock.png",
@@ -2266,8 +2230,7 @@
         "schnelle-tiere",
         "tagaktive-tiere",
         "gebirgstiere",
-        "flugtiere",
-        "wiesentiere"
+        "flugtiere"
       ],
       "image": {
         "filename": "tier-falke.png",
@@ -2296,8 +2259,7 @@
         "kleine-tiere",
         "gartentiere",
         "langsame-tiere",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-schnecke.png",
@@ -2325,8 +2287,7 @@
         "meerestiere",
         "grosse-tiere",
         "fleischfresser",
-        "tagaktive-tiere",
-        "wiesentiere"
+        "tagaktive-tiere"
       ],
       "image": {
         "filename": "tier-pottwal.png",
@@ -2355,8 +2316,7 @@
         "tiere-mit-besonderen-faehigkeiten",
         "tagaktive-tiere",
         "dschungeltiere",
-        "fluchttiere",
-        "wiesentiere"
+        "fluchttiere"
       ],
       "image": {
         "filename": "tier-schimpanse.png",
@@ -2386,8 +2346,7 @@
         "tiere-mit-besonderen-faehigkeiten",
         "dschungeltiere",
         "tagaktive-tiere",
-        "fluchttiere",
-        "wiesentiere"
+        "fluchttiere"
       ],
       "image": {
         "filename": "tier-gorilla.png",
@@ -2417,8 +2376,7 @@
         "tiere-mit-besonderen-faehigkeiten",
         "steppentiere",
         "tagaktive-tiere",
-        "fluchttiere",
-        "wiesentiere"
+        "fluchttiere"
       ],
       "image": {
         "filename": "tier-nashorn.png",
@@ -2448,8 +2406,7 @@
         "tiere-mit-besonderen-faehigkeiten",
         "suesswassertiere",
         "tagaktive-tiere",
-        "fluchttiere",
-        "wiesentiere"
+        "fluchttiere"
       ],
       "image": {
         "filename": "tier-nilpferd.png",
@@ -2479,8 +2436,7 @@
         "schnelle-tiere",
         "waldtiere",
         "tagaktive-tiere",
-        "fluchttiere",
-        "wiesentiere"
+        "fluchttiere"
       ],
       "image": {
         "filename": "tier-hirsch.png",
@@ -2726,8 +2682,7 @@
         "wuestentiere",
         "fleischfresser",
         "tagaktive-tiere",
-        "grosse-tiere",
-        "wiesentiere"
+        "grosse-tiere"
       ],
       "image": {
         "filename": "tier-waran.png",
@@ -2756,8 +2711,7 @@
         "pflanzenfresser",
         "fluchttiere",
         "tagaktive-tiere",
-        "kleine-tiere",
-        "wiesentiere"
+        "kleine-tiere"
       ],
       "image": {
         "filename": "tier-schneehase.png",

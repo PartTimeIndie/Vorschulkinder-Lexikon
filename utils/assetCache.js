@@ -57,6 +57,11 @@ export async function clearCachedAsset(url, version = '') {
  * @returns {Promise<any>} - Parsed JSON object.
  */
 export async function getCachedJson(url, version = '') {
+  // Cache-Busting für zentrale JSONs
+  if (typeof window !== 'undefined' && (url.includes('/kategorien/tiere.json') || url.includes('/eintraege/tierEintraege.json'))) {
+    const sep = url.includes('?') ? '&' : '?';
+    url = url + sep + 'v=' + Date.now();
+  }
   const cacheKey = getCacheKey(url, version) + '_json';
   try {
     const cached = await get(cacheKey);
@@ -217,5 +222,38 @@ export async function clearAllAssetCache() {
   const assetKeys = allKeys.filter(key => typeof key === 'string' && key.startsWith('assetcache_'));
   for (const key of assetKeys) {
     await del(key);
+  }
+}
+
+/**
+ * Löscht wirklich alle Caches: IndexedDB, LocalStorage, Caches API, Service Worker.
+ */
+export async function clearAllCachesDeep() {
+  // 1. IndexedDB (wie bisher)
+  await clearAllAssetCache();
+
+  // 2. LocalStorage (nur relevante Keys, nicht alles!)
+  if (typeof window !== 'undefined') {
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith('imgcache_') || key.startsWith('klex_') || key.startsWith('kinderlexikon_')) {
+        localStorage.removeItem(key);
+      }
+    });
+  }
+
+  // 3. Caches API (Service Worker Cache)
+  if ('caches' in window) {
+    const cacheNames = await caches.keys();
+    for (const name of cacheNames) {
+      await caches.delete(name);
+    }
+  }
+
+  // 4. Service Worker deregistrieren (optional, wird beim Reload neu registriert)
+  if ('serviceWorker' in navigator) {
+    const regs = await navigator.serviceWorker.getRegistrations();
+    for (const reg of regs) {
+      await reg.unregister();
+    }
   }
 } 
