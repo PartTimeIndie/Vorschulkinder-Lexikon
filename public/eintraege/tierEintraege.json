@@ -1047,7 +1047,7 @@
       "description": "Schlurf – im abendlichen Garten schnuppert ein Igel zwischen Blättern. Über 6.000 spitze Stacheln schützen ihn wie winzige Schwertchen. Bei Gefahr rollt er sich zu einer stacheligen Kugel, und Räuber sagen lieber: \"Aua, nein danke!\"\n\nDer Igel hört und riecht hervorragend, sieht dafür nicht so gut. Mit seinem feuchten Rüssel findet er knackige Käfer und Schnecken.\n\nBevor der Winter kommt, frisst er sich eine Speckschicht an und baut ein Blätter-Nest. In der Winterruhe schlägt sein Herz ganz langsam – nur wenige Male pro Minute.\n\nIgelbabys kommen nackt zur Welt, aber schon nach wenigen Stunden brechen weiche Mini-Stacheln durch. Wenn Mama Igel grunzend schmatzt, bedeutet das: \"Zeit fürs Abendbuffet!\"",
       "categories": [
         "saeugetiere",
-        "gartentiere",
+        "wiesentiere",
         "allesfresser",
         "kleine-tiere",
         "nachtaktive-tiere"
@@ -1075,9 +1075,9 @@
       "description": "Flatter – ein bunter Schmetterling tanzt durch die Luft wie ein lebendiger Konfetti-Fetzen. Seine Flügel bestehen aus hauchdünnen Schuppen, die Licht brechen und schillernde Farben zaubern. Berührst du sie, bleiben Glitzerpuder-Körner an deinen Fingern hängen!\n\nDoch er war nicht immer so schön: Zuerst war er eine winzige Raupe, fraß Blätter und legte dann eine Pause in einer glitzernden Puppe ein. Dort verwandelte er sich komplett – ein echtes Zauberkunststück namens Metamorphose.\n\nMit einem langen Rüssel schlürft er Blütennektar wie mit einem Trinkhalm. Seine Füße schmecken den Zucker schon beim Landen.\n\nWenn die Tage kälter werden, fliegen manche Schmetterlinge tausende Kilometer in wärmere Länder. Ein zarter Weltenbummler mit Superkräften!",
       "categories": [
         "wirbellose-tiere",
-        "gartentiere",
         "tagaktive-tiere",
-        "kleine-tiere"
+        "kleine-tiere",
+        "wiesentiere"
       ],
       "image": {
         "filename": "tier-schmetterling.png",
@@ -1102,7 +1102,7 @@
       "description": "Summ-summ – eine fleißige Biene brummt von Blüte zu Blüte. Mit winzigen Härchen sammelt sie klebrigen Pollen und bestäubt damit Pflanzen – sie ist eine echte Gartenheldin!\n\nZu Hause im Bienenstock lebt eine Supergesellschaft: Königin, Arbeiterinnen und Drohnen, jede hat ihre Aufgabe. Finden Bienen ein neues Blumenfeld, tanzen sie den berühmten \"Schwänzeltanz\". Die Richtung und Dauer zeigen den anderen genau, wo das Buffet wartet.\n\nIhr Honigmagen verwandelt Blütennektar zu süßem Honig, den wir so lieben. Eine Arbeiterin fliegt in ihrem Leben bis zu 40.000 Kilometer – das ist weiter als einmal um die Erde!\n\nBienen sehen sogar Ultraviolett und entdecken damit geheime Blütenmuster. Wenn eine Gefahr naht, summen sie lauter, als wollten sie sagen: \"Bleib weg, wir arbeiten!\"",
       "categories": [
         "wirbellose-tiere",
-        "gartentiere",
+        "wiesentiere",
         "tagaktive-tiere",
         "kleine-tiere"
       ],
@@ -1129,7 +1129,7 @@
       "description": "Klack – ein leuchtend roter Marienkäfer landet auf deiner Hand. Seine schwarzen Punkte verraten sein Alter nicht, sie sind einfach schicke Flecken!\n\nMarienkäfer sind Blattlaus-Jäger: Ein einziger Käfer frisst bis zu 100 Läuse am Tag und rettet so Pflanzen vor Schädlingen – ein Mini-Superheld.\n\nWenn sich jemand an ihm verschlucken will, sondern seine Knie gelbe Tropfen aus, die bitter schmecken. Das nennt man \"Reflexbluten\".\n\nIm Herbst kuscheln sich viele Käfer zusammen in Baumrinden-Spalten, um gemeinsam Winter zu halten.\n\nIn vielen Ländern bringt er Glück. Fliegt er davon, kannst du einen Wunsch flüstern – vielleicht erfüllt er ihn mit einem \"Flieg, Käferlein, flieg!\"",
       "categories": [
         "wirbellose-tiere",
-        "gartentiere",
+        "wiesentiere",
         "kleine-tiere",
         "tagaktive-tiere"
       ],
@@ -1156,7 +1156,7 @@
       "description": "Plitsch – unter der Erde arbeitet ein Regenwurm als stiller Garten-Baumeister. Sein Körper besteht aus vielen Ringeln, die sich wie eine Ziehharmonika strecken und zusammenziehen.\n\nWinzige Borstchen geben ihm Halt, sodass er durch die Erde kriechen kann. Dabei frisst er Laub und Erde, verdaut sie und hinterlässt fruchtbaren Humus – ein natürlicher Dünger!\n\nRegenwürmer haben kein Herz, sondern fünf Muskelringe, die Blut pumpen. Sie atmen durch die Haut, deshalb mögen sie es feucht.\n\nSchneidet man ihn versehentlich, kann manchmal ein Teil nachwachsen. Und wusstest du? Regenwürmer sind Zwitter: Jeder Wurm ist gleichzeitig Mama und Papa.\n\nWenn es regnet, kommen sie an die Oberfläche – vielleicht winkt dir einer mit seinem Ringel-Popo!",
       "categories": [
         "wirbellose-tiere",
-        "gartentiere",
+        "wiesentiere",
         "kleine-tiere",
         "tagaktive-tiere"
       ],
@@ -1461,9 +1461,8 @@
       "slug": "ameise",
       "description": "Wusel-wusel – eine Ameise marschiert in perfekter Reihe mit ihren Schwestern. Gemeinsam können sie Brücken aus ihren Körpern bauen, um Schluchten zu überwinden – echte Ingenieure!\n\nAmeisen heben das 20-fache ihres Gewichts. Ihr Nest unter der Erde hat viele Kammern: Kinderstube, Pilzgarten, Vorratslager.\n\nSie sprechen über Duftspuren; folgt eine Ameise Zucker, legt sie eine \"Duftstraße\" für alle an. Die Königin legt täglich Hundert Eier, während Arbeiterinnen alles organisieren.\n\nBei Gefahr verteidigen sie sich mit Säure oder Bissen. Aber meistens pflegen sie Blattläuse wie Bauern Kühe. Hör genau: Das leise \"Tss-tss\" ihrer Fühler ist ihre Geheimsprache!",
       "categories": [
-        "insekten",
         "kleine-tiere",
-        "gartentiere",
+        "wiesentiere",
         "tagaktive-tiere",
         "allesfresser"
       ],
@@ -1945,7 +1944,7 @@
       "categories": [
         "wirbellose-tiere",
         "kleine-tiere",
-        "gartentiere",
+        "wiesentiere",
         "tagaktive-tiere"
       ],
       "image": {
@@ -1970,7 +1969,6 @@
       "slug": "libelle",
       "description": "Schwirr – eine Libelle steht wie ein Helikopter in der Luft. Ihre vier durchsichtigen Flügel schlagen unabhängig, so kann sie abrupt stoppen oder rückwärts fliegen.\n\nLibellenlarven leben im Wasser und jagen mit einer ausklappbaren Fangmaske kleine Tiere. Nach der Metamorphose klettert die junge Libelle aus dem Wasser und entfaltet ihre Flügel.\n\nAus Tausenden Facettenaugen sieht sie fast rundum und fängt Mücken im Flug. Ein echter Akrobat des Sommers!",
       "categories": [
-        "insekten",
         "suesswassertiere"
       ],
       "image": {
@@ -2053,7 +2051,7 @@
       "description": "Plitsch! Ein grüner Frosch schnippt seine klebrige Zunge länger als sein Körper vor und schnappt sich eine ahnungslose Mücke im Flug. Danach hüpft er mit Federbeinsprüngen, die ihn zehnmal so weit tragen, wie er lang ist.\n\nSeine Haut kann durchatmen und muss deshalb stets feucht bleiben – darum sitzt er gern am Teichrand in der Abendkühle. Aus Kaulquappe mit Fischschwanz wird er nach Wochen der Verwandlung zu einem Land- und Wasserakrobaten mit starken Hinterbeinen.\n\nWenn die Nacht beginnt, erklingt sein Quak-Konzert, mit dem Männchen um ein gemütliches Laichplätzchen werben. So sorgt der kleine Sänger dafür, dass auch in Zukunft lauter Mini-Kaulquappen durchs Wasser wuseln.",
       "categories": [
         "amphibien",
-        "gartentiere",
+        "wiesentiere",
         "kleine-tiere",
         "tagaktive-tiere",
         "schnelle-tiere"
@@ -2081,7 +2079,7 @@
       "description": "Gemächlich stapft eine Kröte, als trüge sie schwere Stiefel, über den Waldboden und sammelt gierig Schnecken für ihr Abendessen. Ihre warzige Haut speichert Wasser und enthält milde Giftstoffe, die hungrige Räuber abschrecken.\n\nStatt zu springen läuft sie lieber, und bei Gefahr bläht sie sich wie ein kleiner Ballon auf, um größer zu wirken. Hinter den Augen sitzen Ohrdrüsen, die eine bittere Milch abgeben, falls sie doch gepackt wird.\n\nJedes Frühjahr wandert die Kröte tapfer zurück zu ihrem Geburts-Teich, sogar über Straßen, um dort Eier in langen Perlenschnüren abzulegen. Nach dem Frosch-Tanz der Kaulquappen kriechen winzige Jungkröten an Land und helfen bald beim Schneckenputzdienst im Garten.",
       "categories": [
         "amphibien",
-        "gartentiere",
+        "wiesentiere",
         "kleine-tiere",
         "tagaktive-tiere",
         "langsame-tiere"
@@ -2110,7 +2108,6 @@
       "categories": [
         "saeugetiere",
         "nachtaktive-tiere",
-        "flugtiere",
         "kleine-tiere",
         "fleischfresser",
         "tiere-mit-besonderen-faehigkeiten"
@@ -2137,11 +2134,9 @@
       "slug": "motte",
       "description": "Flauschig und geheimnisvoll schwirrt eine Motte im Kerzenschein und folgt dem Licht, weil sie normalerweise den hellen Mond zum Navigieren nutzt. Ihre Flügel sind mit winzigen Schuppen bedeckt, die wie Zauberstaub wirken und bunte Muster bilden.\n\nTagsüber ruht sie reglos an der Baumrinde, wobei Tarnfarben sie fast unsichtbar machen. In der Nacht saugt sie mit ihrem Trinkrüssel Blütennektar, während ihre behaarte Brust wie ein kleiner Pullover Wärme speichert.\n\nBerührt man eine Motte, bleiben Schuppen an den Fingern – das ist ihr Schutz, denn verlorener Flügelstaub lenkt Feinde ab. Aus einem unscheinbaren Ei wird erst eine hungrige Raupe, dann eine Puppe, aus der schließlich das schillernde Nacht-Schmetterlingswesen schlüpft.",
       "categories": [
-        "insekten",
         "kleine-tiere",
         "nachtaktive-tiere",
-        "flugtiere",
-        "gartentiere"
+        "wiesentiere"
       ],
       "image": {
         "filename": "tier-motte.png",
@@ -2168,10 +2163,9 @@
         "saeugetiere",
         "allesfresser",
         "fleischfresser",
-        "mittelgrosse-tiere",
         "nachtaktive-tiere",
         "fluchttiere",
-        "gartentiere"
+        "wiesentiere"
       ],
       "image": {
         "filename": "tier-waschb-r.png",
@@ -2229,8 +2223,7 @@
         "raubtiere",
         "schnelle-tiere",
         "tagaktive-tiere",
-        "gebirgstiere",
-        "flugtiere"
+        "gebirgstiere"
       ],
       "image": {
         "filename": "tier-falke.png",
@@ -2257,7 +2250,7 @@
         "wirbellose-tiere",
         "allesfresser",
         "kleine-tiere",
-        "gartentiere",
+        "wiesentiere",
         "langsame-tiere",
         "tagaktive-tiere"
       ],
@@ -2373,7 +2366,6 @@
         "saeugetiere",
         "pflanzenfresser",
         "grosse-tiere",
-        "tiere-mit-besonderen-faehigkeiten",
         "steppentiere",
         "tagaktive-tiere",
         "fluchttiere"
@@ -2403,7 +2395,6 @@
         "saeugetiere",
         "pflanzenfresser",
         "grosse-tiere",
-        "tiere-mit-besonderen-faehigkeiten",
         "suesswassertiere",
         "tagaktive-tiere",
         "fluchttiere"
@@ -2456,258 +2447,12 @@
     },
     {
       "id": "tier_100",
-      "name": "Schaf",
-      "slug": "schaf",
-      "description": "Määäh! Ein wollig-weiches Schaf kaut gelassen auf einer blühenden Wiese. Sein gekräuseltes Vlies wächst das ganze Jahr, bis der Schäfer es im Frühling sanft schert – daraus entstehen kuschelige Pullover für uns.\n\nSchafe erkennen die Gesichter ihrer Herdenfreunde und merken sich sogar Stimmen. Rechteckige Pupillen schenken ihnen Panorama-Sicht, damit sie schnell Räuber bemerken.\n\nLämmer veranstalten Fangspiele und springen dabei mit allen vier Beinen gleichzeitig in die Luft – das sieht aus wie Wolkenhüpfen. Wenn Gefahr droht, ruft ein Schaf laut, und die Herde rückt eng zusammen – gemeinsam stark!",
-      "categories": [
-        "saeugetiere",
-        "pflanzenfresser",
-        "haustiere-nutztiere",
-        "wiesentiere",
-        "tagaktive-tiere",
-        "fluchttiere"
-      ],
-      "image": {
-        "filename": "tier-schaf.png",
-        "path": "images/tier-schaf.png",
-        "alt": "Handgezeichnete Illustration eines flauschigen Schafs in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-schaf.mp3",
-        "path": "audio/tier-schaf.mp3"
-      },
-      "character_emotions": [
-        "thinking",
-        "curious",
-        "exploring"
-      ],
-      "safety_score": 9
-    },
-    {
-      "id": "tier_101",
-      "name": "Ente",
-      "slug": "ente",
-      "description": "Quak-quak! Eine Stockente gleitet wie ein kleiner Dampfer über den Teich. Ihre Federn sind mit speziellem Öl versiegelt, sodass kein Tropfen bis zur Haut dringt.\n\nZwischen den Zehen spannen sich Schwimmhäute, die sie beim Paddeln antreiben, doch an Land watschelt sie charmant wie in Gummistiefeln. Wenn sie kopfüber nach Wasserpflanzen taucht, ragt nur noch ihr Schwänzchen wie ein Fähnchen heraus.\n\nIm Frühling führt das Erpel-Männchen Balztänze auf und präsentiert seinen grün schillernden Kopf – ein echter Glamour-Auftritt am Weiher!",
-      "categories": [
-        "haustiere-nutztiere",
-        "voegel",
-        "allesfresser",
-        "tagaktive-tiere",
-        "fluchttiere",
-        "suesswassertiere",
-        "wiesentiere",
-        "kleine-tiere",
-        "flugtiere"
-      ],
-      "image": {
-        "filename": "tier-ente.png",
-        "path": "images/tier-ente.png",
-        "alt": "Handgezeichnete Illustration einer schwimmenden Ente in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-ente.mp3",
-        "path": "audio/tier-ente.mp3"
-      },
-      "character_emotions": [
-        "excited",
-        "curious",
-        "exploring"
-      ],
-      "safety_score": 9
-    },
-    {
-      "id": "tier_102",
-      "name": "Gans",
-      "slug": "gans",
-      "description": "Gaa-gak! Eine Graugans fliegt mit ihrer Familie in perfekter V-Formation und spart dabei ein Fünftel Energie. Auf dem Boden steht stets ein Wächter gerade, während die anderen genüsslich Gras zupfen.\n\nBreite Füße wirken wie Schneeschuhe und tragen sie sicher über Matsch und Eis. Küken folgen dem ersten bewegten Objekt, das sie sehen – meistens die Mutter –, als seien sie flauschige Roboter.\n\nZur Brutzeit verteidigen Gänse ihr Nest tapfer mit fauchenden Flügeln, doch sonst sind sie friedliche Reisende zwischen Seen und Meer.",
-      "categories": [
-        "haustiere-nutztiere",
-        "voegel",
-        "allesfresser",
-        "tagaktive-tiere",
-        "fluchttiere",
-        "suesswassertiere",
-        "wiesentiere",
-        "kleine-tiere",
-        "flugtiere"
-      ],
-      "image": {
-        "filename": "tier-gans.png",
-        "path": "images/tier-gans.png",
-        "alt": "Handgezeichnete Illustration einer stolzen Gans in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-gans.mp3",
-        "path": "audio/tier-gans.mp3"
-      },
-      "character_emotions": [
-        "thinking",
-        "curious",
-        "exploring"
-      ],
-      "safety_score": 8
-    },
-    {
-      "id": "tier_103",
-      "name": "Esel",
-      "slug": "esel",
-      "description": "Iaah! Ein Esel spitzt seine langen Ohren in alle Richtungen und hört Geräusche, die Menschen gar nicht wahrnehmen. In felsigem Gelände setzt er jeden Huf sicher, als hätte er eingebaute Kletterschuhe – deshalb tragen ihn Menschen seit Jahrhunderten über Bergpfade.\n\nSein kräftiges \"IA\" kann drei Kilometer weit schallen und sagt Freunden: \"Hier bin ich, alles gut!\" Trotz geduldiger Art merkt er sich gefährliche Wege genau und weigert sich, sie erneut zu gehen – cleverer Sturkopf.\n\nAbends knabbert er duftende Kräuter, während die Sonne den staubigen Hof in warmes Gold taucht.",
-      "categories": [
-        "haustiere-nutztiere",
-        "saeugetiere",
-        "pflanzenfresser",
-        "grosse-tiere",
-        "fluchttiere",
-        "tagaktive-tiere",
-        "wiesentiere"
-      ],
-      "image": {
-        "filename": "tier-esel.png",
-        "path": "images/tier-esel.png",
-        "alt": "Handgezeichnete Illustration eines geduldigen Esels in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-esel.mp3",
-        "path": "audio/tier-esel.mp3"
-      },
-      "character_emotions": [
-        "thinking",
-        "curious",
-        "exploring"
-      ],
-      "safety_score": 9
-    },
-    {
-      "id": "tier_104",
-      "name": "Jaguar",
-      "slug": "jaguar",
-      "description": "Lautlos wie ein Schatten schleicht der Jaguar durch den Regenwald, sein goldener Pelz mit dunklen Rosetten verschmilzt mit Licht und Blättern. Er ist die einzige Großkatze, die gern schwimmt und sogar Kaimane aus dem Wasser zieht.\n\nSein Biss ist so kräftig, dass er Schildkrötenpanzer knacken kann – ein echtes Supergebiss. Nach der Jagd klettert er auf einen Ast und schnurrt, als wäre er wieder ein verspieltes Jungtier.\n\nDabei hängt sein langer Schwanz gemütlich herab, während die Nacht voller Dschungelgeräusche weiter rauscht.",
-      "categories": [
-        "saeugetiere",
-        "dschungeltiere",
-        "fleischfresser",
-        "raubtiere",
-        "grosse-tiere",
-        "nachtaktive-tiere",
-        "tagaktive-tiere",
-        "wiesentiere",
-        "schnelle-tiere"
-      ],
-      "image": {
-        "filename": "tier-jaguar.png",
-        "path": "images/tier-jaguar.png",
-        "alt": "Handgezeichnete Illustration eines gefleckten Jaguars in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-jaguar.mp3",
-        "path": "audio/tier-jaguar.mp3"
-      },
-      "character_emotions": [
-        "thinking",
-        "curious",
-        "exploring"
-      ],
-      "safety_score": 5
-    },
-    {
-      "id": "tier_105",
-      "name": "Panther",
-      "slug": "panther",
-      "description": "Samtig schwarz bewegt sich der Panther – eigentlich ein tief dunkel gefärbter Leopard – lautlos durch die Dschungelnacht. Obwohl sein Fell fast ganz schwarz wirkt, schimmern unter Mondlicht geheimnisvolle Rosetten.\n\nMit kräftigen Hinterbeinen springt er sechs Meter weit aus dem Stand und trägt Beute auf niedrige Äste, damit sie sicher ist. Seine Schnurrhaare dienen als Antennen im Dunkeln und verhindern, dass er Äste streift.\n\nIm Morgengrauen rollt er sich auf einem Ast zusammen, die Pfoten unter das Kinn gelegt, und lauscht den erwachenden Vögeln – ein unsichtbarer König des Schattenspieles.",
-      "categories": [
-        "saeugetiere",
-        "dschungeltiere",
-        "fleischfresser",
-        "raubtiere",
-        "grosse-tiere",
-        "nachtaktive-tiere",
-        "tagaktive-tiere",
-        "wiesentiere",
-        "schnelle-tiere"
-      ],
-      "image": {
-        "filename": "tier-panther.png",
-        "path": "images/tier-panther.png",
-        "alt": "Handgezeichnete Illustration eines eleganten Panthers in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-panther.mp3",
-        "path": "audio/tier-panther.mp3"
-      },
-      "character_emotions": [
-        "thinking",
-        "curious",
-        "exploring"
-      ],
-      "safety_score": 4
-    },
-    {
-      "id": "tier_106",
-      "name": "Dromedar",
-      "slug": "dromedar",
-      "description": "Durch die flirrende Hitze der Wüste schreitet ein Dromedar, sein einzelner Höcker wirkt wie ein tragbarer Proviant-Rucksack, denn darin lagert Fett statt Wasser. Breite, weiche Fußsohlen funktionieren wie Sand-Schneeschuhe und verhindern Einsinken.\n\nLange Wimpern und schmale Schlitznasen lassen sich wie Fensterläden schließen, wenn ein Sandsturm aufzieht. Das \"Wüstenschiff\" kann eine Woche ohne Trinken auskommen, doch wenn es endlich Wasser findet, schlürft es in zehn Minuten über hundert Liter.\n\nNachts kühlt der Körper stark ab, damit es am heißen Tag weniger schwitzt. Morgens spuckt es zur Begrüßung manchmal einen Schwall Grasbrei – kein Ärger, nur dromedarischer Smalltalk!",
-      "categories": [
-        "saeugetiere",
-        "pflanzenfresser",
-        "grosse-tiere",
-        "wuestentiere",
-        "tagaktive-tiere",
-        "fluchttiere",
-        "wiesentiere"
-      ],
-      "image": {
-        "filename": "tier-dromedar.png",
-        "path": "images/tier-dromedar.png",
-        "alt": "Handgezeichnete Illustration eines einhöckrigen Dromedars in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-dromedar.mp3",
-        "path": "audio/tier-dromedar.mp3"
-      },
-      "character_emotions": [
-        "thinking",
-        "curious",
-        "exploring"
-      ],
-      "safety_score": 8
-    },
-    
-    {
-      "id": "tier_108",
-      "name": "Waran",
-      "slug": "waran",
-      "description": "Ein Waran sonnt sich reglos auf einem Felsen, doch seine Zunge zischt ständig hinaus wie ein blaues Band, sammelt Duftpartikel und liefert der Supernase im Gaumen Nachrichten: Beute in der Nähe!\n\nMit kräftigen Krallen klettert er mühelos auf Bäume, und sein peitschender Schwanz dient als Ruder, wenn er im Fluss schwimmt. Die Haut besteht aus harten Schuppenplatten – eine natürliche Ritterrüstung.\n\nBeim Fressen ist er nicht wählerisch: Eier, Insekten, kleine Säugetiere – alles verschwindet in seinem dehnbaren Rachen. Hat er genug, ruht er stundenlang im Schatten und speichert die Solarenergie für den nächsten Abenteuerlauf.",
-      "categories": [
-        "reptilien",
-        "wuestentiere",
-        "fleischfresser",
-        "tagaktive-tiere",
-        "grosse-tiere"
-      ],
-      "image": {
-        "filename": "tier-waran.png",
-        "path": "images/tier-waran.png",
-        "alt": "Handgezeichnete Illustration eines beeindruckenden Warans in warmem Kinderbuch-Stil"
-      },
-      "audio": {
-        "filename": "tier-waran.mp3",
-        "path": "audio/tier-waran.mp3"
-      },
-      "character_emotions": [
-        "thinking",
-        "curious",
-        "exploring"
-      ],
-      "safety_score": 6
-    },
-    {
-      "id": "tier_110",
       "name": "Schneehase",
       "slug": "schneehase",
       "description": "Husch! Ein Schneehase sprintet über weißen Pulverschnee, seine breiten Hinterpfoten wirken wie Feder-Schneeschuhe und verhindern Einsinken. Im Winter trägt er ein schneeweißes Tarnfell, im Sommer kleidet er sich braun – ein echter Jahreszeiten-Verwandlungskünstler.\n\nBei Sturm gräbt er blitzschnell einen Mini-Tunnel und wartet, bis die Flocken leiser rieseln. Seine Ohren sind kürzer als die des Feldhasen, so verliert er weniger Wärme.\n\nStellt sich Gefahr ein, macht er einen Zickzack-Haken und verschwindet hinter einer Schneewehe. Vielleicht siehst du nur noch den fluffigen Bommel, der kurz wippt und dann lautlos verschwindet.",
       "categories": [
         "saeugetiere",
-        "poltiere",
+        "polartiere",
         "pflanzenfresser",
         "fluchttiere",
         "tagaktive-tiere",
@@ -2730,13 +2475,13 @@
       "safety_score": 9
     },
     {
-      "id": "tier_111",
+      "id": "tier_101",
       "name": "Rentier",
       "slug": "rentier",
       "description": "Klirrende Kälte, Nordlicht am Himmel – ein Rentier stapft gemächlich durch knietiefen Schnee. Breite Hufschalen spreizen sich wie Schneeschuhe und haben scharfe Kanten, um Eis aufzukratzen und verstecktes Moos zu erreichen.\n\nAls einzige Hirschart tragen auch Weibchen ein Geweih; sie behalten es den Winter über, um an Futterstellen Vorrang zu haben. Eine spezielle Nase wärmt eiskalte Luft vor, damit die Lunge nicht friert.\n\nZweimal im Jahr wandern Herden tausende Kilometer, auf Hufen, die im Sommer weich und im Winter hart sind – ein eingebauter Wanderschuh-Wechsel. Hörst du das leise Knacken? Das sind Sehnen in ihren Beinen, die beim Gehen klicken und Artgenossen im Schneetreiben zusammenhalten.",
       "categories": [
         "saeugetiere",
-        "poltiere",
+        "polartiere",
         "pflanzenfresser",
         "grosse-tiere",
         "fluchttiere",
