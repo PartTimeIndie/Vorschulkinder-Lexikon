@@ -57,11 +57,7 @@ export async function clearCachedAsset(url, version = '') {
  * @returns {Promise<any>} - Parsed JSON object.
  */
 export async function getCachedJson(url, version = '') {
-  // Cache-Busting für zentrale JSONs
-  if (typeof window !== 'undefined' && (url.includes('/kategorien/tiere.json') || url.includes('/eintraege/tierEintraege.json'))) {
-    const sep = url.includes('?') ? '&' : '?';
-    url = url + sep + 'v=' + Date.now();
-  }
+  // Entfernt: Cache-Busting für zentrale JSONs
   const cacheKey = getCacheKey(url, version) + '_json';
   try {
     const cached = await get(cacheKey);

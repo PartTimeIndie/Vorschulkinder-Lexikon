@@ -55,7 +55,7 @@ const withPWA = require('next-pwa')({
     },
     {
       urlPattern: /^\/(kategorien|eintraege)\/.*\.json$/,
-      handler: 'CacheFirst',
+      handler: 'NetworkFirst', // <-- statt 'CacheFirst'
       options: {
         cacheName: 'json-data',
         expiration: { maxEntries: 20, maxAgeSeconds: 24 * 60 * 60 },
